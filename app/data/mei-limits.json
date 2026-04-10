@@ -1,0 +1,50 @@
+{
+  "limits": [
+    {
+      "year": 2022,
+      "meiAnnualLimit": 81000,
+      "meAnnualLimit": 360000,
+      "description": "Limite MEI vs ME 2022"
+    },
+    {
+      "year": 2023,
+      "meiAnnualLimit": 81000,
+      "meAnnualLimit": 360000,
+      "description": "Limite MEI vs ME 2023"
+    },
+    {
+      "year": 2024,
+      "meiAnnualLimit": 81000,
+      "meAnnualLimit": 360000,
+      "description": "Limite MEI vs ME 2024"
+    },
+    {
+      "year": 2025,
+      "meiAnnualLimit": 85000,
+      "meAnnualLimit": 360000,
+      "description": "Limite MEI vs ME 2025"
+    },
+    {
+      "year": 2026,
+      "meiAnnualLimit": 85000,
+      "meAnnualLimit": 360000,
+      "description": "Limite MEI vs ME 2026"
+    }
+  ],
+  "thresholds": {
+    "meiToMe": {
+      "description": "Quando você deve mudar de MEI para ME",
+      "monthlyAverage": 7083.33,
+      "annualLimit": 85000
+    },
+    "autonomoToMei": {
+      "description": "Diferença entre autônomo e MEI",
+      "meiAdvantages": [
+        "CNPJ próprio",
+        "Acesso a crédito",
+        "Emissão de nota fiscal",
+        "Contribuição ao INSS reduzida"
+      ]
+    }
+  }
+}

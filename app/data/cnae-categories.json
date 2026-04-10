@@ -1,0 +1,796 @@
+{
+  "cnae": [
+    {
+      "code": "5611-1/01",
+      "description": "Restaurantes de serviço completo",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4711-3/01",
+      "description": "Comércio varejista de alimentos em geral",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7490-2/99",
+      "description": "Consultoria empresarial e outras atividades profissionais não especificadas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "8711-3/00",
+      "description": "Desinfecção e controle de pragas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4722-9/01",
+      "description": "Comércio varejista de carnes e pescados",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "6209-1/03",
+      "description": "Suporte técnico e manutenção em tecnologia da informação",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9511-6/00",
+      "description": "Manutenção e reparação de computadores",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "8512-4/00",
+      "description": "Educação infantil – pré-escola",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "7711-1/00",
+      "description": "Aluguel de imóveis próprios",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "9603-8/01",
+      "description": "Lavanderias",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "8551-3/00",
+      "description": "Ensino de idiomas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4761-2/00",
+      "description": "Comércio varejista especializado de bebidas",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7312-6/00",
+      "description": "Limpeza em prédios e domicílios",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "8230-2/00",
+      "description": "Serviços de organização de eventos",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "5814-4/00",
+      "description": "Lanchonete, casa de chá, de sucos e similares",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "7510-1/01",
+      "description": "Manutenção e reparação de edifícios",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4753-1/00",
+      "description": "Comércio varejista de artigos de decoração",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7319-3/00",
+      "description": "Outras atividades de limpeza não especificadas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "8223-1/00",
+      "description": "Promoção de vendas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "6209-1/99",
+      "description": "Outras atividades de serviços de tecnologia da informação não especificadas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9410-7/00",
+      "description": "Atividades de associações de defesa de direitos sociais",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "7722-7/00",
+      "description": "Aluguel de equipamentos recreativos e de esportes",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4771-3/00",
+      "description": "Comércio varejista de livros",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7490-2/03",
+      "description": "Atividades de contabilidade",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9602-9/01",
+      "description": "Barbearias",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4743-8/01",
+      "description": "Comércio varejista de artigos de vestuário e complementos",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7721-8/00",
+      "description": "Aluguel de objetos pessoais e domésticos",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "8021-6/00",
+      "description": "Atividades de odontologia",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "6022-1/00",
+      "description": "Consultoria em sistemas de automação",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4752-2/00",
+      "description": "Comércio varejista de móveis",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "8220-8/00",
+      "description": "Atividades de teleatendimento (call center)",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "8510-5/01",
+      "description": "Educação infantil – creche",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "7721-8/01",
+      "description": "Aluguel de filmes e vídeos em suporte físico",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "9602-9/02",
+      "description": "Salões de beleza",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "8130-1/00",
+      "description": "Atividades de segurança privada",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4747-6/01",
+      "description": "Comércio varejista de peças e acessórios de automóveis",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "4789-1/99",
+      "description": "Comércio varejista em lojas não especializadas",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7490-2/04",
+      "description": "Consultorias gerenciais",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9504-9/00",
+      "description": "Restauração de máquinas e equipamentos",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "8699-1/08",
+      "description": "Atividades profissionais de saúde não especificadas anteriormente",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4734-9/00",
+      "description": "Comércio varejista de hardware",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7911-9/00",
+      "description": "Agências de viagens",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9529-1/00",
+      "description": "Reparação e manutenção de outros equipamentos pessoais",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "6110-3/00",
+      "description": "Processamento de dados, provedoria de serviços de informação em nuvem",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4722-9/00",
+      "description": "Comércio varejista de frutas e vegetais",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7723-3/00",
+      "description": "Aluguel de máquinas e equipamentos agrícolas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "8230-2/01",
+      "description": "Organização e promoção de festivais e feiras",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4782-3/00",
+      "description": "Comércio varejista de objetos de arte e artesanato",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": false
+    },
+    {
+      "code": "7490-2/02",
+      "description": "Atividades de assessoria e consultoria em administração",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9200-2/01",
+      "description": "Atividades de museus",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4721-0/00",
+      "description": "Comércio varejista de peixaria",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7320-7/00",
+      "description": "Tratamento e disposição de resíduos não-perigosos",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "9520-4/00",
+      "description": "Reparação e manutenção de artigos de fibra óptica",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "6010-3/00",
+      "description": "Programação de computadores",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4751-3/00",
+      "description": "Comércio varejista de artigos têxteis",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "9001-9/00",
+      "description": "Atividades de artes cênicas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "7722-7/01",
+      "description": "Aluguel de equipamentos de transporte",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4761-2/01",
+      "description": "Comércio varejista de vinho e bebidas destiladas",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "8250-5/00",
+      "description": "Atividades de escolas de dança",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4712-1/00",
+      "description": "Comércio varejista de padaria e confeitaria",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7490-2/05",
+      "description": "Atividades de advocacia",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9000-0/00",
+      "description": "Atividades de produção de artes cênicas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4726-5/00",
+      "description": "Comércio varejista de produtos de higiene pessoal",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7739-1/00",
+      "description": "Aluguel de outros meios de transporte terrestre",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "8299-7/99",
+      "description": "Atividades de ensino não especificadas anteriormente",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4741-6/00",
+      "description": "Comércio varejista de eletrônicos de uso pessoal",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "6020-0/00",
+      "description": "Consultoria em tecnologia da informação",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9630-6/00",
+      "description": "Atividades de reparação de motos, bicicletas e equipamentos similares",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4723-1/00",
+      "description": "Comércio varejista de bebidas não alcoólicas",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "8640-2/00",
+      "description": "Ensino de música",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "6209-1/01",
+      "description": "Suporte técnico, manutenção e outros serviços em tecnologia da informação",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "7410-1/00",
+      "description": "Atividades de design",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4754-8/00",
+      "description": "Comércio varejista de artigos de óptica",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "8699-1/03",
+      "description": "Atividades de profissionais da nutrição",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "9101-0/00",
+      "description": "Atividades de bibliotecas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4761-2/02",
+      "description": "Comércio varejista de cerveja",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "8050-3/00",
+      "description": "Atividades de medicina",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4711-3/99",
+      "description": "Comércio varejista de alimentos não especificados",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "9011-4/00",
+      "description": "Atividades de produção de cinema",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "4744-7/00",
+      "description": "Comércio varejista de artigos de joalheria",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "7430-6/00",
+      "description": "Tradução e interpretação",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4766-3/00",
+      "description": "Comércio varejista de jornais e revistas",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "8690-4/00",
+      "description": "Atividades de ensino não especificadas",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "9410-7/01",
+      "description": "Atividades de sindicatos",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    },
+    {
+      "code": "7490-2/01",
+      "description": "Atividades de gerências, administração e gestão",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "4741-6/01",
+      "description": "Comércio varejista de equipamentos de informática",
+      "category": "commerce",
+      "das_icms": true,
+      "das_iss": false,
+      "allows_nfse": false,
+      "popular": true
+    },
+    {
+      "code": "9511-6/01",
+      "description": "Manutenção e reparação de impressoras",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": true
+    },
+    {
+      "code": "8130-1/01",
+      "description": "Atividades de segurança privada",
+      "category": "services",
+      "das_icms": false,
+      "das_iss": true,
+      "allows_nfse": true,
+      "popular": false
+    }
+  ]
+}

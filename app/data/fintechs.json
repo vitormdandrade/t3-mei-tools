@@ -1,0 +1,169 @@
+{
+  "fintechs": [
+    {
+      "id": "conta-simples",
+      "name": "Conta Simples",
+      "slug": "conta-simples",
+      "description_pt": "Conta bancária PJ completa com transferências ilimitadas e antecipação de recebíveis",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Transferências ilimitadas",
+        "Antecipação de recebíveis",
+        "Integração com NFSe"
+      ],
+      "best_for": "Autônomos e MEI com faturamento médio",
+      "affiliate_url": "#",
+      "rating": 4.5
+    },
+    {
+      "id": "neon-pj",
+      "name": "Neon PJ",
+      "slug": "neon-pj",
+      "description_pt": "Conta PJ digital com pagamento de boletos e transferências sem tarifa",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Sem taxa de transferência",
+        "Pagamento de boletos",
+        "App mobile intuitivo"
+      ],
+      "best_for": "MEI com necessidade de mobilidade",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "id": "nubank-pj",
+      "name": "Nubank PJ",
+      "slug": "nubank-pj",
+      "description_pt": "Conta corrente PJ do Nubank com cashback e benefícios exclusivos",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback em transações",
+        "Sem anuidade de cartão",
+        "Integrado ao Nubank Pessoa Física"
+      ],
+      "best_for": "MEI que já usa Nubank",
+      "affiliate_url": "#",
+      "rating": 4.4
+    },
+    {
+      "id": "inter-empresas",
+      "name": "Inter Empresas",
+      "slug": "inter-empresas",
+      "description_pt": "Conta empresarial do Banco Inter com crédito pré-aprovado para MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito pré-aprovado",
+        "Limite de cheque especial",
+        "Sem tarifa de TED"
+      ],
+      "best_for": "MEI que precisa de crédito",
+      "affiliate_url": "#",
+      "rating": 4.2
+    },
+    {
+      "id": "c6-bank-pj",
+      "name": "C6 Bank PJ",
+      "slug": "c6-bank-pj",
+      "description_pt": "Banco digital com conta PJ, cartão corporativo e soluções de crédito",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cartão corporativo",
+        "Limite de crédito automático",
+        "Tarifas reduzidas"
+      ],
+      "best_for": "MEI com crescimento esperado",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "id": "infinitepay",
+      "name": "InfinitePay",
+      "slug": "infinitepay",
+      "description_pt": "Máquina de pagamento com liquidação automática e taxa competitiva",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Liquidação D+1",
+        "Taxa a partir de 1,99%",
+        "Sem aluguel de equipamento"
+      ],
+      "best_for": "MEI de comércio com vendas presenciais",
+      "affiliate_url": "#",
+      "rating": 4.1
+    },
+    {
+      "id": "sumup",
+      "name": "SumUp",
+      "slug": "sumup",
+      "description_pt": "Maquininha com NFC, WiFi e 4G com segurança de dados criptografada",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Portátil e compacta",
+        "Taxa a partir de 2.49%",
+        "Suporte 24/7"
+      ],
+      "best_for": "MEI ambulante ou de serviços",
+      "affiliate_url": "#",
+      "rating": 4.0
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "slug": "stone",
+      "description_pt": "Líder de market share em máquinas de pagamento com suporte enterprise",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Liquidação rápida",
+        "Taxa competitiva",
+        "Suporte especializado"
+      ],
+      "best_for": "MEI de comércio em volume",
+      "affiliate_url": "#",
+      "rating": 4.4
+    },
+    {
+      "id": "pagseguro",
+      "name": "PagSeguro",
+      "slug": "pagseguro",
+      "description_pt": "Solução completa com conta corrente, maquininha e cartão pré-pago",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Conta 100% online",
+        "Maquininha integrada",
+        "Suporte em português"
+      ],
+      "best_for": "MEI iniciante em vendas online",
+      "affiliate_url": "#",
+      "rating": 4.2
+    },
+    {
+      "id": "mercado-pago",
+      "name": "Mercado Pago",
+      "slug": "mercado-pago",
+      "description_pt": "Conta corrente integrada com todas as soluções de pagamento do Mercado Livre",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Integração Mercado Livre",
+        "Taxa reduzida para vendedores",
+        "Cashback em compras"
+      ],
+      "best_for": "MEI vendedor do Mercado Livre",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "id": "boa-compra",
+      "name": "Boa Compra",
+      "slug": "boa-compra",
+      "description_pt": "Antecipação de recebíveis e gestão de fluxo de caixa para MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Antecipação em 24h",
+        "Taxa transparente",
+        "Sem burocracia"
+      ],
+      "best_for": "MEI com contas a receber",
+      "affiliate_url": "#",
+      "rating": 4.1
+    }
+  ]
+}

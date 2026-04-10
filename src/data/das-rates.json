@@ -1,0 +1,80 @@
+{
+  "2024": {
+    "minimumWage": 1412,
+    "inssPercentage": 5,
+    "inssValue": 70.60,
+    "commerce": {
+      "inss": 70.60,
+      "icms": 1.0,
+      "iss": 0,
+      "total": 71.60,
+      "description": "Comércio"
+    },
+    "services": {
+      "inss": 70.60,
+      "icms": 0,
+      "iss": 5.0,
+      "total": 75.60,
+      "description": "Serviços"
+    },
+    "industry": {
+      "inss": 70.60,
+      "icms": 1.0,
+      "iss": 0,
+      "total": 71.60,
+      "description": "Indústria"
+    }
+  },
+  "2025": {
+    "minimumWage": 1518,
+    "inssPercentage": 5,
+    "inssValue": 75.90,
+    "commerce": {
+      "inss": 75.90,
+      "icms": 1.0,
+      "iss": 0,
+      "total": 76.90,
+      "description": "Comércio"
+    },
+    "services": {
+      "inss": 75.90,
+      "icms": 0,
+      "iss": 5.0,
+      "total": 80.90,
+      "description": "Serviços"
+    },
+    "industry": {
+      "inss": 75.90,
+      "icms": 1.0,
+      "iss": 0,
+      "total": 76.90,
+      "description": "Indústria"
+    }
+  },
+  "2026": {
+    "minimumWage": 1518,
+    "inssPercentage": 5,
+    "inssValue": 75.90,
+    "commerce": {
+      "inss": 75.90,
+      "icms": 1.0,
+      "iss": 0,
+      "total": 76.90,
+      "description": "Comércio"
+    },
+    "services": {
+      "inss": 75.90,
+      "icms": 0,
+      "iss": 5.0,
+      "total": 80.90,
+      "description": "Serviços"
+    },
+    "industry": {
+      "inss": 75.90,
+      "icms": 1.0,
+      "iss": 0,
+      "total": 76.90,
+      "description": "Indústria"
+    }
+  }
+}
