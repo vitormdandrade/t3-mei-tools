@@ -32,6 +32,7 @@ export default function RootLayout({
                 <li><a href="/calculadora/das" className="hover:opacity-80">Calculadora DAS</a></li>
                 <li><a href="/calculadora/faturamento" className="hover:opacity-80">Faturamento</a></li>
                 <li><a href="/calculadora/mei-vs-me" className="hover:opacity-80">MEI vs ME</a></li>
+                <li><a href="/calculadora/cnae" className="hover:opacity-80">CNAEs</a></li>
                 <li><a href="/guias" className="hover:opacity-80">Guias</a></li>
               </ul>
             </div>
@@ -52,6 +53,7 @@ export default function RootLayout({
                   <li><a href="/calculadora/faturamento" className="hover:text-white">Faturamento</a></li>
                   <li><a href="/calculadora/mei-vs-me" className="hover:text-white">MEI vs ME</a></li>
                   <li><a href="/calculadora/inss-autonomo" className="hover:text-white">INSS Autônomo</a></li>
+                  <li><a href="/calculadora/cnae" className="hover:text-white">CNAEs Permitidos</a></li>
                 </ul>
               </div>
               <div>
