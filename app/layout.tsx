@@ -55,6 +55,7 @@ export default function RootLayout({
                   <li><a href="/calculadora/faturamento" className="hover:text-white">Faturamento</a></li>
                   <li><a href="/calculadora/preco-por-hora" className="hover:text-white">Preço por Hora</a></li>
                   <li><a href="/calculadora/margem-de-lucro" className="hover:text-white">Margem de Lucro</a></li>
+                  <li><a href="/calculadora/ponto-de-equilibrio" className="hover:text-white">Ponto de Equilíbrio</a></li>
                   <li><a href="/calculadora/mei-vs-me" className="hover:text-white">MEI vs ME</a></li>
                   <li><a href="/calculadora/inss-autonomo" className="hover:text-white">INSS Autônomo</a></li>
                   <li><a href="/calculadora/cnae" className="hover:text-white">CNAEs Permitidos</a></li>

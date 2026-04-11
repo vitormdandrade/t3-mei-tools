@@ -11,9 +11,20 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Ferramentas Gratuitas para MEI e Freelancers
         </h1>
-        <p className="text-xl text-gray-600 mb-8">
-          Calcule DAS, faturamento, INSS e compare regimes de impostos com precisão
+        <p className="text-xl text-gray-600 mb-6">
+          Calcule DAS, faturamento, preços, margens e compare regimes de impostos com precisão
         </p>
+        <div className="flex gap-3 justify-center flex-wrap mb-8 text-sm">
+          <span className="bg-white border border-green-200 text-green-800 px-3 py-1.5 rounded-full font-semibold">
+            ✓ Sem limite de cálculos
+          </span>
+          <span className="bg-white border border-blue-200 text-blue-800 px-3 py-1.5 rounded-full font-semibold">
+            ✓ 100% gratuito, sem cadastro
+          </span>
+          <span className="bg-white border border-purple-200 text-purple-800 px-3 py-1.5 rounded-full font-semibold">
+            ✓ Cada calculadora com URL própria
+          </span>
+        </div>
         <div className="flex gap-4 justify-center flex-wrap">
           <a href="/calculadora/das" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
             Calcular DAS
@@ -29,8 +40,11 @@ export default function Home() {
 
       {/* Calculators Grid */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Nossas Calculadoras</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">Nossas Calculadoras</h2>
+        <p className="text-gray-600 mb-8">7 calculadoras dedicadas — cada uma com sua própria URL, para você achar exatamente o que precisa no Google.</p>
+
+        <h3 className="text-xl font-bold text-gray-800 mb-4">Impostos e regime MEI</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <div className="border rounded-lg p-6 hover:shadow-lg transition">
             <h3 className="text-xl font-bold text-green-600 mb-2">Calculadora DAS</h3>
             <p className="text-gray-600 mb-4">Calcule o valor mensal do DAS conforme sua atividade e o salário mínimo do ano.</p>
@@ -53,6 +67,42 @@ export default function Home() {
             <h3 className="text-xl font-bold text-orange-600 mb-2">INSS Autônomo</h3>
             <p className="text-gray-600 mb-4">Calcule a contribuição ao INSS como autônomo conforme sua renda mensal.</p>
             <a href="/calculadora/inss-autonomo" className="text-orange-600 font-semibold hover:underline">Ver calculadora →</a>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-gray-800 mb-4">Gestão financeira do negócio</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="border rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-emerald-600 mb-2">Margem de Lucro</h3>
+            <p className="text-gray-600 text-sm mb-4">Quanto de cada real vendido vira lucro real depois dos custos.</p>
+            <a href="/calculadora/margem-de-lucro" className="text-emerald-600 font-semibold hover:underline text-sm">Ver calculadora →</a>
+          </div>
+
+          <div className="border rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-teal-600 mb-2">Preço por Hora</h3>
+            <p className="text-gray-600 text-sm mb-4">Valor mínimo/hora para freelancers cobrirem salário, DAS e despesas.</p>
+            <a href="/calculadora/preco-por-hora" className="text-teal-600 font-semibold hover:underline text-sm">Ver calculadora →</a>
+          </div>
+
+          <div className="border rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-indigo-600 mb-2">Ponto de Equilíbrio</h3>
+            <p className="text-gray-600 text-sm mb-4">Quantas unidades vender por mês para cobrir os custos fixos.</p>
+            <a href="/calculadora/ponto-de-equilibrio" className="text-indigo-600 font-semibold hover:underline text-sm">Ver calculadora →</a>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold text-gray-800 mb-4">Consulta e referência</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="border rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">CNAEs Permitidos para MEI</h3>
+            <p className="text-gray-600 text-sm mb-4">Busque entre centenas de atividades aceitas no MEI com descrição e categoria.</p>
+            <a href="/calculadora/cnae" className="text-gray-900 font-semibold hover:underline text-sm">Ver CNAEs →</a>
+          </div>
+
+          <div className="border rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Calendário DAS 2026</h3>
+            <p className="text-gray-600 text-sm mb-4">Todas as 12 datas de vencimento do ano + arquivo .ics para Google/Apple Calendar.</p>
+            <a href="/calendario-das" className="text-gray-900 font-semibold hover:underline text-sm">Ver calendário →</a>
           </div>
         </div>
       </section>

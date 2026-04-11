@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/calculadora/inss-autonomo', changeFreq: 'weekly' as const },
     { url: '/calculadora/margem-de-lucro', changeFreq: 'weekly' as const },
     { url: '/calculadora/preco-por-hora', changeFreq: 'weekly' as const },
+    { url: '/calculadora/ponto-de-equilibrio', changeFreq: 'weekly' as const },
     { url: '/calculadora/cnae', changeFreq: 'weekly' as const },
   ];
 
