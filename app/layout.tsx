@@ -9,10 +9,12 @@ export const metadata: Metadata = {
   title: "MEI Tools - Calculadoras e Guias para Microempreendedores",
   description: "Calculadoras de DAS, faturamento, INSS e guias completos para MEI e freelancers. Simule seus impostos e encontre as melhores contas PJ para seu negócio.",
   keywords: "MEI, DAS, calculadora MEI, nota fiscal, freelancer, imposto MEI, conta PJ",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br'),
   openGraph: {
     title: "MEI Tools - Calculadoras para Microempreendedores",
     description: "Ferramentas gratuitas para calcular DAS, INSS, faturamento e impostos de MEI",
     type: "website",
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br',
   },
 };
 

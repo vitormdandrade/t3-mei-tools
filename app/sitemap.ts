@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mei-tools.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br';
 
   // Calculators
   const calculators = [
