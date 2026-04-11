@@ -13,7 +13,7 @@ export default function LimiteFaturamentoMEI() {
 
       <section className="bg-green-50 border border-green-200 rounded-lg p-6">
         <h2 className="text-2xl font-bold text-green-900 mb-2">O Limite</h2>
-        <p className="text-green-900 text-xl"><strong>R$ 85.000</strong> por ano (2026)</p>
+        <p className="text-green-900 text-xl"><strong>R$ 81.000</strong> por ano (2026)</p>
         <p className="text-green-900 text-sm mt-2">Ou ~R$ 7.083/mês em média</p>
       </section>
 
@@ -56,7 +56,7 @@ export default function LimiteFaturamentoMEI() {
               </tr>
               <tr className="bg-green-50">
                 <td className="border px-4 py-2">2025-2026</td>
-                <td className="border px-4 py-2 text-center text-green-900 font-bold">R$ 85.000</td>
+                <td className="border px-4 py-2 text-center text-green-900 font-bold">R$ 81.000</td>
                 <td className="border px-4 py-2 text-center text-green-900 font-bold">~R$ 7.083</td>
               </tr>
             </tbody>

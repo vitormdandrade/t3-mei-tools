@@ -20,13 +20,13 @@
     },
     {
       "year": 2025,
-      "meiAnnualLimit": 85000,
+      "meiAnnualLimit": 81000,
       "meAnnualLimit": 360000,
       "description": "Limite MEI vs ME 2025"
     },
     {
       "year": 2026,
-      "meiAnnualLimit": 85000,
+      "meiAnnualLimit": 81000,
       "meAnnualLimit": 360000,
       "description": "Limite MEI vs ME 2026"
     }
@@ -35,7 +35,7 @@
     "meiToMe": {
       "description": "Quando você deve mudar de MEI para ME",
       "monthlyAverage": 7083.33,
-      "annualLimit": 85000
+      "annualLimit": 81000
     },
     "autonomoToMei": {
       "description": "Diferença entre autônomo e MEI",

@@ -29,8 +29,10 @@ export default function RootLayout({
             <div className="flex justify-between items-center">
               <a href="/" className="text-2xl font-bold">MEI Tools</a>
               <ul className="flex gap-6">
-                <li><a href="/calculadora/das" className="hover:opacity-80">Calculadora DAS</a></li>
+                <li><a href="/calculadora/das" className="hover:opacity-80">DAS</a></li>
                 <li><a href="/calculadora/faturamento" className="hover:opacity-80">Faturamento</a></li>
+                <li><a href="/calculadora/preco-por-hora" className="hover:opacity-80">Preço/Hora</a></li>
+                <li><a href="/calculadora/margem-de-lucro" className="hover:opacity-80">Margem</a></li>
                 <li><a href="/calculadora/mei-vs-me" className="hover:opacity-80">MEI vs ME</a></li>
                 <li><a href="/calculadora/cnae" className="hover:opacity-80">CNAEs</a></li>
                 <li><a href="/guias" className="hover:opacity-80">Guias</a></li>
@@ -51,6 +53,8 @@ export default function RootLayout({
                 <ul className="space-y-2">
                   <li><a href="/calculadora/das" className="hover:text-white">DAS</a></li>
                   <li><a href="/calculadora/faturamento" className="hover:text-white">Faturamento</a></li>
+                  <li><a href="/calculadora/preco-por-hora" className="hover:text-white">Preço por Hora</a></li>
+                  <li><a href="/calculadora/margem-de-lucro" className="hover:text-white">Margem de Lucro</a></li>
                   <li><a href="/calculadora/mei-vs-me" className="hover:text-white">MEI vs ME</a></li>
                   <li><a href="/calculadora/inss-autonomo" className="hover:text-white">INSS Autônomo</a></li>
                   <li><a href="/calculadora/cnae" className="hover:text-white">CNAEs Permitidos</a></li>

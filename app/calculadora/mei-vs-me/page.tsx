@@ -123,7 +123,7 @@ export default function MeiVsMeCalculator() {
           <tbody>
             <tr className="border-b">
               <td className="px-4 py-3 font-semibold text-gray-900">Limite Anual</td>
-              <td className="px-4 py-3 text-center">R$ 85.000</td>
+              <td className="px-4 py-3 text-center">R$ 81.000</td>
               <td className="px-4 py-3 text-center">R$ 360.000</td>
               <td className="px-4 py-3 text-center">R$ 360.000</td>
             </tr>

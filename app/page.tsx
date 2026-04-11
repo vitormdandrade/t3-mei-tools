@@ -105,7 +105,7 @@ export default function Home() {
         <div className="space-y-4">
           <details className="border rounded-lg p-4">
             <summary className="font-semibold text-gray-900 cursor-pointer">Qual é o limite de faturamento para MEI em 2026?</summary>
-            <p className="text-gray-600 mt-2">O limite anual é de R$ 85.000 em 2026. Se ultrapassar este valor, você terá que migrar para outro regime.</p>
+            <p className="text-gray-600 mt-2">O limite anual é de R$ 81.000 em 2026. Se ultrapassar este valor, você terá que migrar para outro regime.</p>
           </details>
           <details className="border rounded-lg p-4">
             <summary className="font-semibold text-gray-900 cursor-pointer">Como funciona o DAS?</summary>

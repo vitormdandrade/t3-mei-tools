@@ -22,7 +22,7 @@ export default function RevenueCalculator() {
     return meiLimits.limits.find((l) => l.year === year);
   }, [year]);
 
-  const annualLimit = yearData?.meiAnnualLimit || 85000;
+  const annualLimit = yearData?.meiAnnualLimit || 81000;
 
   const total = useMemo(() => {
     return monthlyRevenues.reduce((sum, item) => sum + (item.amount || 0), 0);
@@ -78,7 +78,7 @@ export default function RevenueCalculator() {
 
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
         <p className="text-sm text-blue-900">
-          <strong>Limite MEI 2026:</strong> R$ 85.000 por ano. Ao ultrapassar, você precisa migrar para Microempresa ou Simples Nacional.
+          <strong>Limite MEI 2026:</strong> R$ 81.000 por ano. Ao ultrapassar, você precisa migrar para Microempresa ou Simples Nacional.
         </p>
       </div>
 
