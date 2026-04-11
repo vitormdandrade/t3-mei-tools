@@ -9,6 +9,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/calculadora/faturamento', changeFreq: 'weekly' as const },
     { url: '/calculadora/mei-vs-me', changeFreq: 'weekly' as const },
     { url: '/calculadora/inss-autonomo', changeFreq: 'weekly' as const },
+    { url: '/calculadora/margem-de-lucro', changeFreq: 'weekly' as const },
+    { url: '/calculadora/preco-por-hora', changeFreq: 'weekly' as const },
+    { url: '/calculadora/cnae', changeFreq: 'weekly' as const },
+  ];
+
+  // Reference pages
+  const reference = [
+    { url: '/calendario-das', changeFreq: 'monthly' as const },
   ];
 
   // Guides
@@ -36,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: c.changeFreq,
       priority: 0.9,
+    })),
+    ...reference.map(r => ({
+      url: `${baseUrl}${r.url}`,
+      lastModified: new Date(),
+      changeFrequency: r.changeFreq,
+      priority: 0.85,
     })),
     ...guides.map(g => ({
       url: `${baseUrl}${g.url}`,

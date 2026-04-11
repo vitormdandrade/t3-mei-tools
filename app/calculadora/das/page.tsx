@@ -155,10 +155,10 @@ export default function DASCalculator() {
         <div className="border rounded-lg p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-4">Dicas Importantes</h3>
           <ul className="space-y-2 text-gray-600 text-sm">
-            <li>• O DAS deve ser pago até o último dia útil de cada mês</li>
-            <li>• Podem ser pagos com dinheiro, cartão ou boleto na Prefeitura</li>
-            <li>• Contribuição ao INSS: acumula pontos para aposentadoria</li>
-            <li>• Consulte um contador para sua categoria correta</li>
+            <li>• O DAS vence no dia 20 do mês seguinte ao mês de referência (ex: DAS de jan vence em 20/fev)</li>
+            <li>• Se o dia 20 cair em sábado, domingo ou feriado nacional, o vencimento vai para o próximo dia útil</li>
+            <li>• Pode ser pago via Pix, boleto, cartão ou débito automático pelo Portal do Simples Nacional</li>
+            <li>• A contribuição ao INSS acumula para aposentadoria, auxílio-doença e outros benefícios</li>
           </ul>
         </div>
 
@@ -187,6 +187,9 @@ export default function DASCalculator() {
           Agora que você sabe quanto é o DAS, confira também:
         </p>
         <div className="flex gap-4 flex-wrap">
+          <a href="/calendario-das" className="text-blue-600 font-semibold hover:underline">
+            → Calendário DAS 2026 (todas as datas)
+          </a>
           <a href="/calculadora/faturamento" className="text-blue-600 font-semibold hover:underline">
             → Limite de faturamento
           </a>

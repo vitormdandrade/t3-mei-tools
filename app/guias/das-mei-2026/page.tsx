@@ -74,10 +74,18 @@ export default function DasMei2026() {
       <section className="space-y-4">
         <h2 className="text-3xl font-bold text-gray-900">Prazos</h2>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li><strong>Vencimento:</strong> Último dia útil de cada mês</li>
-          <li><strong>Tolerância:</strong> 30 dias (com multa e juros)</li>
-          <li><strong>Bloqueio CNPJ:</strong> Pode ocorrer após 180 dias de atraso</li>
+          <li><strong>Vencimento:</strong> dia 20 do mês seguinte ao mês de referência. Ex: o DAS de Janeiro/2026 vence em 20 de Fevereiro de 2026.</li>
+          <li><strong>Fim de semana ou feriado:</strong> se o dia 20 cair em sábado, domingo ou feriado nacional, o vencimento é transferido para o próximo dia útil, sem multa.</li>
+          <li><strong>Tolerância:</strong> o DAS atrasado pode ser pago, mas gera multa de 0,33% ao dia (limitada a 20%) + juros Selic.</li>
+          <li><strong>Bloqueio CNPJ:</strong> pode ocorrer após 180 dias de atraso.</li>
         </ul>
+        <p className="text-gray-700 mt-4">
+          Veja as 12 datas de 2026, já ajustadas, no{' '}
+          <a href="/calendario-das" className="text-blue-600 font-semibold hover:underline">
+            Calendário DAS 2026
+          </a>
+          {' '}— você pode baixar o arquivo .ics para importar no Google Calendar ou Apple Calendar.
+        </p>
       </section>
 
       <div className="bg-green-50 border border-green-200 rounded-lg p-6">

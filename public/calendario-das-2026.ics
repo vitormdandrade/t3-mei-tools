@@ -1,0 +1,177 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MEI Tools//Calendario DAS 2026//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Calendário DAS MEI 2026
+X-WR-TIMEZONE:America/Sao_Paulo
+X-WR-CALDESC:Datas de vencimento do DAS MEI para 2026 (ajustadas para dia útil)
+BEGIN:VEVENT
+UID:das-mei-2026-01@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260120
+DTEND;VALUE=DATE:20260121
+SUMMARY:Pagar DAS MEI — ref. Dezembro/2025
+DESCRIPTION:Vencimento do DAS MEI referente a Dezembro de 2025. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-02@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260220
+DTEND;VALUE=DATE:20260221
+SUMMARY:Pagar DAS MEI — ref. Janeiro/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Janeiro de 2026. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-03@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260320
+DTEND;VALUE=DATE:20260321
+SUMMARY:Pagar DAS MEI — ref. Fevereiro/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Fevereiro de 2026. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-04@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260420
+DTEND;VALUE=DATE:20260421
+SUMMARY:Pagar DAS MEI — ref. Março/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Março de 2026. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-05@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260520
+DTEND;VALUE=DATE:20260521
+SUMMARY:Pagar DAS MEI — ref. Abril/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Abril de 2026. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-06@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260622
+DTEND;VALUE=DATE:20260623
+SUMMARY:Pagar DAS MEI — ref. Maio/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Maio de 2026 (transferido de 20/jun por cair em sábado). Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-07@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260720
+DTEND;VALUE=DATE:20260721
+SUMMARY:Pagar DAS MEI — ref. Junho/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Junho de 2026. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-08@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260820
+DTEND;VALUE=DATE:20260821
+SUMMARY:Pagar DAS MEI — ref. Julho/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Julho de 2026. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-09@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+SUMMARY:Pagar DAS MEI — ref. Agosto/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Agosto de 2026 (transferido de 20/set por cair em domingo). Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-10@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:Pagar DAS MEI — ref. Setembro/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Setembro de 2026. Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-11@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Pagar DAS MEI — ref. Outubro/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Outubro de 2026 (transferido de 20/nov - feriado da Consciência Negra). Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:das-mei-2026-12@meitools
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Pagar DAS MEI — ref. Novembro/2026
+DESCRIPTION:Vencimento do DAS MEI referente a Novembro de 2026 (transferido de 20/dez por cair em domingo). Gere o boleto em https://www8.receita.fazenda.gov.br/SimplesNacional/Aplicacoes/ATSPO/pgmei.app/
+LOCATION:Receita Federal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DAS MEI vence em 2 dias
+TRIGGER:-P2D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

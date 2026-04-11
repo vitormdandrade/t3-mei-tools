@@ -65,6 +65,7 @@ export default function RootLayout({
                 <ul className="space-y-2">
                   <li><a href="/guias/como-abrir-mei" className="hover:text-white">Como Abrir MEI</a></li>
                   <li><a href="/guias/das-mei-2026" className="hover:text-white">DAS 2026</a></li>
+                  <li><a href="/calendario-das" className="hover:text-white">Calendário DAS 2026</a></li>
                   <li><a href="/guias/nota-fiscal-mei" className="hover:text-white">Nota Fiscal</a></li>
                 </ul>
               </div>
