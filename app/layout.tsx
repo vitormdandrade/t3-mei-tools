@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br',
   },
   verification: {
-    google: 'LrCOe7GGqg_8wpI0XWE7-SCv5lcJ2ENamTzuwrjJSOE',
+    google: 'kfvkSIgbGEoQ2KFb_TYGCd2hvd8o71OKrr9wryOkfpQ',
   },
 };
 
