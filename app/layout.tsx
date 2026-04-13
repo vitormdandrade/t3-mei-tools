@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   description: "Calculadoras de DAS, faturamento, INSS e guias completos para MEI e freelancers. Simule seus impostos e encontre as melhores contas PJ para seu negócio.",
   keywords: "MEI, DAS, calculadora MEI, nota fiscal, freelancer, imposto MEI, conta PJ",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br'),
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: "MEI Tools - Calculadoras para Microempreendedores",
     description: "Ferramentas gratuitas para calcular DAS, INSS, faturamento e impostos de MEI",
@@ -32,7 +40,9 @@ export default function RootLayout({
         <header className="bg-gradient-to-r from-green-600 to-blue-600 text-white">
           <nav className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center">
-              <a href="/" className="text-2xl font-bold">MEI Tools</a>
+              <a href="/" className="flex items-center gap-2 text-2xl font-bold">
+                <img src="/logo-white.svg" alt="MEI Tools" className="h-8 w-auto" />
+              </a>
               <ul className="flex gap-6">
                 <li><a href="/calculadora/das" className="hover:opacity-80">DAS</a></li>
                 <li><a href="/calculadora/faturamento" className="hover:opacity-80">Faturamento</a></li>

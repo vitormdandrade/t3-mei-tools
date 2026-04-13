@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
+  <!-- Calculator icon -->
+  <rect x="2" y="4" width="28" height="32" rx="4" fill="white" opacity="0.95"/>
+  <rect x="6" y="8" width="20" height="8" rx="1.5" fill="#16a34a" opacity="0.6"/>
+  <rect x="7" y="20" width="5" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+  <rect x="14" y="20" width="5" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+  <rect x="21" y="20" width="5" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+  <rect x="7" y="27" width="5" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+  <rect x="14" y="27" width="5" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+  <rect x="21" y="27" width="5" height="4" rx="1" fill="#16a34a" opacity="0.5"/>
+  <!-- Text -->
+  <text x="38" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="white">MEI</text>
+  <text x="72" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="white" opacity="0.85">Tools</text>
+</svg>
