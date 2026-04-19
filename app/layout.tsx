@@ -62,7 +62,7 @@ export default function RootLayout({
 
         <footer className="bg-gray-900 text-gray-300 mt-16">
           <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
               <div>
                 <h3 className="text-white font-bold mb-4">Calculadoras</h3>
                 <ul className="space-y-2">
@@ -90,6 +90,35 @@ export default function RootLayout({
                 <ul className="space-y-2">
                   <li><a href="/melhores/melhores-contas-pj-mei" className="hover:text-white">Contas PJ</a></li>
                   <li><a href="/melhores/melhores-maquininhas-mei" className="hover:text-white">Maquininhas</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-white font-bold mb-4">Recursos Parceiros</h3>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <a
+                      href="https://compararsaas.com.br"
+                      rel="noopener"
+                      className="hover:text-white"
+                    >
+                      Comparador SaaS Brasil
+                    </a>
+                    <p className="text-xs text-gray-500 mt-0.5">
+                      Softwares para MEI e pequena empresa
+                    </p>
+                  </li>
+                  <li>
+                    <a
+                      href="https://calculaseguro.com.br"
+                      rel="noopener"
+                      className="hover:text-white"
+                    >
+                      Calcula Seguro
+                    </a>
+                    <p className="text-xs text-gray-500 mt-0.5">
+                      Simuladores de seguro por estado
+                    </p>
+                  </li>
                 </ul>
               </div>
             </div>
