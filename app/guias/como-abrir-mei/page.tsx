@@ -4,9 +4,52 @@ export const metadata = {
   alternates: { canonical: '/guias/como-abrir-mei' },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quanto custa abrir MEI?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Totalmente gratuito. Nenhuma taxa ou burocracia. O único custo será o DAS mensal.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Preciso de contador para abrir MEI?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Não. Você abre online sozinho. Um contador ajuda com impostos, mas não é obrigatório.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Posso abrir MEI sendo desempregado?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim. Não há restrição. Você pode abrir MEI em qualquer situação de emprego.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'E-mail de confirmação não chegou?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Verifique spam. Se não receber em 1h, acesse o portal novamente com seu CPF.',
+      },
+    },
+  ],
+};
+
 export default function ComoAbrirMEI() {
   return (
     <article className="prose prose-lg max-w-4xl mx-auto space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Como Abrir MEI Online em 2026</h1>
         <p className="text-gray-600 text-lg">
