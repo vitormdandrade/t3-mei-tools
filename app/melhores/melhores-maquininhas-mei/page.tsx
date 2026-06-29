@@ -1,3 +1,43 @@
+'use client';
+
+import { AffiliateCta } from '@/components/AffiliateCta';
+import { buildAffiliateUrl } from '@/config/affiliates';
+
+const MAQUININHAS = [
+  {
+    id: 'stone',
+    name: 'Stone',
+    description: 'Líder de mercado em Brasil com maior cobertura de MEI.',
+    taxas: { debito: '1,69% a 1,99%', credito: '2,69% a 3,99%', aluguel: 'R$ 79-99/mês', liquidacao: 'D+1' },
+    highlights: ['Maior rede de suporte', 'Equipamentos modernos', 'Integração com diversos sistemas'],
+    affiliate_url: '#',
+  },
+  {
+    id: 'mercado-pago',
+    name: 'Mercado Pago',
+    description: 'Integrada ao Mercado Livre com excelente experiência de uso.',
+    taxas: { debito: '1,69% a 1,99%', credito: '2,69% a 3,99%', aluguel: 'Grátis ou baixo', liquidacao: 'D+1' },
+    highlights: ['Integração Mercado Livre', 'Avançado antecipação', 'App simples'],
+    affiliate_url: '#',
+  },
+  {
+    id: 'sumup',
+    name: 'SumUp',
+    description: 'Maquininha portátil ideal para atendimento ambulante.',
+    taxas: { debito: '1,69%', credito: '2,49% a 2,99%', aluguel: 'Grátis', liquidacao: 'D+1' },
+    highlights: ['Equipamento portátil', 'Sem aluguel', 'Suporte 24/7'],
+    affiliate_url: '#',
+  },
+  {
+    id: 'infinitepay',
+    name: 'InfinitePay',
+    description: 'Focada em antecipação de recebíveis para MEI.',
+    taxas: { debito: '1,99%', credito: '2,99%', aluguel: 'Grátis', liquidacao: '24h' },
+    highlights: ['Antecipação automática', 'Taxa competitiva', 'Sem aluguel'],
+    affiliate_url: '#',
+  },
+];
+
 export default function MelhoresMaquininhas() {
   return (
     <div className="space-y-8">
@@ -17,89 +57,34 @@ export default function MelhoresMaquininhas() {
       <section>
         <h2 className="text-3xl font-bold text-gray-900 mb-6">Principais Fornecedoras</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Stone</h3>
-            <p className="text-gray-700 text-sm mb-4">
-              Líder de mercado em Brasil com maior cobertura de MEI.
-            </p>
-            <div className="space-y-2 text-sm text-gray-700 mb-4">
-              <p><strong>Taxa Débito:</strong> 1,69% a 1,99%</p>
-              <p><strong>Taxa Crédito:</strong> 2,69% a 3,99%</p>
-              <p><strong>Aluguel:</strong> R$ 79-99/mês (ou grátis com volume)</p>
-              <p><strong>Liquidação:</strong> D+1</p>
+          {MAQUININHAS.map((m) => (
+            <div key={m.id} className="border rounded-lg p-6 hover:shadow-lg transition">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{m.name}</h3>
+              <p className="text-gray-700 text-sm mb-4">{m.description}</p>
+              <div className="space-y-2 text-sm text-gray-700 mb-4">
+                <p><strong>Taxa Débito:</strong> {m.taxas.debito}</p>
+                <p><strong>Taxa Crédito:</strong> {m.taxas.credito}</p>
+                <p><strong>Aluguel:</strong> {m.taxas.aluguel}</p>
+                <p><strong>Liquidação:</strong> {m.taxas.liquidacao}</p>
+              </div>
+              <div className="bg-gray-50 p-3 rounded text-sm text-gray-700 mb-4">
+                <p><strong>Destaques:</strong></p>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                  {m.highlights.map((h, i) => (
+                    <li key={i}>{h}</li>
+                  ))}
+                </ul>
+              </div>
+              <AffiliateCta
+                href={buildAffiliateUrl(m.id, m.affiliate_url)}
+                partner={m.id}
+                page="melhores-maquininhas-mei"
+                className="inline-block w-full text-center bg-green-600 text-white py-2 rounded font-semibold hover:bg-green-700 text-sm"
+              >
+                Conhecer {m.name} →
+              </AffiliateCta>
             </div>
-            <div className="bg-gray-50 p-3 rounded text-sm text-gray-700 mb-4">
-              <p><strong>Destaques:</strong></p>
-              <ul className="list-disc list-inside mt-2 space-y-1">
-                <li>Maior rede de suporte</li>
-                <li>Equipamentos modernos</li>
-                <li>Integração com diversos sistemas</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Mercado Pago</h3>
-            <p className="text-gray-700 text-sm mb-4">
-              Integrada ao Mercado Livre com excelente experiência de uso.
-            </p>
-            <div className="space-y-2 text-sm text-gray-700 mb-4">
-              <p><strong>Taxa Débito:</strong> 1,69% a 1,99%</p>
-              <p><strong>Taxa Crédito:</strong> 2,69% a 3,99%</p>
-              <p><strong>Aluguel:</strong> Grátis ou baixo com volume</p>
-              <p><strong>Liquidação:</strong> D+1</p>
-            </div>
-            <div className="bg-gray-50 p-3 rounded text-sm text-gray-700 mb-4">
-              <p><strong>Destaques:</strong></p>
-              <ul className="list-disc list-inside mt-2 space-y-1">
-                <li>Integração Mercado Livre</li>
-                <li>Avançado antecipação</li>
-                <li>App simples</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">SumUp</h3>
-            <p className="text-gray-700 text-sm mb-4">
-              Maquininha portátil ideal para atendimento ambulante.
-            </p>
-            <div className="space-y-2 text-sm text-gray-700 mb-4">
-              <p><strong>Taxa Débito:</strong> 1,69%</p>
-              <p><strong>Taxa Crédito:</strong> 2,49% a 2,99%</p>
-              <p><strong>Aluguel:</strong> Grátis</p>
-              <p><strong>Liquidação:</strong> D+1</p>
-            </div>
-            <div className="bg-gray-50 p-3 rounded text-sm text-gray-700 mb-4">
-              <p><strong>Destaques:</strong></p>
-              <ul className="list-disc list-inside mt-2 space-y-1">
-                <li>Equipamento portátil</li>
-                <li>Sem aluguel</li>
-                <li>Suporte 24/7</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">InfinitePay</h3>
-            <p className="text-gray-700 text-sm mb-4">
-              Focada em antecipação de recebíveis para MEI.
-            </p>
-            <div className="space-y-2 text-sm text-gray-700 mb-4">
-              <p><strong>Taxa Débito:</strong> 1,99%</p>
-              <p><strong>Taxa Crédito:</strong> 2,99%</p>
-              <p><strong>Aluguel:</strong> Grátis</p>
-              <p><strong>Antecipação:</strong> 24h</p>
-            </div>
-            <div className="bg-gray-50 p-3 rounded text-sm text-gray-700 mb-4">
-              <p><strong>Destaques:</strong></p>
-              <ul className="list-disc list-inside mt-2 space-y-1">
-                <li>Antecipação automática</li>
-                <li>Taxa competitiva</li>
-                <li>Sem aluguel</li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

@@ -1,7 +1,8 @@
 'use client';
 
-import { track } from '@vercel/analytics';
 import fintechs from '@/data/fintechs.json';
+import { AffiliateCta } from '@/components/AffiliateCta';
+import { buildAffiliateUrl } from '@/config/affiliates';
 
 export default function MelhoresContasPJ() {
   return (
@@ -85,15 +86,14 @@ export default function MelhoresContasPJ() {
                 </p>
               </div>
 
-              <a
-                href={f.affiliate_url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <AffiliateCta
+                href={buildAffiliateUrl(f.id, f.affiliate_url)}
+                partner={f.id}
+                page="melhores-contas-pj-mei"
                 className="inline-block w-full text-center bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 text-sm"
-                onClick={() => track('affiliate_click', { partner: f.id, page: 'melhores-contas-pj-mei' })}
               >
                 Conhecer Mais
-              </a>
+              </AffiliateCta>
             </div>
           ))}
         </div>
