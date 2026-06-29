@@ -181,6 +181,20 @@ export default function DASCalculator() {
         </div>
       </div>
 
+      {/* Affiliate CTA */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white">
+        <h3 className="text-lg font-bold mb-2">💳 Precisa de uma conta PJ para pagar o DAS?</h3>
+        <p className="text-blue-100 mb-4 text-sm">
+          Compare as melhores contas digitais PJ gratuitas para MEI: sem tarifas, Pix ilimitado e cartão de crédito.
+        </p>
+        <a
+          href="/melhores/melhores-contas-pj-mei"
+          className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition shadow-md"
+        >
+          Ver Melhores Contas PJ →
+        </a>
+      </div>
+
       <div className="bg-green-50 border border-green-200 rounded-lg p-6">
         <h3 className="text-lg font-bold text-green-900 mb-2">Próximos Passos</h3>
         <p className="text-green-800 mb-4">
