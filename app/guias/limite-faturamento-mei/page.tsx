@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Limite de Faturamento MEI 2026 - R$ 85 mil",
   description: "Entenda o limite de R$ 85 mil de MEI e quando você deve migrar para outro regime.",
+  alternates: { canonical: '/guias/limite-faturamento-mei' },
 };
 
 export default function LimiteFaturamentoMEI() {

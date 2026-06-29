@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Guias Completos para MEI e Freelancers",
   description: "Guias detalhados sobre como abrir MEI, calcular DAS, emitir nota fiscal e muito mais.",
+  alternates: { canonical: '/guias' },
 };
 
 export default function GuidesPage() {

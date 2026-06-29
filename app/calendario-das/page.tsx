@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords:
     'calendário DAS MEI 2026, vencimento DAS 2026, datas DAS MEI, quando pagar DAS, DAS MEI feriado, DAS MEI dia útil',
   alternates: {
-    canonical: 'https://meitools.com.br/calendario-das',
+    canonical: '/calendario-das',
   },
 };
 

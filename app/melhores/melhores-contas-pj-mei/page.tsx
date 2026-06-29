@@ -1,5 +1,6 @@
 'use client';
 
+import { track } from '@vercel/analytics';
 import fintechs from '@/data/fintechs.json';
 
 export default function MelhoresContasPJ() {
@@ -86,7 +87,10 @@ export default function MelhoresContasPJ() {
 
               <a
                 href={f.affiliate_url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block w-full text-center bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 text-sm"
+                onClick={() => track('affiliate_click', { partner: f.id, page: 'melhores-contas-pj-mei' })}
               >
                 Conhecer Mais
               </a>

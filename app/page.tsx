@@ -1,6 +1,7 @@
 export const metadata = {
   title: "MEI Tools - Calculadoras Gratuitas para Microempreendedores",
   description: "Ferramentas completas para MEI: calculadora de DAS, faturamento, MEI vs ME, INSS autônomo e guias detalhados.",
+  alternates: { canonical: '/' },
 };
 
 export default function Home() {

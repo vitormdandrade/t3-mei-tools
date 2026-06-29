@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Guia Completo DAS MEI 2026 - Valores, Prazos e Pagamento",
   description: "Entenda tudo sobre DAS MEI 2026: valores atualizados, como pagar, prazos e penalidades.",
+  alternates: { canonical: '/guias/das-mei-2026' },
 };
 
 export default function DasMei2026() {

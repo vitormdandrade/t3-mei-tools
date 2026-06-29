@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Como Abrir Conta PJ para MEI - Guia Completo",
   description: "Guia passo a passo para abrir conta bancária PJ/MEI. Documentos, bancos e taxas.",
+  alternates: { canonical: '/guias/abrir-conta-pj-mei' },
 };
 
 export default function AbrirContaPJMEI() {

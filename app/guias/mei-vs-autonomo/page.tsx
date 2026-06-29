@@ -1,6 +1,7 @@
 export const metadata = {
   title: "MEI vs Autônomo - Qual É Melhor?",
   description: "Comparação completa: MEI vs autônomo. Custos, impostos, benefícios e diferenças.",
+  alternates: { canonical: '/guias/mei-vs-autonomo' },
 };
 
 export default function MEIVsAutonomo() {

@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Nota Fiscal MEI - Quando é Obrigatória e Como Emitir",
   description: "Guia completo sobre nota fiscal para MEI. Regras 2026, quando é obrigatório e como emitir.",
+  alternates: { canonical: '/guias/nota-fiscal-mei' },
 };
 
 export default function NotaFiscalMEI() {

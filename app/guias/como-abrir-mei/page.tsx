@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Como Abrir MEI Online - Guia Passo a Passo 2026",
   description: "Guia completo para registrar seu MEI no portal oficial. Documentos necessários, custos e prazos.",
+  alternates: { canonical: '/guias/como-abrir-mei' },
 };
 
 export default function ComoAbrirMEI() {

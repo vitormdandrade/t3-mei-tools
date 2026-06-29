@@ -1,6 +1,7 @@
 export const metadata = {
   title: "MEI Pode Ter Funcionário? Regras 2026",
   description: "Saiba se MEI pode ter funcionário, como contratar e quando você é obrigado a virar ME.",
+  alternates: { canonical: '/guias/mei-pode-ter-funcionario' },
 };
 
 export default function MEIPodeSerFuncionario() {
