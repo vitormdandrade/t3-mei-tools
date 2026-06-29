@@ -96,6 +96,28 @@ export default function DasMei2026() {
           Calcular DAS 2026
         </a>
       </div>
+
+      <section className="space-y-4">
+        <h2 className="text-3xl font-bold text-gray-900">Conteúdo Relacionado</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="/guias/como-abrir-mei" className="border rounded-lg p-4 hover:shadow-md transition group">
+            <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">Como Abrir MEI →</h3>
+            <p className="text-sm text-gray-600 mt-1">Guia passo a passo para registrar seu MEI gratuitamente</p>
+          </a>
+          <a href="/calendario-das" className="border rounded-lg p-4 hover:shadow-md transition group">
+            <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">Calendário DAS 2026 →</h3>
+            <p className="text-sm text-gray-600 mt-1">Datas de vencimento para download (.ics)</p>
+          </a>
+          <a href="/guias/limite-faturamento-mei" className="border rounded-lg p-4 hover:shadow-md transition group">
+            <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">Limite de Faturamento MEI →</h3>
+            <p className="text-sm text-gray-600 mt-1">Entenda o teto de R$ 81 mil e o que fazer se ultrapassar</p>
+          </a>
+          <a href="/guias/abrir-conta-pj-mei" className="border rounded-lg p-4 hover:shadow-md transition group">
+            <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">Abrir Conta PJ para MEI →</h3>
+            <p className="text-sm text-gray-600 mt-1">Compare as melhores contas PJ gratuitas para seu CNPJ</p>
+          </a>
+        </div>
+      </section>
     </article>
   );
 }
