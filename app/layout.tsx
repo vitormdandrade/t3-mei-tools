@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import MobileNav from "./components/MobileNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -60,18 +61,7 @@ export default function RootLayout({
                   Oráculo do MEI
                 </span>
               </a>
-              <ul className="flex flex-wrap gap-1 items-center text-sm font-medium" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-                <li><a href="/calculadora/das" className="btn-ghost no-underline text-sm py-1.5 px-2.5">DAS</a></li>
-                <li><a href="/calculadora/faturamento" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Faturamento</a></li>
-                <li><a href="/calculadora/preco-por-hora" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Preço/Hora</a></li>
-                <li><a href="/calculadora/margem-de-lucro" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Margem</a></li>
-                <li><a href="/guias" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Guias</a></li>
-                <li>
-                  <a href="/kit-mei" className="btn-primary no-underline text-sm py-2 px-4 inline-flex items-center gap-1">
-                    📋 Kit MEI
-                  </a>
-                </li>
-              </ul>
+              <MobileNav />
             </div>
           </nav>
         </header>
