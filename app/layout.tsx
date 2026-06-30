@@ -72,7 +72,7 @@ export default function RootLayout({
         </main>
 
         {/* ── Footer ── */}
-        <footer style={{ background: 'var(--brand-navy)', color: '#c8d2dc' }}>
+        <footer style={{ background: '#1a2744', color: '#c8d2dc' }}>
           {/* Wave divider */}
           <div style={{ height: '4px', background: 'linear-gradient(90deg, var(--brand-sage), var(--brand-terra), var(--brand-gold), var(--brand-sage))' }}></div>
           <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
