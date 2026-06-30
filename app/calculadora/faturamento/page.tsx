@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import meiLimits from '@/data/mei-limits.json';
+import { AffiliateCta } from '@/components/AffiliateCta';
 
 type Year = 2024 | 2025 | 2026;
 
@@ -245,6 +246,24 @@ export default function RevenueCalculator() {
           </div>
         </div>
       </div>
+
+      {/* Affiliate CTA — when user is engaged with their MEI finances */}
+      {total > 0 && (
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-6 text-white">
+          <h3 className="text-lg font-bold mb-2">💰 Abra sua Conta PJ Gratuita</h3>
+          <p className="text-blue-100 text-sm mb-4">
+            Gerencie seu faturamento MEI com uma conta digital gratuita. Sem tarifas, com emissão de boletos e integração com contabilidade.
+          </p>
+          <AffiliateCta
+            href="#"
+            partner="contas-pj"
+            page="calculadora-faturamento"
+            className="inline-block bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition"
+          >
+            Ver Melhores Contas PJ →
+          </AffiliateCta>
+        </div>
+      )}
 
       <div className="bg-green-50 border border-green-200 rounded-lg p-6">
         <h3 className="text-lg font-bold text-green-900 mb-2">Saiba Mais</h3>
