@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  env: {
+    // Expose server-side env vars to API routes
+    STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+  },
 };
 
 export default nextConfig;
