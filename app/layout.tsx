@@ -144,6 +144,24 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        {/* Organization Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'MEI Tools',
+              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br',
+              description:
+                'Ferramentas gratuitas para microempreendedores: calculadoras de DAS, faturamento, INSS, margem de lucro e guias completos para MEI.',
+              sameAs: [
+                'https://compararsaas.com.br',
+                'https://calculaseguro.com.br',
+              ],
+            }),
+          }}
+        />
         <Analytics />
       </body>
     </html>
