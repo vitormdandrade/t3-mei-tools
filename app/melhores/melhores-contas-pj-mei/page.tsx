@@ -1,10 +1,28 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import fintechs from '@/data/fintechs.json';
 import { AffiliateCta } from '@/components/AffiliateCta';
 import { buildAffiliateUrl } from '@/config/affiliates';
 
+type SortMode = 'default' | 'rating' | 'fee';
+
+function sortFintechs(list: typeof fintechs.fintechs, mode: SortMode) {
+  const sorted = [...list];
+  switch (mode) {
+    case 'rating':
+      return sorted.sort((a, b) => b.rating - a.rating);
+    case 'fee':
+      return sorted.sort((a, b) => a.monthly_fee_brl - b.monthly_fee_brl);
+    default:
+      return sorted;
+  }
+}
+
 export default function MelhoresContasPJ() {
+  const [sortMode, setSortMode] = useState<SortMode>('default');
+  const sorted = useMemo(() => sortFintechs(fintechs.fintechs, sortMode), [sortMode]);
+
   return (
     <div className="space-y-8">
       <div>
@@ -18,6 +36,20 @@ export default function MelhoresContasPJ() {
         <p className="text-sm text-blue-900">
           <strong>Dica:</strong> A melhor conta para você depende de suas necessidades. Analise transferências, cartão, antecipação de recebíveis e atendimento.
         </p>
+      </div>
+
+      {/* Sort Controls */}
+      <div className="flex items-center gap-2 flex-wrap">
+        <span className="text-sm text-gray-500">Ordenar por:</span>
+        <select
+          value={sortMode}
+          onChange={(e) => setSortMode(e.target.value as SortMode)}
+          className="border border-gray-300 rounded-lg px-3 py-2 text-sm font-medium bg-white hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition"
+        >
+          <option value="default">Padrão</option>
+          <option value="rating">⭐ Melhor Avaliados</option>
+          <option value="fee">💰 Menor Taxa</option>
+        </select>
       </div>
 
       {/* Comparison Table */}
@@ -35,7 +67,7 @@ export default function MelhoresContasPJ() {
             </tr>
           </thead>
           <tbody>
-            {fintechs.fintechs.map((f, idx) => (
+            {sorted.map((f, idx) => (
               <tr key={f.id} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                 <td className="px-4 py-3 font-bold text-gray-900">{f.name}</td>
                 <td className="px-4 py-3 text-center">
@@ -69,7 +101,7 @@ export default function MelhoresContasPJ() {
       <section>
         <h2 className="text-3xl font-bold text-gray-900 mb-6">Detalhes de Cada Conta</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {fintechs.fintechs.map((f) => (
+          {sorted.map((f) => (
             <div key={f.id} className="border rounded-lg p-6 hover:shadow-lg transition">
               <div className="flex justify-between items-start mb-4">
                 <div>
