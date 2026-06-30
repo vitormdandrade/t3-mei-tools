@@ -9,7 +9,7 @@ export function getStripe(): Stripe {
     throw new Error("STRIPE_SECRET_KEY is not set");
   }
   return new Stripe(key, {
-    apiVersion: "2025-06-16.acacia" as any,
+    // Use account's default API version
   });
 }
 
