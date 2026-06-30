@@ -40,10 +40,11 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ url: session.url });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Checkout error:", error);
+    const message = error?.message || String(error);
     return NextResponse.json(
-      { error: "Erro ao processar checkout" },
+      { error: `Erro ao processar checkout: ${message}` },
       { status: 500 }
     );
   }
