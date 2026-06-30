@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
 
 export default function MeiVsMeCalculator() {
   const [monthlyRevenue, setMonthlyRevenue] = useState(3000);
@@ -258,6 +259,12 @@ export default function MeiVsMeCalculator() {
           </div>
         </div>
       </div>
+
+      {/* Lead Capture — contador orçamento */}
+      <LeadCaptureForm
+        source="mei-vs-me"
+        contextMessage="Na dúvida entre MEI, Simples ou ME? Receba orçamento de contadores e tome a melhor decisão para seu negócio."
+      />
 
       <div className="bg-green-50 border border-green-200 rounded-lg p-6">
         <h3 className="text-lg font-bold text-green-900 mb-2">Próximos Passos</h3>

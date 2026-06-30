@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import meiLimits from '@/data/mei-limits.json';
 import { AffiliateCta } from '@/components/AffiliateCta';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
 
 type Year = 2024 | 2025 | 2026;
 
@@ -246,6 +247,14 @@ export default function RevenueCalculator() {
           </div>
         </div>
       </div>
+
+      {/* Lead Capture — contador orçamento */}
+      {total > 0 && (
+        <LeadCaptureForm
+          source="faturamento"
+          contextMessage={`Com R$ ${total.toLocaleString('pt-BR')} em faturamento, um contador pode ajudar a planejar seus impostos e evitar surpresas.`}
+        />
+      )}
 
       {/* Affiliate CTA — when user is engaged with their MEI finances */}
       {total > 0 && (

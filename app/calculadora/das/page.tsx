@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import dasRates from '@/data/das-rates.json';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
 
 type Year = '2024' | '2025' | '2026';
 type Category = 'commerce' | 'services' | 'industry';
@@ -180,6 +181,12 @@ export default function DASCalculator() {
           </div>
         </div>
       </div>
+
+      {/* Lead Capture — contador orçamento */}
+      <LeadCaptureForm
+        source="das"
+        contextMessage="Depois de calcular seu DAS, que tal receber orçamento de contadores para cuidar da parte fiscal do seu MEI?"
+      />
 
       {/* Affiliate CTA */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
 
 export default function INSSAutonomoCalculator() {
   const [monthlyIncome, setMonthlyIncome] = useState(3000);
@@ -299,6 +300,12 @@ export default function INSSAutonomoCalculator() {
           </ul>
         </div>
       </div>
+
+      {/* Lead Capture — contador orçamento */}
+      <LeadCaptureForm
+        source="inss"
+        contextMessage="Autônomo pensando em virar MEI? Receba orçamento de contadores e veja qual regime vale mais a pena para você."
+      />
 
       <div className="bg-green-50 border border-green-200 rounded-lg p-6">
         <h3 className="text-lg font-bold text-green-900 mb-2">Próximos Passos</h3>
