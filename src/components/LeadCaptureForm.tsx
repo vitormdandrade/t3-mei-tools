@@ -9,6 +9,8 @@ interface LeadCaptureFormProps {
   source: 'das' | 'faturamento' | 'mei-vs-me' | 'inss'
   /** Optional contextual message above the form */
   contextMessage?: string
+  /** Controls whether the form starts visible or dismissed */
+  initiallyDismissed?: boolean
 }
 
 const REVENUE_RANGES = [
@@ -23,6 +25,7 @@ const REVENUE_RANGES = [
 export default function LeadCaptureForm({
   source,
   contextMessage,
+  initiallyDismissed = false,
 }: LeadCaptureFormProps) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -32,6 +35,7 @@ export default function LeadCaptureForm({
   const [revenueRange, setRevenueRange] = useState('')
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [dismissed, setDismissed] = useState(initiallyDismissed)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -63,7 +67,20 @@ export default function LeadCaptureForm({
           throw new Error(data.error || 'Erro ao enviar')
         }
       } else {
-        const { error } = await supabase.from('leads').insert([payload])
+        const { error } = await supabase.from('leads').insert({
+          site: 'oraculo-do-mei',
+          lead_type: source,
+          name: payload.name,
+          email: payload.email,
+          phone: payload.phone,
+          data: {
+            cnpj: payload.cnpj,
+            city: payload.city,
+            revenue_range: payload.revenue_range,
+            source: payload.source,
+            user_agent: payload.user_agent,
+          },
+        })
 
         if (error) {
           throw new Error(error.message)
@@ -97,10 +114,14 @@ export default function LeadCaptureForm({
     return `${digits.slice(0, 2)}.${digits.slice(2, 5)}.${digits.slice(5, 8)}/${digits.slice(8, 12)}-${digits.slice(12)}`
   }
 
+  if (dismissed) {
+    return null
+  }
+
   if (status === 'success') {
     return (
       <div
-        className="rounded-2xl p-8 text-center"
+        className="rounded-2xl p-8 text-center relative"
         style={{ background: 'linear-gradient(135deg, var(--brand-sage) 0%, var(--brand-sage-dark) 100%)', color: '#ffffff' }}
       >
         <div className="text-4xl mb-3">✅</div>
@@ -114,9 +135,21 @@ export default function LeadCaptureForm({
 
   return (
     <div
-      className="rounded-2xl p-6 sm:p-8"
+      className="rounded-2xl p-6 sm:p-8 relative"
       style={{ background: 'linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-navy-light) 100%)', color: '#ffffff' }}
     >
+      {/* Dismiss button */}
+      <button
+        onClick={() => setDismissed(true)}
+        className="absolute top-3 right-3 text-white/50 hover:text-white/80 transition p-1 rounded-full hover:bg-white/10"
+        aria-label="Fechar formulário"
+        title="Fechar"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
+      </button>
+
       <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Merriweather', Georgia, serif" }}>
         📋 Receba orçamento de 3 contadores para seu MEI
       </h3>

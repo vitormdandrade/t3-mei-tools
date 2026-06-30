@@ -122,11 +122,11 @@ export async function POST(req: NextRequest) {
 
       // Cleanup old entries (keep last 24 hours)
       const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
-      for (const [key, val] of (globalThis as any).__kitMeiZips.entries()) {
+      (globalThis as any).__kitMeiZips.forEach((val: any, key: string) => {
         if (val.createdAt < oneDayAgo) {
           (globalThis as any).__kitMeiZips.delete(key);
         }
-      }
+      });
     }
 
     return NextResponse.json({ received: true });

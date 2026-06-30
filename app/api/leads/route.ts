@@ -35,18 +35,22 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await supabase
       .from('leads')
-      .insert([
-        {
-          name: name.trim(),
-          email: email.trim().toLowerCase(),
-          phone: phone.replace(/\D/g, ''),
+      .insert({
+        site: 'oraculo-do-mei',
+        lead_type: source || 'unknown',
+        name: name.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone.replace(/\D/g, ''),
+        data: {
           cnpj: cnpj ? cnpj.replace(/\D/g, '') : null,
           city: city ? city.trim() : null,
           revenue_range: revenue_range || null,
           source: source || 'unknown',
           user_agent: user_agent || req.headers.get('user-agent') || null,
+          submitted_from: req.headers.get('referer') || null,
         },
-      ])
+        status: 'new',
+      })
       .select('id')
       .single()
 
@@ -80,6 +84,7 @@ export async function GET(req: NextRequest) {
     const { data, error } = await supabase
       .from('leads')
       .select('*')
+      .eq('site', 'oraculo-do-mei')
       .order('created_at', { ascending: false })
       .limit(200)
 

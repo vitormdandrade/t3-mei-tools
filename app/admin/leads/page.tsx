@@ -1,18 +1,17 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 
 interface Lead {
   id: number
+  site: string
+  lead_type: string
   name: string
   email: string
   phone: string
-  cnpj: string | null
-  city: string | null
-  revenue_range: string | null
-  source: string
+  data: Record<string, any>
+  status: string
   created_at: string
-  user_agent: string | null
 }
 
 const REVENUE_LABELS: Record<string, string> = {
@@ -29,6 +28,22 @@ const SOURCE_LABELS: Record<string, string> = {
   'mei-vs-me': 'MEI vs ME',
   inss: 'Calculadora INSS',
   unknown: 'Desconhecido',
+}
+
+const STATUS_LABELS: Record<string, string> = {
+  new: 'Novo',
+  contacted: 'Contatado',
+  qualified: 'Qualificado',
+  converted: 'Convertido',
+  rejected: 'Rejeitado',
+}
+
+const STATUS_COLORS: Record<string, string> = {
+  new: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
+  contacted: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
+  qualified: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300',
+  converted: 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300',
+  rejected: 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300',
 }
 
 export default function AdminLeadsPage() {
@@ -80,17 +95,21 @@ export default function AdminLeadsPage() {
   }
 
   const exportCSV = () => {
-    const headers = ['Nome', 'E-mail', 'Telefone', 'CNPJ', 'Cidade', 'Faturamento', 'Fonte', 'Data']
-    const rows = leads.map((l) => [
-      l.name,
-      l.email,
-      l.phone,
-      l.cnpj || '',
-      l.city || '',
-      REVENUE_LABELS[l.revenue_range || ''] || l.revenue_range || '',
-      SOURCE_LABELS[l.source] || l.source,
-      new Date(l.created_at).toLocaleDateString('pt-BR'),
-    ])
+    const headers = ['Nome', 'E-mail', 'Telefone', 'CNPJ', 'Cidade', 'Faturamento', 'Fonte', 'Status', 'Data']
+    const rows = leads.map((l) => {
+      const d = l.data || {}
+      return [
+        l.name,
+        l.email,
+        l.phone,
+        d.cnpj || '',
+        d.city || '',
+        REVENUE_LABELS[d.revenue_range || ''] || d.revenue_range || '',
+        SOURCE_LABELS[l.lead_type] || l.lead_type,
+        STATUS_LABELS[l.status] || l.status,
+        new Date(l.created_at).toLocaleDateString('pt-BR'),
+      ]
+    })
 
     const csv = [headers, ...rows].map((r) => r.join(',')).join('\n')
     const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' })
@@ -140,8 +159,7 @@ export default function AdminLeadsPage() {
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Leads Capturados</h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1">
-            {leads.length} lead{leads.length !== 1 ? 's' : ''} encontrado
-            {leads.length !== 1 ? 's' : ''}
+            {leads.length} lead{leads.length !== 1 ? 's' : ''} encontrado{leads.length !== 1 ? 's' : ''}
           </p>
         </div>
         <div className="flex gap-3">
@@ -176,51 +194,60 @@ export default function AdminLeadsPage() {
                 <th className="px-4 py-3 text-left font-bold">CNPJ</th>
                 <th className="px-4 py-3 text-left font-bold">Faturamento</th>
                 <th className="px-4 py-3 text-left font-bold">Fonte</th>
+                <th className="px-4 py-3 text-left font-bold">Status</th>
                 <th className="px-4 py-3 text-left font-bold">Data</th>
               </tr>
             </thead>
             <tbody>
-              {leads.map((lead) => (
-                <tr key={lead.id} className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
-                  <td className="px-4 py-3 font-medium">{lead.name}</td>
-                  <td className="px-4 py-3">
-                    <button
-                      onClick={() => copyToClipboard(lead.email, lead.id)}
-                      className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
-                      title="Copiar e-mail"
-                    >
-                      {lead.email}
-                      {copiedId === lead.id && (
-                        <span className="ml-1 text-accent text-xs">✓</span>
-                      )}
-                    </button>
-                  </td>
-                  <td className="px-4 py-3">{lead.phone}</td>
-                  <td className="px-4 py-3">{lead.city || '-'}</td>
-                  <td className="px-4 py-3 font-mono text-xs">
-                    {lead.cnpj || '-'}
-                  </td>
-                  <td className="px-4 py-3">
-                    <span className="bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-full text-xs">
-                      {REVENUE_LABELS[lead.revenue_range || ''] || lead.revenue_range || '-'}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3">
-                    <span className="bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 px-2 py-1 rounded-full text-xs">
-                      {SOURCE_LABELS[lead.source] || lead.source}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-xs text-gray-500 dark:text-gray-400">
-                    {new Date(lead.created_at).toLocaleDateString('pt-BR', {
-                      day: '2-digit',
-                      month: '2-digit',
-                      year: '2-digit',
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </td>
-                </tr>
-              ))}
+              {leads.map((lead) => {
+                const d = lead.data || {}
+                return (
+                  <tr key={lead.id} className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <td className="px-4 py-3 font-medium">{lead.name}</td>
+                    <td className="px-4 py-3">
+                      <button
+                        onClick={() => copyToClipboard(lead.email, lead.id)}
+                        className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+                        title="Copiar e-mail"
+                      >
+                        {lead.email}
+                        {copiedId === lead.id && (
+                          <span className="ml-1 text-accent text-xs">✓</span>
+                        )}
+                      </button>
+                    </td>
+                    <td className="px-4 py-3">{lead.phone}</td>
+                    <td className="px-4 py-3">{d.city || '-'}</td>
+                    <td className="px-4 py-3 font-mono text-xs">
+                      {d.cnpj || '-'}
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className="bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-full text-xs">
+                        {REVENUE_LABELS[d.revenue_range || ''] || d.revenue_range || '-'}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className="bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 px-2 py-1 rounded-full text-xs">
+                        {SOURCE_LABELS[lead.lead_type] || lead.lead_type}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${STATUS_COLORS[lead.status] || 'bg-gray-100 text-gray-800'}`}>
+                        {STATUS_LABELS[lead.status] || lead.status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-xs text-gray-500 dark:text-gray-400">
+                      {new Date(lead.created_at).toLocaleDateString('pt-BR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
