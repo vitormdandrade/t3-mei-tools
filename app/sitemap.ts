@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Reference pages
   const reference = [
     { url: '/calendario-das', changeFreq: 'monthly' as const },
+    { url: '/kit-mei', changeFreq: 'monthly' as const },
   ];
 
   // Guides

@@ -222,6 +222,26 @@ export default function ComoAbrirMEI() {
           <li>✓ <a href="/guias/das-mei-2026" className="font-semibold text-blue-600 hover:underline">Entenda o DAS</a></li>
         </ul>
       </div>
+
+      {/* Kit MEI CTA */}
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg p-6">
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex-1">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">
+              📋 Abriu seu MEI? Precisa de documentos!
+            </h2>
+            <p className="text-gray-600 text-sm">
+              Todo MEI precisa de contrato, nota fiscal e recibos. Nosso Kit MEI inclui 4 modelos profissionais em PDF prontos para preencher e usar.
+            </p>
+          </div>
+          <a
+            href="/kit-mei"
+            className="bg-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-amber-700 transition whitespace-nowrap"
+          >
+            Comprar Kit MEI — R$ 29,90
+          </a>
+        </div>
+      </div>
     </article>
   );
 }

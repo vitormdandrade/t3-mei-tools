@@ -57,6 +57,7 @@ export default function RootLayout({
                 <li><a href="/calculadora/mei-vs-me" className="hover:opacity-80">MEI vs ME</a></li>
                 <li><a href="/calculadora/cnae" className="hover:opacity-80">CNAEs</a></li>
                 <li><a href="/guias" className="hover:opacity-80">Guias</a></li>
+                <li><a href="/kit-mei" className="bg-amber-500 text-white px-3 py-1 rounded-full font-semibold hover:bg-amber-600 transition text-sm">Kit MEI</a></li>
               </ul>
             </div>
           </nav>
@@ -101,6 +102,14 @@ export default function RootLayout({
               <div>
                 <h3 className="text-white font-bold mb-4">Recursos Parceiros</h3>
                 <ul className="space-y-2 text-sm">
+                  <li>
+                    <a href="/kit-mei" className="text-amber-400 font-semibold hover:text-amber-300">
+                      📋 Kit MEI — Documentos
+                    </a>
+                    <p className="text-xs text-gray-500 mt-0.5">
+                      4 modelos profissionais em PDF por R$ 29,90
+                    </p>
+                  </li>
                   <li>
                     <a
                       href="https://compararsaas.com.br"

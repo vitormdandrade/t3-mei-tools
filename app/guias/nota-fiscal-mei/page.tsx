@@ -66,6 +66,26 @@ export default function NotaFiscalMEI() {
         <h2 className="text-2xl font-bold text-green-900 mb-4">Próximos Passos</h2>
         <a href="/guias/como-abrir-mei" className="text-blue-600 font-semibold hover:underline">← Voltar ao guias</a>
       </div>
+
+      {/* Kit MEI CTA */}
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg p-6">
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex-1">
+            <h2 className="text-xl font-bold text-gray-900 mb-2">
+              📋 Precisa de modelos prontos?
+            </h2>
+            <p className="text-gray-600 text-sm">
+              Baixe nosso Kit MEI com 4 PDFs profissionais: Contrato de Prestação de Serviços, Modelo de Nota Fiscal, Recibo de Pagamento e Termo de Responsabilidade.
+            </p>
+          </div>
+          <a
+            href="/kit-mei"
+            className="bg-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-amber-700 transition whitespace-nowrap"
+          >
+            Comprar Kit MEI — R$ 29,90
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

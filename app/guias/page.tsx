@@ -77,6 +77,22 @@ export default function GuidesPage() {
           </a>
         ))}
       </div>
+
+      {/* Kit MEI CTA */}
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg p-8 text-center">
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          📋 Kit MEI — Documentos Prontos para Usar
+        </h2>
+        <p className="text-gray-600 mb-4">
+          4 modelos profissionais em PDF: Contrato, Nota Fiscal, Recibo e Termo de Responsabilidade.
+        </p>
+        <a
+          href="/kit-mei"
+          className="inline-block bg-amber-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-amber-700 transition"
+        >
+          Comprar por R$ 29,90
+        </a>
+      </div>
     </div>
   );
 }
