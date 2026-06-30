@@ -67,11 +67,11 @@ export default function RootLayout({
         </header>
 
         {/* ── Main ── */}
-        <main className="flex-grow" style={{ scrollPaddingTop: '80px' }}>
+        <main className="flex-grow w-full max-w-6xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
           {children}
         </main>
 
-        {/* ── Footer ── */}
+        {/* ── Footer ── (always dark navy in both themes, so text uses fixed light-on-navy colors) */}
         <footer style={{ background: '#1a2744', color: '#c8d2dc' }}>
           {/* Wave divider */}
           <div style={{ height: '4px', background: 'linear-gradient(90deg, var(--brand-sage), var(--brand-terra), var(--brand-gold), var(--brand-sage))' }}></div>
@@ -84,12 +84,12 @@ export default function RootLayout({
                     Oráculo do MEI
                   </span>
                 </div>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: '#8899aa' }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: '#a3b1c0' }}>
                   Seu guia financeiro completo. Calculadoras gratuitas, guias e ferramentas para microempreendedores.
                 </p>
               </div>
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: 'var(--brand-sage-light)' }}>Calculadoras</h4>
+                <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: '#74c69d' }}>Calculadoras</h4>
                 <ul className="space-y-2.5 text-sm">
                   {[
                     ['/calculadora/das', 'DAS'],
@@ -107,7 +107,7 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: 'var(--brand-terra)' }}>Guias</h4>
+                <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: '#e8a890' }}>Guias</h4>
                 <ul className="space-y-2.5 text-sm">
                   {[
                     ['/guias/como-abrir-mei', 'Como Abrir MEI'],
@@ -122,20 +122,20 @@ export default function RootLayout({
                 </ul>
               </div>
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: 'var(--brand-gold)' }}>Parceiros</h4>
+                <h4 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: '#fbbf24' }}>Parceiros</h4>
                 <ul className="space-y-2.5 text-sm">
                   <li>
-                    <a href="/kit-mei" className="no-underline font-semibold" style={{ color: 'var(--brand-gold)' }}>
+                    <a href="/kit-mei" className="no-underline font-semibold" style={{ color: '#fbbf24' }}>
                       📋 Kit MEI — R$29,90
                     </a>
-                    <p className="text-xs mt-0.5" style={{ color: '#667788' }}>4 modelos profissionais em PDF</p>
+                    <p className="text-xs mt-0.5" style={{ color: '#9aa7b5' }}>4 modelos profissionais em PDF</p>
                   </li>
                   <li><a href="https://compararsaas.com.br" rel="noopener" className="no-underline hover:opacity-80 transition-opacity" style={{ color: '#c8d2dc' }}>Comparador SaaS</a></li>
                   <li><a href="https://calculaseguro.com.br" rel="noopener" className="no-underline hover:opacity-80 transition-opacity" style={{ color: '#c8d2dc' }}>Calcula Seguro</a></li>
                 </ul>
               </div>
             </div>
-            <div className="pt-8 text-center text-xs" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', color: '#667788' }}>
+            <div className="pt-8 text-center text-xs" style={{ borderTop: '1px solid rgba(255,255,255,0.12)', color: '#9aa7b5' }}>
               <p>© 2026 Oráculo do MEI. Conteúdo educacional. Consulte um profissional para recomendações específicas.</p>
             </div>
           </div>

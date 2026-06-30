@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function CnaePage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
         Consulta de CNAE para MEI
       </h1>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-600 dark:text-gray-400 mb-8">
         Pesquise entre as 88 atividades permitidas para MEI. Veja se sua
         atividade permite Nota Fiscal, qual imposto incide e se é popular entre
         microempreendedores.

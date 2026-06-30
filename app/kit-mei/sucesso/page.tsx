@@ -47,10 +47,10 @@ function SucessoContent() {
     return (
       <div className="text-center py-16">
         <div className="animate-spin w-12 h-12 border-4 border-amber-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Confirmando pagamento...
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Aguarde um momento enquanto verificamos seu pagamento.
         </p>
       </div>
@@ -61,13 +61,13 @@ function SucessoContent() {
     return (
       <div className="text-center py-16">
         <div className="text-5xl mb-4">❌</div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Algo deu errado
         </h2>
-        <p className="text-gray-600 mb-4">{error}</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">{error}</p>
         <a
           href="/kit-mei"
-          className="text-amber-600 font-semibold hover:underline"
+          className="text-amber-600 dark:text-amber-400 font-semibold hover:underline"
         >
           ← Voltar para o Kit MEI
         </a>
@@ -79,16 +79,16 @@ function SucessoContent() {
     return (
       <div className="text-center py-16">
         <div className="text-5xl mb-4">⏰</div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Link expirado
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
           O link de download expirou após 24 horas. Entre em contato para
           reenviarmos.
         </p>
         <a
           href="/kit-mei"
-          className="text-amber-600 font-semibold hover:underline"
+          className="text-amber-600 dark:text-amber-400 font-semibold hover:underline"
         >
           ← Voltar para o Kit MEI
         </a>
@@ -99,10 +99,10 @@ function SucessoContent() {
   return (
     <div className="text-center py-16">
       <div className="text-5xl mb-4">🎉</div>
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">
+      <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
         Pagamento confirmado!
       </h2>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-600 dark:text-gray-400 mb-8">
         Seu Kit MEI está pronto. Clique no botão abaixo para baixar.
       </p>
       <a
@@ -111,14 +111,14 @@ function SucessoContent() {
       >
         📥 Baixar Kit MEI (ZIP)
       </a>
-      <p className="text-sm text-gray-500 mt-4">
+      <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
         Arquivo ZIP com 4 PDFs · Contrato · Nota Fiscal · Recibo · Termo de
         Responsabilidade
       </p>
       <div className="mt-8">
         <a
           href="/kit-mei"
-          className="text-amber-600 font-semibold hover:underline"
+          className="text-amber-600 dark:text-amber-400 font-semibold hover:underline"
         >
           ← Voltar para o Kit MEI
         </a>
@@ -133,7 +133,7 @@ export default function SucessoPage() {
       fallback={
         <div className="text-center py-16">
           <div className="animate-spin w-12 h-12 border-4 border-amber-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-          <p className="text-gray-600">Carregando...</p>
+          <p className="text-gray-600 dark:text-gray-400">Carregando...</p>
         </div>
       }
     >

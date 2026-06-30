@@ -131,7 +131,7 @@ export default function LeadCaptureForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-3 py-2.5 rounded-lg text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
           />
           <input
             type="email"
@@ -139,7 +139,7 @@ export default function LeadCaptureForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3 py-2.5 rounded-lg text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
@@ -150,14 +150,14 @@ export default function LeadCaptureForm({
             value={phone}
             onChange={(e) => setPhone(formatPhone(e.target.value))}
             required
-            className="w-full px-3 py-2.5 rounded-lg text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
           />
           <input
             type="text"
             placeholder="CNPJ (opcional)"
             value={cnpj}
             onChange={(e) => setCnpj(formatCnpj(e.target.value))}
-            className="w-full px-3 py-2.5 rounded-lg text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
@@ -167,12 +167,12 @@ export default function LeadCaptureForm({
             placeholder="Cidade"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="w-full px-3 py-2.5 rounded-lg text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
           />
           <select
             value={revenueRange}
             onChange={(e) => setRevenueRange(e.target.value)}
-            className="w-full px-3 py-2.5 rounded-lg text-gray-900 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 border-0 focus:ring-2 focus:ring-amber-400"
           >
             {REVENUE_RANGES.map((r) => (
               <option key={r.value} value={r.value}>

@@ -137,10 +137,10 @@ export default function CalendarioDasPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3">
           Calendário DAS MEI 2026
         </h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-gray-600 dark:text-gray-400">
           Todas as 12 datas de vencimento do DAS MEI em 2026, já ajustadas para dia
           útil quando caem em fim de semana ou feriado nacional. Baixe no seu
           calendário em um clique — sem cadastro, sem limite.
@@ -169,44 +169,44 @@ export default function CalendarioDasPage() {
       </div>
 
       {/* Main table */}
-      <div className="border rounded-lg overflow-hidden mb-8">
+      <div className="border dark:border-gray-700 rounded-lg overflow-hidden mb-8">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 border-b">
+          <thead className="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
             <tr>
-              <th className="text-left px-4 py-3 font-semibold text-gray-700">
+              <th className="text-left px-4 py-3 font-semibold text-gray-700 dark:text-gray-300">
                 Mês de Referência
               </th>
-              <th className="text-left px-4 py-3 font-semibold text-gray-700">
+              <th className="text-left px-4 py-3 font-semibold text-gray-700 dark:text-gray-300">
                 Vencimento
               </th>
-              <th className="text-left px-4 py-3 font-semibold text-gray-700 hidden md:table-cell">
+              <th className="text-left px-4 py-3 font-semibold text-gray-700 dark:text-gray-300 hidden md:table-cell">
                 Observação
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
             {vencimentos2026.map((v) => (
               <tr
                 key={v.iso}
-                className={v.moved ? 'bg-amber-50/50' : 'hover:bg-gray-50'}
+                className={v.moved ? 'bg-amber-50/50 dark:bg-amber-950/40' : 'hover:bg-gray-50 dark:hover:bg-gray-900'}
               >
                 <td className="px-4 py-3">
-                  <div className="font-semibold text-gray-900">
+                  <div className="font-semibold text-gray-900 dark:text-gray-100">
                     {v.refMonth}/{v.refYear}
                   </div>
                 </td>
                 <td className="px-4 py-3">
-                  <div className="font-semibold text-gray-900">{v.dueDate}</div>
-                  <div className="text-xs text-gray-500 capitalize">{v.dueWeekday}</div>
-                  <div className="text-xs text-amber-700 md:hidden mt-1">
+                  <div className="font-semibold text-gray-900 dark:text-gray-100">{v.dueDate}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{v.dueWeekday}</div>
+                  <div className="text-xs text-amber-700 dark:text-amber-300 md:hidden mt-1">
                     {v.moved && v.movedReason}
                   </div>
                 </td>
-                <td className="px-4 py-3 hidden md:table-cell text-xs text-gray-600">
+                <td className="px-4 py-3 hidden md:table-cell text-xs text-gray-600 dark:text-gray-400">
                   {v.moved ? (
-                    <span className="text-amber-700">{v.movedReason}</span>
+                    <span className="text-amber-700 dark:text-amber-300">{v.movedReason}</span>
                   ) : (
-                    <span className="text-gray-400">—</span>
+                    <span className="text-gray-400 dark:text-gray-400">—</span>
                   )}
                 </td>
               </tr>
@@ -216,11 +216,11 @@ export default function CalendarioDasPage() {
       </div>
 
       {/* Explanation */}
-      <section className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold text-blue-900 mb-3">
+      <section className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8">
+        <h2 className="text-xl font-bold text-blue-900 dark:text-blue-200 mb-3">
           Como funcionam as datas do DAS
         </h2>
-        <ul className="space-y-2 text-sm text-blue-900">
+        <ul className="space-y-2 text-sm text-blue-900 dark:text-blue-200">
           <li>
             <strong>Regra geral:</strong> o DAS de um mês vence no dia 20 do mês seguinte.
             Ex: o DAS referente a Janeiro/2026 vence em 20 de Fevereiro de 2026.
@@ -244,11 +244,11 @@ export default function CalendarioDasPage() {
       </section>
 
       {/* Missed payment */}
-      <section className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold text-amber-900 mb-3">
+      <section className="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 rounded-lg p-6 mb-8">
+        <h2 className="text-xl font-bold text-amber-900 dark:text-amber-200 mb-3">
           E se eu atrasar o pagamento?
         </h2>
-        <div className="space-y-3 text-sm text-amber-900">
+        <div className="space-y-3 text-sm text-amber-900 dark:text-amber-200">
           <p>
             O DAS atrasado gera multa de <strong>0,33% ao dia</strong> (limitada a 20%)
             e juros Selic. Ainda é possível pagar — basta gerar o boleto pelo{' '}
@@ -266,48 +266,48 @@ export default function CalendarioDasPage() {
       </section>
 
       {/* Calculator CTA */}
-      <section className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold text-green-900 mb-3">
+      <section className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-8">
+        <h2 className="text-xl font-bold text-green-900 dark:text-green-200 mb-3">
           Quanto pago de DAS em 2026?
         </h2>
-        <p className="text-green-900 text-sm mb-4">
+        <p className="text-green-900 dark:text-green-200 text-sm mb-4">
           O valor depende da sua categoria. Em 2026 o DAS mensal fica em
           aproximadamente R$ 76,90 (comércio/indústria) ou R$ 80,90 (serviços),
           usando o salário mínimo vigente.
         </p>
         <Link
           href="/calculadora/das"
-          className="inline-flex items-center text-blue-600 font-semibold hover:underline"
+          className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:underline"
         >
           → Calcular meu DAS 2026
         </Link>
       </section>
 
       {/* Related links */}
-      <section className="border-t pt-6">
-        <h3 className="text-base font-bold text-gray-900 mb-3">Veja também</h3>
+      <section className="border-t dark:border-gray-700 pt-6">
+        <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-3">Veja também</h3>
         <div className="flex gap-4 flex-wrap">
           <Link
             href="/calculadora/das"
-            className="text-blue-600 font-semibold hover:underline text-sm"
+            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
           >
             → Calculadora DAS
           </Link>
           <Link
             href="/guias/das-mei-2026"
-            className="text-blue-600 font-semibold hover:underline text-sm"
+            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
           >
             → Guia completo DAS 2026
           </Link>
           <Link
             href="/calculadora/faturamento"
-            className="text-blue-600 font-semibold hover:underline text-sm"
+            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
           >
             → Limite de Faturamento MEI
           </Link>
           <Link
             href="/calculadora/mei-vs-me"
-            className="text-blue-600 font-semibold hover:underline text-sm"
+            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
           >
             → MEI vs ME vs Simples
           </Link>

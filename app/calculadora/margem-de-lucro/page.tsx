@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function MargemPage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
         Calculadora de Margem de Lucro MEI
       </h1>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-600 dark:text-gray-400 mb-8">
         Descubra se seu preço cobre os custos e gera lucro real. Resultado
         instantâneo — sem cadastro, sem limite de cálculos.
       </p>

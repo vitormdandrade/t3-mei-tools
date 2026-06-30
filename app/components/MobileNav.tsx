@@ -18,7 +18,7 @@ export default function MobileNav() {
       {/* Hamburger button — visible on mobile only */}
       <button
         onClick={() => setOpen(!open)}
-        className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg"
+        className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg"
         style={{
           background: 'var(--color-surface)',
           border: '1px solid var(--color-border)',
@@ -27,6 +27,8 @@ export default function MobileNav() {
           cursor: 'pointer',
         }}
         aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+        aria-expanded={open}
+        aria-controls="mobile-menu"
       >
         {open ? '✕' : '☰'}
       </button>
@@ -47,7 +49,7 @@ export default function MobileNav() {
 
       {/* Mobile overlay menu */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-50" style={{ top: '60px' }}>
+        <div id="mobile-menu" className="md:hidden fixed inset-0 z-50" style={{ top: '64px' }}>
           {/* Backdrop */}
           <div
             className="absolute inset-0"

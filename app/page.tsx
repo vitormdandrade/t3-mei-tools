@@ -8,21 +8,21 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <section className="text-center py-12 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+      <section className="text-center py-12 bg-gradient-to-r from-green-50 dark:from-green-950/40 to-blue-50 dark:to-blue-950/40 rounded-lg p-8">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
           Ferramentas Gratuitas para MEI e Freelancers
         </h1>
-        <p className="text-xl text-gray-600 mb-6">
+        <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
           Calcule DAS, faturamento, preços, margens e compare regimes de impostos com precisão
         </p>
         <div className="flex gap-3 justify-center flex-wrap mb-8 text-sm">
-          <span className="bg-white border border-green-200 text-green-800 px-3 py-1.5 rounded-full font-semibold">
+          <span className="bg-white dark:bg-gray-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-300 px-3 py-1.5 rounded-full font-semibold">
             ✓ Sem limite de cálculos
           </span>
-          <span className="bg-white border border-blue-200 text-blue-800 px-3 py-1.5 rounded-full font-semibold">
+          <span className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 px-3 py-1.5 rounded-full font-semibold">
             ✓ 100% gratuito, sem cadastro
           </span>
-          <span className="bg-white border border-purple-200 text-purple-800 px-3 py-1.5 rounded-full font-semibold">
+          <span className="bg-white dark:bg-gray-900 border border-purple-200 dark:border-purple-800 text-purple-800 dark:text-purple-300 px-3 py-1.5 rounded-full font-semibold">
             ✓ Cada calculadora com URL própria
           </span>
         </div>
@@ -41,122 +41,122 @@ export default function Home() {
 
       {/* Calculators Grid */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Nossas Calculadoras</h2>
-        <p className="text-gray-600 mb-8">7 calculadoras dedicadas — cada uma com sua própria URL, para você achar exatamente o que precisa no Google.</p>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Nossas Calculadoras</h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">7 calculadoras dedicadas — cada uma com sua própria URL, para você achar exatamente o que precisa no Google.</p>
 
-        <h3 className="text-xl font-bold text-gray-800 mb-4">Impostos e regime MEI</h3>
+        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Impostos e regime MEI</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-green-600 mb-2">Calculadora DAS</h3>
-            <p className="text-gray-600 mb-4">Calcule o valor mensal do DAS conforme sua atividade e o salário mínimo do ano.</p>
-            <a href="/calculadora/das" className="text-green-600 font-semibold hover:underline">Ver calculadora →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-green-600 dark:text-green-400 mb-2">Calculadora DAS</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Calcule o valor mensal do DAS conforme sua atividade e o salário mínimo do ano.</p>
+            <a href="/calculadora/das" className="text-green-600 dark:text-green-400 font-semibold hover:underline">Ver calculadora →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-blue-600 mb-2">Limite de Faturamento</h3>
-            <p className="text-gray-600 mb-4">Acompanhe seu faturamento anual e saiba quando você precisa mudar de regime.</p>
-            <a href="/calculadora/faturamento" className="text-blue-600 font-semibold hover:underline">Ver calculadora →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Limite de Faturamento</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Acompanhe seu faturamento anual e saiba quando você precisa mudar de regime.</p>
+            <a href="/calculadora/faturamento" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Ver calculadora →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-purple-600 mb-2">MEI vs ME vs Simples</h3>
-            <p className="text-gray-600 mb-4">Compare impostos, custos e benefícios dos três regimes para seu negócio.</p>
-            <a href="/calculadora/mei-vs-me" className="text-purple-600 font-semibold hover:underline">Ver calculadora →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2">MEI vs ME vs Simples</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Compare impostos, custos e benefícios dos três regimes para seu negócio.</p>
+            <a href="/calculadora/mei-vs-me" className="text-purple-600 dark:text-purple-400 font-semibold hover:underline">Ver calculadora →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-orange-600 mb-2">INSS Autônomo</h3>
-            <p className="text-gray-600 mb-4">Calcule a contribuição ao INSS como autônomo conforme sua renda mensal.</p>
-            <a href="/calculadora/inss-autonomo" className="text-orange-600 font-semibold hover:underline">Ver calculadora →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-orange-600 dark:text-orange-400 mb-2">INSS Autônomo</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Calcule a contribuição ao INSS como autônomo conforme sua renda mensal.</p>
+            <a href="/calculadora/inss-autonomo" className="text-orange-600 dark:text-orange-400 font-semibold hover:underline">Ver calculadora →</a>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-gray-800 mb-4">Gestão financeira do negócio</h3>
+        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Gestão financeira do negócio</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-emerald-600 mb-2">Margem de Lucro</h3>
-            <p className="text-gray-600 text-sm mb-4">Quanto de cada real vendido vira lucro real depois dos custos.</p>
-            <a href="/calculadora/margem-de-lucro" className="text-emerald-600 font-semibold hover:underline text-sm">Ver calculadora →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-emerald-600 dark:text-emerald-400 mb-2">Margem de Lucro</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Quanto de cada real vendido vira lucro real depois dos custos.</p>
+            <a href="/calculadora/margem-de-lucro" className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline text-sm">Ver calculadora →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-teal-600 mb-2">Preço por Hora</h3>
-            <p className="text-gray-600 text-sm mb-4">Valor mínimo/hora para freelancers cobrirem salário, DAS e despesas.</p>
-            <a href="/calculadora/preco-por-hora" className="text-teal-600 font-semibold hover:underline text-sm">Ver calculadora →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-teal-600 dark:text-teal-400 mb-2">Preço por Hora</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Valor mínimo/hora para freelancers cobrirem salário, DAS e despesas.</p>
+            <a href="/calculadora/preco-por-hora" className="text-teal-600 dark:text-teal-400 font-semibold hover:underline text-sm">Ver calculadora →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-indigo-600 mb-2">Ponto de Equilíbrio</h3>
-            <p className="text-gray-600 text-sm mb-4">Quantas unidades vender por mês para cobrir os custos fixos.</p>
-            <a href="/calculadora/ponto-de-equilibrio" className="text-indigo-600 font-semibold hover:underline text-sm">Ver calculadora →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-indigo-600 dark:text-indigo-400 mb-2">Ponto de Equilíbrio</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Quantas unidades vender por mês para cobrir os custos fixos.</p>
+            <a href="/calculadora/ponto-de-equilibrio" className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline text-sm">Ver calculadora →</a>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-gray-800 mb-4">Consulta e referência</h3>
+        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Consulta e referência</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">CNAEs Permitidos para MEI</h3>
-            <p className="text-gray-600 text-sm mb-4">Busque entre centenas de atividades aceitas no MEI com descrição e categoria.</p>
-            <a href="/calculadora/cnae" className="text-gray-900 font-semibold hover:underline text-sm">Ver CNAEs →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">CNAEs Permitidos para MEI</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Busque entre centenas de atividades aceitas no MEI com descrição e categoria.</p>
+            <a href="/calculadora/cnae" className="text-gray-900 dark:text-gray-100 font-semibold hover:underline text-sm">Ver CNAEs →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Calendário DAS 2026</h3>
-            <p className="text-gray-600 text-sm mb-4">Todas as 12 datas de vencimento do ano + arquivo .ics para Google/Apple Calendar.</p>
-            <a href="/calendario-das" className="text-gray-900 font-semibold hover:underline text-sm">Ver calendário →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Calendário DAS 2026</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Todas as 12 datas de vencimento do ano + arquivo .ics para Google/Apple Calendar.</p>
+            <a href="/calendario-das" className="text-gray-900 dark:text-gray-100 font-semibold hover:underline text-sm">Ver calendário →</a>
           </div>
         </div>
       </section>
 
       {/* Guides Section */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Guias Completos</h2>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Guias Completos</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Como Abrir MEI</h3>
-            <p className="text-gray-600 text-sm">Passo a passo para registrar seu MEI online e começar legalmente.</p>
-            <a href="/guias/como-abrir-mei" className="text-gray-600 font-semibold hover:text-gray-900 text-sm mt-4 inline-block">Ler guia →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Como Abrir MEI</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Passo a passo para registrar seu MEI online e começar legalmente.</p>
+            <a href="/guias/como-abrir-mei" className="text-gray-600 dark:text-gray-400 font-semibold hover:text-gray-900 dark:hover:text-gray-100 text-sm mt-4 inline-block">Ler guia →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">DAS 2026</h3>
-            <p className="text-gray-600 text-sm">Entenda tudo sobre o DAS: valores, prazos e como pagar corretamente.</p>
-            <a href="/guias/das-mei-2026" className="text-gray-600 font-semibold hover:text-gray-900 text-sm mt-4 inline-block">Ler guia →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">DAS 2026</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Entenda tudo sobre o DAS: valores, prazos e como pagar corretamente.</p>
+            <a href="/guias/das-mei-2026" className="text-gray-600 dark:text-gray-400 font-semibold hover:text-gray-900 dark:hover:text-gray-100 text-sm mt-4 inline-block">Ler guia →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Nota Fiscal MEI</h3>
-            <p className="text-gray-600 text-sm">Quando, como e quando usar nota fiscal no MEI. Regras 2026.</p>
-            <a href="/guias/nota-fiscal-mei" className="text-gray-600 font-semibold hover:text-gray-900 text-sm mt-4 inline-block">Ler guia →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Nota Fiscal MEI</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Quando, como e quando usar nota fiscal no MEI. Regras 2026.</p>
+            <a href="/guias/nota-fiscal-mei" className="text-gray-600 dark:text-gray-400 font-semibold hover:text-gray-900 dark:hover:text-gray-100 text-sm mt-4 inline-block">Ler guia →</a>
           </div>
         </div>
       </section>
 
       {/* Kit MEI Section */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Kit MEI — Documentos Prontos</h2>
-        <p className="text-gray-600 mb-8">Modelos profissionais de contrato, nota fiscal, recibo e termo de responsabilidade em PDF. Preencha e use.</p>
-        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg p-8 mb-10">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Kit MEI — Documentos Prontos</h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">Modelos profissionais de contrato, nota fiscal, recibo e termo de responsabilidade em PDF. Preencha e use.</p>
+        <div className="bg-gradient-to-r from-amber-50 dark:from-amber-950/40 to-orange-50 dark:to-orange-950/40 border border-amber-200 dark:border-amber-800 rounded-lg p-8 mb-10">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                 📋 Kit MEI Completo
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 4 modelos profissionais em PDF: Contrato de Prestação de Serviços, Nota Fiscal (RPA), Recibo de Pagamento e Termo de Responsabilidade.
               </p>
               <div className="flex items-center gap-4">
-                <span className="text-2xl font-bold text-amber-700">R$ 29,90</span>
+                <span className="text-2xl font-bold text-amber-700 dark:text-amber-300">R$ 29,90</span>
                 <a href="/kit-mei" className="bg-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-amber-700 transition">
                   Comprar Kit MEI →
                 </a>
               </div>
             </div>
-            <div className="flex gap-2 text-sm text-gray-500">
-              <span className="bg-white px-3 py-1.5 rounded-full border">📝 Contrato</span>
-              <span className="bg-white px-3 py-1.5 rounded-full border">🧾 Nota Fiscal</span>
-              <span className="bg-white px-3 py-1.5 rounded-full border">💰 Recibo</span>
-              <span className="bg-white px-3 py-1.5 rounded-full border">✍️ Termo</span>
+            <div className="flex gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">📝 Contrato</span>
+              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">🧾 Nota Fiscal</span>
+              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">💰 Recibo</span>
+              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">✍️ Termo</span>
             </div>
           </div>
         </div>
@@ -164,37 +164,37 @@ export default function Home() {
 
       {/* Fintechs Section */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Melhores Contas e Soluções PJ</h2>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Melhores Contas e Soluções PJ</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Melhores Contas PJ para MEI</h3>
-            <p className="text-gray-600 mb-4">Compare as melhores contas bancárias para MEI com transferências, cartões e crédito.</p>
-            <a href="/melhores/melhores-contas-pj-mei" className="text-blue-600 font-semibold hover:underline">Ver comparativo →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Melhores Contas PJ para MEI</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Compare as melhores contas bancárias para MEI com transferências, cartões e crédito.</p>
+            <a href="/melhores/melhores-contas-pj-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Ver comparativo →</a>
           </div>
 
-          <div className="border rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Melhores Máquinas de Pagamento</h3>
-            <p className="text-gray-600 mb-4">Maquininhas de crédito e débito para MEI com as melhores taxas e suporte.</p>
-            <a href="/melhores/melhores-maquininhas-mei" className="text-blue-600 font-semibold hover:underline">Ver comparativo →</a>
+          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Melhores Máquinas de Pagamento</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Maquininhas de crédito e débito para MEI com as melhores taxas e suporte.</p>
+            <a href="/melhores/melhores-maquininhas-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Ver comparativo →</a>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-50 rounded-lg p-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Perguntas Frequentes</h2>
+      <section className="bg-gray-50 dark:bg-gray-900 rounded-lg p-8">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Perguntas Frequentes</h2>
         <div className="space-y-4">
-          <details className="border rounded-lg p-4">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Qual é o limite de faturamento para MEI em 2026?</summary>
-            <p className="text-gray-600 mt-2">O limite anual é de R$ 81.000 em 2026. Se ultrapassar este valor, você terá que migrar para outro regime.</p>
+          <details className="border dark:border-gray-700 rounded-lg p-4">
+            <summary className="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer">Qual é o limite de faturamento para MEI em 2026?</summary>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">O limite anual é de R$ 81.000 em 2026. Se ultrapassar este valor, você terá que migrar para outro regime.</p>
           </details>
-          <details className="border rounded-lg p-4">
-            <summary className="font-semibold text-gray-900 cursor-pointer">Como funciona o DAS?</summary>
-            <p className="text-gray-600 mt-2">O DAS é a contribuição mensal que o MEI faz à Prefeitura (ISS ou ICMS) e ao INSS. Varia conforme a categoria da atividade.</p>
+          <details className="border dark:border-gray-700 rounded-lg p-4">
+            <summary className="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer">Como funciona o DAS?</summary>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">O DAS é a contribuição mensal que o MEI faz à Prefeitura (ISS ou ICMS) e ao INSS. Varia conforme a categoria da atividade.</p>
           </details>
-          <details className="border rounded-lg p-4">
-            <summary className="font-semibold text-gray-900 cursor-pointer">MEI pode ter funcionário?</summary>
-            <p className="text-gray-600 mt-2">Sim, MEI pode ter apenas 1 funcionário. Se contratar outro, é obrigado a virar ME.</p>
+          <details className="border dark:border-gray-700 rounded-lg p-4">
+            <summary className="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer">MEI pode ter funcionário?</summary>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">Sim, MEI pode ter apenas 1 funcionário. Se contratar outro, é obrigado a virar ME.</p>
           </details>
         </div>
       </section>

@@ -23,6 +23,9 @@
   --brand-gold: #b8860b;
   --brand-gold-soft: #fef3c7;
 
+  /* Sync native form controls / scrollbars with the theme */
+  color-scheme: light;
+
   /* Semantic — light */
   --color-background: var(--brand-cream);
   --color-foreground: var(--brand-navy);
@@ -72,6 +75,7 @@
 /* ── Dark Mode ── */
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     /* Brand overrides — must match light-mode naming for utilities that reference --brand-* directly */
     --brand-sage: #52b788;
     --brand-sage-dark: #40916c;
@@ -142,8 +146,9 @@
   --color-warning: var(--color-warning);
   --color-highlight: var(--color-highlight);
   --color-highlight-soft: var(--color-highlight-soft);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Merriweather', 'Georgia', serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
@@ -152,12 +157,27 @@
 }
 
 /* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  /* Sticky header is ~64px tall; offset in-page anchor jumps so headings aren't hidden under it */
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-geist-sans), 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Guard against accidental horizontal scroll from wide children */
+  overflow-x: hidden;
+}
+
+/* Media never overflows its container on small screens */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ── Typography Utilities ── */
@@ -378,6 +398,9 @@ a:hover {
 
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

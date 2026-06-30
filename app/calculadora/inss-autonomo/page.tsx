@@ -62,35 +62,35 @@ export default function INSSAutonomoCalculator() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Calculadora INSS - Autônomo/Freelancer</h1>
-        <p className="text-gray-600">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">Calculadora INSS - Autônomo/Freelancer</h1>
+        <p className="text-gray-600 dark:text-gray-400">
           Calcule sua contribuição ao INSS como autônomo e conheça os benefícios disponíveis.
         </p>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <p className="text-sm text-blue-900">
+      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+        <p className="text-sm text-blue-900 dark:text-blue-200">
           <strong>Importante:</strong> Autônomos e freelancers não registrados como MEI ou PJ devem contribuir como contribuintes individuais.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Input Section */}
-        <div className="lg:col-span-2 border rounded-lg p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Simulação de Contribuição</h2>
+        <div className="lg:col-span-2 border dark:border-gray-700 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Simulação de Contribuição</h2>
 
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 Renda Mensal
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-2 text-gray-600">R$</span>
+                <span className="absolute left-3 top-2 text-gray-600 dark:text-gray-400">R$</span>
                 <input
                   type="number"
                   value={monthlyIncome}
                   onChange={(e) => setMonthlyIncome(parseInt(e.target.value) || 0)}
-                  className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-9 pr-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   min="0"
                   step="100"
                 />
@@ -98,11 +98,11 @@ export default function INSSAutonomoCalculator() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                 Tipo de Contribuição
               </label>
               <div className="space-y-3">
-                <label className="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50" onClick={() => setContributionClass('5')}>
+                <label className="flex items-center p-3 border dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900" onClick={() => setContributionClass('5')}>
                   <input
                     type="radio"
                     name="contribution"
@@ -112,12 +112,12 @@ export default function INSSAutonomoCalculator() {
                     className="mr-3"
                   />
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">5% - Microempreendedor (MEI)</p>
-                    <p className="text-xs text-gray-600">Categoria reduzida, poucos benefícios</p>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">5% - Microempreendedor (MEI)</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">Categoria reduzida, poucos benefícios</p>
                   </div>
                 </label>
 
-                <label className="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50" onClick={() => setContributionClass('11')}>
+                <label className="flex items-center p-3 border dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900" onClick={() => setContributionClass('11')}>
                   <input
                     type="radio"
                     name="contribution"
@@ -127,12 +127,12 @@ export default function INSSAutonomoCalculator() {
                     className="mr-3"
                   />
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">11% - Contribuinte Individual</p>
-                    <p className="text-xs text-gray-600">Padrão para autônomos, maioria dos benefícios</p>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">11% - Contribuinte Individual</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">Padrão para autônomos, maioria dos benefícios</p>
                   </div>
                 </label>
 
-                <label className="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50" onClick={() => setContributionClass('20')}>
+                <label className="flex items-center p-3 border dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900" onClick={() => setContributionClass('20')}>
                   <input
                     type="radio"
                     name="contribution"
@@ -142,15 +142,15 @@ export default function INSSAutonomoCalculator() {
                     className="mr-3"
                   />
                   <div className="flex-1">
-                    <p className="font-semibold text-gray-900">20% - Contribuinte Voluntário/Autônomo</p>
-                    <p className="text-xs text-gray-600">Alíquota máxima, para aumentar aposentadoria</p>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">20% - Contribuinte Voluntário/Autônomo</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">Alíquota máxima, para aumentar aposentadoria</p>
                   </div>
                 </label>
               </div>
             </div>
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-              <p className="text-sm text-yellow-900">
+            <div className="bg-yellow-50 dark:bg-yellow-950/40 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+              <p className="text-sm text-yellow-900 dark:text-yellow-200">
                 <strong>Teto de Contribuição:</strong> {formatCurrency(contributionCeiling)}/mês ou {formatCurrency(ceilingAnnual)}/ano
               </p>
             </div>
@@ -158,34 +158,34 @@ export default function INSSAutonomoCalculator() {
         </div>
 
         {/* Results Section */}
-        <div className="border rounded-lg p-6 bg-gradient-to-br from-green-50 to-blue-50 h-fit">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Sua Contribuição</h2>
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-950/40 dark:to-blue-950/40 h-fit">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Sua Contribuição</h2>
 
           <div className="space-y-4">
-            <div className="bg-white rounded-lg p-4 border border-blue-200">
-              <p className="text-sm text-gray-600 mb-1">Contribuição Mensal ({contributionClass}%)</p>
-              <p className="text-2xl font-bold text-blue-600">
+            <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Contribuição Mensal ({contributionClass}%)</p>
+              <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                 {formatCurrency(monthlyInss)}
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-4 border border-green-200">
-              <p className="text-sm text-gray-600 mb-1">Contribuição Anual</p>
-              <p className="text-2xl font-bold text-green-600">
+            <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-green-200 dark:border-green-800">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Contribuição Anual</p>
+              <p className="text-2xl font-bold text-green-600 dark:text-green-400">
                 {formatCurrency(annualInss)}
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-4 border border-purple-200">
-              <p className="text-sm text-gray-600 mb-1">Alíquota</p>
-              <p className="text-2xl font-bold text-purple-600">
+            <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-purple-200 dark:border-purple-800">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Alíquota</p>
+              <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
                 {contributionClass}%
               </p>
             </div>
 
-            <div className="bg-blue-100 rounded-lg p-3 text-center">
-              <p className="text-xs text-blue-900 mb-1">Valor para 12 meses</p>
-              <p className="text-lg font-bold text-blue-900">
+            <div className="bg-blue-100 dark:bg-blue-900/40 rounded-lg p-3 text-center">
+              <p className="text-xs text-blue-900 dark:text-blue-200 mb-1">Valor para 12 meses</p>
+              <p className="text-lg font-bold text-blue-900 dark:text-blue-200">
                 {formatCurrency(annualInss)}
               </p>
             </div>
@@ -194,59 +194,59 @@ export default function INSSAutonomoCalculator() {
       </div>
 
       {/* Benefits Section */}
-      <div className="border rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Benefícios Disponíveis - {currentBenefit.name}</h2>
+      <div className="border dark:border-gray-700 rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Benefícios Disponíveis - {currentBenefit.name}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaIdade ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'}`}>
-            <p className={`font-semibold ${currentBenefit.aposentadoriaIdade ? 'text-green-900' : 'text-red-900'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaIdade ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.aposentadoriaIdade ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.aposentadoriaIdade ? '✓' : '✗'} Aposentadoria por Idade
             </p>
-            <p className="text-xs text-gray-600 mt-1">Aos 62 anos (mulher) ou 65 anos (homem)</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Aos 62 anos (mulher) ou 65 anos (homem)</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaTempoContribuicao ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'}`}>
-            <p className={`font-semibold ${currentBenefit.aposentadoriaTempoContribuicao ? 'text-green-900' : 'text-red-900'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaTempoContribuicao ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.aposentadoriaTempoContribuicao ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.aposentadoriaTempoContribuicao ? '✓' : '✗'} Aposentadoria por Tempo
             </p>
-            <p className="text-xs text-gray-600 mt-1">Com 30 anos (mulher) ou 35 anos (homem)</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Com 30 anos (mulher) ou 35 anos (homem)</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxiliodoenca ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'}`}>
-            <p className={`font-semibold ${currentBenefit.auxiliodoenca ? 'text-green-900' : 'text-red-900'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxiliodoenca ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.auxiliodoenca ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.auxiliodoenca ? '✓' : '✗'} Auxílio-Doença
             </p>
-            <p className="text-xs text-gray-600 mt-1">Quando incapacitado para trabalhar</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Quando incapacitado para trabalhar</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.salarioMaternidade ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'}`}>
-            <p className={`font-semibold ${currentBenefit.salarioMaternidade ? 'text-green-900' : 'text-red-900'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.salarioMaternidade ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.salarioMaternidade ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.salarioMaternidade ? '✓' : '✗'} Salário-Maternidade
             </p>
-            <p className="text-xs text-gray-600 mt-1">Durante gestação e pós-parto</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Durante gestação e pós-parto</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.pensaoPorMorte ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'}`}>
-            <p className={`font-semibold ${currentBenefit.pensaoPorMorte ? 'text-green-900' : 'text-red-900'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.pensaoPorMorte ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.pensaoPorMorte ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.pensaoPorMorte ? '✓' : '✗'} Pensão por Morte
             </p>
-            <p className="text-xs text-gray-600 mt-1">Para dependentes em caso de falecimento</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Para dependentes em caso de falecimento</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxilioAcidente ? 'border-green-400 bg-green-50' : 'border-red-400 bg-red-50'}`}>
-            <p className={`font-semibold ${currentBenefit.auxilioAcidente ? 'text-green-900' : 'text-red-900'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxilioAcidente ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.auxilioAcidente ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.auxilioAcidente ? '✓' : '✗'} Auxílio-Acidente
             </p>
-            <p className="text-xs text-gray-600 mt-1">Quando reduz capacidade laborativa</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Quando reduz capacidade laborativa</p>
           </div>
         </div>
       </div>
 
       {/* Comparison */}
-      <div className="border rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Comparativo de Alíquotas</h2>
+      <div className="border dark:border-gray-700 rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Comparativo de Alíquotas</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-gray-100 border-b">
+            <thead className="bg-gray-100 dark:bg-gray-800 border-b dark:border-gray-700">
               <tr>
                 <th className="px-4 py-3 text-left font-bold">Alíquota</th>
                 <th className="px-4 py-3 text-center font-bold">Categoria</th>
@@ -255,19 +255,19 @@ export default function INSSAutonomoCalculator() {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b">
+              <tr className="border-b dark:border-gray-700">
                 <td className="px-4 py-3 font-bold">5%</td>
                 <td className="px-4 py-3">MEI</td>
                 <td className="px-4 py-3 text-center">{formatCurrency(3000 * 0.05)}</td>
                 <td className="px-4 py-3 text-center text-sm">Mínimos</td>
               </tr>
-              <tr className="border-b bg-blue-50">
-                <td className="px-4 py-3 font-bold text-blue-600">11%</td>
-                <td className="px-4 py-3 text-blue-600">Contribuinte Individual</td>
-                <td className="px-4 py-3 text-center text-blue-600 font-bold">{formatCurrency(3000 * 0.11)}</td>
-                <td className="px-4 py-3 text-center text-sm text-blue-600">Maioria</td>
+              <tr className="border-b dark:border-gray-700 bg-blue-50 dark:bg-blue-950/40">
+                <td className="px-4 py-3 font-bold text-blue-600 dark:text-blue-400">11%</td>
+                <td className="px-4 py-3 text-blue-600 dark:text-blue-400">Contribuinte Individual</td>
+                <td className="px-4 py-3 text-center text-blue-600 dark:text-blue-400 font-bold">{formatCurrency(3000 * 0.11)}</td>
+                <td className="px-4 py-3 text-center text-sm text-blue-600 dark:text-blue-400">Maioria</td>
               </tr>
-              <tr className="border-b">
+              <tr className="border-b dark:border-gray-700">
                 <td className="px-4 py-3 font-bold">20%</td>
                 <td className="px-4 py-3">Voluntário/Autônomo</td>
                 <td className="px-4 py-3 text-center">{formatCurrency(3000 * 0.2)}</td>
@@ -280,9 +280,9 @@ export default function INSSAutonomoCalculator() {
 
       {/* Tips */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border rounded-lg p-6 bg-blue-50">
-          <h3 className="text-lg font-bold text-blue-900 mb-4">Dicas</h3>
-          <ul className="space-y-2 text-blue-900 text-sm">
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/40">
+          <h3 className="text-lg font-bold text-blue-900 dark:text-blue-200 mb-4">Dicas</h3>
+          <ul className="space-y-2 text-blue-900 dark:text-blue-200 text-sm">
             <li>• Guarde todos os recibos de pagamento do INSS</li>
             <li>• Verifique sua contribuição no myINSS</li>
             <li>• Mantenha sua contribuição em dia</li>
@@ -290,9 +290,9 @@ export default function INSSAutonomoCalculator() {
           </ul>
         </div>
 
-        <div className="border rounded-lg p-6 bg-green-50">
-          <h3 className="text-lg font-bold text-green-900 mb-4">MEI vs Autônomo</h3>
-          <ul className="space-y-2 text-green-900 text-sm">
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-green-50 dark:bg-green-950/40">
+          <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-4">MEI vs Autônomo</h3>
+          <ul className="space-y-2 text-green-900 dark:text-green-200 text-sm">
             <li>• MEI: 5% com CNPJ (até R$ 85k/ano)</li>
             <li>• Autônomo: 11-20% sem CNPJ</li>
             <li>• MEI tem mais benefícios acessórios</li>
@@ -307,13 +307,13 @@ export default function INSSAutonomoCalculator() {
         contextMessage="Autônomo pensando em virar MEI? Receba orçamento de contadores e veja qual regime vale mais a pena para você."
       />
 
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-        <h3 className="text-lg font-bold text-green-900 mb-2">Próximos Passos</h3>
+      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
+        <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-2">Próximos Passos</h3>
         <div className="flex gap-4 flex-wrap text-sm">
-          <a href="/calculadora/das" className="text-blue-600 font-semibold hover:underline">
+          <a href="/calculadora/das" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
             → Calculadora DAS MEI
           </a>
-          <a href="/guias/como-abrir-mei" className="text-blue-600 font-semibold hover:underline">
+          <a href="/guias/como-abrir-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
             → Como Abrir MEI
           </a>
         </div>

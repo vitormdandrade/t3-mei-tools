@@ -8,32 +8,32 @@ export default function MEIPodeSerFuncionario() {
   return (
     <div className="space-y-8 max-w-4xl mx-auto">
       <div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">MEI Pode Ter Funcionário em 2026?</h1>
-        <p className="text-gray-600 text-lg">Regras, limitações e o que você precisa saber antes de contratar.</p>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">MEI Pode Ter Funcionário em 2026?</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg">Regras, limitações e o que você precisa saber antes de contratar.</p>
       </div>
 
-      <section className="bg-green-50 border border-green-200 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 mb-4">Resposta Curta</h2>
-        <p className="text-green-900 text-lg">
+      <section className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Resposta Curta</h2>
+        <p className="text-green-900 dark:text-green-200 text-lg">
           <strong>SIM!</strong> MEI pode ter 1 funcionário. Não pode contratar mais de um.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900">Regras para Contratar Funcionário</h2>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Regras para Contratar Funcionário</h2>
         <div className="space-y-3">
-          <div className="border rounded-lg p-4">
-            <h3 className="font-bold text-gray-900 mb-2">✓ Você Pode:</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700">
+          <div className="border dark:border-gray-700 rounded-lg p-4">
+            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">✓ Você Pode:</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
               <li>Contratar 1 funcionário com registro em CTPS</li>
               <li>Pagar salário compatível com o mercado</li>
               <li>Descontar INSS e IRRF do funcionário</li>
               <li>Pagar encargos sociais e 13º</li>
             </ul>
           </div>
-          <div className="border rounded-lg p-4 bg-red-50">
-            <h3 className="font-bold text-red-900 mb-2">✗ Você NÃO Pode:</h3>
-            <ul className="list-disc list-inside space-y-1 text-red-900">
+          <div className="border dark:border-gray-700 rounded-lg p-4 bg-red-50 dark:bg-red-950/40">
+            <h3 className="font-bold text-red-900 dark:text-red-200 mb-2">✗ Você NÃO Pode:</h3>
+            <ul className="list-disc list-inside space-y-1 text-red-900 dark:text-red-200">
               <li>Contratar 2 ou mais funcionários</li>
               <li>Ter estagiários sem registro</li>
               <li>Ter prestadores de serviço sem nota fiscal</li>
@@ -44,12 +44,12 @@ export default function MEIPodeSerFuncionario() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900">Custos de Contratar um Funcionário</h2>
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-          <p className="text-yellow-900 mb-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Custos de Contratar um Funcionário</h2>
+        <div className="bg-yellow-50 dark:bg-yellow-950/40 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6">
+          <p className="text-yellow-900 dark:text-yellow-200 mb-4">
             Exemplo: Funcionário com salário de R$ 1.500/mês (salário mínimo)
           </p>
-          <div className="space-y-2 text-yellow-900 text-sm">
+          <div className="space-y-2 text-yellow-900 dark:text-yellow-200 text-sm">
             <div className="flex justify-between">
               <span>Salário:</span>
               <strong>R$ 1.500,00</strong>
@@ -62,7 +62,7 @@ export default function MEIPodeSerFuncionario() {
               <span>IRRF (se houver):</span>
               <strong>R$ 0,00 (mínimo)</strong>
             </div>
-            <div className="border-t border-yellow-400 my-2"></div>
+            <div className="border-t border-yellow-400 dark:border-yellow-700 my-2"></div>
             <div className="flex justify-between text-lg">
               <span><strong>Custo Mensal Total:</strong></span>
               <strong>~R$ 1.800-2.000</strong>
@@ -72,8 +72,8 @@ export default function MEIPodeSerFuncionario() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900">Como Contratar Funcionário</h2>
-        <ol className="list-decimal list-inside space-y-3 text-gray-700">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Como Contratar Funcionário</h2>
+        <ol className="list-decimal list-inside space-y-3 text-gray-700 dark:text-gray-300">
           <li><strong>Entrevista e seleção</strong> - Escolha o melhor candidato</li>
           <li><strong>CTPS</strong> - O funcionário precisará levar a Carteira de Trabalho</li>
           <li><strong>Registro na CTPS</strong> - Você registra dados do emprego</li>
@@ -85,12 +85,12 @@ export default function MEIPodeSerFuncionario() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900">O que Acontece se Contratar Mais de 1?</h2>
-        <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-          <p className="text-red-900 mb-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">O que Acontece se Contratar Mais de 1?</h2>
+        <div className="bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 rounded-lg p-6">
+          <p className="text-red-900 dark:text-red-200 mb-4">
             Se você contratar 2 ou mais funcionários, é obrigado a migrar para Microempresa (ME) ou outra modalidade:
           </p>
-          <ul className="list-disc list-inside space-y-2 text-red-900">
+          <ul className="list-disc list-inside space-y-2 text-red-900 dark:text-red-200">
             <li>Você será reclassificado administrativamente</li>
             <li>Terá que cumprir obrigações de ME</li>
             <li>Impostos serão maiores</li>
@@ -100,8 +100,8 @@ export default function MEIPodeSerFuncionario() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900">Alternativas a Contratar</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Alternativas a Contratar</h2>
+        <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
           <li><strong>Pessoa Jurídica (PJ):</strong> Contratar outra empresa ou autônomo sem vinculo</li>
           <li><strong>Terceirizar:</strong> Contratar serviços especializados</li>
           <li><strong>Família:</strong> Pode ser contra-produtivo (risco fiscal)</li>
@@ -109,9 +109,9 @@ export default function MEIPodeSerFuncionario() {
         </ul>
       </section>
 
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 mb-4">Saiba Mais</h2>
-        <a href="/calculadora/mei-vs-me" className="inline-block text-blue-600 font-semibold hover:underline mb-4">
+      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Saiba Mais</h2>
+        <a href="/calculadora/mei-vs-me" className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline mb-4">
           → Comparar MEI vs ME
         </a>
       </div>

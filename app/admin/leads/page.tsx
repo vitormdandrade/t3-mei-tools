@@ -105,8 +105,8 @@ export default function AdminLeadsPage() {
   if (!authenticated) {
     return (
       <div className="max-w-md mx-auto mt-20">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin - Leads</h1>
-        <p className="text-gray-600 mb-6">Digite a senha para acessar os leads capturados.</p>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Admin - Leads</h1>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">Digite a senha para acessar os leads capturados.</p>
 
         <form onSubmit={handleLogin} className="space-y-4">
           <input
@@ -114,11 +114,11 @@ export default function AdminLeadsPage() {
             placeholder="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
             autoFocus
           />
           {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-800">
+            <div className="bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 rounded-lg p-3 text-sm text-red-800 dark:text-red-300">
               {error}
             </div>
           )}
@@ -138,8 +138,8 @@ export default function AdminLeadsPage() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Leads Capturados</h1>
-          <p className="text-gray-600 mt-1">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Leads Capturados</h1>
+          <p className="text-gray-600 dark:text-gray-400 mt-1">
             {leads.length} lead{leads.length !== 1 ? 's' : ''} encontrado
             {leads.length !== 1 ? 's' : ''}
           </p>
@@ -161,13 +161,13 @@ export default function AdminLeadsPage() {
       </div>
 
       {leads.length === 0 ? (
-        <div className="text-center py-16 text-gray-500">
+        <div className="text-center py-16 text-gray-500 dark:text-gray-400">
           Nenhum lead capturado ainda.
         </div>
       ) : (
-        <div className="overflow-x-auto border rounded-lg">
+        <div className="overflow-x-auto border dark:border-gray-700 rounded-lg">
           <table className="w-full text-sm">
-            <thead className="bg-gray-100 border-b">
+            <thead className="bg-gray-100 dark:bg-gray-800 border-b dark:border-gray-700">
               <tr>
                 <th className="px-4 py-3 text-left font-bold">Nome</th>
                 <th className="px-4 py-3 text-left font-bold">E-mail</th>
@@ -181,17 +181,17 @@ export default function AdminLeadsPage() {
             </thead>
             <tbody>
               {leads.map((lead) => (
-                <tr key={lead.id} className="border-b hover:bg-gray-50">
+                <tr key={lead.id} className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
                   <td className="px-4 py-3 font-medium">{lead.name}</td>
                   <td className="px-4 py-3">
                     <button
                       onClick={() => copyToClipboard(lead.email, lead.id)}
-                      className="text-blue-600 hover:underline cursor-pointer"
+                      className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
                       title="Copiar e-mail"
                     >
                       {lead.email}
                       {copiedId === lead.id && (
-                        <span className="ml-1 text-green-600 text-xs">✓</span>
+                        <span className="ml-1 text-green-600 dark:text-green-400 text-xs">✓</span>
                       )}
                     </button>
                   </td>
@@ -201,16 +201,16 @@ export default function AdminLeadsPage() {
                     {lead.cnpj || '-'}
                   </td>
                   <td className="px-4 py-3">
-                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                    <span className="bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-full text-xs">
                       {REVENUE_LABELS[lead.revenue_range || ''] || lead.revenue_range || '-'}
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">
+                    <span className="bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 px-2 py-1 rounded-full text-xs">
                       {SOURCE_LABELS[lead.source] || lead.source}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-xs text-gray-500">
+                  <td className="px-4 py-3 text-xs text-gray-500 dark:text-gray-400">
                     {new Date(lead.created_at).toLocaleDateString('pt-BR', {
                       day: '2-digit',
                       month: '2-digit',
