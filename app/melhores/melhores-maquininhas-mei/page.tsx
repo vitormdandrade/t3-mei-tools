@@ -96,9 +96,9 @@ export default function MelhoresMaquininhas() {
           </p>
         </div>
 
-        <div className="border-2 border-green-400 dark:border-green-700 rounded-lg p-6 bg-green-50 dark:bg-green-950/40">
-          <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-3">Melhor Antecipação</h3>
-          <p className="text-green-900 dark:text-green-200 text-sm">
+        <div className="border-2 border-accent dark:border-accent rounded-lg p-6 bg-surface-alt dark:bg-accent-soft/30">
+          <h3 className="text-lg font-bold text-foreground mb-3">Melhor Antecipação</h3>
+          <p className="text-foreground text-sm">
             <strong>InfinitePay:</strong> Antecipação em 24h com taxa transparente.
           </p>
         </div>
@@ -135,9 +135,9 @@ export default function MelhoresMaquininhas() {
         </div>
       </section>
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Próximos Passos</h2>
-        <ul className="space-y-2 text-green-900 dark:text-green-200">
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Próximos Passos</h2>
+        <ul className="space-y-2 text-foreground">
           <li>✓ <a href="/melhores/melhores-contas-pj-mei" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Ver melhores contas PJ</a></li>
           <li>✓ <a href="/calculadora/das" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Calcular DAS mensal</a></li>
           <li>✓ Escolha a maquininha ideal para seu negócio</li>

@@ -158,7 +158,7 @@ export default function INSSAutonomoCalculator() {
         </div>
 
         {/* Results Section */}
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-950/40 dark:to-blue-950/40 h-fit">
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-accent-soft to-surface-alt dark:from-accent-soft/20 dark:to-surface h-fit">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Sua Contribuição</h2>
 
           <div className="space-y-4">
@@ -169,9 +169,9 @@ export default function INSSAutonomoCalculator() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-green-200 dark:border-green-800">
+            <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-border">
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Contribuição Anual</p>
-              <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+              <p className="text-2xl font-bold text-accent">
                 {formatCurrency(annualInss)}
               </p>
             </div>
@@ -197,43 +197,43 @@ export default function INSSAutonomoCalculator() {
       <div className="border dark:border-gray-700 rounded-lg p-6">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Benefícios Disponíveis - {currentBenefit.name}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaIdade ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
-            <p className={`font-semibold ${currentBenefit.aposentadoriaIdade ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaIdade ? 'border-accent dark:border-accent bg-surface-alt dark:bg-accent-soft/30' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.aposentadoriaIdade ? 'text-foreground' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.aposentadoriaIdade ? '✓' : '✗'} Aposentadoria por Idade
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Aos 62 anos (mulher) ou 65 anos (homem)</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaTempoContribuicao ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
-            <p className={`font-semibold ${currentBenefit.aposentadoriaTempoContribuicao ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.aposentadoriaTempoContribuicao ? 'border-accent dark:border-accent bg-surface-alt dark:bg-accent-soft/30' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.aposentadoriaTempoContribuicao ? 'text-foreground' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.aposentadoriaTempoContribuicao ? '✓' : '✗'} Aposentadoria por Tempo
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Com 30 anos (mulher) ou 35 anos (homem)</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxiliodoenca ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
-            <p className={`font-semibold ${currentBenefit.auxiliodoenca ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxiliodoenca ? 'border-accent dark:border-accent bg-surface-alt dark:bg-accent-soft/30' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.auxiliodoenca ? 'text-foreground' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.auxiliodoenca ? '✓' : '✗'} Auxílio-Doença
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Quando incapacitado para trabalhar</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.salarioMaternidade ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
-            <p className={`font-semibold ${currentBenefit.salarioMaternidade ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.salarioMaternidade ? 'border-accent dark:border-accent bg-surface-alt dark:bg-accent-soft/30' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.salarioMaternidade ? 'text-foreground' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.salarioMaternidade ? '✓' : '✗'} Salário-Maternidade
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Durante gestação e pós-parto</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.pensaoPorMorte ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
-            <p className={`font-semibold ${currentBenefit.pensaoPorMorte ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.pensaoPorMorte ? 'border-accent dark:border-accent bg-surface-alt dark:bg-accent-soft/30' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.pensaoPorMorte ? 'text-foreground' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.pensaoPorMorte ? '✓' : '✗'} Pensão por Morte
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Para dependentes em caso de falecimento</p>
           </div>
 
-          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxilioAcidente ? 'border-green-400 dark:border-green-700 bg-green-50 dark:bg-green-950/40' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
-            <p className={`font-semibold ${currentBenefit.auxilioAcidente ? 'text-green-900 dark:text-green-200' : 'text-red-900 dark:text-red-200'}`}>
+          <div className={`p-4 rounded-lg border-2 ${currentBenefit.auxilioAcidente ? 'border-accent dark:border-accent bg-surface-alt dark:bg-accent-soft/30' : 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/40'}`}>
+            <p className={`font-semibold ${currentBenefit.auxilioAcidente ? 'text-foreground' : 'text-red-900 dark:text-red-200'}`}>
               {currentBenefit.auxilioAcidente ? '✓' : '✗'} Auxílio-Acidente
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Quando reduz capacidade laborativa</p>
@@ -290,9 +290,9 @@ export default function INSSAutonomoCalculator() {
           </ul>
         </div>
 
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-green-50 dark:bg-green-950/40">
-          <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-4">MEI vs Autônomo</h3>
-          <ul className="space-y-2 text-green-900 dark:text-green-200 text-sm">
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-surface-alt dark:bg-accent-soft/30">
+          <h3 className="text-lg font-bold text-foreground mb-4">MEI vs Autônomo</h3>
+          <ul className="space-y-2 text-foreground text-sm">
             <li>• MEI: 5% com CNPJ (até R$ 85k/ano)</li>
             <li>• Autônomo: 11-20% sem CNPJ</li>
             <li>• MEI tem mais benefícios acessórios</li>
@@ -307,8 +307,8 @@ export default function INSSAutonomoCalculator() {
         contextMessage="Autônomo pensando em virar MEI? Receba orçamento de contadores e veja qual regime vale mais a pena para você."
       />
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-2">Próximos Passos</h3>
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h3 className="text-lg font-bold text-foreground mb-2">Próximos Passos</h3>
         <div className="flex gap-4 flex-wrap text-sm">
           <a href="/calculadora/das" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
             → Calculadora DAS MEI

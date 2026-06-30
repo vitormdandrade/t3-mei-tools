@@ -57,9 +57,9 @@ export default function ComoAbrirMEI() {
         </p>
       </div>
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-xl font-bold text-green-900 dark:text-green-200 mb-2">Boas Notícias</h2>
-        <p className="text-green-900 dark:text-green-200">
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-xl font-bold text-foreground mb-2">Boas Notícias</h2>
+        <p className="text-foreground">
           Abrir MEI é totalmente gratuito e leva menos de 10 minutos. Nenhuma taxa, nenhuma burocrácia excessiva.
         </p>
       </div>
@@ -214,9 +214,9 @@ export default function ComoAbrirMEI() {
         </div>
       </section>
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Próximos Passos</h2>
-        <ul className="space-y-2 text-green-900 dark:text-green-200">
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Próximos Passos</h2>
+        <ul className="space-y-2 text-foreground">
           <li>✓ <a href="/calculadora/das" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Calcule seu DAS</a></li>
           <li>✓ <a href="/melhores/melhores-contas-pj-mei" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Abra uma conta PJ</a></li>
           <li>✓ <a href="/guias/das-mei-2026" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Entenda o DAS</a></li>

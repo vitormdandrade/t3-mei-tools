@@ -116,7 +116,7 @@ export default function MeiVsMeCalculator() {
           <thead className="bg-gray-100 dark:bg-gray-800 border-b dark:border-gray-700">
             <tr>
               <th className="px-4 py-3 text-left font-bold text-gray-900 dark:text-gray-100">Aspecto</th>
-              <th className="px-4 py-3 text-center font-bold text-green-600 dark:text-green-400">MEI</th>
+              <th className="px-4 py-3 text-center font-bold text-accent">MEI</th>
               <th className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">Simples Nacional</th>
               <th className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">Microempresa (ME)</th>
             </tr>
@@ -136,13 +136,13 @@ export default function MeiVsMeCalculator() {
             </tr>
             <tr className="border-b dark:border-gray-700">
               <td className="px-4 py-3 font-semibold text-gray-900 dark:text-gray-100">DAS/Impostos Mensais</td>
-              <td className="px-4 py-3 text-center font-bold text-green-600 dark:text-green-400">{formatCurrency(meiMonthlyTotal)}</td>
+              <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(meiMonthlyTotal)}</td>
               <td className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">{formatCurrency(simplesMonthlyTotal)}</td>
               <td className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">{formatCurrency(meMonthlyTotal)}</td>
             </tr>
             <tr className="border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <td className="px-4 py-3 font-semibold text-gray-900 dark:text-gray-100">DAS/Impostos Anuais</td>
-              <td className="px-4 py-3 text-center font-bold text-green-600 dark:text-green-400">{formatCurrency(meiAnnualDas)}</td>
+              <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(meiAnnualDas)}</td>
               <td className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">{formatCurrency(simplesAnnualTax)}</td>
               <td className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">{formatCurrency(meAnnualTax)}</td>
             </tr>
@@ -192,9 +192,9 @@ export default function MeiVsMeCalculator() {
 
       {/* Recommendation */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="border-2 border-green-400 dark:border-green-700 rounded-lg p-6 bg-green-50 dark:bg-green-950/40">
-          <h3 className="text-xl font-bold text-green-900 dark:text-green-200 mb-4">MEI é Ideal Se</h3>
-          <ul className="space-y-2 text-green-900 dark:text-green-200 text-sm">
+        <div className="border-2 border-accent dark:border-accent rounded-lg p-6 bg-surface-alt dark:bg-accent-soft/30">
+          <h3 className="text-xl font-bold text-foreground mb-4">MEI é Ideal Se</h3>
+          <ul className="space-y-2 text-foreground text-sm">
             <li>✓ Você fatura até R$ 85 mil/ano</li>
             <li>✓ Trabalha sozinho ou tem apenas 1 funcionário</li>
             <li>✓ Quer simplicidade e menos burocracia</li>
@@ -231,7 +231,7 @@ export default function MeiVsMeCalculator() {
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Benefícios Sociais</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
           <div>
-            <h4 className="font-bold text-green-600 dark:text-green-400 mb-3">MEI</h4>
+            <h4 className="font-bold text-accent mb-3">MEI</h4>
             <ul className="space-y-1 text-gray-700 dark:text-gray-300">
               <li>✓ Aposentadoria por idade</li>
               <li>✓ Auxílio-doença</li>
@@ -266,9 +266,9 @@ export default function MeiVsMeCalculator() {
         contextMessage="Na dúvida entre MEI, Simples ou ME? Receba orçamento de contadores e tome a melhor decisão para seu negócio."
       />
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-2">Próximos Passos</h3>
-        <p className="text-green-800 dark:text-green-300 mb-4">
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h3 className="text-lg font-bold text-foreground mb-2">Próximos Passos</h3>
+        <p className="text-foreground mb-4">
           Agora que você conhece os regimes, confira:
         </p>
         <div className="flex gap-4 flex-wrap">

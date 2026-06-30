@@ -152,7 +152,7 @@ export default function CalendarioDasPage() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h2 className="text-2xl font-bold mb-1">Baixar no meu calendário</h2>
-            <p className="text-green-100 text-sm">
+            <p className="text-muted-soft text-sm">
               12 eventos para 2026 com lembrete automático 2 dias antes do vencimento.
               Funciona no Google Calendar, Apple Calendar, Outlook e qualquer app que
               abra arquivos .ics.
@@ -161,7 +161,7 @@ export default function CalendarioDasPage() {
           <a
             href="/calendario-das-2026.ics"
             download="calendario-das-mei-2026.ics"
-            className="whitespace-nowrap inline-flex items-center justify-center px-6 py-3 bg-white text-green-700 font-bold rounded-lg hover:bg-green-50 transition-colors shadow-md"
+            className="whitespace-nowrap inline-flex items-center justify-center px-6 py-3 bg-white text-accent font-bold rounded-lg hover:bg-surface-alt transition-colors shadow-md"
           >
             ↓ Baixar .ics
           </a>
@@ -266,11 +266,11 @@ export default function CalendarioDasPage() {
       </section>
 
       {/* Calculator CTA */}
-      <section className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold text-green-900 dark:text-green-200 mb-3">
+      <section className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6 mb-8">
+        <h2 className="text-xl font-bold text-foreground mb-3">
           Quanto pago de DAS em 2026?
         </h2>
-        <p className="text-green-900 dark:text-green-200 text-sm mb-4">
+        <p className="text-foreground text-sm mb-4">
           O valor depende da sua categoria. Em 2026 o DAS mensal fica em
           aproximadamente R$ 76,90 (comércio/indústria) ou R$ 80,90 (serviços),
           usando o salário mínimo vigente.

@@ -99,10 +99,13 @@ export default function LeadCaptureForm({
 
   if (status === 'success') {
     return (
-      <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg p-6 text-white text-center">
+      <div
+        className="rounded-2xl p-8 text-center"
+        style={{ background: 'linear-gradient(135deg, var(--brand-sage) 0%, var(--brand-sage-dark) 100%)', color: '#ffffff' }}
+      >
         <div className="text-4xl mb-3">✅</div>
-        <h3 className="text-xl font-bold mb-2">Solicitação enviada com sucesso!</h3>
-        <p className="text-green-100 text-sm">
+        <h3 className="text-2xl font-bold mb-2">Solicitação enviada com sucesso!</h3>
+        <p className="text-base" style={{ color: 'rgba(255,255,255,0.85)' }}>
           Em breve você receberá orçamentos de contadores especializados em MEI no seu e-mail.
         </p>
       </div>
@@ -110,17 +113,20 @@ export default function LeadCaptureForm({
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-6 text-white">
-      <h3 className="text-xl font-bold mb-2">
+    <div
+      className="rounded-2xl p-6 sm:p-8"
+      style={{ background: 'linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-navy-light) 100%)', color: '#ffffff' }}
+    >
+      <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Merriweather', Georgia, serif" }}>
         📋 Receba orçamento de 3 contadores para seu MEI
       </h3>
-      <p className="text-blue-100 text-sm mb-5">
+      <p className="text-base mb-5" style={{ color: '#c8d2dc' }}>
         Preencha o formulário e receba propostas de contadores verificados.
         Sem compromisso, gratuito.
       </p>
 
       {contextMessage && (
-        <p className="text-blue-200 text-xs mb-4 italic">💡 {contextMessage}</p>
+        <p className="text-sm mb-4 italic" style={{ color: '#a3b1c0' }}>💡 {contextMessage}</p>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-3">
@@ -131,7 +137,7 @@ export default function LeadCaptureForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] placeholder-gray-500 border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           />
           <input
             type="email"
@@ -139,7 +145,7 @@ export default function LeadCaptureForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] placeholder-gray-500 border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           />
         </div>
 
@@ -150,14 +156,14 @@ export default function LeadCaptureForm({
             value={phone}
             onChange={(e) => setPhone(formatPhone(e.target.value))}
             required
-            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] placeholder-gray-500 border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           />
           <input
             type="text"
             placeholder="CNPJ (opcional)"
             value={cnpj}
             onChange={(e) => setCnpj(formatCnpj(e.target.value))}
-            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] placeholder-gray-500 border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           />
         </div>
 
@@ -167,12 +173,12 @@ export default function LeadCaptureForm({
             placeholder="Cidade"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 placeholder-gray-500 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] placeholder-gray-500 border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           />
           <select
             value={revenueRange}
             onChange={(e) => setRevenueRange(e.target.value)}
-            className="w-full px-3 py-2.5 rounded-lg bg-white text-gray-900 border-0 focus:ring-2 focus:ring-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           >
             {REVENUE_RANGES.map((r) => (
               <option key={r.value} value={r.value}>
@@ -191,7 +197,7 @@ export default function LeadCaptureForm({
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="w-full bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold py-3 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+          className="btn-gold btn-block w-full py-3.5 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === 'submitting' ? (
             <span className="flex items-center justify-center gap-2">
@@ -218,7 +224,7 @@ export default function LeadCaptureForm({
           )}
         </button>
 
-        <p className="text-xs text-blue-200 text-center mt-2">
+        <p className="text-xs text-center mt-2" style={{ color: '#a3b1c0' }}>
           Seus dados estão seguros. Não compartilhamos com terceiros sem sua autorização.
         </p>
       </form>

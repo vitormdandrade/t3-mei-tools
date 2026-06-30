@@ -12,10 +12,10 @@ export default function LimiteFaturamentoMEI() {
         <p className="text-gray-600 dark:text-gray-400 text-lg">O limite de R$ 85 mil por ano e quando você precisa mudar de regime.</p>
       </div>
 
-      <section className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-2">O Limite</h2>
-        <p className="text-green-900 dark:text-green-200 text-xl"><strong>R$ 81.000</strong> por ano (2026)</p>
-        <p className="text-green-900 dark:text-green-200 text-sm mt-2">Ou ~R$ 7.083/mês em média</p>
+      <section className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-foreground mb-2">O Limite</h2>
+        <p className="text-foreground text-xl"><strong>R$ 81.000</strong> por ano (2026)</p>
+        <p className="text-foreground text-sm mt-2">Ou ~R$ 7.083/mês em média</p>
       </section>
 
       <section className="space-y-4">
@@ -55,10 +55,10 @@ export default function LimiteFaturamentoMEI() {
                 <td className="border dark:border-gray-700 px-4 py-2 text-center">R$ 81.000</td>
                 <td className="border dark:border-gray-700 px-4 py-2 text-center">~R$ 6.750</td>
               </tr>
-              <tr className="bg-green-50 dark:bg-green-950/40">
+              <tr className="bg-surface-alt dark:bg-accent-soft/30">
                 <td className="border dark:border-gray-700 px-4 py-2">2025-2026</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center text-green-900 dark:text-green-200 font-bold">R$ 81.000</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center text-green-900 dark:text-green-200 font-bold">~R$ 7.083</td>
+                <td className="border dark:border-gray-700 px-4 py-2 text-center text-foreground font-bold">R$ 81.000</td>
+                <td className="border dark:border-gray-700 px-4 py-2 text-center text-foreground font-bold">~R$ 7.083</td>
               </tr>
             </tbody>
           </table>

@@ -4,198 +4,195 @@ export const metadata = {
   alternates: { canonical: '/' },
 };
 
+type Tool = {
+  href: string;
+  icon: string;
+  title: string;
+  desc: string;
+  cta: string;
+};
+
+const taxTools: Tool[] = [
+  { href: '/calculadora/das', icon: '🧾', title: 'Calculadora DAS', desc: 'Calcule o valor mensal do DAS conforme sua atividade e o salário mínimo do ano.', cta: 'Ver calculadora' },
+  { href: '/calculadora/faturamento', icon: '📊', title: 'Limite de Faturamento', desc: 'Acompanhe seu faturamento anual e saiba quando precisa mudar de regime.', cta: 'Ver calculadora' },
+  { href: '/calculadora/mei-vs-me', icon: '⚖️', title: 'MEI vs ME vs Simples', desc: 'Compare impostos, custos e benefícios dos três regimes para o seu negócio.', cta: 'Ver calculadora' },
+  { href: '/calculadora/inss-autonomo', icon: '🛡️', title: 'INSS Autônomo', desc: 'Calcule a contribuição ao INSS como autônomo conforme sua renda mensal.', cta: 'Ver calculadora' },
+];
+
+const financeTools: Tool[] = [
+  { href: '/calculadora/margem-de-lucro', icon: '💹', title: 'Margem de Lucro', desc: 'Quanto de cada real vendido vira lucro real depois dos custos.', cta: 'Ver calculadora' },
+  { href: '/calculadora/preco-por-hora', icon: '⏱️', title: 'Preço por Hora', desc: 'Valor mínimo/hora para freelancers cobrirem salário, DAS e despesas.', cta: 'Ver calculadora' },
+  { href: '/calculadora/ponto-de-equilibrio', icon: '🎯', title: 'Ponto de Equilíbrio', desc: 'Quantas unidades vender por mês para cobrir os custos fixos.', cta: 'Ver calculadora' },
+];
+
+const referenceTools: Tool[] = [
+  { href: '/calculadora/cnae', icon: '🔍', title: 'CNAEs Permitidos para MEI', desc: 'Busque entre centenas de atividades aceitas no MEI com descrição e categoria.', cta: 'Ver CNAEs' },
+  { href: '/calendario-das', icon: '📅', title: 'Calendário DAS 2026', desc: 'Todas as 12 datas de vencimento do ano + arquivo .ics para Google/Apple Calendar.', cta: 'Ver calendário' },
+];
+
+const guides: Tool[] = [
+  { href: '/guias/como-abrir-mei', icon: '🚀', title: 'Como Abrir MEI', desc: 'Passo a passo para registrar seu MEI online e começar legalmente.', cta: 'Ler guia' },
+  { href: '/guias/das-mei-2026', icon: '📑', title: 'DAS 2026', desc: 'Entenda tudo sobre o DAS: valores, prazos e como pagar corretamente.', cta: 'Ler guia' },
+  { href: '/guias/nota-fiscal-mei', icon: '🧾', title: 'Nota Fiscal MEI', desc: 'Quando, como e quando usar nota fiscal no MEI. Regras 2026.', cta: 'Ler guia' },
+];
+
+const comparisons: Tool[] = [
+  { href: '/melhores/melhores-contas-pj-mei', icon: '🏦', title: 'Melhores Contas PJ para MEI', desc: 'Compare as melhores contas bancárias para MEI com transferências, cartões e crédito.', cta: 'Ver comparativo' },
+  { href: '/melhores/melhores-maquininhas-mei', icon: '💳', title: 'Melhores Maquininhas', desc: 'Maquininhas de crédito e débito para MEI com as melhores taxas e suporte.', cta: 'Ver comparativo' },
+];
+
+function ToolCard({ tool }: { tool: Tool }) {
+  return (
+    <a
+      href={tool.href}
+      className="card card-hover no-underline p-6 flex flex-col gap-3 transition-transform duration-200 hover:-translate-y-1"
+    >
+      <span
+        className="inline-flex items-center justify-center w-12 h-12 rounded-xl text-2xl shrink-0"
+        style={{ background: 'var(--color-accent-soft)' }}
+        aria-hidden
+      >
+        {tool.icon}
+      </span>
+      <h3 className="text-subheading" style={{ color: 'var(--color-foreground)' }}>{tool.title}</h3>
+      <p className="text-body flex-grow">{tool.desc}</p>
+      <span className="link-arrow mt-1">{tool.cta} <span aria-hidden>→</span></span>
+    </a>
+  );
+}
+
+const faqs = [
+  { q: 'Qual é o limite de faturamento para MEI em 2026?', a: 'O limite anual é de R$ 81.000 em 2026. Se ultrapassar este valor, você terá que migrar para outro regime.' },
+  { q: 'Como funciona o DAS?', a: 'O DAS é a contribuição mensal que o MEI faz à Prefeitura (ISS ou ICMS) e ao INSS. Varia conforme a categoria da atividade.' },
+  { q: 'MEI pode ter funcionário?', a: 'Sim, MEI pode ter apenas 1 funcionário. Se contratar outro, é obrigado a virar ME.' },
+];
+
 export default function Home() {
   return (
-    <div className="space-y-12">
-      {/* Hero Section */}
-      <section className="text-center py-12 bg-gradient-to-r from-green-50 dark:from-green-950/40 to-blue-50 dark:to-blue-950/40 rounded-lg p-8">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          Ferramentas Gratuitas para MEI e Freelancers
+    <div className="space-y-20">
+      {/* ── Hero ── */}
+      <section
+        className="text-center rounded-3xl px-6 py-16 sm:py-20"
+        style={{ background: 'linear-gradient(160deg, var(--color-accent-soft) 0%, var(--color-surface-alt) 55%, var(--color-background) 100%)' }}
+      >
+        <span className="pill mb-5">🔮 Oráculo do MEI · 100% gratuito</span>
+        <h1 className="text-hero mb-5 max-w-3xl mx-auto">
+          Ferramentas gratuitas para <span className="gradient-text">MEI e Freelancers</span>
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
-          Calcule DAS, faturamento, preços, margens e compare regimes de impostos com precisão
+        <p className="text-body-lg max-w-2xl mx-auto mb-8">
+          Calcule DAS, faturamento, preços, margens e compare regimes de impostos com precisão — sem cadastro, sem limite.
         </p>
-        <div className="flex gap-3 justify-center flex-wrap mb-8 text-sm">
-          <span className="bg-white dark:bg-gray-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-300 px-3 py-1.5 rounded-full font-semibold">
-            ✓ Sem limite de cálculos
-          </span>
-          <span className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 px-3 py-1.5 rounded-full font-semibold">
-            ✓ 100% gratuito, sem cadastro
-          </span>
-          <span className="bg-white dark:bg-gray-900 border border-purple-200 dark:border-purple-800 text-purple-800 dark:text-purple-300 px-3 py-1.5 rounded-full font-semibold">
-            ✓ Cada calculadora com URL própria
-          </span>
+        <div className="flex gap-3 justify-center flex-wrap mb-10">
+          <a href="/calculadora/das" className="btn-primary btn-lg no-underline">Calcular DAS</a>
+          <a href="/calculadora/faturamento" className="btn-secondary btn-lg no-underline">Limite de faturamento</a>
         </div>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <a href="/calculadora/das" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
-            Calcular DAS
-          </a>
-          <a href="/calculadora/faturamento" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">
-            Faturamento Limite
-          </a>
-          <a href="/calculadora/mei-vs-me" className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700">
-            Comparar Regimes
-          </a>
+        <div className="flex gap-2.5 justify-center flex-wrap">
+          <span className="chip">✓ Sem limite de cálculos</span>
+          <span className="chip">✓ 100% gratuito, sem cadastro</span>
+          <span className="chip">✓ Cada calculadora com URL própria</span>
         </div>
       </section>
 
-      {/* Calculators Grid */}
+      {/* ── Calculators ── */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Nossas Calculadoras</h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">7 calculadoras dedicadas — cada uma com sua própria URL, para você achar exatamente o que precisa no Google.</p>
-
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Impostos e regime MEI</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-green-600 dark:text-green-400 mb-2">Calculadora DAS</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">Calcule o valor mensal do DAS conforme sua atividade e o salário mínimo do ano.</p>
-            <a href="/calculadora/das" className="text-green-600 dark:text-green-400 font-semibold hover:underline">Ver calculadora →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Limite de Faturamento</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">Acompanhe seu faturamento anual e saiba quando você precisa mudar de regime.</p>
-            <a href="/calculadora/faturamento" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Ver calculadora →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2">MEI vs ME vs Simples</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">Compare impostos, custos e benefícios dos três regimes para seu negócio.</p>
-            <a href="/calculadora/mei-vs-me" className="text-purple-600 dark:text-purple-400 font-semibold hover:underline">Ver calculadora →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-orange-600 dark:text-orange-400 mb-2">INSS Autônomo</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">Calcule a contribuição ao INSS como autônomo conforme sua renda mensal.</p>
-            <a href="/calculadora/inss-autonomo" className="text-orange-600 dark:text-orange-400 font-semibold hover:underline">Ver calculadora →</a>
-          </div>
+        <div className="mb-8">
+          <span className="text-label">Calculadoras</span>
+          <h2 className="text-heading mt-2 mb-2">Nossas Calculadoras</h2>
+          <p className="text-body-lg max-w-2xl">7 calculadoras dedicadas — cada uma com sua própria URL, para você achar exatamente o que precisa no Google.</p>
         </div>
 
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Gestão financeira do negócio</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-emerald-600 dark:text-emerald-400 mb-2">Margem de Lucro</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Quanto de cada real vendido vira lucro real depois dos custos.</p>
-            <a href="/calculadora/margem-de-lucro" className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline text-sm">Ver calculadora →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-teal-600 dark:text-teal-400 mb-2">Preço por Hora</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Valor mínimo/hora para freelancers cobrirem salário, DAS e despesas.</p>
-            <a href="/calculadora/preco-por-hora" className="text-teal-600 dark:text-teal-400 font-semibold hover:underline text-sm">Ver calculadora →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-indigo-600 dark:text-indigo-400 mb-2">Ponto de Equilíbrio</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Quantas unidades vender por mês para cobrir os custos fixos.</p>
-            <a href="/calculadora/ponto-de-equilibrio" className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline text-sm">Ver calculadora →</a>
-          </div>
+        <h3 className="text-subheading mb-4" style={{ color: 'var(--color-foreground)' }}>Impostos e regime MEI</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+          {taxTools.map((t) => <ToolCard key={t.href} tool={t} />)}
         </div>
 
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">Consulta e referência</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">CNAEs Permitidos para MEI</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Busque entre centenas de atividades aceitas no MEI com descrição e categoria.</p>
-            <a href="/calculadora/cnae" className="text-gray-900 dark:text-gray-100 font-semibold hover:underline text-sm">Ver CNAEs →</a>
-          </div>
+        <h3 className="text-subheading mb-4" style={{ color: 'var(--color-foreground)' }}>Gestão financeira do negócio</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {financeTools.map((t) => <ToolCard key={t.href} tool={t} />)}
+        </div>
 
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Calendário DAS 2026</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Todas as 12 datas de vencimento do ano + arquivo .ics para Google/Apple Calendar.</p>
-            <a href="/calendario-das" className="text-gray-900 dark:text-gray-100 font-semibold hover:underline text-sm">Ver calendário →</a>
-          </div>
+        <h3 className="text-subheading mb-4" style={{ color: 'var(--color-foreground)' }}>Consulta e referência</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {referenceTools.map((t) => <ToolCard key={t.href} tool={t} />)}
         </div>
       </section>
 
-      {/* Guides Section */}
+      {/* ── Guides ── */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Guias Completos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Como Abrir MEI</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">Passo a passo para registrar seu MEI online e começar legalmente.</p>
-            <a href="/guias/como-abrir-mei" className="text-gray-600 dark:text-gray-400 font-semibold hover:text-gray-900 dark:hover:text-gray-100 text-sm mt-4 inline-block">Ler guia →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">DAS 2026</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">Entenda tudo sobre o DAS: valores, prazos e como pagar corretamente.</p>
-            <a href="/guias/das-mei-2026" className="text-gray-600 dark:text-gray-400 font-semibold hover:text-gray-900 dark:hover:text-gray-100 text-sm mt-4 inline-block">Ler guia →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Nota Fiscal MEI</h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">Quando, como e quando usar nota fiscal no MEI. Regras 2026.</p>
-            <a href="/guias/nota-fiscal-mei" className="text-gray-600 dark:text-gray-400 font-semibold hover:text-gray-900 dark:hover:text-gray-100 text-sm mt-4 inline-block">Ler guia →</a>
-          </div>
+        <div className="mb-8">
+          <span className="text-label">Conteúdo</span>
+          <h2 className="text-heading mt-2">Guias Completos</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {guides.map((t) => <ToolCard key={t.href} tool={t} />)}
         </div>
       </section>
 
-      {/* Kit MEI Section */}
+      {/* ── Kit MEI ── */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Kit MEI — Documentos Prontos</h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">Modelos profissionais de contrato, nota fiscal, recibo e termo de responsabilidade em PDF. Preencha e use.</p>
-        <div className="bg-gradient-to-r from-amber-50 dark:from-amber-950/40 to-orange-50 dark:to-orange-950/40 border border-amber-200 dark:border-amber-800 rounded-lg p-8 mb-10">
-          <div className="flex flex-col md:flex-row items-center gap-6">
+        <div
+          className="rounded-3xl p-8 sm:p-10 overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-navy-light) 100%)' }}
+        >
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-                📋 Kit MEI Completo
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
+              <span
+                className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
+                style={{ background: 'var(--brand-gold-soft)', color: 'var(--brand-gold)' }}
+              >
+                📋 Kit MEI — Documentos Prontos
+              </span>
+              <h2 className="text-heading mb-3" style={{ color: '#ffffff' }}>Kit MEI Completo</h2>
+              <p className="text-body-lg mb-6" style={{ color: '#c8d2dc' }}>
                 4 modelos profissionais em PDF: Contrato de Prestação de Serviços, Nota Fiscal (RPA), Recibo de Pagamento e Termo de Responsabilidade.
               </p>
-              <div className="flex items-center gap-4">
-                <span className="text-2xl font-bold text-amber-700 dark:text-amber-300">R$ 29,90</span>
-                <a href="/kit-mei" className="bg-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-amber-700 transition">
-                  Comprar Kit MEI →
-                </a>
+              <div className="flex items-center gap-5 flex-wrap">
+                <span className="text-2xl font-bold" style={{ color: 'var(--brand-gold)' }}>R$ 29,90</span>
+                <a href="/kit-mei" className="btn-gold no-underline inline-flex items-center gap-2">Comprar Kit MEI <span aria-hidden>→</span></a>
               </div>
             </div>
-            <div className="flex gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">📝 Contrato</span>
-              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">🧾 Nota Fiscal</span>
-              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">💰 Recibo</span>
-              <span className="bg-white dark:bg-gray-900 px-3 py-1.5 rounded-full border dark:border-gray-700">✍️ Termo</span>
+            <div className="grid grid-cols-2 gap-2.5 shrink-0">
+              {['📝 Contrato', '🧾 Nota Fiscal', '💰 Recibo', '✍️ Termo'].map((label) => (
+                <span
+                  key={label}
+                  className="px-3.5 py-2 rounded-full text-sm font-medium text-center"
+                  style={{ background: 'rgba(255,255,255,0.08)', color: '#e8ece7', border: '1px solid rgba(255,255,255,0.12)' }}
+                >
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Fintechs Section */}
+      {/* ── Comparisons ── */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Melhores Contas e Soluções PJ</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Melhores Contas PJ para MEI</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">Compare as melhores contas bancárias para MEI com transferências, cartões e crédito.</p>
-            <a href="/melhores/melhores-contas-pj-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Ver comparativo →</a>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Melhores Máquinas de Pagamento</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">Maquininhas de crédito e débito para MEI com as melhores taxas e suporte.</p>
-            <a href="/melhores/melhores-maquininhas-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Ver comparativo →</a>
-          </div>
+        <div className="mb-8">
+          <span className="text-label">Comparativos</span>
+          <h2 className="text-heading mt-2">Melhores Contas e Soluções PJ</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {comparisons.map((t) => <ToolCard key={t.href} tool={t} />)}
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="bg-gray-50 dark:bg-gray-900 rounded-lg p-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Perguntas Frequentes</h2>
+      {/* ── FAQ ── */}
+      <section>
+        <div className="mb-8">
+          <span className="text-label">Dúvidas</span>
+          <h2 className="text-heading mt-2">Perguntas Frequentes</h2>
+        </div>
         <div className="space-y-4">
-          <details className="border dark:border-gray-700 rounded-lg p-4">
-            <summary className="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer">Qual é o limite de faturamento para MEI em 2026?</summary>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">O limite anual é de R$ 81.000 em 2026. Se ultrapassar este valor, você terá que migrar para outro regime.</p>
-          </details>
-          <details className="border dark:border-gray-700 rounded-lg p-4">
-            <summary className="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer">Como funciona o DAS?</summary>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">O DAS é a contribuição mensal que o MEI faz à Prefeitura (ISS ou ICMS) e ao INSS. Varia conforme a categoria da atividade.</p>
-          </details>
-          <details className="border dark:border-gray-700 rounded-lg p-4">
-            <summary className="font-semibold text-gray-900 dark:text-gray-100 cursor-pointer">MEI pode ter funcionário?</summary>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">Sim, MEI pode ter apenas 1 funcionário. Se contratar outro, é obrigado a virar ME.</p>
-          </details>
+          {faqs.map((item) => (
+            <details key={item.q} className="card p-6 group">
+              <summary className="text-subheading cursor-pointer list-none flex items-center justify-between gap-4" style={{ color: 'var(--color-foreground)' }}>
+                {item.q}
+                <span className="link-arrow shrink-0 transition-transform group-open:rotate-45" aria-hidden>+</span>
+              </summary>
+              <p className="text-body mt-3">{item.a}</p>
+            </details>
+          ))}
         </div>
       </section>
     </div>

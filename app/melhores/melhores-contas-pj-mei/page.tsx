@@ -26,25 +26,25 @@ export default function MelhoresContasPJ() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">Melhores Contas PJ para MEI 2026</h1>
-        <p className="text-gray-600 dark:text-gray-400 text-lg">
+        <h1 className="text-hero text-foreground mb-2">Melhores Contas PJ para MEI 2026</h1>
+        <p className="text-body-lg">
           Compare as melhores contas bancárias PJ/MEI do mercado. Taxas, benefícios e comparativo.
         </p>
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <p className="text-sm text-blue-900 dark:text-blue-200">
-          <strong>Dica:</strong> A melhor conta para você depende de suas necessidades. Analise transferências, cartão, antecipação de recebíveis e atendimento.
+      <div className="callout callout-info">
+        <p className="text-body">
+          <strong className="text-foreground">Dica:</strong> A melhor conta para você depende de suas necessidades. Analise transferências, cartão, antecipação de recebíveis e atendimento.
         </p>
       </div>
 
       {/* Sort Controls */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-sm text-gray-500 dark:text-gray-400">Ordenar por:</span>
+        <span className="text-body">Ordenar por:</span>
         <select
           value={sortMode}
           onChange={(e) => setSortMode(e.target.value as SortMode)}
-          className="border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm font-medium bg-white dark:bg-gray-800 dark:text-gray-100 hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition"
+          className="input-field font-medium"
         >
           <option value="default">Padrão</option>
           <option value="rating">⭐ Melhor Avaliados</option>
@@ -151,9 +151,9 @@ export default function MelhoresContasPJ() {
           </p>
         </div>
 
-        <div className="border-2 border-green-400 dark:border-green-700 rounded-lg p-6 bg-green-50 dark:bg-green-950/40">
-          <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-3">Melhor para Crédito</h3>
-          <p className="text-green-900 dark:text-green-200 mb-3">
+        <div className="border-2 border-accent dark:border-accent rounded-lg p-6 bg-surface-alt dark:bg-accent-soft/30">
+          <h3 className="text-lg font-bold text-foreground mb-3">Melhor para Crédito</h3>
+          <p className="text-foreground mb-3">
             <strong>Inter Empresas ou C6 PJ</strong> - Oferecem crédito pré-aprovado e limite automático.
           </p>
         </div>
@@ -197,9 +197,9 @@ export default function MelhoresContasPJ() {
         </div>
       </section>
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Próximos Passos</h2>
-        <ul className="space-y-2 text-green-900 dark:text-green-200">
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Próximos Passos</h2>
+        <ul className="space-y-2 text-foreground">
           <li>✓ <a href="/guias/abrir-conta-pj-mei" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Leia nosso guia de abertura de conta</a></li>
           <li>✓ <a href="/calculadora/das" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Calcule seu DAS mensal</a></li>
           <li>✓ Compare e escolha a melhor opção para seu negócio</li>
@@ -207,11 +207,11 @@ export default function MelhoresContasPJ() {
       </div>
 
       {/* Social Proof Banner */}
-      <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg p-6 text-center">
+      <div className="bg-gradient-to-r from-accent to-accent-secondary text-white rounded-lg p-6 text-center">
         <p className="text-lg font-bold mb-1">
           🔥 Mais de 5.000 MEIs já compararam contas PJ este mês
         </p>
-        <p className="text-green-100 text-sm">
+        <p className="text-muted-soft text-sm">
           Escolha a conta ideal e abra em minutos — sem burocracia e sem tarifa escondida
         </p>
       </div>

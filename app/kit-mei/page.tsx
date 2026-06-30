@@ -75,7 +75,7 @@ export default function KitMEIPage() {
           <p className="text-red-600 dark:text-red-400 mt-3 text-sm">{error}</p>
         )}
         <div className="flex gap-3 justify-center flex-wrap mt-4 text-sm">
-          <span className="bg-white dark:bg-gray-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-300 px-3 py-1 rounded-full">
+          <span className="bg-white dark:bg-gray-900 border border-border text-foreground px-3 py-1 rounded-full">
             🔒 Pagamento seguro via Stripe
           </span>
           <span className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full">

@@ -12,9 +12,9 @@ export default function MEIPodeSerFuncionario() {
         <p className="text-gray-600 dark:text-gray-400 text-lg">Regras, limitações e o que você precisa saber antes de contratar.</p>
       </div>
 
-      <section className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Resposta Curta</h2>
-        <p className="text-green-900 dark:text-green-200 text-lg">
+      <section className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Resposta Curta</h2>
+        <p className="text-foreground text-lg">
           <strong>SIM!</strong> MEI pode ter 1 funcionário. Não pode contratar mais de um.
         </p>
       </section>
@@ -109,8 +109,8 @@ export default function MEIPodeSerFuncionario() {
         </ul>
       </section>
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Saiba Mais</h2>
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Saiba Mais</h2>
         <a href="/calculadora/mei-vs-me" className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline mb-4">
           → Comparar MEI vs ME
         </a>

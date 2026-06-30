@@ -191,7 +191,7 @@ export default function AdminLeadsPage() {
                     >
                       {lead.email}
                       {copiedId === lead.id && (
-                        <span className="ml-1 text-green-600 dark:text-green-400 text-xs">✓</span>
+                        <span className="ml-1 text-accent text-xs">✓</span>
                       )}
                     </button>
                   </td>

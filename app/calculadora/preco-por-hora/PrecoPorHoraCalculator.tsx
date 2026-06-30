@@ -226,8 +226,8 @@ export default function PrecoPorHoraCalculator() {
         </ul>
       </div>
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h3 className="text-base font-bold text-green-900 dark:text-green-200 mb-3">Veja também</h3>
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h3 className="text-base font-bold text-foreground mb-3">Veja também</h3>
         <div className="flex gap-4 flex-wrap">
           <a href="/calculadora/margem-de-lucro" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
             → Calculadora Margem de Lucro

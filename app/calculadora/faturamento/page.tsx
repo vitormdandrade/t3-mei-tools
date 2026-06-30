@@ -72,27 +72,27 @@ export default function RevenueCalculator() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">Calculadora de Faturamento MEI</h1>
-        <p className="text-gray-600 dark:text-gray-400">
+        <h1 className="text-hero mb-2">Calculadora de Faturamento MEI</h1>
+        <p className="text-body-lg">
           Acompanhe seu faturamento anual e saiba se você está próximo do limite MEI.
         </p>
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <p className="text-sm text-blue-900 dark:text-blue-200">
+      <div className="callout callout-info">
+        <p className="text-body">
           <strong>Limite MEI 2026:</strong> R$ 81.000 por ano. Ao ultrapassar, você precisa migrar para Microempresa ou Simples Nacional.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Input Section */}
-        <div className="lg:col-span-2 border dark:border-gray-700 rounded-lg p-6">
+        <div className="lg:col-span-2 card p-6">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Faturamento Mensal</h2>
+            <h2 className="text-heading">Faturamento Mensal</h2>
             <select
               value={year}
               onChange={(e) => setYear(parseInt(e.target.value) as Year)}
-              className="px-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="input-field"
             >
               <option value={2024}>2024</option>
               <option value={2025}>2025</option>
@@ -103,16 +103,16 @@ export default function RevenueCalculator() {
           <div className="space-y-3 max-h-96 overflow-y-auto">
             {monthlyRevenues.map((item, index) => (
               <div key={index} className="flex gap-3 items-center">
-                <label className="w-24 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="w-24 text-base font-semibold text-foreground">
                   {item.month}
                 </label>
                 <div className="flex-1 relative">
-                  <span className="absolute left-3 top-2 text-gray-600 dark:text-gray-400">R$</span>
+                  <span className="absolute left-3 top-2.5 text-muted z-10">R$</span>
                   <input
                     type="number"
                     value={item.amount || ''}
                     onChange={(e) => handleRevenueChange(index, parseFloat(e.target.value) || 0)}
-                    className="w-full pl-9 pr-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="input-field w-full pl-9"
                     placeholder="0,00"
                     min="0"
                     step="100"
@@ -121,7 +121,7 @@ export default function RevenueCalculator() {
                 {monthlyRevenues.length > 1 && (
                   <button
                     onClick={() => removeMonth(index)}
-                    className="text-red-600 dark:text-red-400 hover:text-red-700 font-semibold"
+                    className="text-danger hover:opacity-80 font-semibold"
                   >
                     ✕
                   </button>
@@ -133,7 +133,7 @@ export default function RevenueCalculator() {
           {monthlyRevenues.length < 12 && (
             <button
               onClick={addMonth}
-              className="mt-4 w-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-semibold py-2 rounded-lg hover:bg-blue-200"
+              className="btn-secondary btn-block mt-4"
             >
               + Adicionar Mês
             </button>
@@ -141,13 +141,13 @@ export default function RevenueCalculator() {
         </div>
 
         {/* Summary Section */}
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-950/40 dark:to-blue-950/40 h-fit">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Resumo</h2>
+        <div className="card p-6 h-fit" style={{ background: 'var(--color-surface-alt)' }}>
+          <h2 className="text-heading mb-6">Resumo</h2>
 
           <div className="space-y-4">
-            <div className="bg-white dark:bg-gray-900 rounded-lg p-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Faturado</p>
-              <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+            <div className="result-card">
+              <p className="result-label">Total Faturado</p>
+              <p className="result-value">
                 R$ {total.toLocaleString('pt-BR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
@@ -155,28 +155,30 @@ export default function RevenueCalculator() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-900 rounded-lg p-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Limite MEI {year}</p>
-              <div className="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
+            <div className="result-card">
+              <p className="result-label">Limite MEI {year}</p>
+              <div className="w-full rounded-full h-4 overflow-hidden" style={{ background: 'var(--color-surface-hover)' }}>
                 <div
-                  className={`h-full transition-all ${
-                    percentage <= 90
-                      ? 'bg-green-500'
-                      : percentage <= 100
-                        ? 'bg-yellow-500'
-                        : 'bg-red-500'
-                  }`}
-                  style={{ width: `${Math.min(percentage, 100)}%` }}
+                  className="h-full transition-all"
+                  style={{
+                    width: `${Math.min(percentage, 100)}%`,
+                    background:
+                      percentage <= 90
+                        ? 'var(--color-success)'
+                        : percentage <= 100
+                          ? 'var(--color-warning)'
+                          : 'var(--color-danger)',
+                  }}
                 />
               </div>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
+              <p className="text-caption mt-2">
                 {percentage.toFixed(1)}% do limite
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-900 rounded-lg p-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Ainda pode faturar</p>
-              <p className={`text-2xl font-bold ${remaining > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+            <div className="result-card">
+              <p className="result-label">Ainda pode faturar</p>
+              <p className="result-value" style={remaining > 0 ? undefined : { color: 'var(--color-danger)' }}>
                 R$ {remaining.toLocaleString('pt-BR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
@@ -184,9 +186,9 @@ export default function RevenueCalculator() {
               </p>
             </div>
 
-            <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-3">
-              <p className="text-xs text-gray-600 dark:text-gray-400">Média Mensal</p>
-              <p className="text-lg font-bold text-blue-600 dark:text-blue-400">
+            <div className="callout">
+              <p className="result-label">Média Mensal</p>
+              <p className="text-subheading text-accent">
                 R$ {monthlyAverage.toLocaleString('pt-BR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
@@ -194,9 +196,9 @@ export default function RevenueCalculator() {
               </p>
             </div>
 
-            <div className="bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 rounded-lg p-3">
-              <p className="text-xs text-gray-600 dark:text-gray-400">Projeção Anual</p>
-              <p className={`text-lg font-bold ${yearProjection > annualLimit ? 'text-red-600 dark:text-red-400' : 'text-purple-600 dark:text-purple-400'}`}>
+            <div className="callout">
+              <p className="result-label">Projeção Anual</p>
+              <p className="text-subheading" style={{ color: yearProjection > annualLimit ? 'var(--color-danger)' : 'var(--color-accent)' }}>
                 R$ {yearProjection.toLocaleString('pt-BR', {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2,
@@ -206,8 +208,8 @@ export default function RevenueCalculator() {
           </div>
 
           {yearProjection > annualLimit && (
-            <div className="mt-4 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 rounded-lg p-3">
-              <p className="text-sm text-red-900 dark:text-red-200">
+            <div className="callout callout-terra mt-4">
+              <p className="text-body">
                 <strong>Atenção:</strong> Sua projeção anual ultrapassa o limite de MEI. Considere migrar para outro regime.
               </p>
             </div>
@@ -217,32 +219,32 @@ export default function RevenueCalculator() {
 
       {/* Information Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border dark:border-gray-700 rounded-lg p-6">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Limites Históricos</h3>
-          <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+        <div className="card p-6">
+          <h3 className="text-subheading mb-4">Limites Históricos</h3>
+          <div className="space-y-2 text-body">
             {meiLimits.limits.map((limit) => (
               <div key={limit.year} className="flex justify-between">
                 <span>{limit.year}:</span>
-                <strong>R$ {limit.meiAnnualLimit.toLocaleString('pt-BR')}</strong>
+                <strong className="text-foreground">R$ {limit.meiAnnualLimit.toLocaleString('pt-BR')}</strong>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="border dark:border-gray-700 rounded-lg p-6">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">O que Fazer?</h3>
-          <div className="space-y-2 text-sm">
+        <div className="card p-6">
+          <h3 className="text-subheading mb-4">O que Fazer?</h3>
+          <div className="space-y-3">
             <div>
-              <p className="font-semibold text-green-600 dark:text-green-400">Até 80% do limite:</p>
-              <p className="text-gray-600 dark:text-gray-400">Continue como MEI normalmente</p>
+              <p className="font-semibold text-accent">Até 80% do limite:</p>
+              <p className="text-body">Continue como MEI normalmente</p>
             </div>
             <div>
-              <p className="font-semibold text-yellow-600 dark:text-yellow-400">80-100% do limite:</p>
-              <p className="text-gray-600 dark:text-gray-400">Comece a planejar a migração</p>
+              <p className="font-semibold text-warning">80-100% do limite:</p>
+              <p className="text-body">Comece a planejar a migração</p>
             </div>
             <div>
-              <p className="font-semibold text-red-600 dark:text-red-400">Acima do limite:</p>
-              <p className="text-gray-600 dark:text-gray-400">Você é obrigado a migrar legalmente</p>
+              <p className="font-semibold text-danger">Acima do limite:</p>
+              <p className="text-body">Você é obrigado a migrar legalmente</p>
             </div>
           </div>
         </div>
@@ -258,30 +260,33 @@ export default function RevenueCalculator() {
 
       {/* Affiliate CTA — when user is engaged with their MEI finances */}
       {total > 0 && (
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-6 text-white">
-          <h3 className="text-lg font-bold mb-2">💰 Abra sua Conta PJ Gratuita</h3>
-          <p className="text-blue-100 text-sm mb-4">
+        <div
+          className="rounded-3xl p-6"
+          style={{ background: 'linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light))' }}
+        >
+          <h3 className="text-subheading mb-2" style={{ color: '#ffffff' }}>💰 Abra sua Conta PJ Gratuita</h3>
+          <p className="text-body mb-4" style={{ color: '#c8d2dc' }}>
             Gerencie seu faturamento MEI com uma conta digital gratuita. Sem tarifas, com emissão de boletos e integração com contabilidade.
           </p>
           <AffiliateCta
             href="#"
             partner="contas-pj"
             page="calculadora-faturamento"
-            className="inline-block bg-white text-blue-700 font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition"
+            className="btn-light no-underline inline-flex items-center gap-2"
           >
             Ver Melhores Contas PJ →
           </AffiliateCta>
         </div>
       )}
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h3 className="text-lg font-bold text-green-900 dark:text-green-200 mb-2">Saiba Mais</h3>
-        <div className="flex gap-4 flex-wrap text-sm">
-          <a href="/guias/limite-faturamento-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
-            → Guia: Limite de Faturamento
+      <div className="callout callout-accent">
+        <h3 className="callout-title">Saiba Mais</h3>
+        <div className="flex gap-4 flex-wrap">
+          <a href="/guias/limite-faturamento-mei" className="link-arrow no-underline">
+            <span aria-hidden>→</span> Guia: Limite de Faturamento
           </a>
-          <a href="/calculadora/mei-vs-me" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
-            → Comparar MEI vs ME
+          <a href="/calculadora/mei-vs-me" className="link-arrow no-underline">
+            <span aria-hidden>→</span> Comparar MEI vs ME
           </a>
         </div>
       </div>

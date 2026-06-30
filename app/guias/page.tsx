@@ -51,10 +51,11 @@ export default function GuidesPage() {
   ];
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">Guias Completos para MEI</h1>
-        <p className="text-gray-600 dark:text-gray-400 text-lg">
+        <span className="text-label">Conteúdo</span>
+        <h1 className="text-hero mt-2 mb-3">Guias Completos para MEI</h1>
+        <p className="text-body-lg max-w-2xl">
           Aprenda tudo que você precisa saber sobre ser MEI ou freelancer no Brasil.
         </p>
       </div>
@@ -64,32 +65,30 @@ export default function GuidesPage() {
           <a
             key={guide.slug}
             href={`/guias/${guide.slug}`}
-            className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition hover:border-blue-400"
+            className="card card-hover no-underline p-6 flex flex-col gap-3 transition-transform duration-200 hover:-translate-y-1"
           >
-            <div className="mb-3">
-              <span className="inline-block bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">
-                {guide.category}
-              </span>
+            <div>
+              <span className="pill">{guide.category}</span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{guide.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">{guide.excerpt}</p>
-            <span className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Ler guia →</span>
+            <h3 className="text-subheading" style={{ color: 'var(--color-foreground)' }}>{guide.title}</h3>
+            <p className="text-body flex-grow">{guide.excerpt}</p>
+            <span className="link-arrow mt-1">Ler guia <span aria-hidden>→</span></span>
           </a>
         ))}
       </div>
 
       {/* Kit MEI CTA */}
-      <div className="bg-gradient-to-r from-amber-50 dark:from-amber-950/40 to-orange-50 dark:to-orange-950/40 border border-amber-200 dark:border-amber-800 rounded-lg p-8 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+      <div
+        className="rounded-3xl p-8 sm:p-10 text-center overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-navy-light) 100%)' }}
+      >
+        <h2 className="text-heading mb-2" style={{ color: '#ffffff' }}>
           📋 Kit MEI — Documentos Prontos para Usar
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        <p className="text-body-lg mb-6 max-w-2xl mx-auto" style={{ color: '#c8d2dc' }}>
           4 modelos profissionais em PDF: Contrato, Nota Fiscal, Recibo e Termo de Responsabilidade.
         </p>
-        <a
-          href="/kit-mei"
-          className="inline-block bg-amber-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-amber-700 transition"
-        >
+        <a href="/kit-mei" className="btn-gold btn-lg no-underline inline-flex items-center gap-2">
           Comprar por R$ 29,90
         </a>
       </div>

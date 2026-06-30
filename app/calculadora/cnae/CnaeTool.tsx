@@ -30,9 +30,9 @@ export default function CnaeTool() {
     <>
       {/* Summary cards */}
       <div className="grid grid-cols-3 gap-4 mb-8">
-        <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-green-700 dark:text-green-300">{cnaes.length}</div>
-          <div className="text-sm text-green-600 dark:text-green-400">CNAEs permitidos</div>
+        <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-4 text-center">
+          <div className="text-2xl font-bold text-accent">{cnaes.length}</div>
+          <div className="text-sm text-accent">CNAEs permitidos</div>
         </div>
         <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">
@@ -103,7 +103,7 @@ export default function CnaeTool() {
                     {categoryLabel[cnae.category]}
                   </span>
                   {cnae.popular && (
-                    <span className="text-xs px-2 py-0.5 rounded font-medium bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300">
+                    <span className="text-xs px-2 py-0.5 rounded font-medium bg-accent-soft text-accent">
                       Popular
                     </span>
                   )}

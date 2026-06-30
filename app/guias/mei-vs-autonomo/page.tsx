@@ -139,9 +139,9 @@ export default function MEIVsAutonomo() {
       <section className="space-y-4">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Quando Escolher Cada Um</h2>
         <div className="space-y-3">
-          <div className="border dark:border-gray-700 rounded-lg p-4 bg-green-50 dark:bg-green-950/40">
-            <h3 className="font-bold text-green-900 dark:text-green-200 mb-2">Escolha MEI se:</h3>
-            <ul className="list-disc list-inside space-y-1 text-green-900 dark:text-green-200 text-sm">
+          <div className="border dark:border-gray-700 rounded-lg p-4 bg-surface-alt dark:bg-accent-soft/30">
+            <h3 className="font-bold text-foreground mb-2">Escolha MEI se:</h3>
+            <ul className="list-disc list-inside space-y-1 text-foreground text-sm">
               <li>Você quer formalidade e CNPJ</li>
               <li>Precisa de crédito ou parcelamentos</li>
               <li>Vai faturar até R$ 85k/ano</li>
@@ -162,8 +162,8 @@ export default function MEIVsAutonomo() {
         </div>
       </section>
 
-      <div className="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-4">Próximo Passo</h2>
+      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-foreground mb-4">Próximo Passo</h2>
         <a href="/calculadora/das" className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
           Calcular DAS MEI
         </a>
