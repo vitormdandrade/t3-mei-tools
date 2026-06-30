@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MEI Tools - Calculadoras e Guias para Microempreendedores",
@@ -42,22 +39,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} min-h-full flex flex-col antialiased`}>
-        <header className="bg-gradient-to-r from-green-600 to-blue-600 text-white">
-          <nav className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+      <head>
+        {/* Site-specific accent: Emerald — financial trust */}
+        <style>{`
+          :root {
+            --site-accent: #0a6e4e;
+            --site-accent-hover: #065f3a;
+            --site-accent-soft: #e6f4ec;
+            --site-accent-dark: #22c55e;
+            --site-accent-hover-dark: #4ade80;
+            --site-accent-soft-dark: rgba(34, 197, 94, 0.12);
+          }
+        `}</style>
+      </head>
+      <body className="min-h-screen flex flex-col antialiased">
+        {/* Header */}
+        <header className="sticky top-0 z-50 border-b" style={{
+          background: 'var(--color-background)',
+          borderColor: 'var(--color-border)',
+          boxShadow: 'var(--shadow-ring)',
+        }}>
+          <nav className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center">
-              <a href="/" className="flex items-center gap-2 text-2xl font-bold">
-                <img src="/logo-white.svg" alt="MEI Tools" className="h-8 w-auto" />
+              <a href="/" className="flex items-center gap-2 text-lg font-semibold no-underline" style={{ color: 'var(--color-foreground)', letterSpacing: '-0.02em' }}>
+                <img src="/logo-white.svg" alt="MEI Tools" className="h-7 w-auto" />
               </a>
-              <ul className="flex gap-6">
-                <li><a href="/calculadora/das" className="hover:opacity-80">DAS</a></li>
-                <li><a href="/calculadora/faturamento" className="hover:opacity-80">Faturamento</a></li>
-                <li><a href="/calculadora/preco-por-hora" className="hover:opacity-80">Preço/Hora</a></li>
-                <li><a href="/calculadora/margem-de-lucro" className="hover:opacity-80">Margem</a></li>
-                <li><a href="/calculadora/mei-vs-me" className="hover:opacity-80">MEI vs ME</a></li>
-                <li><a href="/calculadora/cnae" className="hover:opacity-80">CNAEs</a></li>
-                <li><a href="/guias" className="hover:opacity-80">Guias</a></li>
-                <li><a href="/kit-mei" className="bg-amber-500 text-white px-3 py-1 rounded-full font-semibold hover:bg-amber-600 transition text-sm">Kit MEI</a></li>
+              <ul className="flex gap-5 items-center text-sm font-medium">
+                <li><a href="/calculadora/das" className="no-underline hover:opacity-70 transition-opacity" style={{ color: 'var(--color-muted)' }}>DAS</a></li>
+                <li><a href="/calculadora/faturamento" className="no-underline hover:opacity-70 transition-opacity" style={{ color: 'var(--color-muted)' }}>Faturamento</a></li>
+                <li><a href="/calculadora/preco-por-hora" className="no-underline hover:opacity-70 transition-opacity" style={{ color: 'var(--color-muted)' }}>Preço/Hora</a></li>
+                <li><a href="/calculadora/margem-de-lucro" className="no-underline hover:opacity-70 transition-opacity" style={{ color: 'var(--color-muted)' }}>Margem</a></li>
+                <li><a href="/calculadora/mei-vs-me" className="no-underline hover:opacity-70 transition-opacity" style={{ color: 'var(--color-muted)' }}>MEI vs ME</a></li>
+                <li><a href="/calculadora/cnae" className="no-underline hover:opacity-70 transition-opacity" style={{ color: 'var(--color-muted)' }}>CNAEs</a></li>
+                <li><a href="/guias" className="no-underline hover:opacity-70 transition-opacity" style={{ color: 'var(--color-muted)' }}>Guias</a></li>
+                <li><a href="/kit-mei" className="pill no-underline font-semibold">Kit MEI</a></li>
               </ul>
             </div>
           </nav>
@@ -67,80 +82,59 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="bg-gray-900 text-gray-300 mt-16">
-          <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        {/* Footer */}
+        <footer style={{ background: 'var(--color-foreground)', color: 'var(--color-muted-soft)' }}>
+          <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
               <div>
-                <h3 className="text-white font-bold mb-4">Calculadoras</h3>
-                <ul className="space-y-2">
-                  <li><a href="/calculadora/das" className="hover:text-white">DAS</a></li>
-                  <li><a href="/calculadora/faturamento" className="hover:text-white">Faturamento</a></li>
-                  <li><a href="/calculadora/preco-por-hora" className="hover:text-white">Preço por Hora</a></li>
-                  <li><a href="/calculadora/margem-de-lucro" className="hover:text-white">Margem de Lucro</a></li>
-                  <li><a href="/calculadora/ponto-de-equilibrio" className="hover:text-white">Ponto de Equilíbrio</a></li>
-                  <li><a href="/calculadora/mei-vs-me" className="hover:text-white">MEI vs ME</a></li>
-                  <li><a href="/calculadora/inss-autonomo" className="hover:text-white">INSS Autônomo</a></li>
-                  <li><a href="/calculadora/cnae" className="hover:text-white">CNAEs Permitidos</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-bold mb-4">Guias</h3>
-                <ul className="space-y-2">
-                  <li><a href="/guias/como-abrir-mei" className="hover:text-white">Como Abrir MEI</a></li>
-                  <li><a href="/guias/das-mei-2026" className="hover:text-white">DAS 2026</a></li>
-                  <li><a href="/calendario-das" className="hover:text-white">Calendário DAS 2026</a></li>
-                  <li><a href="/guias/nota-fiscal-mei" className="hover:text-white">Nota Fiscal</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-bold mb-4">Melhores Contas</h3>
-                <ul className="space-y-2">
-                  <li><a href="/melhores/melhores-contas-pj-mei" className="hover:text-white">Contas PJ</a></li>
-                  <li><a href="/melhores/melhores-maquininhas-mei" className="hover:text-white">Maquininhas</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-bold mb-4">Recursos Parceiros</h3>
+                <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: 'var(--color-background)' }}>Calculadoras</h3>
                 <ul className="space-y-2 text-sm">
+                  <li><a href="/calculadora/das" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>DAS</a></li>
+                  <li><a href="/calculadora/faturamento" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Faturamento</a></li>
+                  <li><a href="/calculadora/preco-por-hora" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Preço por Hora</a></li>
+                  <li><a href="/calculadora/margem-de-lucro" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Margem de Lucro</a></li>
+                  <li><a href="/calculadora/ponto-de-equilibrio" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Ponto de Equilíbrio</a></li>
+                  <li><a href="/calculadora/mei-vs-me" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>MEI vs ME</a></li>
+                  <li><a href="/calculadora/inss-autonomo" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>INSS Autônomo</a></li>
+                  <li><a href="/calculadora/cnae" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>CNAEs Permitidos</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: 'var(--color-background)' }}>Guias</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/guias/como-abrir-mei" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Como Abrir MEI</a></li>
+                  <li><a href="/guias/das-mei-2026" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>DAS 2026</a></li>
+                  <li><a href="/calendario-das" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Calendário DAS 2026</a></li>
+                  <li><a href="/guias/nota-fiscal-mei" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Nota Fiscal</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: 'var(--color-background)' }}>Melhores Contas</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/melhores/melhores-contas-pj-mei" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Contas PJ</a></li>
+                  <li><a href="/melhores/melhores-maquininhas-mei" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Maquininhas</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: 'var(--color-background)' }}>Recursos Parceiros</h3>
+                <ul className="space-y-3 text-sm">
                   <li>
-                    <a href="/kit-mei" className="text-amber-400 font-semibold hover:text-amber-300">
-                      📋 Kit MEI — Documentos
-                    </a>
-                    <p className="text-xs text-gray-500 mt-0.5">
-                      4 modelos profissionais em PDF por R$ 29,90
-                    </p>
+                    <a href="/kit-mei" className="font-semibold no-underline" style={{ color: 'var(--color-accent)' }}>📋 Kit MEI — Documentos</a>
+                    <p className="text-xs mt-0.5" style={{ color: 'var(--color-muted-soft)' }}>4 modelos profissionais em PDF por R$ 29,90</p>
                   </li>
                   <li>
-                    <a
-                      href="https://compararsaas.com.br"
-                      rel="noopener"
-                      className="hover:text-white"
-                    >
-                      Comparador SaaS Brasil
-                    </a>
-                    <p className="text-xs text-gray-500 mt-0.5">
-                      Softwares para MEI e pequena empresa
-                    </p>
+                    <a href="https://compararsaas.com.br" rel="noopener" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Comparador SaaS Brasil</a>
+                    <p className="text-xs mt-0.5" style={{ color: 'var(--color-muted-soft)' }}>Softwares para MEI e pequena empresa</p>
                   </li>
                   <li>
-                    <a
-                      href="https://calculaseguro.com.br"
-                      rel="noopener"
-                      className="hover:text-white"
-                    >
-                      Calcula Seguro
-                    </a>
-                    <p className="text-xs text-gray-500 mt-0.5">
-                      Simuladores de seguro por estado
-                    </p>
+                    <a href="https://calculaseguro.com.br" rel="noopener" className="no-underline hover:opacity-80 transition-opacity" style={{ color: 'var(--color-muted-soft)' }}>Calcula Seguro</a>
+                    <p className="text-xs mt-0.5" style={{ color: 'var(--color-muted-soft)' }}>Simuladores de seguro por estado</p>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="border-t border-gray-800 pt-8">
-              <p className="text-center text-gray-400 text-sm">
-                © 2026 MEI Tools. Informações educacionais. Consulte um profissional para recomendações específicas.
-              </p>
+            <div className="pt-8 text-center text-xs" style={{ borderTop: '1px solid var(--color-border-strong)' }}>
+              <p>© 2026 MEI Tools. Informações educacionais. Consulte um profissional para recomendações específicas.</p>
             </div>
           </div>
         </footer>
