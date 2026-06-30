@@ -222,6 +222,51 @@ export default function DASCalculator() {
           </a>
         </div>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'O que é o DAS MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'É a contribuição mensal que todo MEI precisa pagar. Inclui INSS (5% do salário mínimo), ICMS (se comércio) e ISS (se serviços).',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quando vence o DAS MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O DAS vence no dia 20 do mês seguinte ao mês de referência. Se o dia 20 cair em sábado, domingo ou feriado nacional, o vencimento vai para o próximo dia útil.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Como pagar o DAS MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Pode ser pago via Pix, boleto, cartão ou débito automático pelo Portal do Simples Nacional.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'O que acontece se eu não pagar o DAS?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O atraso no pagamento gera multa e juros. Além disso, o MEI pode perder benefícios previdenciários como aposentadoria e auxílio-doença se ficar muitos meses sem pagar.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
