@@ -72,26 +72,43 @@
 /* ── Dark Mode ── */
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Brand overrides — must match light-mode naming for utilities that reference --brand-* directly */
+    --brand-sage: #52b788;
+    --brand-sage-dark: #40916c;
+    --brand-sage-light: #6ee7b7;
+    --brand-sage-soft: rgba(82, 183, 136, 0.15);
+    --brand-cream: #0f1a14;
+    --brand-cream-warm: #1a2d1f;
+    --brand-terra: #e8a890;
+    --brand-terra-dark: #f4c2b0;
+    --brand-navy: #c8d2dc;
+    --brand-navy-light: #8899aa;
+    --brand-gold: #fbbf24;
+    --brand-gold-soft: rgba(251, 191, 36, 0.15);
+
+    /* Header */
+    --header-bg: rgba(15, 26, 20, 0.95);
+
     --color-background: #0f1a14;
     --color-foreground: #e8ece7;
-    --color-muted: #8a9e95;
-    --color-muted-soft: #647a70;
+    --color-muted: #9ab0a8;
+    --color-muted-soft: #8a9e95;
     --color-border: #1e3528;
     --color-border-strong: #2a4a38;
     --color-surface: #162418;
     --color-surface-alt: #1a2d1f;
     --color-surface-hover: #1f3526;
-    --color-accent: #40916c;
-    --color-accent-hover: #52b788;
-    --color-accent-soft: rgba(64, 145, 108, 0.15);
-    --color-accent-secondary: #d68c72;
-    --color-accent-secondary-hover: #e8a890;
+    --color-accent: #52b788;
+    --color-accent-hover: #6ee7b7;
+    --color-accent-soft: rgba(82, 183, 136, 0.15);
+    --color-accent-secondary: #e8a890;
+    --color-accent-secondary-hover: #f4c2b0;
     --color-success: #52b788;
     --color-success-soft: rgba(82, 183, 136, 0.15);
     --color-danger: #ef4444;
     --color-danger-soft: rgba(239, 68, 68, 0.15);
-    --color-warning: #f59e0b;
-    --color-warning-soft: rgba(245, 158, 11, 0.15);
+    --color-warning: #fbbf24;
+    --color-warning-soft: rgba(251, 191, 36, 0.15);
     --color-highlight: #fbbf24;
     --color-highlight-soft: rgba(251, 191, 36, 0.15);
     --shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -100,8 +117,8 @@
     --shadow-xl: 0px 16px 40px rgba(0, 0, 0, 0.5);
     --shadow-card: var(--shadow-sm);
     --shadow-card-hover: var(--shadow-md);
-    --shadow-button: 0px 2px 12px rgba(64, 145, 108, 0.3);
-    --shadow-focus: 0px 0px 0px 3px rgba(64, 145, 108, 0.35);
+    --shadow-button: 0px 2px 12px rgba(82, 183, 136, 0.3);
+    --shadow-focus: 0px 0px 0px 3px rgba(82, 183, 136, 0.35);
   }
 }
 
@@ -146,11 +163,17 @@ body {
 /* ── Typography Utilities ── */
 @utility text-hero {
   font-family: 'Merriweather', 'Georgia', serif;
-  font-size: 2.75rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--brand-navy);
+  color: var(--color-foreground);
+}
+@media (min-width: 640px) {
+  .text-hero { font-size: 2.25rem; }
+}
+@media (min-width: 1024px) {
+  .text-hero { font-size: 2.75rem; }
 }
 @utility text-heading {
   font-family: 'Merriweather', 'Georgia', serif;
@@ -194,11 +217,17 @@ body {
 }
 @utility text-stat {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--brand-sage);
+  color: var(--color-accent);
+}
+@media (min-width: 640px) {
+  .text-stat { font-size: 2rem; }
+}
+@media (min-width: 1024px) {
+  .text-stat { font-size: 2.25rem; }
 }
 
 /* ── Components ── */
@@ -221,7 +250,7 @@ body {
 }
 
 @utility btn-primary {
-  background: linear-gradient(135deg, var(--brand-sage) 0%, var(--brand-sage-dark) 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
   color: #ffffff;
   font-weight: 600;
   font-size: 0.9375rem;
@@ -234,12 +263,12 @@ body {
 }
 @utility btn-secondary {
   background: var(--color-surface);
-  color: var(--brand-sage);
+  color: var(--color-accent);
   font-weight: 600;
   font-size: 0.9375rem;
   padding: 0.75rem 1.75rem;
   border-radius: var(--radius-full);
-  border: 2px solid var(--brand-sage);
+  border: 2px solid var(--color-accent);
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -286,7 +315,7 @@ body {
   margin: 2rem 0;
 }
 @utility gradient-text {
-  background: linear-gradient(135deg, var(--brand-sage) 0%, var(--brand-terra) 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -326,12 +355,12 @@ body {
 
 /* ── Links ── */
 a {
-  color: var(--brand-sage);
+  color: var(--color-accent);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 a:hover {
-  color: var(--brand-sage-dark);
+  color: var(--color-accent-hover);
 }
 
 /* ── Focus ── */

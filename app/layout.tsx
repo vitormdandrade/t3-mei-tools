@@ -47,26 +47,26 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased">
         {/* ── Header ── */}
         <header className="sticky top-0 z-50" style={{
-          background: 'rgba(254, 252, 245, 0.92)',
+          background: 'var(--header-bg, rgba(254, 252, 245, 0.92))',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
           borderBottom: '1px solid var(--color-border)',
         }}>
           <nav className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center">
-              <a href="/" className="flex items-center gap-2.5 no-underline">
+            <div className="flex justify-between items-center flex-wrap gap-y-3">
+              <a href="/" className="flex items-center gap-2.5 no-underline shrink-0">
                 <span className="text-2xl">🔮</span>
-                <span className="text-xl font-bold tracking-tight" style={{ color: 'var(--brand-navy)', fontFamily: "'Inter', system-ui, sans-serif" }}>
+                <span className="text-xl font-bold tracking-tight" style={{ color: 'var(--color-foreground)', fontFamily: "'Inter', system-ui, sans-serif" }}>
                   Oráculo do MEI
                 </span>
               </a>
-              <ul className="hidden md:flex gap-1 items-center text-sm font-medium" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-                <li><a href="/calculadora/das" className="btn-ghost no-underline text-sm">DAS</a></li>
-                <li><a href="/calculadora/faturamento" className="btn-ghost no-underline text-sm">Faturamento</a></li>
-                <li><a href="/calculadora/preco-por-hora" className="btn-ghost no-underline text-sm">Preço/Hora</a></li>
-                <li><a href="/calculadora/margem-de-lucro" className="btn-ghost no-underline text-sm">Margem</a></li>
-                <li><a href="/guias" className="btn-ghost no-underline text-sm">Guias</a></li>
-                <li className="ml-2">
+              <ul className="flex flex-wrap gap-1 items-center text-sm font-medium" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+                <li><a href="/calculadora/das" className="btn-ghost no-underline text-sm py-1.5 px-2.5">DAS</a></li>
+                <li><a href="/calculadora/faturamento" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Faturamento</a></li>
+                <li><a href="/calculadora/preco-por-hora" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Preço/Hora</a></li>
+                <li><a href="/calculadora/margem-de-lucro" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Margem</a></li>
+                <li><a href="/guias" className="btn-ghost no-underline text-sm py-1.5 px-2.5">Guias</a></li>
+                <li>
                   <a href="/kit-mei" className="btn-primary no-underline text-sm py-2 px-4 inline-flex items-center gap-1">
                     📋 Kit MEI
                   </a>
@@ -77,7 +77,7 @@ export default function RootLayout({
         </header>
 
         {/* ── Main ── */}
-        <main className="flex-grow">
+        <main className="flex-grow" style={{ scrollPaddingTop: '80px' }}>
           {children}
         </main>
 
