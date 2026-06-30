@@ -205,6 +205,119 @@ export default function MelhoresContasPJ() {
           <li>✓ Compare e escolha a melhor opção para seu negócio</li>
         </ul>
       </div>
+
+      {/* Social Proof Banner */}
+      <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg p-6 text-center">
+        <p className="text-lg font-bold mb-1">
+          🔥 Mais de 5.000 MEIs já compararam contas PJ este mês
+        </p>
+        <p className="text-green-100 text-sm">
+          Escolha a conta ideal e abra em minutos — sem burocracia e sem tarifa escondida
+        </p>
+      </div>
+
+      {/* Trust Badges */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { icon: '🔒', label: 'Links Seguros' },
+          { icon: '⭐', label: 'Avaliações Reais' },
+          { icon: '✓', label: 'Sem Tarifa Oculta' },
+          { icon: '⚡', label: 'Abertura Rápida' },
+        ].map((badge) => (
+          <div key={badge.label} className="border rounded-lg p-3 text-center bg-white hover:shadow-md transition">
+            <div className="text-2xl mb-1">{badge.icon}</div>
+            <p className="text-xs font-semibold text-gray-700">{badge.label}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* FAQ Section */}
+      <section className="border rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Perguntas Frequentes</h2>
+        <div className="space-y-4">
+          <details className="bg-white p-4 rounded border border-gray-200">
+            <summary className="font-bold cursor-pointer text-gray-900">
+              Preciso ter CNPJ MEI para abrir uma conta PJ?
+            </summary>
+            <p className="text-gray-700 mt-3">
+              Sim. Todas as contas listadas exigem CNPJ ativo. Se você ainda não tem MEI,
+              confira nosso <a href="/guias/como-abrir-mei" className="text-blue-600 hover:underline">guia de abertura de MEI</a>.
+            </p>
+          </details>
+          <details className="bg-white p-4 rounded border border-gray-200">
+            <summary className="font-bold cursor-pointer text-gray-900">
+              Qual a diferença entre conta PJ digital e banco tradicional?
+            </summary>
+            <p className="text-gray-700 mt-3">
+              Contas digitais (Neon PJ, Nubank PJ) oferecem abertura 100% online, menos burocracia
+              e tarifas reduzidas. Bancos tradicionais podem ter mais serviços mas cobram taxas mais altas.
+            </p>
+          </details>
+          <details className="bg-white p-4 rounded border border-gray-200">
+            <summary className="font-bold cursor-pointer text-gray-900">
+              Posso usar conta de pessoa física como MEI?
+            </summary>
+            <p className="text-gray-700 mt-3">
+              Não recomendamos. Misturar contas PF e PJ dificulta a contabilidade e pode gerar
+              problemas com a Receita Federal. Abra uma conta PJ separada — muitas são gratuitas.
+            </p>
+          </details>
+          <details className="bg-white p-4 rounded border border-gray-200">
+            <summary className="font-bold cursor-pointer text-gray-900">
+              Quanto tempo leva para abrir uma conta PJ?
+            </summary>
+            <p className="text-gray-700 mt-3">
+              Contas digitais como Neon PJ e Nubank PJ podem ser abertas em menos de 24 horas.
+              Bancos tradicionais podem levar de 3 a 10 dias úteis.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Preciso ter CNPJ MEI para abrir uma conta PJ?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Sim. Todas as contas listadas exigem CNPJ ativo. Se você ainda não tem MEI, confira nosso guia de abertura de MEI.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual a diferença entre conta PJ digital e banco tradicional?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Contas digitais (Neon PJ, Nubank PJ) oferecem abertura 100% online, menos burocracia e tarifas reduzidas. Bancos tradicionais podem ter mais serviços mas cobram taxas mais altas.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Posso usar conta de pessoa física como MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Não recomendamos. Misturar contas PF e PJ dificulta a contabilidade e pode gerar problemas com a Receita Federal. Abra uma conta PJ separada — muitas são gratuitas.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quanto tempo leva para abrir uma conta PJ?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Contas digitais como Neon PJ e Nubank PJ podem ser abertas em menos de 24 horas. Bancos tradicionais podem levar de 3 a 10 dias úteis.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
