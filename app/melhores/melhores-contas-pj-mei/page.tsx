@@ -31,6 +31,7 @@ export default function MelhoresContasPJ() {
               <th className="px-4 py-3 text-center font-bold">Maquininha</th>
               <th className="px-4 py-3 text-center font-bold">Cartão</th>
               <th className="px-4 py-3 text-center font-bold">Rating</th>
+              <th className="px-4 py-3 text-center font-bold">Ação</th>
             </tr>
           </thead>
           <tbody>
@@ -48,6 +49,16 @@ export default function MelhoresContasPJ() {
                   {f.highlights.some(h => h.includes('artão')) ? '✓' : '-'}
                 </td>
                 <td className="px-4 py-3 text-center font-bold">{f.rating}</td>
+                <td className="px-4 py-3 text-center">
+                  <AffiliateCta
+                    href={buildAffiliateUrl(f.id, f.affiliate_url)}
+                    partner={f.id}
+                    page="melhores-contas-pj-mei"
+                    className="inline-block bg-green-600 text-white text-xs px-3 py-1.5 rounded font-semibold hover:bg-green-700 whitespace-nowrap"
+                  >
+                    Conhecer →
+                  </AffiliateCta>
+                </td>
               </tr>
             ))}
           </tbody>
