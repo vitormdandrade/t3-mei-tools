@@ -1,6 +1,7 @@
 {
   "fintechs": [
     {
+      "locale": "pt-BR",
       "id": "conta-simples",
       "name": "Conta Simples",
       "slug": "conta-simples",
@@ -16,6 +17,7 @@
       "rating": 4.5
     },
     {
+      "locale": "pt-BR",
       "id": "neon-pj",
       "name": "Neon PJ",
       "slug": "neon-pj",
@@ -31,6 +33,7 @@
       "rating": 4.3
     },
     {
+      "locale": "pt-BR",
       "id": "nubank-pj",
       "name": "Nubank PJ",
       "slug": "nubank-pj",
@@ -46,6 +49,7 @@
       "rating": 4.4
     },
     {
+      "locale": "pt-BR",
       "id": "inter-empresas",
       "name": "Inter Empresas",
       "slug": "inter-empresas",
@@ -61,6 +65,7 @@
       "rating": 4.2
     },
     {
+      "locale": "pt-BR",
       "id": "c6-bank-pj",
       "name": "C6 Bank PJ",
       "slug": "c6-bank-pj",
@@ -76,6 +81,7 @@
       "rating": 4.3
     },
     {
+      "locale": "pt-BR",
       "id": "infinitepay",
       "name": "InfinitePay",
       "slug": "infinitepay",
@@ -91,6 +97,7 @@
       "rating": 4.1
     },
     {
+      "locale": "pt-BR",
       "id": "sumup",
       "name": "SumUp",
       "slug": "sumup",
@@ -103,9 +110,10 @@
       ],
       "best_for": "MEI ambulante ou de serviços",
       "affiliate_url": "#",
-      "rating": 4.0
+      "rating": 4
     },
     {
+      "locale": "pt-BR",
       "id": "stone",
       "name": "Stone",
       "slug": "stone",
@@ -121,6 +129,7 @@
       "rating": 4.4
     },
     {
+      "locale": "pt-BR",
       "id": "pagseguro",
       "name": "PagSeguro",
       "slug": "pagseguro",
@@ -136,6 +145,7 @@
       "rating": 4.2
     },
     {
+      "locale": "pt-BR",
       "id": "mercado-pago",
       "name": "Mercado Pago",
       "slug": "mercado-pago",
@@ -151,6 +161,7 @@
       "rating": 4.3
     },
     {
+      "locale": "pt-BR",
       "id": "boa-compra",
       "name": "Boa Compra",
       "slug": "boa-compra",
