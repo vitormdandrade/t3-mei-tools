@@ -212,6 +212,21 @@ export default function ComoAbrirMEI() {
         </ul>
       </div>
 
+      <h2>Conteúdo Relacionado</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        {[
+          ['/guias/das-mei-2026', 'DAS MEI 2026', 'Valores atualizados, prazos e como pagar o DAS'],
+          ['/guias/limite-faturamento-mei', 'Limite de Faturamento MEI', 'Entenda o teto de R$ 81 mil e o que fazer se ultrapassar'],
+          ['/guias/abrir-conta-pj-mei', 'Abrir Conta PJ para MEI', 'Compare as melhores contas PJ gratuitas para seu CNPJ'],
+          ['/guias/mei-pode-ter-funcionario', 'MEI Pode Ter Funcionário?', 'Regras, limites e obrigações para contratar'],
+        ].map(([href, title, desc]) => (
+          <a key={href} href={href} className="card card-hover no-underline p-4 flex flex-col gap-1">
+            <span className="font-semibold" style={{ color: 'var(--color-foreground)' }}>{title} →</span>
+            <span className="text-caption">{desc}</span>
+          </a>
+        ))}
+      </div>
+
       {/* Kit MEI CTA */}
       <div className="callout callout-accent my-8">
         <div className="flex flex-col sm:flex-row items-center gap-4">
