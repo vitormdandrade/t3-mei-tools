@@ -46,6 +46,24 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
+        {/* Organization Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Oráculo do MEI',
+              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br',
+              description: 'Calculadoras gratuitas, guias e ferramentas completas para microempreendedores individuais (MEI).',
+              foundingDate: '2025',
+              sameAs: [
+                'https://compararsaas.com.br',
+                'https://calculaseguro.com.br',
+              ],
+            }),
+          }}
+        />
         {/* ── Header ── */}
         <header className="sticky top-0 z-50" style={{
           background: 'var(--header-bg, rgba(254, 252, 245, 0.92))',
