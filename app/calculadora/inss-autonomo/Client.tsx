@@ -68,8 +68,8 @@ export default function INSSAutonomoCalculator() {
         </p>
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <p className="text-sm text-blue-900 dark:text-blue-200">
+      <div className="bg-accent-soft border border-accent rounded-lg p-4">
+        <p className="text-sm text-foreground">
           <strong>Importante:</strong> Autônomos e freelancers não registrados como MEI ou PJ devem contribuir como contribuintes individuais.
         </p>
       </div>
@@ -90,7 +90,7 @@ export default function INSSAutonomoCalculator() {
                   type="number"
                   value={monthlyIncome}
                   onChange={(e) => setMonthlyIncome(parseInt(e.target.value) || 0)}
-                  className="w-full pl-9 pr-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-9 pr-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
                   min="0"
                   step="100"
                 />
@@ -162,9 +162,9 @@ export default function INSSAutonomoCalculator() {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Sua Contribuição</h2>
 
           <div className="space-y-4">
-            <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+            <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-accent">
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Contribuição Mensal ({contributionClass}%)</p>
-              <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+              <p className="text-2xl font-bold text-accent">
                 {formatCurrency(monthlyInss)}
               </p>
             </div>
@@ -183,9 +183,9 @@ export default function INSSAutonomoCalculator() {
               </p>
             </div>
 
-            <div className="bg-blue-100 dark:bg-blue-900/40 rounded-lg p-3 text-center">
-              <p className="text-xs text-blue-900 dark:text-blue-200 mb-1">Valor para 12 meses</p>
-              <p className="text-lg font-bold text-blue-900 dark:text-blue-200">
+            <div className="bg-accent-soft rounded-lg p-3 text-center">
+              <p className="text-xs text-foreground mb-1">Valor para 12 meses</p>
+              <p className="text-lg font-bold text-foreground">
                 {formatCurrency(annualInss)}
               </p>
             </div>
@@ -261,11 +261,11 @@ export default function INSSAutonomoCalculator() {
                 <td className="px-4 py-3 text-center">{formatCurrency(3000 * 0.05)}</td>
                 <td className="px-4 py-3 text-center text-sm">Mínimos</td>
               </tr>
-              <tr className="border-b dark:border-gray-700 bg-blue-50 dark:bg-blue-950/40">
-                <td className="px-4 py-3 font-bold text-blue-600 dark:text-blue-400">11%</td>
-                <td className="px-4 py-3 text-blue-600 dark:text-blue-400">Contribuinte Individual</td>
-                <td className="px-4 py-3 text-center text-blue-600 dark:text-blue-400 font-bold">{formatCurrency(3000 * 0.11)}</td>
-                <td className="px-4 py-3 text-center text-sm text-blue-600 dark:text-blue-400">Maioria</td>
+              <tr className="border-b dark:border-gray-700 bg-accent-soft">
+                <td className="px-4 py-3 font-bold text-accent">11%</td>
+                <td className="px-4 py-3 text-accent">Contribuinte Individual</td>
+                <td className="px-4 py-3 text-center text-accent font-bold">{formatCurrency(3000 * 0.11)}</td>
+                <td className="px-4 py-3 text-center text-sm text-accent">Maioria</td>
               </tr>
               <tr className="border-b dark:border-gray-700">
                 <td className="px-4 py-3 font-bold">20%</td>
@@ -280,9 +280,9 @@ export default function INSSAutonomoCalculator() {
 
       {/* Tips */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/40">
-          <h3 className="text-lg font-bold text-blue-900 dark:text-blue-200 mb-4">Dicas</h3>
-          <ul className="space-y-2 text-blue-900 dark:text-blue-200 text-sm">
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-accent-soft">
+          <h3 className="text-lg font-bold text-foreground mb-4">Dicas</h3>
+          <ul className="space-y-2 text-foreground text-sm">
             <li>• Guarde todos os recibos de pagamento do INSS</li>
             <li>• Verifique sua contribuição no myINSS</li>
             <li>• Mantenha sua contribuição em dia</li>
@@ -310,10 +310,10 @@ export default function INSSAutonomoCalculator() {
       <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
         <h3 className="text-lg font-bold text-foreground mb-2">Próximos Passos</h3>
         <div className="flex gap-4 flex-wrap text-sm">
-          <a href="/calculadora/das" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+          <a href="/calculadora/das" className="text-accent font-semibold hover:underline">
             → Calculadora DAS MEI
           </a>
-          <a href="/guias/como-abrir-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+          <a href="/guias/como-abrir-mei" className="text-accent font-semibold hover:underline">
             → Como Abrir MEI
           </a>
         </div>

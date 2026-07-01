@@ -34,11 +34,11 @@ export default function CnaeTool() {
           <div className="text-2xl font-bold text-accent">{cnaes.length}</div>
           <div className="text-sm text-accent">CNAEs permitidos</div>
         </div>
-        <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">
+        <div className="bg-accent-soft border border-accent rounded-lg p-4 text-center">
+          <div className="text-2xl font-bold text-accent">
             {cnaes.filter((c) => c.category === 'services').length}
           </div>
-          <div className="text-sm text-blue-600 dark:text-blue-400">Serviços</div>
+          <div className="text-sm text-accent">Serviços</div>
         </div>
         <div className="bg-orange-50 dark:bg-orange-950/40 border border-orange-200 dark:border-orange-800 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-orange-700 dark:text-orange-300">
@@ -55,12 +55,12 @@ export default function CnaeTool() {
           placeholder="Buscar por código ou descrição (ex: restaurante, 5611, consultoria...)"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="flex-1 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent"
         />
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value as 'all' | 'services' | 'commerce')}
-          className="border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 text-sm bg-white dark:bg-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 text-sm bg-white dark:bg-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-accent"
         >
           <option value="all">Todos os tipos</option>
           <option value="services">Serviços</option>
@@ -96,7 +96,7 @@ export default function CnaeTool() {
                   <span
                     className={`text-xs px-2 py-0.5 rounded font-medium ${
                       cnae.category === 'services'
-                        ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300'
+                        ? 'bg-accent-soft text-accent'
                         : 'bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300'
                     }`}
                   >
@@ -116,7 +116,7 @@ export default function CnaeTool() {
               <div className="flex items-center gap-1.5">
                 <span
                   className={`w-2 h-2 rounded-full ${
-                    cnae.das_iss ? 'bg-blue-500' : 'bg-gray-300'
+                    cnae.das_iss ? 'bg-accent' : 'bg-gray-300'
                   }`}
                 />
                 <span className="text-gray-600 dark:text-gray-400">ISS (DAS +R$5/mês)</span>
@@ -132,7 +132,7 @@ export default function CnaeTool() {
               <div className="flex items-center gap-1.5">
                 <span
                   className={`w-2 h-2 rounded-full ${
-                    cnae.allows_nfse ? 'bg-green-500' : 'bg-red-400'
+                    cnae.allows_nfse ? 'bg-success' : 'bg-red-400'
                   }`}
                 />
                 <span className="text-gray-600 dark:text-gray-400">
@@ -170,7 +170,7 @@ export default function CnaeTool() {
       <div className="mt-6 text-center">
         <a
           href="/calculadora/das"
-          className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+          className="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition"
         >
           Calcular seu DAS →
         </a>

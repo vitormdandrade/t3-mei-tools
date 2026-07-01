@@ -52,8 +52,8 @@ export default function PrecoPorHoraCalculator() {
 
   return (
     <div className="space-y-8">
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <p className="text-sm text-blue-900 dark:text-blue-200">
+      <div className="bg-accent-soft border border-accent rounded-lg p-4">
+        <p className="text-sm text-foreground">
           <strong>Como funciona:</strong> Divida tudo que você precisa ganhar no mês
           (salário + despesas + DAS) pelo número de horas que você realmente trabalha.
           Simples, mas poucos MEIs fazem esse cálculo.
@@ -76,7 +76,7 @@ export default function PrecoPorHoraCalculator() {
                 placeholder="Ex: 5000"
                 value={salario}
                 onChange={(e) => setSalario(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-accent focus:border-transparent"
               />
             </div>
 
@@ -87,7 +87,7 @@ export default function PrecoPorHoraCalculator() {
               <select
                 value={horasMes}
                 onChange={(e) => setHorasMes(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
               >
                 <option value="80">80h/mês (meio período)</option>
                 <option value="120">120h/mês (6h/dia)</option>
@@ -104,7 +104,7 @@ export default function PrecoPorHoraCalculator() {
               <select
                 value={feriasDias}
                 onChange={(e) => setFeriasDias(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
               >
                 <option value="0">Sem férias</option>
                 <option value="15">15 dias</option>
@@ -125,7 +125,7 @@ export default function PrecoPorHoraCalculator() {
                 placeholder="Ex: 500 (internet, material, software)"
                 value={despesas}
                 onChange={(e) => setDespesas(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
               />
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Internet, material de trabalho, softwares, transporte, etc.
@@ -135,7 +135,7 @@ export default function PrecoPorHoraCalculator() {
         </div>
 
         {/* Results */}
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-blue-50 dark:from-blue-950/40 to-indigo-50 dark:to-indigo-950/40">
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-accent-soft">
           <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6">Seu Preço por Hora</h2>
 
           {!result ? (
@@ -144,9 +144,9 @@ export default function PrecoPorHoraCalculator() {
             </div>
           ) : (
             <div className="space-y-4">
-              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-accent">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Valor Mínimo por Hora</p>
-                <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+                <p className="text-4xl font-bold text-accent">
                   R$ {fmt(result.valorMinimo)}
                 </p>
                 <p className="text-xs text-gray-400 dark:text-gray-400 mt-1">
@@ -154,9 +154,9 @@ export default function PrecoPorHoraCalculator() {
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border-2 border-indigo-500 dark:border-indigo-700">
+              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border-2 border-accent">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Valor Recomendado/Hora</p>
-                <p className="text-4xl font-bold text-indigo-600 dark:text-indigo-400">
+                <p className="text-4xl font-bold text-accent">
                   R$ {fmt(result.valorRecomendado)}
                 </p>
                 <p className="text-xs text-gray-400 dark:text-gray-400 mt-1">
@@ -204,9 +204,9 @@ export default function PrecoPorHoraCalculator() {
                   <td className="py-2 text-gray-600 dark:text-gray-400">Horas efetivas/mês</td>
                   <td className="py-2 text-right font-mono text-gray-900 dark:text-gray-100">{fmt(result.horasMesMedio)}h</td>
                 </tr>
-                <tr className="font-semibold border-t-2 border-blue-400 dark:border-blue-700">
-                  <td className="py-2 text-blue-700 dark:text-blue-300">Valor mínimo/hora</td>
-                  <td className="py-2 text-right font-mono text-blue-700 dark:text-blue-300">R$ {fmt(result.valorMinimo)}</td>
+                <tr className="font-semibold border-t-2 border-accent">
+                  <td className="py-2 text-accent">Valor mínimo/hora</td>
+                  <td className="py-2 text-right font-mono text-accent">R$ {fmt(result.valorMinimo)}</td>
                 </tr>
               </tbody>
             </table>
@@ -229,13 +229,13 @@ export default function PrecoPorHoraCalculator() {
       <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
         <h3 className="text-base font-bold text-foreground mb-3">Veja também</h3>
         <div className="flex gap-4 flex-wrap">
-          <a href="/calculadora/margem-de-lucro" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
+          <a href="/calculadora/margem-de-lucro" className="text-accent font-semibold hover:underline text-sm">
             → Calculadora Margem de Lucro
           </a>
-          <a href="/calculadora/das" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
+          <a href="/calculadora/das" className="text-accent font-semibold hover:underline text-sm">
             → Calculadora DAS
           </a>
-          <a href="/calculadora/mei-vs-me" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
+          <a href="/calculadora/mei-vs-me" className="text-accent font-semibold hover:underline text-sm">
             → MEI vs ME vs Simples
           </a>
         </div>

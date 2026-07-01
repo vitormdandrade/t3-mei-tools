@@ -86,7 +86,7 @@ export default function MelhoresContasPJ() {
                     href={buildAffiliateUrl(f.id, f.affiliate_url)}
                     partner={f.id}
                     page="melhores-contas-pj-mei"
-                    className="inline-block bg-green-600 text-white text-xs px-3 py-1.5 rounded font-semibold hover:bg-green-700 whitespace-nowrap"
+                    className="inline-block bg-accent text-white text-xs px-3 py-1.5 rounded font-semibold hover:bg-accent-hover whitespace-nowrap"
                   >
                     Conhecer →
                   </AffiliateCta>
@@ -133,7 +133,7 @@ export default function MelhoresContasPJ() {
                 href={buildAffiliateUrl(f.id, f.affiliate_url)}
                 partner={f.id}
                 page="melhores-contas-pj-mei"
-                className="inline-block w-full text-center bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 text-sm"
+                className="inline-block w-full text-center bg-accent text-white py-2 rounded font-semibold hover:bg-accent-hover text-sm"
               >
                 Conhecer Mais
               </AffiliateCta>
@@ -158,9 +158,9 @@ export default function MelhoresContasPJ() {
           </p>
         </div>
 
-        <div className="border-2 border-blue-400 dark:border-blue-700 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/40">
-          <h3 className="text-lg font-bold text-blue-900 dark:text-blue-200 mb-3">Melhor para Comércio</h3>
-          <p className="text-blue-900 dark:text-blue-200 mb-3">
+        <div className="border-2 border-accent rounded-lg p-6 bg-accent-soft">
+          <h3 className="text-lg font-bold text-foreground mb-3">Melhor para Comércio</h3>
+          <p className="text-foreground mb-3">
             <strong>Stone ou InfinitePay</strong> - Maquininha com taxa competitiva e liquidação rápida.
           </p>
         </div>
@@ -200,8 +200,8 @@ export default function MelhoresContasPJ() {
       <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
         <h2 className="text-2xl font-bold text-foreground mb-4">Próximos Passos</h2>
         <ul className="space-y-2 text-foreground">
-          <li>✓ <a href="/guias/abrir-conta-pj-mei" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Leia nosso guia de abertura de conta</a></li>
-          <li>✓ <a href="/calculadora/das" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Calcule seu DAS mensal</a></li>
+          <li>✓ <a href="/guias/abrir-conta-pj-mei" className="font-semibold text-accent hover:underline">Leia nosso guia de abertura de conta</a></li>
+          <li>✓ <a href="/calculadora/das" className="font-semibold text-accent hover:underline">Calcule seu DAS mensal</a></li>
           <li>✓ Compare e escolha a melhor opção para seu negócio</li>
         </ul>
       </div>
@@ -241,7 +241,7 @@ export default function MelhoresContasPJ() {
             </summary>
             <p className="text-gray-700 dark:text-gray-300 mt-3">
               Sim. Todas as contas listadas exigem CNPJ ativo. Se você ainda não tem MEI,
-              confira nosso <a href="/guias/como-abrir-mei" className="text-blue-600 dark:text-blue-400 hover:underline">guia de abertura de MEI</a>.
+              confira nosso <a href="/guias/como-abrir-mei" className="text-accent hover:underline">guia de abertura de MEI</a>.
             </p>
           </details>
           <details className="bg-white dark:bg-gray-900 p-4 rounded border border-gray-200 dark:border-gray-700">

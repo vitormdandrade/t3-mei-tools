@@ -107,7 +107,7 @@ function SucessoContent() {
       </p>
       <a
         href={downloadUrl}
-        className="inline-block bg-green-600 text-white px-10 py-4 rounded-lg text-lg font-bold hover:bg-green-700 transition shadow-lg"
+        className="inline-block bg-accent text-white px-10 py-4 rounded-lg text-lg font-bold hover:bg-accent-hover transition shadow-lg"
       >
         📥 Baixar Kit MEI (ZIP)
       </a>

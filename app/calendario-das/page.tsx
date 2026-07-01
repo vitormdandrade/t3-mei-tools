@@ -148,11 +148,11 @@ export default function CalendarioDasPage() {
       </div>
 
       {/* Download CTA */}
-      <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl p-6 mb-8 text-white shadow-lg">
+      <div className="bg-gradient-to-r from-[#2d6a4f] to-[#1b4332] rounded-xl p-6 mb-8 text-white shadow-lg">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h2 className="text-2xl font-bold mb-1">Baixar no meu calendário</h2>
-            <p className="text-muted-soft text-sm">
+            <p className="text-white/90 text-sm">
               12 eventos para 2026 com lembrete automático 2 dias antes do vencimento.
               Funciona no Google Calendar, Apple Calendar, Outlook e qualquer app que
               abra arquivos .ics.
@@ -161,7 +161,8 @@ export default function CalendarioDasPage() {
           <a
             href="/calendario-das-2026.ics"
             download="calendario-das-mei-2026.ics"
-            className="whitespace-nowrap inline-flex items-center justify-center px-6 py-3 bg-white text-accent font-bold rounded-lg hover:bg-surface-alt transition-colors shadow-md"
+            className="whitespace-nowrap inline-flex items-center justify-center px-6 py-3 bg-white font-bold rounded-lg hover:bg-[#f5f2ea] transition-colors shadow-md"
+            style={{ color: '#1b4332' }}
           >
             ↓ Baixar .ics
           </a>
@@ -169,8 +170,8 @@ export default function CalendarioDasPage() {
       </div>
 
       {/* Main table */}
-      <div className="border dark:border-gray-700 rounded-lg overflow-hidden mb-8">
-        <table className="w-full text-sm">
+      <div className="border dark:border-gray-700 rounded-lg overflow-x-auto mb-8">
+        <table className="w-full text-sm min-w-[560px]">
           <thead className="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
             <tr>
               <th className="text-left px-4 py-3 font-semibold text-gray-700 dark:text-gray-300">
@@ -216,11 +217,11 @@ export default function CalendarioDasPage() {
       </div>
 
       {/* Explanation */}
-      <section className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold text-blue-900 dark:text-blue-200 mb-3">
+      <section className="bg-accent-soft border border-accent rounded-lg p-6 mb-8">
+        <h2 className="text-xl font-bold text-foreground mb-3">
           Como funcionam as datas do DAS
         </h2>
-        <ul className="space-y-2 text-sm text-blue-900 dark:text-blue-200">
+        <ul className="space-y-2 text-sm text-foreground">
           <li>
             <strong>Regra geral:</strong> o DAS de um mês vence no dia 20 do mês seguinte.
             Ex: o DAS referente a Janeiro/2026 vence em 20 de Fevereiro de 2026.
@@ -277,7 +278,7 @@ export default function CalendarioDasPage() {
         </p>
         <Link
           href="/calculadora/das"
-          className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+          className="inline-flex items-center text-accent font-semibold hover:underline"
         >
           → Calcular meu DAS 2026
         </Link>
@@ -289,25 +290,25 @@ export default function CalendarioDasPage() {
         <div className="flex gap-4 flex-wrap">
           <Link
             href="/calculadora/das"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → Calculadora DAS
           </Link>
           <Link
             href="/guias/das-mei-2026"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → Guia completo DAS 2026
           </Link>
           <Link
             href="/calculadora/faturamento"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → Limite de Faturamento MEI
           </Link>
           <Link
             href="/calculadora/mei-vs-me"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → MEI vs ME vs Simples
           </Link>

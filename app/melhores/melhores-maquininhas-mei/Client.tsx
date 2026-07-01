@@ -48,8 +48,8 @@ export default function MelhoresMaquininhas() {
         </p>
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <p className="text-sm text-blue-900 dark:text-blue-200">
+      <div className="bg-accent-soft border border-accent rounded-lg p-4">
+        <p className="text-sm text-foreground">
           <strong>O que observar:</strong> Taxa de transação, taxa de aluguel, liquidação rápida, e compatibilidade com seu negócio.
         </p>
       </div>
@@ -79,7 +79,7 @@ export default function MelhoresMaquininhas() {
                 href={buildAffiliateUrl(m.id, m.affiliate_url)}
                 partner={m.id}
                 page="melhores-maquininhas-mei"
-                className="inline-block w-full text-center bg-green-600 text-white py-2 rounded font-semibold hover:bg-green-700 text-sm"
+                className="inline-block w-full text-center bg-accent text-white py-2 rounded font-semibold hover:bg-accent-hover text-sm"
               >
                 Conhecer {m.name} →
               </AffiliateCta>
@@ -103,9 +103,9 @@ export default function MelhoresMaquininhas() {
           </p>
         </div>
 
-        <div className="border-2 border-blue-400 dark:border-blue-700 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/40">
-          <h3 className="text-lg font-bold text-blue-900 dark:text-blue-200 mb-3">Melhor Portabilidade</h3>
-          <p className="text-blue-900 dark:text-blue-200 text-sm">
+        <div className="border-2 border-accent rounded-lg p-6 bg-accent-soft">
+          <h3 className="text-lg font-bold text-foreground mb-3">Melhor Portabilidade</h3>
+          <p className="text-foreground text-sm">
             <strong>SumUp:</strong> Equipamento compacto para trabalho ambulante.
           </p>
         </div>
@@ -138,8 +138,8 @@ export default function MelhoresMaquininhas() {
       <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
         <h2 className="text-2xl font-bold text-foreground mb-4">Próximos Passos</h2>
         <ul className="space-y-2 text-foreground">
-          <li>✓ <a href="/melhores/melhores-contas-pj-mei" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Ver melhores contas PJ</a></li>
-          <li>✓ <a href="/calculadora/das" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Calcular DAS mensal</a></li>
+          <li>✓ <a href="/melhores/melhores-contas-pj-mei" className="font-semibold text-accent hover:underline">Ver melhores contas PJ</a></li>
+          <li>✓ <a href="/calculadora/das" className="font-semibold text-accent hover:underline">Calcular DAS mensal</a></li>
           <li>✓ Escolha a maquininha ideal para seu negócio</li>
         </ul>
       </div>

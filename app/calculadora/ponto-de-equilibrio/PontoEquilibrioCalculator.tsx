@@ -51,8 +51,8 @@ export default function PontoEquilibrioCalculator() {
   return (
     <div className="space-y-8">
       {/* Info banner */}
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <p className="text-sm text-blue-900 dark:text-blue-200">
+      <div className="bg-accent-soft border border-accent rounded-lg p-4">
+        <p className="text-sm text-foreground">
           <strong>Fórmula:</strong> Ponto de Equilíbrio (unidades) = Custos Fixos
           ÷ (Preço − Custo Variável por unidade). É a quantidade mínima que
           cobre todas as suas contas mensais — abaixo disso, você está no
@@ -76,7 +76,7 @@ export default function PontoEquilibrioCalculator() {
                 placeholder="Ex: 3.500,00"
                 value={custosFixos}
                 onChange={(e) => setCustosFixos(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-accent focus:border-transparent"
               />
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Aluguel, DAS, internet, telefone, contador, pró-labore, software
@@ -94,7 +94,7 @@ export default function PontoEquilibrioCalculator() {
                 placeholder="Ex: 80,00"
                 value={preco}
                 onChange={(e) => setPreco(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-accent focus:border-transparent"
               />
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Valor que você cobra por produto ou serviço
@@ -112,7 +112,7 @@ export default function PontoEquilibrioCalculator() {
                 placeholder="Ex: 35,00"
                 value={custoVariavel}
                 onChange={(e) => setCustoVariavel(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg text-lg focus:ring-2 focus:ring-accent focus:border-transparent"
               />
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Matéria-prima, embalagem, frete — só o que varia por venda
@@ -132,7 +132,7 @@ export default function PontoEquilibrioCalculator() {
         </div>
 
         {/* Results */}
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-blue-50 dark:from-blue-950/40 to-indigo-50 dark:to-indigo-950/40">
+        <div className="border dark:border-gray-700 rounded-lg p-6 bg-accent-soft">
           <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6">Resultado</h2>
 
           {!result ? (
@@ -145,9 +145,9 @@ export default function PontoEquilibrioCalculator() {
             </div>
           ) : (
             <div className="space-y-4">
-              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-accent">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Unidades por mês</p>
-                <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+                <p className="text-4xl font-bold text-accent">
                   {fmtInt(result.unidades)}
                 </p>
                 <p className="text-xs text-gray-400 dark:text-gray-400 mt-1">
@@ -155,9 +155,9 @@ export default function PontoEquilibrioCalculator() {
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-indigo-200 dark:border-indigo-800">
+              <div className="bg-white dark:bg-gray-900 rounded-lg p-4 border border-accent">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Faturamento mínimo mensal</p>
-                <p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+                <p className="text-3xl font-bold text-accent">
                   R$ {fmt(result.faturamento)}
                 </p>
               </div>
@@ -258,30 +258,30 @@ export default function PontoEquilibrioCalculator() {
         </ul>
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
-        <h3 className="text-base font-bold text-blue-900 dark:text-blue-200 mb-3">Veja também</h3>
+      <div className="bg-accent-soft border border-accent rounded-lg p-6">
+        <h3 className="text-base font-bold text-foreground mb-3">Veja também</h3>
         <div className="flex gap-4 flex-wrap">
           <a
             href="/calculadora/margem-de-lucro"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → Margem de Lucro
           </a>
           <a
             href="/calculadora/preco-por-hora"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → Preço por Hora
           </a>
           <a
             href="/calculadora/faturamento"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → Limite de Faturamento
           </a>
           <a
             href="/calculadora/mei-vs-me"
-            className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm"
+            className="text-accent font-semibold hover:underline text-sm"
           >
             → MEI vs ME
           </a>

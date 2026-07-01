@@ -40,9 +40,9 @@ const STATUS_LABELS: Record<string, string> = {
 
 const STATUS_COLORS: Record<string, string> = {
   new: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
-  contacted: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
+  contacted: 'bg-accent-soft text-accent  ',
   qualified: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300',
-  converted: 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300',
+  converted: 'bg-accent-soft text-success  ',
   rejected: 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300',
 }
 
@@ -133,7 +133,7 @@ export default function AdminLeadsPage() {
             placeholder="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-accent"
             autoFocus
           />
           {error && (
@@ -144,7 +144,7 @@ export default function AdminLeadsPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition disabled:opacity-50"
+            className="w-full bg-accent text-white font-bold py-3 rounded-lg hover:bg-accent-hover transition disabled:opacity-50"
           >
             {loading ? 'Carregando...' : 'Acessar'}
           </button>
@@ -165,13 +165,13 @@ export default function AdminLeadsPage() {
         <div className="flex gap-3">
           <button
             onClick={exportCSV}
-            className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition"
+            className="bg-accent text-white px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition"
           >
             📥 Exportar CSV
           </button>
           <button
             onClick={() => fetchLeads(password)}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+            className="bg-accent text-white px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition"
           >
             🔄 Atualizar
           </button>
@@ -207,7 +207,7 @@ export default function AdminLeadsPage() {
                     <td className="px-4 py-3">
                       <button
                         onClick={() => copyToClipboard(lead.email, lead.id)}
-                        className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+                        className="text-accent hover:underline cursor-pointer"
                         title="Copiar e-mail"
                       >
                         {lead.email}
@@ -222,7 +222,7 @@ export default function AdminLeadsPage() {
                       {d.cnpj || '-'}
                     </td>
                     <td className="px-4 py-3">
-                      <span className="bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-full text-xs">
+                      <span className="bg-accent-soft text-accent px-2 py-1 rounded-full text-xs">
                         {REVENUE_LABELS[d.revenue_range || ''] || d.revenue_range || '-'}
                       </span>
                     </td>

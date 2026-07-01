@@ -78,7 +78,7 @@ export default function KitMEIPage() {
           <span className="bg-white dark:bg-gray-900 border border-border text-foreground px-3 py-1 rounded-full">
             🔒 Pagamento seguro via Stripe
           </span>
-          <span className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full">
+          <span className="bg-white dark:bg-gray-900 border border-accent text-accent px-3 py-1 rounded-full">
             📥 Download imediato em ZIP
           </span>
           <span className="bg-white dark:bg-gray-900 border border-purple-200 dark:border-purple-800 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-full">

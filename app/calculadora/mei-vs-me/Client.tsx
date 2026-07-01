@@ -55,8 +55,8 @@ export default function MeiVsMeCalculator() {
         </p>
       </div>
 
-      <div className="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-        <p className="text-sm text-blue-900 dark:text-blue-200">
+      <div className="bg-accent-soft border border-accent rounded-lg p-4">
+        <p className="text-sm text-foreground">
           <strong>Dica:</strong> Esta calculadora usa estimativas. Consulte um contador para situações específicas.
         </p>
       </div>
@@ -72,7 +72,7 @@ export default function MeiVsMeCalculator() {
               type="number"
               value={monthlyRevenue}
               onChange={(e) => setMonthlyRevenue(parseInt(e.target.value) || 0)}
-              className="w-full pl-9 pr-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-9 pr-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent"
               min="0"
               step="500"
             />
@@ -86,7 +86,7 @@ export default function MeiVsMeCalculator() {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value as 'commerce' | 'services')}
-            className="w-full px-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent"
           >
             <option value="commerce">Comércio</option>
             <option value="services">Serviços</option>
@@ -100,7 +100,7 @@ export default function MeiVsMeCalculator() {
           <select
             value={employees}
             onChange={(e) => setEmployees(parseInt(e.target.value))}
-            className="w-full px-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent"
           >
             <option value={0}>0 (apenas você)</option>
             <option value={1}>1 funcionário</option>
@@ -117,7 +117,7 @@ export default function MeiVsMeCalculator() {
             <tr>
               <th className="px-4 py-3 text-left font-bold text-gray-900 dark:text-gray-100">Aspecto</th>
               <th className="px-4 py-3 text-center font-bold text-accent">MEI</th>
-              <th className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">Simples Nacional</th>
+              <th className="px-4 py-3 text-center font-bold text-accent">Simples Nacional</th>
               <th className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">Microempresa (ME)</th>
             </tr>
           </thead>
@@ -137,13 +137,13 @@ export default function MeiVsMeCalculator() {
             <tr className="border-b dark:border-gray-700">
               <td className="px-4 py-3 font-semibold text-gray-900 dark:text-gray-100">DAS/Impostos Mensais</td>
               <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(meiMonthlyTotal)}</td>
-              <td className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">{formatCurrency(simplesMonthlyTotal)}</td>
+              <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(simplesMonthlyTotal)}</td>
               <td className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">{formatCurrency(meMonthlyTotal)}</td>
             </tr>
             <tr className="border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
               <td className="px-4 py-3 font-semibold text-gray-900 dark:text-gray-100">DAS/Impostos Anuais</td>
               <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(meiAnnualDas)}</td>
-              <td className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">{formatCurrency(simplesAnnualTax)}</td>
+              <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(simplesAnnualTax)}</td>
               <td className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">{formatCurrency(meAnnualTax)}</td>
             </tr>
             {employees > 0 && (
@@ -151,13 +151,13 @@ export default function MeiVsMeCalculator() {
                 <tr className="border-b dark:border-gray-700">
                   <td className="px-4 py-3 font-semibold text-gray-900 dark:text-gray-100 text-red-600 dark:text-red-400">Custo Funcionários/mês</td>
                   <td className="px-4 py-3 text-center text-red-600 dark:text-red-400">Não permitido</td>
-                  <td className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">{formatCurrency(employeeMonthly)}</td>
+                  <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(employeeMonthly)}</td>
                   <td className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">{formatCurrency(employeeMonthly)}</td>
                 </tr>
                 <tr className="border-b dark:border-gray-700 bg-yellow-50 dark:bg-yellow-950/40">
                   <td className="px-4 py-3 font-semibold text-gray-900 dark:text-gray-100">Total Mensal (com funcionários)</td>
                   <td className="px-4 py-3 text-center text-red-600 dark:text-red-400 font-bold">Não permitido</td>
-                  <td className="px-4 py-3 text-center font-bold text-blue-600 dark:text-blue-400">{formatCurrency(simplesWithEmployeeMonthly)}</td>
+                  <td className="px-4 py-3 text-center font-bold text-accent">{formatCurrency(simplesWithEmployeeMonthly)}</td>
                   <td className="px-4 py-3 text-center font-bold text-purple-600 dark:text-purple-400">{formatCurrency(meWithEmployeeMonthly)}</td>
                 </tr>
               </>
@@ -203,9 +203,9 @@ export default function MeiVsMeCalculator() {
           </ul>
         </div>
 
-        <div className="border-2 border-blue-400 dark:border-blue-700 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/40">
-          <h3 className="text-xl font-bold text-blue-900 dark:text-blue-200 mb-4">Simples Nacional é Ideal Se</h3>
-          <ul className="space-y-2 text-blue-900 dark:text-blue-200 text-sm">
+        <div className="border-2 border-accent rounded-lg p-6 bg-accent-soft">
+          <h3 className="text-xl font-bold text-foreground mb-4">Simples Nacional é Ideal Se</h3>
+          <ul className="space-y-2 text-foreground text-sm">
             <li>✓ Você fatura entre R$ 85k e R$ 360k/ano</li>
             <li>✓ Precisa contratar funcionários</li>
             <li>✓ Quer economia nos impostos</li>
@@ -240,7 +240,7 @@ export default function MeiVsMeCalculator() {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-blue-600 dark:text-blue-400 mb-3">Simples Nacional</h4>
+            <h4 className="font-bold text-accent mb-3">Simples Nacional</h4>
             <ul className="space-y-1 text-gray-700 dark:text-gray-300">
               <li>✓ Aposentadoria por idade</li>
               <li>✓ Aposentadoria por tempo</li>
@@ -272,13 +272,13 @@ export default function MeiVsMeCalculator() {
           Agora que você conhece os regimes, confira:
         </p>
         <div className="flex gap-4 flex-wrap">
-          <a href="/calculadora/das" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
+          <a href="/calculadora/das" className="text-accent font-semibold hover:underline text-sm">
             → Calcular DAS
           </a>
-          <a href="/guias/mei-vs-autonomo" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
+          <a href="/guias/mei-vs-autonomo" className="text-accent font-semibold hover:underline text-sm">
             → MEI vs Autônomo
           </a>
-          <a href="/melhores/melhores-contas-pj-mei" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
+          <a href="/melhores/melhores-contas-pj-mei" className="text-accent font-semibold hover:underline text-sm">
             → Melhores Contas PJ
           </a>
         </div>
