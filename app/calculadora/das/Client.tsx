@@ -212,23 +212,6 @@ export default function DASCalculator() {
         contextMessage="Depois de calcular seu DAS, que tal receber orçamento de contadores para cuidar da parte fiscal do seu MEI?"
       />
 
-      {/* Affiliate CTA */}
-      <div
-        className="rounded-3xl p-6"
-        style={{ background: 'linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light))' }}
-      >
-        <h3 className="text-subheading mb-2" style={{ color: '#ffffff' }}>💳 Precisa de uma conta PJ para pagar o DAS?</h3>
-        <p className="text-body mb-4" style={{ color: '#c8d2dc' }}>
-          Compare as melhores contas digitais PJ gratuitas para MEI: sem tarifas, Pix ilimitado e cartão de crédito.
-        </p>
-        <a
-          href="/melhores/melhores-contas-pj-mei"
-          className="btn-light no-underline inline-flex items-center gap-2"
-        >
-          Ver Melhores Contas PJ <span aria-hidden>→</span>
-        </a>
-      </div>
-
       <div className="callout callout-accent">
         <h3 className="callout-title">Próximos Passos</h3>
         <p className="text-body mb-4">
