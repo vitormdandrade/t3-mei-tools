@@ -30,7 +30,8 @@
   --color-background: var(--brand-cream);
   --color-foreground: var(--brand-navy);
   --color-muted: #5a6b7a;
-  --color-muted-soft: #8899aa;
+  /* Darkened from #8899aa to meet WCAG AA (4.5:1) for caption text on cream/white */
+  --color-muted-soft: #607080;
   --color-border: #e2ddd3;
   --color-border-strong: #c4bcab;
   --color-surface: #ffffff;
@@ -45,9 +46,11 @@
   --color-success-soft: #d8f3dc;
   --color-danger: #dc2626;
   --color-danger-soft: #fef2f2;
-  --color-warning: #b8860b;
+  /* Darkened gold (#b8860b → #8c6200) so warning/highlight TEXT passes AA on light
+     surfaces. --brand-gold stays #b8860b for button/footer fills (dark text on gold). */
+  --color-warning: #8c6200;
   --color-warning-soft: #fef3c7;
-  --color-highlight: var(--brand-gold);
+  --color-highlight: #8c6200;
   --color-highlight-soft: var(--brand-gold-soft);
 
   /* Typography */
@@ -109,7 +112,7 @@
     --color-accent-secondary-hover: #f4c2b0;
     --color-success: #52b788;
     --color-success-soft: rgba(82, 183, 136, 0.15);
-    --color-danger: #ef4444;
+    --color-danger: #f87171;
     --color-danger-soft: rgba(239, 68, 68, 0.15);
     --color-warning: #fbbf24;
     --color-warning-soft: rgba(251, 191, 36, 0.15);
@@ -619,6 +622,20 @@ a {
 .prose-guide a:hover,
 .prose-content a:hover {
   color: var(--color-accent-hover);
+}
+/* Links that are actually buttons or cards inside prose must not inherit
+   the inline-link underline/accent treatment. */
+.prose-guide a.btn-primary,
+.prose-guide a.btn-secondary,
+.prose-guide a.btn-gold,
+.prose-guide a.btn-light,
+.prose-guide a.card,
+.prose-content a.btn-primary,
+.prose-content a.btn-secondary,
+.prose-content a.btn-gold,
+.prose-content a.btn-light,
+.prose-content a.card {
+  text-decoration: none;
 }
 
 /* ── Focus ── */

@@ -167,6 +167,8 @@ export default function LeadCaptureForm({
           <input
             type="text"
             placeholder="Nome completo *"
+            aria-label="Nome completo"
+            autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -175,6 +177,8 @@ export default function LeadCaptureForm({
           <input
             type="email"
             placeholder="E-mail *"
+            aria-label="E-mail"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -186,6 +190,9 @@ export default function LeadCaptureForm({
           <input
             type="tel"
             placeholder="WhatsApp / Telefone *"
+            aria-label="WhatsApp ou telefone"
+            autoComplete="tel"
+            inputMode="tel"
             value={phone}
             onChange={(e) => setPhone(formatPhone(e.target.value))}
             required
@@ -194,6 +201,8 @@ export default function LeadCaptureForm({
           <input
             type="text"
             placeholder="CNPJ (opcional)"
+            aria-label="CNPJ (opcional)"
+            inputMode="numeric"
             value={cnpj}
             onChange={(e) => setCnpj(formatCnpj(e.target.value))}
             className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] placeholder-gray-500 border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
@@ -204,12 +213,15 @@ export default function LeadCaptureForm({
           <input
             type="text"
             placeholder="Cidade"
+            aria-label="Cidade"
+            autoComplete="address-level2"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] placeholder-gray-500 border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           />
           <select
             value={revenueRange}
+            aria-label="Faixa de faturamento mensal"
             onChange={(e) => setRevenueRange(e.target.value)}
             className="w-full px-3.5 py-2.5 rounded-lg bg-white text-[#1a2744] border-0 outline-none focus:ring-2 focus:ring-[#fbbf24]"
           >

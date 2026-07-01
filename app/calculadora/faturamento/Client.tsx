@@ -1,0 +1,295 @@
+'use client';
+
+import { useState, useMemo } from 'react';
+import meiLimits from '@/data/mei-limits.json';
+import { AffiliateCta } from '@/components/AffiliateCta';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
+
+type Year = 2024 | 2025 | 2026;
+
+interface MonthlyRevenue {
+  month: string;
+  amount: number;
+}
+
+export default function RevenueCalculator() {
+  const [year, setYear] = useState<Year>(2026);
+  const [monthlyRevenues, setMonthlyRevenues] = useState<MonthlyRevenue[]>([
+    { month: 'Janeiro', amount: 0 },
+    { month: 'Fevereiro', amount: 0 },
+    { month: 'Março', amount: 0 },
+  ]);
+
+  const yearData = useMemo(() => {
+    return meiLimits.limits.find((l) => l.year === year);
+  }, [year]);
+
+  const annualLimit = yearData?.meiAnnualLimit || 81000;
+
+  const total = useMemo(() => {
+    return monthlyRevenues.reduce((sum, item) => sum + (item.amount || 0), 0);
+  }, [monthlyRevenues]);
+
+  const remaining = Math.max(0, annualLimit - total);
+  const percentage = (total / annualLimit) * 100;
+  const monthCount = monthlyRevenues.filter((m) => m.amount > 0).length;
+  const monthlyAverage = monthCount > 0 ? total / monthCount : 0;
+  const yearProjection = monthlyAverage * 12;
+
+  const handleRevenueChange = (index: number, value: number) => {
+    const updated = [...monthlyRevenues];
+    updated[index].amount = value;
+    setMonthlyRevenues(updated);
+  };
+
+  const addMonth = () => {
+    const months = [
+      'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+      'Julho',
+      'Agosto',
+      'Setembro',
+      'Outubro',
+      'Novembro',
+      'Dezembro',
+    ];
+    if (monthlyRevenues.length < 12) {
+      setMonthlyRevenues([
+        ...monthlyRevenues,
+        { month: months[monthlyRevenues.length], amount: 0 },
+      ]);
+    }
+  };
+
+  const removeMonth = (index: number) => {
+    setMonthlyRevenues(monthlyRevenues.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-hero mb-2">Calculadora de Faturamento MEI</h1>
+        <p className="text-body-lg">
+          Acompanhe seu faturamento anual e saiba se você está próximo do limite MEI.
+        </p>
+      </div>
+
+      <div className="callout callout-info">
+        <p className="text-body">
+          <strong>Limite MEI 2026:</strong> R$ 81.000 por ano. Ao ultrapassar, você precisa migrar para Microempresa ou Simples Nacional.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Input Section */}
+        <div className="lg:col-span-2 card p-6">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-heading">Faturamento Mensal</h2>
+            <select
+              value={year}
+              onChange={(e) => setYear(parseInt(e.target.value) as Year)}
+              className="input-field"
+            >
+              <option value={2024}>2024</option>
+              <option value={2025}>2025</option>
+              <option value={2026}>2026</option>
+            </select>
+          </div>
+
+          <div className="space-y-3 max-h-96 overflow-y-auto">
+            {monthlyRevenues.map((item, index) => (
+              <div key={index} className="flex gap-3 items-center">
+                <label className="w-24 text-base font-semibold text-foreground">
+                  {item.month}
+                </label>
+                <div className="flex-1 relative">
+                  <span className="absolute left-3 top-2.5 text-muted z-10">R$</span>
+                  <input
+                    type="number"
+                    value={item.amount || ''}
+                    onChange={(e) => handleRevenueChange(index, parseFloat(e.target.value) || 0)}
+                    className="input-field w-full pl-9"
+                    placeholder="0,00"
+                    min="0"
+                    step="100"
+                  />
+                </div>
+                {monthlyRevenues.length > 1 && (
+                  <button
+                    onClick={() => removeMonth(index)}
+                    className="text-danger hover:opacity-80 font-semibold"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {monthlyRevenues.length < 12 && (
+            <button
+              onClick={addMonth}
+              className="btn-secondary btn-block mt-4"
+            >
+              + Adicionar Mês
+            </button>
+          )}
+        </div>
+
+        {/* Summary Section */}
+        <div className="card p-6 h-fit" style={{ background: 'var(--color-surface-alt)' }}>
+          <h2 className="text-heading mb-6">Resumo</h2>
+
+          <div className="space-y-4">
+            <div className="result-card">
+              <p className="result-label">Total Faturado</p>
+              <p className="result-value">
+                R$ {total.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </p>
+            </div>
+
+            <div className="result-card">
+              <p className="result-label">Limite MEI {year}</p>
+              <div className="w-full rounded-full h-4 overflow-hidden" style={{ background: 'var(--color-surface-hover)' }}>
+                <div
+                  className="h-full transition-all"
+                  style={{
+                    width: `${Math.min(percentage, 100)}%`,
+                    background:
+                      percentage <= 90
+                        ? 'var(--color-success)'
+                        : percentage <= 100
+                          ? 'var(--color-warning)'
+                          : 'var(--color-danger)',
+                  }}
+                />
+              </div>
+              <p className="text-caption mt-2">
+                {percentage.toFixed(1)}% do limite
+              </p>
+            </div>
+
+            <div className="result-card">
+              <p className="result-label">Ainda pode faturar</p>
+              <p className="result-value" style={remaining > 0 ? undefined : { color: 'var(--color-danger)' }}>
+                R$ {remaining.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </p>
+            </div>
+
+            <div className="callout">
+              <p className="result-label">Média Mensal</p>
+              <p className="text-subheading text-accent">
+                R$ {monthlyAverage.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </p>
+            </div>
+
+            <div className="callout">
+              <p className="result-label">Projeção Anual</p>
+              <p className="text-subheading" style={{ color: yearProjection > annualLimit ? 'var(--color-danger)' : 'var(--color-accent)' }}>
+                R$ {yearProjection.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </p>
+            </div>
+          </div>
+
+          {yearProjection > annualLimit && (
+            <div className="callout callout-terra mt-4">
+              <p className="text-body">
+                <strong>Atenção:</strong> Sua projeção anual ultrapassa o limite de MEI. Considere migrar para outro regime.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Information Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="card p-6">
+          <h3 className="text-subheading mb-4">Limites Históricos</h3>
+          <div className="space-y-2 text-body">
+            {meiLimits.limits.map((limit) => (
+              <div key={limit.year} className="flex justify-between">
+                <span>{limit.year}:</span>
+                <strong className="text-foreground">R$ {limit.meiAnnualLimit.toLocaleString('pt-BR')}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="card p-6">
+          <h3 className="text-subheading mb-4">O que Fazer?</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-semibold text-accent">Até 80% do limite:</p>
+              <p className="text-body">Continue como MEI normalmente</p>
+            </div>
+            <div>
+              <p className="font-semibold text-warning">80-100% do limite:</p>
+              <p className="text-body">Comece a planejar a migração</p>
+            </div>
+            <div>
+              <p className="font-semibold text-danger">Acima do limite:</p>
+              <p className="text-body">Você é obrigado a migrar legalmente</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Lead Capture — contador orçamento */}
+      {total > 0 && (
+        <LeadCaptureForm
+          source="faturamento"
+          contextMessage={`Com R$ ${total.toLocaleString('pt-BR')} em faturamento, um contador pode ajudar a planejar seus impostos e evitar surpresas.`}
+        />
+      )}
+
+      {/* Affiliate CTA — when user is engaged with their MEI finances */}
+      {total > 0 && (
+        <div
+          className="rounded-3xl p-6"
+          style={{ background: 'linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light))' }}
+        >
+          <h3 className="text-subheading mb-2" style={{ color: '#ffffff' }}>💰 Abra sua Conta PJ Gratuita</h3>
+          <p className="text-body mb-4" style={{ color: '#c8d2dc' }}>
+            Gerencie seu faturamento MEI com uma conta digital gratuita. Sem tarifas, com emissão de boletos e integração com contabilidade.
+          </p>
+          <AffiliateCta
+            href="#"
+            partner="contas-pj"
+            page="calculadora-faturamento"
+            className="btn-light no-underline inline-flex items-center gap-2"
+          >
+            Ver Melhores Contas PJ →
+          </AffiliateCta>
+        </div>
+      )}
+
+      <div className="callout callout-accent">
+        <h3 className="callout-title">Saiba Mais</h3>
+        <div className="flex gap-4 flex-wrap">
+          <a href="/guias/limite-faturamento-mei" className="link-arrow no-underline">
+            <span aria-hidden>→</span> Guia: Limite de Faturamento
+          </a>
+          <a href="/calculadora/mei-vs-me" className="link-arrow no-underline">
+            <span aria-hidden>→</span> Comparar MEI vs ME
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
