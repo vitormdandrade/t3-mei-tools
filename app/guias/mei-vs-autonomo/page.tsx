@@ -6,16 +6,17 @@ export const metadata = {
 
 export default function MEIVsAutonomo() {
   return (
-    <div className="space-y-8 max-w-4xl mx-auto">
-      <div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">MEI vs Autônomo: Qual Escolher?</h1>
-        <p className="text-gray-600 dark:text-gray-400 text-lg">Comparação completa entre ser MEI e trabalhar como autônomo.</p>
-      </div>
+    <article className="prose-guide max-w-3xl mx-auto">
+      <header className="mb-10">
+        <span className="text-label">Guia</span>
+        <h1 className="text-hero mt-2 mb-4">MEI vs Autônomo: Qual Escolher?</h1>
+        <p className="text-body-lg">Comparação completa entre ser MEI e trabalhar como autônomo.</p>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/40">
-          <h2 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-4">MEI (Microempreendedor Individual)</h2>
-          <ul className="space-y-2 text-blue-900 dark:text-blue-200 text-sm">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="card p-6">
+          <h2>MEI (Microempreendedor Individual)</h2>
+          <ul>
             <li>✓ CNPJ próprio</li>
             <li>✓ Formalidade legal</li>
             <li>✓ Acesso a crédito</li>
@@ -26,9 +27,9 @@ export default function MEIVsAutonomo() {
           </ul>
         </div>
 
-        <div className="border dark:border-gray-700 rounded-lg p-6 bg-yellow-50 dark:bg-yellow-950/40">
-          <h2 className="text-2xl font-bold text-yellow-900 dark:text-yellow-200 mb-4">Autônomo</h2>
-          <ul className="space-y-2 text-yellow-900 dark:text-yellow-200 text-sm">
+        <div className="card p-6">
+          <h2>Autônomo</h2>
+          <ul>
             <li>✓ Sem limite de faturamento</li>
             <li>✓ Sem obrigações formais</li>
             <li>✓ Simples de começar</li>
@@ -40,134 +41,106 @@ export default function MEIVsAutonomo() {
         </div>
       </div>
 
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Comparação Detalhada</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-sm">
-            <thead>
-              <tr className="bg-gray-100 dark:bg-gray-800">
-                <th className="border dark:border-gray-700 px-4 py-2 text-left font-bold">Aspecto</th>
-                <th className="border dark:border-gray-700 px-4 py-2 text-center font-bold">MEI</th>
-                <th className="border dark:border-gray-700 px-4 py-2 text-center font-bold">Autônomo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border dark:border-gray-700 px-4 py-2 font-bold">CNPJ</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Sim</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Não</td>
-              </tr>
-              <tr className="bg-gray-50 dark:bg-gray-900">
-                <td className="border dark:border-gray-700 px-4 py-2 font-bold">Faturamento Limite</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">R$ 85k/ano</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Ilimitado</td>
-              </tr>
-              <tr>
-                <td className="border dark:border-gray-700 px-4 py-2 font-bold">INSS Mensal</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">R$ 75-80</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">R$ 165+</td>
-              </tr>
-              <tr className="bg-gray-50 dark:bg-gray-900">
-                <td className="border dark:border-gray-700 px-4 py-2 font-bold">Acesso a Crédito</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Sim</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Difícil</td>
-              </tr>
-              <tr>
-                <td className="border dark:border-gray-700 px-4 py-2 font-bold">Nota Fiscal</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Sim</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Recibo</td>
-              </tr>
-              <tr className="bg-gray-50 dark:bg-gray-900">
-                <td className="border dark:border-gray-700 px-4 py-2 font-bold">Benefícios INSS</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Básicos</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Completos</td>
-              </tr>
-              <tr>
-                <td className="border dark:border-gray-700 px-4 py-2 font-bold">Funcionários</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">1 máximo</td>
-                <td className="border dark:border-gray-700 px-4 py-2 text-center">Não</td>
-              </tr>
-            </tbody>
-          </table>
+      <h2>Comparação Detalhada</h2>
+      <div className="overflow-x-auto my-6">
+        <table className="table-compare">
+          <thead>
+            <tr>
+              <th>Aspecto</th>
+              <th>MEI</th>
+              <th>Autônomo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CNPJ</strong></td>
+              <td>Sim</td>
+              <td>Não</td>
+            </tr>
+            <tr>
+              <td><strong>Faturamento Limite</strong></td>
+              <td>R$ 85k/ano</td>
+              <td>Ilimitado</td>
+            </tr>
+            <tr>
+              <td><strong>INSS Mensal</strong></td>
+              <td>R$ 75-80</td>
+              <td>R$ 165+</td>
+            </tr>
+            <tr>
+              <td><strong>Acesso a Crédito</strong></td>
+              <td>Sim</td>
+              <td>Difícil</td>
+            </tr>
+            <tr>
+              <td><strong>Nota Fiscal</strong></td>
+              <td>Sim</td>
+              <td>Recibo</td>
+            </tr>
+            <tr>
+              <td><strong>Benefícios INSS</strong></td>
+              <td>Básicos</td>
+              <td>Completos</td>
+            </tr>
+            <tr>
+              <td><strong>Funcionários</strong></td>
+              <td>1 máximo</td>
+              <td>Não</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Custos Mensais Estimados</h2>
+      <p>Para uma renda de R$ 3.000/mês:</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="card p-6">
+          <h3>MEI</h3>
+          <ul>
+            <li><strong>DAS (serviços):</strong> R$ 80,90</li>
+            <li><strong>Contador (opcional):</strong> R$ 100-200</li>
+            <li><strong>Total:</strong> ~R$ 180-280</li>
+          </ul>
         </div>
-      </section>
 
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Custos Mensais Estimados</h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-4">Para uma renda de R$ 3.000/mês:</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="border dark:border-gray-700 rounded-lg p-4 bg-blue-50 dark:bg-blue-950/40">
-            <h3 className="font-bold text-blue-900 dark:text-blue-200 mb-3">MEI</h3>
-            <div className="space-y-2 text-sm text-blue-900 dark:text-blue-200">
-              <div className="flex justify-between">
-                <span>DAS (serviços):</span>
-                <strong>R$ 80,90</strong>
-              </div>
-              <div className="flex justify-between">
-                <span>Contador (opcional):</span>
-                <strong>R$ 100-200</strong>
-              </div>
-              <div className="border-t border-blue-400 dark:border-blue-700 my-2"></div>
-              <div className="flex justify-between text-base font-bold">
-                <span>Total:</span>
-                <strong>~R$ 180-280</strong>
-              </div>
-            </div>
-          </div>
-
-          <div className="border dark:border-gray-700 rounded-lg p-4 bg-yellow-50 dark:bg-yellow-950/40">
-            <h3 className="font-bold text-yellow-900 dark:text-yellow-200 mb-3">Autônomo</h3>
-            <div className="space-y-2 text-sm text-yellow-900 dark:text-yellow-200">
-              <div className="flex justify-between">
-                <span>INSS (11%):</span>
-                <strong>R$ 330</strong>
-              </div>
-              <div className="flex justify-between">
-                <span>Sem contabilidade:</span>
-                <strong>R$ 0</strong>
-              </div>
-              <div className="border-t border-yellow-400 dark:border-yellow-700 my-2"></div>
-              <div className="flex justify-between text-base font-bold">
-                <span>Total:</span>
-                <strong>~R$ 330</strong>
-              </div>
-            </div>
-          </div>
+        <div className="card p-6">
+          <h3>Autônomo</h3>
+          <ul>
+            <li><strong>INSS (11%):</strong> R$ 330</li>
+            <li><strong>Sem contabilidade:</strong> R$ 0</li>
+            <li><strong>Total:</strong> ~R$ 330</li>
+          </ul>
         </div>
-      </section>
+      </div>
 
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Quando Escolher Cada Um</h2>
-        <div className="space-y-3">
-          <div className="border dark:border-gray-700 rounded-lg p-4 bg-surface-alt dark:bg-accent-soft/30">
-            <h3 className="font-bold text-foreground mb-2">Escolha MEI se:</h3>
-            <ul className="list-disc list-inside space-y-1 text-foreground text-sm">
-              <li>Você quer formalidade e CNPJ</li>
-              <li>Precisa de crédito ou parcelamentos</li>
-              <li>Vai faturar até R$ 85k/ano</li>
-              <li>Quer benefícios do INSS</li>
-              <li>Precisa emitir nota fiscal</li>
-            </ul>
-          </div>
-          <div className="border dark:border-gray-700 rounded-lg p-4 bg-yellow-50 dark:bg-yellow-950/40">
-            <h3 className="font-bold text-yellow-900 dark:text-yellow-200 mb-2">Escolha Autônomo se:</h3>
-            <ul className="list-disc list-inside space-y-1 text-yellow-900 dark:text-yellow-200 text-sm">
-              <li>Trabalha de forma informal/pontual</li>
-              <li>Não quer burocrácia</li>
-              <li>Faturamento pode ser alto/sem limite</li>
-              <li>Clientes não pedem nota/CNPJ</li>
-              <li>Quer máximos benefícios de INSS</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <h2>Quando Escolher Cada Um</h2>
+      <div className="callout callout-info my-6">
+        <p className="callout-title">Escolha MEI se:</p>
+        <ul>
+          <li>Você quer formalidade e CNPJ</li>
+          <li>Precisa de crédito ou parcelamentos</li>
+          <li>Vai faturar até R$ 85k/ano</li>
+          <li>Quer benefícios do INSS</li>
+          <li>Precisa emitir nota fiscal</li>
+        </ul>
+      </div>
+      <div className="callout callout-warning my-6">
+        <p className="callout-title">Escolha Autônomo se:</p>
+        <ul>
+          <li>Trabalha de forma informal/pontual</li>
+          <li>Não quer burocrácia</li>
+          <li>Faturamento pode ser alto/sem limite</li>
+          <li>Clientes não pedem nota/CNPJ</li>
+          <li>Quer máximos benefícios de INSS</li>
+        </ul>
+      </div>
 
-      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-foreground mb-4">Próximo Passo</h2>
-        <a href="/calculadora/das" className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">
+      <div className="callout callout-accent my-8">
+        <p className="callout-title">Próximo Passo</p>
+        <a href="/calculadora/das" className="btn-primary no-underline inline-flex">
           Calcular DAS MEI
         </a>
       </div>
-    </div>
+    </article>
   );
 }

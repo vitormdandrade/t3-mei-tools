@@ -6,115 +6,105 @@ export const metadata = {
 
 export default function MEIPodeSerFuncionario() {
   return (
-    <div className="space-y-8 max-w-4xl mx-auto">
-      <div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">MEI Pode Ter Funcionário em 2026?</h1>
-        <p className="text-gray-600 dark:text-gray-400 text-lg">Regras, limitações e o que você precisa saber antes de contratar.</p>
-      </div>
+    <article className="prose-guide max-w-3xl mx-auto">
+      <header className="mb-10">
+        <span className="text-label">Guia</span>
+        <h1 className="text-hero mt-2 mb-4">MEI Pode Ter Funcionário em 2026?</h1>
+        <p className="text-body-lg">Regras, limitações e o que você precisa saber antes de contratar.</p>
+      </header>
 
-      <section className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-foreground mb-4">Resposta Curta</h2>
-        <p className="text-foreground text-lg">
+      <div className="callout callout-info my-6">
+        <p className="callout-title">Resposta Curta</p>
+        <p>
           <strong>SIM!</strong> MEI pode ter 1 funcionário. Não pode contratar mais de um.
         </p>
-      </section>
+      </div>
 
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Regras para Contratar Funcionário</h2>
-        <div className="space-y-3">
-          <div className="border dark:border-gray-700 rounded-lg p-4">
-            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">✓ Você Pode:</h3>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-              <li>Contratar 1 funcionário com registro em CTPS</li>
-              <li>Pagar salário compatível com o mercado</li>
-              <li>Descontar INSS e IRRF do funcionário</li>
-              <li>Pagar encargos sociais e 13º</li>
-            </ul>
-          </div>
-          <div className="border dark:border-gray-700 rounded-lg p-4 bg-red-50 dark:bg-red-950/40">
-            <h3 className="font-bold text-red-900 dark:text-red-200 mb-2">✗ Você NÃO Pode:</h3>
-            <ul className="list-disc list-inside space-y-1 text-red-900 dark:text-red-200">
-              <li>Contratar 2 ou mais funcionários</li>
-              <li>Ter estagiários sem registro</li>
-              <li>Ter prestadores de serviço sem nota fiscal</li>
-              <li>Pagar trabalhador sem vínculo formal</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Custos de Contratar um Funcionário</h2>
-        <div className="bg-yellow-50 dark:bg-yellow-950/40 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6">
-          <p className="text-yellow-900 dark:text-yellow-200 mb-4">
-            Exemplo: Funcionário com salário de R$ 1.500/mês (salário mínimo)
-          </p>
-          <div className="space-y-2 text-yellow-900 dark:text-yellow-200 text-sm">
-            <div className="flex justify-between">
-              <span>Salário:</span>
-              <strong>R$ 1.500,00</strong>
-            </div>
-            <div className="flex justify-between">
-              <span>INSS (11%):</span>
-              <strong>R$ 165,00</strong>
-            </div>
-            <div className="flex justify-between">
-              <span>IRRF (se houver):</span>
-              <strong>R$ 0,00 (mínimo)</strong>
-            </div>
-            <div className="border-t border-yellow-400 dark:border-yellow-700 my-2"></div>
-            <div className="flex justify-between text-lg">
-              <span><strong>Custo Mensal Total:</strong></span>
-              <strong>~R$ 1.800-2.000</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Como Contratar Funcionário</h2>
-        <ol className="list-decimal list-inside space-y-3 text-gray-700 dark:text-gray-300">
-          <li><strong>Entrevista e seleção</strong> - Escolha o melhor candidato</li>
-          <li><strong>CTPS</strong> - O funcionário precisará levar a Carteira de Trabalho</li>
-          <li><strong>Registro na CTPS</strong> - Você registra dados do emprego</li>
-          <li><strong>Filiação ao INSS</strong> - Como empregador (você já está)</li>
-          <li><strong>Documento de Saúde</strong> - ASO (Atestado de Saúde Ocupacional)</li>
-          <li><strong>Folha de Pagamento</strong> - Registre os salários e descontos</li>
-          <li><strong>Repasse ao INSS</strong> - Até o 15º dia do mês seguinte</li>
-        </ol>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">O que Acontece se Contratar Mais de 1?</h2>
-        <div className="bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 rounded-lg p-6">
-          <p className="text-red-900 dark:text-red-200 mb-4">
-            Se você contratar 2 ou mais funcionários, é obrigado a migrar para Microempresa (ME) ou outra modalidade:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-red-900 dark:text-red-200">
-            <li>Você será reclassificado administrativamente</li>
-            <li>Terá que cumprir obrigações de ME</li>
-            <li>Impostos serão maiores</li>
-            <li>Pode sofrer multas se descoberto</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Alternativas a Contratar</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-          <li><strong>Pessoa Jurídica (PJ):</strong> Contratar outra empresa ou autônomo sem vinculo</li>
-          <li><strong>Terceirizar:</strong> Contratar serviços especializados</li>
-          <li><strong>Família:</strong> Pode ser contra-produtivo (risco fiscal)</li>
-          <li><strong>Virar ME:</strong> Se crescimento justificar</li>
+      <h2>Regras para Contratar Funcionário</h2>
+      <div className="callout callout-accent my-6">
+        <p className="callout-title">✓ Você Pode:</p>
+        <ul>
+          <li>Contratar 1 funcionário com registro em CTPS</li>
+          <li>Pagar salário compatível com o mercado</li>
+          <li>Descontar INSS e IRRF do funcionário</li>
+          <li>Pagar encargos sociais e 13º</li>
         </ul>
-      </section>
+      </div>
+      <div className="callout callout-terra my-6">
+        <p className="callout-title">✗ Você NÃO Pode:</p>
+        <ul>
+          <li>Contratar 2 ou mais funcionários</li>
+          <li>Ter estagiários sem registro</li>
+          <li>Ter prestadores de serviço sem nota fiscal</li>
+          <li>Pagar trabalhador sem vínculo formal</li>
+        </ul>
+      </div>
 
-      <div className="bg-surface-alt dark:bg-accent-soft/30 border border-border rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-foreground mb-4">Saiba Mais</h2>
-        <a href="/calculadora/mei-vs-me" className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline mb-4">
+      <h2>Custos de Contratar um Funcionário</h2>
+      <div className="callout callout-warning my-6">
+        <p className="callout-title">Exemplo: Funcionário com salário de R$ 1.500/mês (salário mínimo)</p>
+        <div className="overflow-x-auto my-6">
+          <table className="table-compare">
+            <tbody>
+              <tr>
+                <td>Salário:</td>
+                <td><strong>R$ 1.500,00</strong></td>
+              </tr>
+              <tr>
+                <td>INSS (11%):</td>
+                <td><strong>R$ 165,00</strong></td>
+              </tr>
+              <tr>
+                <td>IRRF (se houver):</td>
+                <td><strong>R$ 0,00 (mínimo)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Custo Mensal Total:</strong></td>
+                <td><strong>~R$ 1.800-2.000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>Como Contratar Funcionário</h2>
+      <ol>
+        <li><strong>Entrevista e seleção</strong> - Escolha o melhor candidato</li>
+        <li><strong>CTPS</strong> - O funcionário precisará levar a Carteira de Trabalho</li>
+        <li><strong>Registro na CTPS</strong> - Você registra dados do emprego</li>
+        <li><strong>Filiação ao INSS</strong> - Como empregador (você já está)</li>
+        <li><strong>Documento de Saúde</strong> - ASO (Atestado de Saúde Ocupacional)</li>
+        <li><strong>Folha de Pagamento</strong> - Registre os salários e descontos</li>
+        <li><strong>Repasse ao INSS</strong> - Até o 15º dia do mês seguinte</li>
+      </ol>
+
+      <h2>O que Acontece se Contratar Mais de 1?</h2>
+      <div className="callout callout-terra my-6">
+        <p>
+          Se você contratar 2 ou mais funcionários, é obrigado a migrar para Microempresa (ME) ou outra modalidade:
+        </p>
+        <ul>
+          <li>Você será reclassificado administrativamente</li>
+          <li>Terá que cumprir obrigações de ME</li>
+          <li>Impostos serão maiores</li>
+          <li>Pode sofrer multas se descoberto</li>
+        </ul>
+      </div>
+
+      <h2>Alternativas a Contratar</h2>
+      <ul>
+        <li><strong>Pessoa Jurídica (PJ):</strong> Contratar outra empresa ou autônomo sem vinculo</li>
+        <li><strong>Terceirizar:</strong> Contratar serviços especializados</li>
+        <li><strong>Família:</strong> Pode ser contra-produtivo (risco fiscal)</li>
+        <li><strong>Virar ME:</strong> Se crescimento justificar</li>
+      </ul>
+
+      <div className="callout callout-info my-8">
+        <p className="callout-title">Saiba Mais</p>
+        <a href="/calculadora/mei-vs-me">
           → Comparar MEI vs ME
         </a>
       </div>
-    </div>
+    </article>
   );
 }
