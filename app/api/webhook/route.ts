@@ -6,14 +6,15 @@ import {
   generateReciboPagamento,
   generateTermoResponsabilidade,
 } from "../../../lib/pdf-templates";
+import { ensureBucket, uploadKitZipAndGetUrl } from "../../../lib/supabase-storage";
+import { sendKitDeliveryEmail } from "../../../lib/email";
 import Stripe from "stripe";
 
 // Dynamic import to work around archiver CJS/ESM interop with Turbopack
 async function createZip(pdfs: { name: string; data: Buffer }[]): Promise<Buffer> {
-  // Use dynamic require for archiver to avoid Turbopack static analysis issues
   const archiverMod = await import("archiver");
-  // archiver CJS module: the default may be the namespace, Archiver is the class
-  const ArchiverClass = (archiverMod as any).default?.Archiver || (archiverMod as any).Archiver;
+  const ArchiverClass =
+    (archiverMod as any).default?.Archiver || (archiverMod as any).Archiver;
 
   return new Promise((resolve, reject) => {
     const archive = new ArchiverClass("zip", { zlib: { level: 9 } });
@@ -58,7 +59,7 @@ export async function POST(req: NextRequest) {
       event = await verifyWebhook(req);
     } else {
       // Development mode: parse body directly
-      event = await req.json() as Stripe.Event;
+      event = (await req.json()) as Stripe.Event;
     }
 
     // Handle checkout.session.completed
@@ -71,7 +72,7 @@ export async function POST(req: NextRequest) {
       }
 
       const customerEmail = session.customer_details?.email;
-      const customerName = session.customer_details?.name;
+      const customerName = session.customer_details?.name || "Empreendedor";
 
       if (!customerEmail) {
         console.error("No customer email in session:", session.id);
@@ -81,14 +82,14 @@ export async function POST(req: NextRequest) {
         );
       }
 
-      // Generate all 4 PDFs
-      const data = {
-        nome: customerName || "",
-        email: customerEmail,
-        nomeEmpresa: customerName || "",
-      };
+      console.log(`Processing Kit MEI for ${customerEmail} (session: ${session.id})`);
 
-      console.log(`Generating Kit MEI PDFs for ${customerEmail}...`);
+      // STEP 1: Generate all 4 PDFs
+      const data = {
+        nome: customerName,
+        email: customerEmail,
+        nomeEmpresa: customerName,
+      };
 
       const [contrato, notaFiscal, recibo, termo] = await Promise.all([
         generateContratoPrestacaoServicos(data),
@@ -97,7 +98,7 @@ export async function POST(req: NextRequest) {
         generateTermoResponsabilidade(data),
       ]);
 
-      // Create ZIP archive
+      // STEP 2: Create ZIP archive
       const zipBuffer = await createZip([
         { name: "01-Contrato-Prestacao-Servicos.pdf", data: contrato },
         { name: "02-Modelo-Nota-Fiscal-RPA.pdf", data: notaFiscal },
@@ -106,27 +107,38 @@ export async function POST(req: NextRequest) {
       ]);
 
       console.log(
-        `Kit MEI generated for ${customerEmail}. ZIP size: ${(zipBuffer.length / 1024).toFixed(1)} KB`
+        `Kit MEI ZIP generated: ${(zipBuffer.length / 1024).toFixed(1)} KB`
       );
 
-      // Store zip in memory mapped to session for the success page to retrieve
-      // In production: use Vercel Blob or S3 for persistence
+      // STEP 3: Ensure Supabase bucket exists, upload ZIP, get signed URL
+      await ensureBucket();
+      const downloadUrl = await uploadKitZipAndGetUrl(session.id, zipBuffer);
+
+      console.log(`Download URL generated for session ${session.id}`);
+
+      // STEP 4: Keep in-memory store for success page (backward compat)
       if (!(globalThis as any).__kitMeiZips) {
         (globalThis as any).__kitMeiZips = new Map();
       }
       (globalThis as any).__kitMeiZips.set(session.id, {
         buffer: zipBuffer,
         email: customerEmail,
+        downloadUrl,
         createdAt: Date.now(),
       });
 
-      // Cleanup old entries (keep last 24 hours)
-      const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
-      (globalThis as any).__kitMeiZips.forEach((val: any, key: string) => {
-        if (val.createdAt < oneDayAgo) {
-          (globalThis as any).__kitMeiZips.delete(key);
-        }
-      });
+      // STEP 5: Send email via Resend
+      try {
+        await sendKitDeliveryEmail({
+          to: customerEmail,
+          name: customerName,
+          downloadUrl,
+        });
+        console.log(`Kit MEI email sent to ${customerEmail}`);
+      } catch (emailError: any) {
+        console.error("Failed to send Kit MEI email:", emailError?.message);
+        // Don't fail the webhook — email is a bonus, download still works via success page
+      }
     }
 
     return NextResponse.json({ received: true });
