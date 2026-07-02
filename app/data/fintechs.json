@@ -175,6 +175,54 @@
       "best_for": "MEI com contas a receber",
       "affiliate_url": "#",
       "rating": 4.1
+    },
+    {
+      "locale": "pt-BR",
+      "id": "cora",
+      "name": "Cora",
+      "slug": "cora",
+      "description_pt": "Conta PJ digital com foco em gestão de cobranças e emissão de boletos ilimitados",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados e gratuitos",
+        "Cobrança recorrente automática",
+        "Conciliação bancária integrada"
+      ],
+      "best_for": "MEI que emite muitas cobranças e boletos",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "bs2",
+      "name": "BS2",
+      "slug": "bs2",
+      "description_pt": "Banco digital com conta PJ gratuita, crédito consignado e integração com contabilidade",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito consignado para MEI",
+        "Integração com escritórios de contabilidade",
+        "App com gestão de fluxo de caixa"
+      ],
+      "best_for": "MEI que precisa de crédito e integração contábil",
+      "affiliate_url": "#",
+      "rating": 4.1
+    },
+    {
+      "locale": "pt-BR",
+      "id": "original",
+      "name": "Banco Original",
+      "slug": "original",
+      "description_pt": "Conta PJ digital do Banco Original com assessoria financeira e soluções de crédito",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Assessoria financeira dedicada",
+        "Antecipação de recebíveis",
+        "Cartão corporativo sem anuidade"
+      ],
+      "best_for": "MEI com faturamento crescente que busca assessoria",
+      "affiliate_url": "#",
+      "rating": 4.2
     }
   ]
 }
