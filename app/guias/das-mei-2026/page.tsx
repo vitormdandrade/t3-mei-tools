@@ -88,6 +88,26 @@ export default function DasMei2026() {
         </a>
       </div>
 
+      {/* Kit MEI CTA */}
+      <div className="callout callout-accent my-8">
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex-1">
+            <p className="callout-title">
+              📋 Já é MEI? Precisa de documentos!
+            </p>
+            <p>
+              Contrato de prestação de serviços, nota fiscal, recibos — tudo que você precisa para trabalhar como MEI. Nosso Kit inclui 4 modelos profissionais em PDF prontos para usar.
+            </p>
+          </div>
+          <a
+            href="/kit-mei"
+            className="btn-primary no-underline inline-flex whitespace-nowrap"
+          >
+            Comprar Kit MEI — R$ 29,90
+          </a>
+        </div>
+      </div>
+
       <h2>Conteúdo Relacionado</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[
