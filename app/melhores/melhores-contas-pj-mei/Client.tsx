@@ -69,7 +69,14 @@ export default function MelhoresContasPJ() {
           <tbody>
             {sorted.map((f, idx) => (
               <tr key={f.id} className={idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-900'}>
-                <td className="px-4 py-3 font-bold text-gray-900 dark:text-gray-100">{f.name}</td>
+                <td className="px-4 py-3 font-bold text-gray-900 dark:text-gray-100">
+                  {f.name}
+                  {fintechs.fintechs.sort((a, b) => b.rating - a.rating).slice(0, 3).some(top => top.id === f.id) && (
+                    <span className="ml-1.5 inline-flex items-center gap-0.5 bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-amber-200 whitespace-nowrap">
+                      🔥 Procurado
+                    </span>
+                  )}
+                </td>
                 <td className="px-4 py-3 text-center">
                   {f.monthly_fee_brl === 0 ? 'Grátis' : `R$ ${f.monthly_fee_brl}`}
                 </td>
@@ -105,7 +112,14 @@ export default function MelhoresContasPJ() {
             <div key={f.id} className="border dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{f.name}</h3>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{f.name}</h3>
+                    {fintechs.fintechs.sort((a, b) => b.rating - a.rating).slice(0, 3).some(top => top.id === f.id) && (
+                      <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded-full border border-amber-300">
+                        🔥 Mais Procurado
+                      </span>
+                    )}
+                  </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">{f.best_for}</p>
                 </div>
                 <div className="text-2xl font-bold text-yellow-500 dark:text-yellow-400">{f.rating}★</div>
