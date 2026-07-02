@@ -102,6 +102,51 @@ export default function DasMei2026() {
           </a>
         ))}
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Qual o valor do DAS MEI em 2026?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Com o salário mínimo em R$ 1.518, o DAS para comércio é R$ 76,90, para serviços é R$ 80,90, e para indústria é R$ 76,90. Inclui INSS (5% do salário mínimo) mais taxa municipal.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quando vence o DAS MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O DAS vence no dia 20 do mês seguinte ao mês de referência. Se o dia 20 cair em sábado, domingo ou feriado nacional, o vencimento é transferido para o próximo dia útil, sem multa.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Como pagar o DAS MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Pode ser pago via boleto em qualquer banco, casa lotérica, app MEI, internet banking ou direto na prefeitura.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'O que acontece se eu não pagar o DAS?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O atraso gera multa de 0,33% ao dia (limitada a 20%) mais juros Selic. Após 180 dias de atraso, o CNPJ pode ser bloqueado e o MEI perde benefícios previdenciários.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </article>
   );
 }
