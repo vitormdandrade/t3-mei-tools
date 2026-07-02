@@ -64,6 +64,26 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* WebSite Structured Data — enables Google Sitelinks Search Box */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Oráculo do MEI',
+              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://oraculodomei.com.br'}/?s={search_term_string}`,
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
         {/* ── Header ── */}
         <header className="sticky top-0 z-50" style={{
           background: 'var(--header-bg, rgba(254, 252, 245, 0.92))',
