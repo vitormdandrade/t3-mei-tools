@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
+import DasAlertForm from './DasAlertForm';
 
 export const metadata: Metadata = {
   title: 'Calendário DAS MEI 2026 — Todas as Datas de Vencimento (Ajustadas)',
@@ -168,6 +170,11 @@ export default function CalendarioDasPage() {
           </a>
         </div>
       </div>
+
+      {/* DAS Alert Bot opt-in */}
+      <Suspense fallback={null}>
+        <DasAlertForm />
+      </Suspense>
 
       {/* Main table */}
       <div className="border dark:border-gray-700 rounded-lg overflow-x-auto mb-8">

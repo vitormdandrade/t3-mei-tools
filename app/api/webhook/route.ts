@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "../../../lib/stripe";
+import { getSupabaseAdmin } from "@/lib/supabase";
 import {
   generateContratoPrestacaoServicos,
   generateModeloNotaFiscal,
@@ -138,6 +139,112 @@ export async function POST(req: NextRequest) {
       } catch (emailError: any) {
         console.error("Failed to send Kit MEI email:", emailError?.message);
         // Don't fail the webhook — email is a bonus, download still works via success page
+      }
+    }
+
+    // --- DAS Alert Bot: Subscription event handlers ---
+
+    // customer.subscription.created — when a DAS Alert Bot subscription is created
+    if (event.type === "customer.subscription.created") {
+      const subscription = event.data.object as Stripe.Subscription;
+      const metadata = subscription.metadata || {};
+
+      if (metadata.product !== "das-alert-bot") {
+        return NextResponse.json({ received: true, skipped: "not das-alert-bot" });
+      }
+
+      const subscriberId = parseInt(metadata.subscriber_id, 10);
+      if (!subscriberId) {
+        console.error("No subscriber_id in subscription metadata");
+        return NextResponse.json({ received: true, skipped: "no subscriber_id" });
+      }
+
+      const trialEnd = subscription.trial_end
+        ? new Date(subscription.trial_end * 1000).toISOString()
+        : null;
+
+      const supabase = getSupabaseAdmin();
+      const { error: updateError } = await supabase
+        .from("das_subscribers")
+        .update({
+          stripe_subscription_id: subscription.id,
+          subscription_status: subscription.status,
+          trial_ends_at: trialEnd,
+        })
+        .eq("id", subscriberId);
+
+      if (updateError) {
+        console.error(
+          `Failed to update subscriber ${subscriberId} on subscription.created:`,
+          updateError
+        );
+      } else {
+        console.log(
+          `DAS subscriber ${subscriberId} linked to Stripe sub ${subscription.id} (status: ${subscription.status})`
+        );
+      }
+    }
+
+    // customer.subscription.updated — status changes (e.g., trial → active, canceled)
+    if (event.type === "customer.subscription.updated") {
+      const subscription = event.data.object as Stripe.Subscription;
+      const metadata = subscription.metadata || {};
+
+      if (metadata.product !== "das-alert-bot") {
+        return NextResponse.json({ received: true, skipped: "not das-alert-bot" });
+      }
+
+      const trialEnd = subscription.trial_end
+        ? new Date(subscription.trial_end * 1000).toISOString()
+        : null;
+
+      const supabase = getSupabaseAdmin();
+      const { error: updateError } = await supabase
+        .from("das_subscribers")
+        .update({
+          subscription_status: subscription.status,
+          trial_ends_at: trialEnd,
+        })
+        .eq("stripe_subscription_id", subscription.id);
+
+      if (updateError) {
+        console.error(
+          `Failed to update subscriber for sub ${subscription.id}:`,
+          updateError
+        );
+      } else {
+        console.log(
+          `DAS subscription ${subscription.id} updated to status: ${subscription.status}`
+        );
+      }
+    }
+
+    // customer.subscription.deleted — subscription canceled/expired
+    if (event.type === "customer.subscription.deleted") {
+      const subscription = event.data.object as Stripe.Subscription;
+      const metadata = subscription.metadata || {};
+
+      if (metadata.product !== "das-alert-bot") {
+        return NextResponse.json({ received: true, skipped: "not das-alert-bot" });
+      }
+
+      const supabase = getSupabaseAdmin();
+      const { error: updateError } = await supabase
+        .from("das_subscribers")
+        .update({
+          subscription_status: "canceled",
+        })
+        .eq("stripe_subscription_id", subscription.id);
+
+      if (updateError) {
+        console.error(
+          `Failed to mark subscriber as canceled for sub ${subscription.id}:`,
+          updateError
+        );
+      } else {
+        console.log(
+          `DAS subscription ${subscription.id} marked as canceled`
+        );
       }
     }
 
