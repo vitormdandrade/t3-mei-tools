@@ -143,6 +143,51 @@ export default function MelhoresMaquininhas() {
           <li>✓ Escolha a maquininha ideal para seu negócio</li>
         </ul>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Qual a melhor maquininha de cartão para MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Depende do seu perfil: para atendimento presencial fixo, a Stone oferece o melhor suporte. Para trabalho ambulante, a SumUp é ideal por ser portátil e sem aluguel. Para vendas online + presenciais, o Mercado Pago integra com o Mercado Livre. Para quem precisa de antecipação rápida, a InfinitePay liquida em 24h.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual maquininha tem a menor taxa para MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A SumUp oferece as menores taxas do mercado: 1,69% no débito e a partir de 2,49% no crédito, sem aluguel. A InfinitePay também é competitiva com 1,99% no débito e 2,99% no crédito, também sem custo de aluguel.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Preciso de CNPJ MEI para ter uma maquininha de cartão?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Sim. Todas as principais operadoras de maquininhas exigem CNPJ ativo, seja MEI, ME ou EPP. O cadastro como MEI é simples e gratuito. Se você ainda não tem, confira nosso guia de como abrir MEI.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual o prazo de liquidação das maquininhas?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A maioria das maquininhas oferece liquidação em D+1 (crédito no dia seguinte). A InfinitePay se destaca com liquidação em até 24h para todas as transações. Stone, SumUp e Mercado Pago também operam em D+1 na maioria dos casos. Consulte as condições específicas de cada operadora.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
