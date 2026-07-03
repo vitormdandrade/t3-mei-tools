@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "../../../lib/stripe";
-import { getSupabaseAdmin } from "@/lib/supabase";
 import {
   generateContratoPrestacaoServicos,
   generateModeloNotaFiscal,
   generateReciboPagamento,
   generateTermoResponsabilidade,
+  generateContratoPrestacaoDetalhado,
+  generateReciboAutonomoRPA,
+  generateDASN_SIMEI,
+  generateNotaFiscalAvulsa,
+  generateTermoRescisaoContrato,
 } from "../../../lib/pdf-templates";
-import { ensureBucket, uploadKitZipAndGetUrl } from "../../../lib/supabase-storage";
-import { sendKitDeliveryEmail } from "../../../lib/email";
+import { ensureBucket, uploadKitZipAndGetUrl, uploadPdfAndGetUrl } from "../../../lib/supabase-storage";
+import { sendKitDeliveryEmail, sendTemplateDeliveryEmail } from "../../../lib/email";
 import Stripe from "stripe";
 
 // Dynamic import to work around archiver CJS/ESM interop with Turbopack
@@ -52,6 +56,39 @@ async function verifyWebhook(req: NextRequest): Promise<Stripe.Event> {
   return stripe.webhooks.constructEvent(body, signature, webhookSecret);
 }
 
+// Map product → single PDF generator
+const SINGLE_PDF_GENERATORS: Record<string, {
+  fn: (data: any) => Promise<Buffer>;
+  filename: string;
+  name: string;
+}> = {
+  "contrato-prestacao": {
+    fn: generateContratoPrestacaoDetalhado,
+    filename: "Contrato-Prestacao-Servicos.pdf",
+    name: "Contrato de Prestação de Serviços",
+  },
+  "recibo-autonomo": {
+    fn: generateReciboAutonomoRPA,
+    filename: "Recibo-Autonomo-RPA.pdf",
+    name: "Recibo de Autônomo (RPA)",
+  },
+  "dasn-simei": {
+    fn: generateDASN_SIMEI,
+    filename: "Declaracao-Anual-DASN-SIMEI.pdf",
+    name: "Declaração Anual MEI (DASN-SIMEI)",
+  },
+  "nota-fiscal-avulsa": {
+    fn: generateNotaFiscalAvulsa,
+    filename: "Nota-Fiscal-Servico-Avulsa.pdf",
+    name: "Nota Fiscal de Serviço Avulsa",
+  },
+  "termo-rescisao": {
+    fn: generateTermoRescisaoContrato,
+    filename: "Termo-Rescisao-Contrato.pdf",
+    name: "Termo de Rescisão de Contrato",
+  },
+};
+
 export async function POST(req: NextRequest) {
   try {
     let event: Stripe.Event;
@@ -66,11 +103,8 @@ export async function POST(req: NextRequest) {
     // Handle checkout.session.completed
     if (event.type === "checkout.session.completed") {
       const session = event.data.object as Stripe.Checkout.Session;
-
-      // Only process kit-mei purchases
-      if (session.metadata?.product !== "kit-mei") {
-        return NextResponse.json({ received: true, skipped: "not kit-mei" });
-      }
+      const product = session.metadata?.product;
+      const type = session.metadata?.type;
 
       const customerEmail = session.customer_details?.email;
       const customerName = session.customer_details?.name || "Empreendedor";
@@ -83,168 +117,114 @@ export async function POST(req: NextRequest) {
         );
       }
 
-      console.log(`Processing Kit MEI for ${customerEmail} (session: ${session.id})`);
+      console.log(`Processing ${product} for ${customerEmail} (session: ${session.id})`);
 
-      // STEP 1: Generate all 4 PDFs
       const data = {
         nome: customerName,
         email: customerEmail,
         nomeEmpresa: customerName,
       };
 
-      const [contrato, notaFiscal, recibo, termo] = await Promise.all([
-        generateContratoPrestacaoServicos(data),
-        generateModeloNotaFiscal(data),
-        generateReciboPagamento(data),
-        generateTermoResponsabilidade(data),
-      ]);
+      // --- Individual template pack ---
+      if (type === "template-pack" && product && SINGLE_PDF_GENERATORS[product]) {
+        const generator = SINGLE_PDF_GENERATORS[product];
 
-      // STEP 2: Create ZIP archive
-      const zipBuffer = await createZip([
-        { name: "01-Contrato-Prestacao-Servicos.pdf", data: contrato },
-        { name: "02-Modelo-Nota-Fiscal-RPA.pdf", data: notaFiscal },
-        { name: "03-Recibo-Pagamento.pdf", data: recibo },
-        { name: "04-Termo-Responsabilidade.pdf", data: termo },
-      ]);
+        // STEP 1: Generate single PDF
+        const pdfBuffer = await generator.fn(data);
+        console.log(`${generator.name} PDF generated: ${(pdfBuffer.length / 1024).toFixed(1)} KB`);
 
-      console.log(
-        `Kit MEI ZIP generated: ${(zipBuffer.length / 1024).toFixed(1)} KB`
-      );
+        // STEP 2: Upload to Supabase
+        await ensureBucket();
+        const downloadUrl = await uploadPdfAndGetUrl(session.id, pdfBuffer, generator.filename);
 
-      // STEP 3: Ensure Supabase bucket exists, upload ZIP, get signed URL
-      await ensureBucket();
-      const downloadUrl = await uploadKitZipAndGetUrl(session.id, zipBuffer);
+        console.log(`Download URL generated for session ${session.id}`);
 
-      console.log(`Download URL generated for session ${session.id}`);
-
-      // STEP 4: Keep in-memory store for success page (backward compat)
-      if (!(globalThis as any).__kitMeiZips) {
-        (globalThis as any).__kitMeiZips = new Map();
-      }
-      (globalThis as any).__kitMeiZips.set(session.id, {
-        buffer: zipBuffer,
-        email: customerEmail,
-        downloadUrl,
-        createdAt: Date.now(),
-      });
-
-      // STEP 5: Send email via Resend
-      try {
-        await sendKitDeliveryEmail({
-          to: customerEmail,
-          name: customerName,
+        // STEP 3: Keep in-memory store
+        if (!(globalThis as any).__kitMeiZips) {
+          (globalThis as any).__kitMeiZips = new Map();
+        }
+        (globalThis as any).__kitMeiZips.set(session.id, {
+          buffer: pdfBuffer,
+          email: customerEmail,
           downloadUrl,
+          createdAt: Date.now(),
+          isPdf: true,
+          filename: generator.filename,
         });
-        console.log(`Kit MEI email sent to ${customerEmail}`);
-      } catch (emailError: any) {
-        console.error("Failed to send Kit MEI email:", emailError?.message);
-        // Don't fail the webhook — email is a bonus, download still works via success page
-      }
-    }
 
-    // --- DAS Alert Bot: Subscription event handlers ---
+        // STEP 4: Send email
+        try {
+          await sendTemplateDeliveryEmail({
+            to: customerEmail,
+            name: customerName,
+            downloadUrl,
+            templateName: generator.name,
+          });
+          console.log(`Template email sent to ${customerEmail}`);
+        } catch (emailError: any) {
+          console.error("Failed to send template email:", emailError?.message);
+        }
 
-    // customer.subscription.created — when a DAS Alert Bot subscription is created
-    if (event.type === "customer.subscription.created") {
-      const subscription = event.data.object as Stripe.Subscription;
-      const metadata = subscription.metadata || {};
-
-      if (metadata.product !== "das-alert-bot") {
-        return NextResponse.json({ received: true, skipped: "not das-alert-bot" });
-      }
-
-      const subscriberId = parseInt(metadata.subscriber_id, 10);
-      if (!subscriberId) {
-        console.error("No subscriber_id in subscription metadata");
-        return NextResponse.json({ received: true, skipped: "no subscriber_id" });
+        return NextResponse.json({ received: true });
       }
 
-      const trialEnd = subscription.trial_end
-        ? new Date(subscription.trial_end * 1000).toISOString()
-        : null;
+      // --- Original Kit MEI bundle ---
+      if (!product || product === "kit-mei") {
+        // Only process kit-mei purchases
+        if (session.metadata?.product !== "kit-mei" && product !== "kit-mei") {
+          return NextResponse.json({ received: true, skipped: "not kit-mei" });
+        }
 
-      const supabase = getSupabaseAdmin();
-      const { error: updateError } = await supabase
-        .from("das_subscribers")
-        .update({
-          stripe_subscription_id: subscription.id,
-          subscription_status: subscription.status,
-          trial_ends_at: trialEnd,
-        })
-        .eq("id", subscriberId);
+        console.log(`Processing Kit MEI for ${customerEmail} (session: ${session.id})`);
 
-      if (updateError) {
-        console.error(
-          `Failed to update subscriber ${subscriberId} on subscription.created:`,
-          updateError
-        );
-      } else {
+        // STEP 1: Generate all 4 PDFs
+        const [contrato, notaFiscal, recibo, termo] = await Promise.all([
+          generateContratoPrestacaoServicos(data),
+          generateModeloNotaFiscal(data),
+          generateReciboPagamento(data),
+          generateTermoResponsabilidade(data),
+        ]);
+
+        // STEP 2: Create ZIP archive
+        const zipBuffer = await createZip([
+          { name: "01-Contrato-Prestacao-Servicos.pdf", data: contrato },
+          { name: "02-Modelo-Nota-Fiscal-RPA.pdf", data: notaFiscal },
+          { name: "03-Recibo-Pagamento.pdf", data: recibo },
+          { name: "04-Termo-Responsabilidade.pdf", data: termo },
+        ]);
+
         console.log(
-          `DAS subscriber ${subscriberId} linked to Stripe sub ${subscription.id} (status: ${subscription.status})`
+          `Kit MEI ZIP generated: ${(zipBuffer.length / 1024).toFixed(1)} KB`
         );
-      }
-    }
 
-    // customer.subscription.updated — status changes (e.g., trial → active, canceled)
-    if (event.type === "customer.subscription.updated") {
-      const subscription = event.data.object as Stripe.Subscription;
-      const metadata = subscription.metadata || {};
+        // STEP 3: Ensure Supabase bucket exists, upload ZIP, get signed URL
+        await ensureBucket();
+        const downloadUrl = await uploadKitZipAndGetUrl(session.id, zipBuffer);
 
-      if (metadata.product !== "das-alert-bot") {
-        return NextResponse.json({ received: true, skipped: "not das-alert-bot" });
-      }
+        console.log(`Download URL generated for session ${session.id}`);
 
-      const trialEnd = subscription.trial_end
-        ? new Date(subscription.trial_end * 1000).toISOString()
-        : null;
+        // STEP 4: Keep in-memory store for success page (backward compat)
+        if (!(globalThis as any).__kitMeiZips) {
+          (globalThis as any).__kitMeiZips = new Map();
+        }
+        (globalThis as any).__kitMeiZips.set(session.id, {
+          buffer: zipBuffer,
+          email: customerEmail,
+          downloadUrl,
+          createdAt: Date.now(),
+        });
 
-      const supabase = getSupabaseAdmin();
-      const { error: updateError } = await supabase
-        .from("das_subscribers")
-        .update({
-          subscription_status: subscription.status,
-          trial_ends_at: trialEnd,
-        })
-        .eq("stripe_subscription_id", subscription.id);
-
-      if (updateError) {
-        console.error(
-          `Failed to update subscriber for sub ${subscription.id}:`,
-          updateError
-        );
-      } else {
-        console.log(
-          `DAS subscription ${subscription.id} updated to status: ${subscription.status}`
-        );
-      }
-    }
-
-    // customer.subscription.deleted — subscription canceled/expired
-    if (event.type === "customer.subscription.deleted") {
-      const subscription = event.data.object as Stripe.Subscription;
-      const metadata = subscription.metadata || {};
-
-      if (metadata.product !== "das-alert-bot") {
-        return NextResponse.json({ received: true, skipped: "not das-alert-bot" });
-      }
-
-      const supabase = getSupabaseAdmin();
-      const { error: updateError } = await supabase
-        .from("das_subscribers")
-        .update({
-          subscription_status: "canceled",
-        })
-        .eq("stripe_subscription_id", subscription.id);
-
-      if (updateError) {
-        console.error(
-          `Failed to mark subscriber as canceled for sub ${subscription.id}:`,
-          updateError
-        );
-      } else {
-        console.log(
-          `DAS subscription ${subscription.id} marked as canceled`
-        );
+        // STEP 5: Send email via Resend
+        try {
+          await sendKitDeliveryEmail({
+            to: customerEmail,
+            name: customerName,
+            downloadUrl,
+          });
+          console.log(`Kit MEI email sent to ${customerEmail}`);
+        } catch (emailError: any) {
+          console.error("Failed to send Kit MEI email:", emailError?.message);
+        }
       }
     }
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-function getMemoryStore(): Map<string, { buffer: Buffer; email: string; downloadUrl?: string; createdAt: number }> {
+function getMemoryStore(): Map<string, { buffer: Buffer; email: string; downloadUrl?: string; createdAt: number; isPdf?: boolean; filename?: string }> {
   if (!(globalThis as any).__kitMeiZips) {
     (globalThis as any).__kitMeiZips = new Map();
   }
@@ -37,11 +37,17 @@ export async function GET(req: NextRequest) {
 
       // If we have the buffer in memory (backward compat), stream it
       if (download === "1" && entry.buffer) {
+        const isPdf = entry.isPdf;
+        const filename = entry.filename || "kit-mei-documentos.zip";
+        const contentType = isPdf ? "application/pdf" : "application/zip";
+        const disposition = isPdf
+          ? `attachment; filename="${filename}"`
+          : 'attachment; filename="kit-mei-documentos.zip"';
+
         return new NextResponse(new Uint8Array(entry.buffer), {
           headers: {
-            "Content-Type": "application/zip",
-            "Content-Disposition":
-              'attachment; filename="kit-mei-documentos.zip"',
+            "Content-Type": contentType,
+            "Content-Disposition": disposition,
             "Content-Length": entry.buffer.length.toString(),
           },
         });

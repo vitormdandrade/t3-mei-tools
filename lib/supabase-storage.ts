@@ -51,7 +51,7 @@ export async function ensureBucket(): Promise<void> {
       name: BUCKET_NAME,
       public: false,
       file_size_limit: 52428800,
-      allowed_mime_types: ["application/zip"],
+      allowed_mime_types: ["application/zip", "application/pdf"],
     }),
   });
 
@@ -109,6 +109,76 @@ export async function uploadKitZipAndGetUrl(
 
   console.log(
     `ZIP uploaded: ${filePath} (${(zipBuffer.length / 1024).toFixed(1)} KB)`
+  );
+
+  // Generate signed URL (48 hours)
+  const signHeaders: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+  signHeaders["apikey"] = secret;
+  signHeaders["Authorization"] = `Bearer ${secret}`;
+
+  const signRes = await fetch(
+    `${url}/storage/v1/object/sign/${BUCKET_NAME}/${filePath}`,
+    {
+      method: "POST",
+      headers: signHeaders,
+      body: JSON.stringify({ expiresIn: 60 * 60 * 48 }),
+    }
+  );
+
+  if (!signRes.ok) {
+    const err = await signRes.text();
+    console.error("Failed to create signed URL:", err);
+    throw new Error(`Signed URL failed: ${err}`);
+  }
+
+  const signData = await signRes.json();
+  const signedUrl = signData.signedURL || signData.signedUrl;
+
+  if (!signedUrl) {
+    throw new Error("No signed URL in response: " + JSON.stringify(signData));
+  }
+
+  return signedUrl;
+}
+
+/**
+ * Upload a single PDF file and return a signed download URL (48h expiry).
+ */
+export async function uploadPdfAndGetUrl(
+  sessionId: string,
+  pdfBuffer: Buffer,
+  filename: string
+): Promise<string> {
+  const { url, secret } = getConfig();
+  const filePath = `${sessionId}/${filename}`;
+
+  // Upload via REST API
+  const uploadHeaders: Record<string, string> = {
+    "Content-Type": "application/pdf",
+    "x-upsert": "true",
+  };
+  uploadHeaders["apikey"] = secret;
+  uploadHeaders["Authorization"] = `Bearer ${secret}`;
+
+  const uploadRes = await fetch(
+    `${url}/storage/v1/object/${BUCKET_NAME}/${filePath}`,
+    {
+      method: "POST",
+      headers: uploadHeaders,
+      body: new Uint8Array(pdfBuffer),
+    }
+  );
+
+  if (!uploadRes.ok) {
+    const err = await uploadRes.text();
+    console.error("Failed to upload PDF:", err);
+    throw new Error(`Upload failed: ${err}`);
+  }
+
+  console.log(
+    `PDF uploaded: ${filePath} (${(pdfBuffer.length / 1024).toFixed(1)} KB)`
   );
 
   // Generate signed URL (48 hours)

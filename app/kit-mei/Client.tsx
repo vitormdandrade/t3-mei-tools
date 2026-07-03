@@ -301,6 +301,42 @@ export default function KitMEIPage() {
           {loading ? "Redirecionando..." : "Comprar por R$ 29,90"}
         </button>
       </section>
+
+      {/* Cross-sell: Individual Templates */}
+      <section>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+          📦 Templates Individuais
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-6">
+          Precisa de um documento específico? Confira nossos templates avulsos:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { slug: "contrato-prestacao", name: "Contrato de Prestação de Serviços", price: "R$49,90", emoji: "📋", desc: "8 cláusulas para design, TI e fotografia" },
+            { slug: "recibo-autonomo", name: "Recibo de Autônomo (RPA)", price: "R$19,90", emoji: "🧾", desc: "Tabela de serviços e retenções" },
+            { slug: "dasn-simei", name: "Declaração Anual MEI (DASN)", price: "R$29,90", emoji: "📊", desc: "Tabelas mensais e limite de faturamento" },
+            { slug: "nota-fiscal-avulsa", name: "Nota Fiscal de Serviço Avulsa", price: "R$19,90", emoji: "📄", desc: "Campos fiscais completos" },
+            { slug: "termo-rescisao", name: "Termo de Rescisão de Contrato", price: "R$39,90", emoji: "📝", desc: "Acerto financeiro e quitação" },
+          ].map((tpl) => (
+            <a
+              key={tpl.slug}
+              href={`/kit-mei/${tpl.slug}`}
+              className="border dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg p-5 hover:shadow-lg transition hover:border-amber-400 dark:hover:border-amber-600 no-underline"
+            >
+              <div className="text-2xl mb-2">{tpl.emoji}</div>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">
+                {tpl.name}
+              </h3>
+              <p className="text-gray-500 dark:text-gray-400 text-xs mb-2">
+                {tpl.desc}
+              </p>
+              <p className="text-amber-600 dark:text-amber-400 font-bold text-sm">
+                {tpl.price}
+              </p>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

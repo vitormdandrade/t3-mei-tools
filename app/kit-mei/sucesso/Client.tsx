@@ -3,12 +3,24 @@
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
+const PRODUCT_NAMES: Record<string, string> = {
+  "contrato-prestacao": "Contrato de Prestação de Serviços",
+  "recibo-autonomo": "Recibo de Autônomo (RPA)",
+  "dasn-simei": "Declaração Anual MEI (DASN-SIMEI)",
+  "nota-fiscal-avulsa": "Nota Fiscal de Serviço Avulsa",
+  "termo-rescisao": "Termo de Rescisão de Contrato",
+};
+
 function SucessoContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
+  const product = searchParams.get("product");
   const [status, setStatus] = useState<"loading" | "ready" | "expired" | "error">("loading");
   const [downloadUrl, setDownloadUrl] = useState("");
   const [error, setError] = useState("");
+
+  const isTemplate = !!product && product !== "kit-mei";
+  const productName = product ? PRODUCT_NAMES[product] || "Template" : null;
 
   useEffect(() => {
     if (!sessionId) {
@@ -26,7 +38,6 @@ function SucessoContent() {
           setStatus("ready");
           setDownloadUrl(`/api/download?session_id=${sessionId}&download=1`);
         } else if (data.status === "pending") {
-          // Payment still processing, retry in 3 seconds
           setTimeout(checkSession, 3000);
         } else if (data.status === "expired") {
           setStatus("expired");
@@ -103,24 +114,27 @@ function SucessoContent() {
         Pagamento confirmado!
       </h2>
       <p className="text-gray-600 dark:text-gray-400 mb-8">
-        Seu Kit MEI está pronto. Clique no botão abaixo para baixar.
+        {isTemplate
+          ? `Seu template "${productName}" está pronto. Clique no botão abaixo para baixar.`
+          : "Seu Kit MEI está pronto. Clique no botão abaixo para baixar."}
       </p>
       <a
         href={downloadUrl}
         className="inline-block bg-accent text-white px-10 py-4 rounded-lg text-lg font-bold hover:bg-accent-hover transition shadow-lg"
       >
-        📥 Baixar Kit MEI (ZIP)
+        {isTemplate ? `📥 Baixar ${productName} (PDF)` : "📥 Baixar Kit MEI (ZIP)"}
       </a>
       <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-        Arquivo ZIP com 4 PDFs · Contrato · Nota Fiscal · Recibo · Termo de
-        Responsabilidade
+        {isTemplate
+          ? `Arquivo PDF · ${productName} · Preenchível`
+          : "Arquivo ZIP com 4 PDFs · Contrato · Nota Fiscal · Recibo · Termo de Responsabilidade"}
       </p>
       <div className="mt-8">
         <a
-          href="/kit-mei"
+          href={isTemplate ? `/kit-mei/${product}` : "/kit-mei"}
           className="text-amber-600 dark:text-amber-400 font-semibold hover:underline"
         >
-          ← Voltar para o Kit MEI
+          ← Voltar{isTemplate ? ` para ${productName}` : " para o Kit MEI"}
         </a>
       </div>
     </div>

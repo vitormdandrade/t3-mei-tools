@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import KitMEIPage from './Client';
 
 export const metadata: Metadata = {
-  title: 'Kit MEI — 4 Modelos Profissionais em PDF por R$ 29,90',
+  title: 'Kit MEI — Modelos Profissionais em PDF | Templates Individuais a partir de R$19,90',
   description:
-    'Kit MEI completo: contrato de prestação de serviços, recibo, proposta comercial e controle financeiro. 4 modelos editáveis em PDF prontos para usar. Compra única, acesso imediato.',
+    'Kit MEI completo com modelos de documentos profissionais. Templates individuais: contrato, recibo RPA, DASN-SIMEI, nota fiscal avulsa e termo de rescisão. Download imediato.',
   keywords:
-    'kit MEI, modelo contrato MEI, recibo MEI PDF, proposta comercial MEI, controle financeiro MEI, documentos MEI',
+    'kit MEI, modelo contrato MEI, recibo MEI PDF, DASN-SIMEI preenchível, nota fiscal MEI, termo rescisão MEI, documentos MEI, templates MEI',
   alternates: { canonical: '/kit-mei' },
   openGraph: {
-    title: 'Kit MEI — 4 Modelos Profissionais em PDF',
+    title: 'Kit MEI — Modelos de Documentos Profissionais em PDF',
     description:
-      'Contrato, recibo, proposta comercial e controle financeiro. 4 modelos editáveis prontos para o seu MEI.',
+      'Templates individuais para MEI: contrato, recibo RPA, DASN, nota fiscal e termo de rescisão. A partir de R$19,90.',
     type: 'website',
     url: '/kit-mei',
   },

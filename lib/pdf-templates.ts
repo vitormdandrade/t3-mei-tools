@@ -599,3 +599,492 @@ export function generateTermoResponsabilidade(data: CustomerData): Promise<Buffe
     doc.end();
   });
 }
+
+// ─── 5 NEW TEMPLATE PACKS ────────────────────────────────────────────────────
+
+/** Contrato de Prestação de Serviços — design gráfico, TI, fotografia */
+export function generateContratoPrestacaoDetalhado(data: CustomerData): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const doc = createBaseDocument();
+    const chunks: Buffer[] = [];
+    doc.on("data", (chunk) => chunks.push(chunk));
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+    doc.on("error", reject);
+
+    addHeader(doc, "CONTRATO DE PRESTAÇÃO DE SERVIÇOS");
+    const today = new Date().toLocaleDateString("pt-BR");
+
+    doc
+      .fontSize(10)
+      .font("Helvetica")
+      .fillColor("#666666")
+      .text("Modelo profissional para MEI — Design Gráfico, TI, Fotografia e Serviços", { align: "center" })
+      .moveDown(1);
+
+    doc
+      .fontSize(11)
+      .font("Helvetica")
+      .fillColor("#333333")
+      .text("Pelo presente instrumento particular de Contrato de Prestação de Serviços, as partes abaixo qualificadas têm entre si justo e acordado o seguinte:")
+      .moveDown(1);
+
+    // CLÁUSULA 1 — PARTES
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 1 — DAS PARTES").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica-Bold").text("CONTRATANTE:").moveDown(0.3);
+    doc.fontSize(11).font("Helvetica")
+      .text("Nome/Razão Social: _______________________________________________________")
+      .text("CPF/CNPJ: ________________________________________________________________")
+      .text("Endereço: _________________________________________________________________")
+      .text("Telefone: _________________________ E-mail: _______________________________")
+      .moveDown(0.5);
+    doc.font("Helvetica-Bold").text("CONTRATADO(A) — MEI:").moveDown(0.3);
+    doc.font("Helvetica")
+      .text(`Nome: ${data.nomeEmpresa || "_________________________________________"}`)
+      .text(`CNPJ (MEI): ${data.cnpj || "_____________________________________________"}`)
+      .text("Inscrição Municipal: ______________________________________________________")
+      .text("Endereço Comercial: _______________________________________________________")
+      .text("Telefone: _________________________ E-mail: _______________________________")
+      .moveDown(1);
+
+    // CLÁUSULA 2 — OBJETO
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 2 — DO OBJETO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("2.1. O presente contrato tem por objeto a prestação dos seguintes serviços profissionais:")
+      .moveDown(0.3)
+      .text("___________________________________________________________________________")
+      .text("___________________________________________________________________________")
+      .text("___________________________________________________________________________")
+      .moveDown(0.3)
+      .text("2.2. Área de atuação (design gráfico, TI, fotografia, consultoria, etc.):")
+      .text("___________________________________________________________________________")
+      .moveDown(0.3)
+      .text("2.3. Escopo detalhado e entregáveis:")
+      .text("___________________________________________________________________________")
+      .text("___________________________________________________________________________")
+      .text("___________________________________________________________________________")
+      .moveDown(1);
+
+    // CLÁUSULA 3 — VALOR
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 3 — DO VALOR E PAGAMENTO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("3.1. O valor total pelos serviços é de R$ _________________ (_________________________).")
+      .text("3.2. Forma de pagamento: ( ) À vista  ( ) Parcelado em ____ vezes  ( ) Por entrega")
+      .text("3.3. Em caso de atraso, multa de 2% + juros de 1% ao mês + correção monetária.")
+      .moveDown(1);
+
+    // CLÁUSULA 4 — PRAZO
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 4 — DO PRAZO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("4.1. Prazo de execução: ____ dias úteis a partir da assinatura.")
+      .text("4.2. Vigência: de ___/___/______ até ___/___/______, podendo ser renovado.")
+      .moveDown(1);
+
+    // CLÁUSULA 5 — OBRIGAÇÕES
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 5 — DAS OBRIGAÇÕES").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica-Bold").text("5.1. Do CONTRATANTE:").moveDown(0.3);
+    doc.font("Helvetica")
+      .text("a) Fornecer briefings, materiais e informações necessárias;")
+      .text("b) Efetuar pagamentos nos prazos acordados;")
+      .text("c) Respeitar prazos de aprovação e feedback.")
+      .moveDown(0.5);
+    doc.font("Helvetica-Bold").text("5.2. Do CONTRATADO(A):").moveDown(0.3);
+    doc.font("Helvetica")
+      .text("a) Executar serviços com qualidade técnica e profissionalismo;")
+      .text("b) Cumprir prazos acordados, comunicando eventuais atrasos;")
+      .text("c) Manter sigilo sobre informações confidenciais;")
+      .text("d) Emitir nota fiscal/recibo quando solicitado;")
+      .text("e) Respeitar direitos autorais e de propriedade intelectual.")
+      .moveDown(1);
+
+    // CLÁUSULA 6 — PROPRIEDADE INTELECTUAL
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 6 — DA PROPRIEDADE INTELECTUAL").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("6.1. Os direitos de uso dos materiais produzidos serão transferidos ao CONTRATANTE após quitação total.")
+      .text("6.2. O CONTRATADO(A) poderá utilizar os trabalhos em portfólio, salvo acordo contrário.")
+      .moveDown(1);
+
+    // CLÁUSULA 7 — RESCISÃO
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 7 — DA RESCISÃO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("7.1. Qualquer parte pode rescindir com aviso prévio de 15 dias.")
+      .text("7.2. Rescisão sem justa causa pelo CONTRATANTE: pagamento de 30% do valor restante.")
+      .text("7.3. Rescisão por descumprimento: a parte lesada pode rescindir imediatamente.")
+      .moveDown(1);
+
+    // CLÁUSULA 8 — FORO
+    doc.fontSize(13).font("Helvetica-Bold").text("CLÁUSULA 8 — DO FORO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("Fica eleito o foro da Comarca de ___________________ para dirimir dúvidas deste contrato.")
+      .moveDown(2);
+
+    // SIGNATURES
+    doc.text(`__________________________, ${today}.`, { align: "center" }).moveDown(2);
+    doc.text("_________________________________________", { align: "center" });
+    doc.text("CONTRATANTE", { align: "center" }).moveDown(2);
+    doc.text("_________________________________________", { align: "center" });
+    doc.text("CONTRATADO(A) — MEI", { align: "center" }).moveDown(1);
+    doc.fontSize(9).fillColor("#999999")
+      .text("Testemunhas (opcional):", { align: "left" })
+      .text("1. ______________________________  2. ______________________________");
+
+    addFooter(doc);
+    doc.end();
+  });
+}
+
+/** Recibo de Autônomo (RPA) — preenchível */
+export function generateReciboAutonomoRPA(data: CustomerData): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const doc = createBaseDocument();
+    const chunks: Buffer[] = [];
+    doc.on("data", (chunk) => chunks.push(chunk));
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+    doc.on("error", reject);
+
+    addHeader(doc, "RECIBO DE PAGAMENTO A AUTÔNOMO (RPA)");
+    const today = new Date().toLocaleDateString("pt-BR");
+
+    doc.fontSize(10).font("Helvetica").fillColor("#666666")
+      .text("Documento válido como comprovante de pagamento para pessoa física e MEI", { align: "center" })
+      .moveDown(1);
+
+    doc.fontSize(12).font("Helvetica-Bold").fillColor("#333333")
+      .text("RPA Nº: ________/________", { align: "right" })
+      .moveDown(0.5);
+
+    doc.fontSize(12).font("Helvetica-Bold").fillColor("#1a1a1a")
+      .text("DADOS DO PRESTADOR DE SERVIÇOS").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text(`Nome: ${data.nomeEmpresa || "_________________________________________________________________"}`)
+      .text(`CNPJ/CPF: ${data.cnpj || "______________________________"}  Insc. Municipal: ___________________`)
+      .text("Endereço: ____________________________________________________________________________")
+      .text("Cidade/UF: __________________________________  CEP: ___________________")
+      .text("Telefone: _________________________  E-mail: ___________________________________________")
+      .moveDown(0.8);
+
+    doc.fontSize(12).font("Helvetica-Bold").text("DADOS DO TOMADOR DE SERVIÇOS").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text("Nome/Razão Social: ____________________________________________________________________")
+      .text("CPF/CNPJ: _____________________________________________________________________________")
+      .text("Endereço: ____________________________________________________________________________")
+      .text("Cidade/UF: __________________________________  CEP: ___________________")
+      .text("Telefone: _________________________  E-mail: ___________________________________________")
+      .moveDown(0.8);
+
+    doc.fontSize(12).font("Helvetica-Bold").text("DISCRIMINAÇÃO DOS SERVIÇOS PRESTADOS").moveDown(0.3);
+
+    const tableY = doc.y;
+    doc.fontSize(9).font("Helvetica-Bold");
+    doc.text("Descrição do Serviço", 60, tableY, { width: 240 });
+    doc.text("Valor (R$)", 310, tableY, { width: 100 });
+
+    doc.moveTo(60, doc.y + 2).lineTo(500, doc.y + 2).strokeColor("#cccccc").stroke();
+    doc.moveDown(0.5);
+
+    for (let i = 0; i < 6; i++) {
+      const y = doc.y;
+      doc.fontSize(9).font("Helvetica")
+        .text("_______________________________________________________________", 60, y, { width: 240 })
+        .text("___________________", 310, y, { width: 100 });
+      doc.moveDown(0.4);
+    }
+
+    doc.moveTo(60, doc.y + 2).lineTo(500, doc.y + 2).strokeColor("#333333").stroke();
+    doc.moveDown(0.5);
+
+    doc.fontSize(10).font("Helvetica-Bold")
+      .text("VALOR TOTAL:  R$ ___________________________________________", { align: "right" })
+      .moveDown(1);
+
+    doc.fontSize(12).font("Helvetica-Bold").text("RETENÇÕES E DESCONTOS").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text("INSS (11%): R$ ____________________   IRRF: R$ ____________________")
+      .text("ISS: R$ ____________________          Outros: R$ ____________________")
+      .text("VALOR LÍQUIDO A RECEBER: R$ ________________________________________________")
+      .moveDown(1);
+
+    doc.fontSize(10).font("Helvetica-Oblique").fillColor("#666666")
+      .text("Observações:")
+      .text("• MEI é isento de IRRF conforme Lei Complementar 123/2006")
+      .text("• Para serviços prestados a pessoa jurídica, pode haver retenção de INSS (11%) e ISS conforme município")
+      .text("• Consulte seu contador sobre obrigações fiscais específicas")
+      .moveDown(1);
+
+    doc.fontSize(10).font("Helvetica").fillColor("#333333")
+      .text(`__________________________, ${today}.`, { align: "center" }).moveDown(1.5);
+    doc.text("_________________________________________", { align: "center" });
+    doc.font("Helvetica-Bold").text("PRESTADOR DE SERVIÇOS", { align: "center" }).moveDown(1.5);
+    doc.font("Helvetica").text("_________________________________________", { align: "center" });
+    doc.font("Helvetica-Bold").text("TOMADOR DE SERVIÇOS", { align: "center" });
+
+    addFooter(doc);
+    doc.end();
+  });
+}
+
+/** Declaração Anual MEI (DASN-SIMEI) — preenchível */
+export function generateDASN_SIMEI(data: CustomerData): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const doc = createBaseDocument();
+    const chunks: Buffer[] = [];
+    doc.on("data", (chunk) => chunks.push(chunk));
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+    doc.on("error", reject);
+
+    addHeader(doc, "DECLARAÇÃO ANUAL DO SIMPLES NACIONAL");
+    const today = new Date().toLocaleDateString("pt-BR");
+    doc.fontSize(10).font("Helvetica").fillColor("#666666")
+      .text("DASN-SIMEI — Modelo Preenchível para Microempreendedor Individual", { align: "center" })
+      .moveDown(1);
+
+    doc.fontSize(13).font("Helvetica-Bold").fillColor("#1a1a1a")
+      .text("1. IDENTIFICAÇÃO DO MEI").moveDown(0.5);
+    doc.fontSize(10).font("Helvetica")
+      .text(`Nome Empresarial: ${data.nomeEmpresa || "_________________________________________________________________"}`)
+      .text(`CNPJ: ${data.cnpj || "______________________________"}  Nome Fantasia: ____________________________`)
+      .text("Endereço Comercial: _____________________________________________________________________")
+      .text("Município/UF: ______________________________  CEP: ___________________")
+      .text("Natureza Jurídica: 213-5 — Microempreendedor Individual")
+      .moveDown(0.8);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("2. ANO-CALENDÁRIO DA DECLARAÇÃO").moveDown(0.5);
+    doc.fontSize(10).font("Helvetica")
+      .text("Ano-calendário: ________  (exercício ________)")
+      .text("Data de abertura do MEI: ___/___/______")
+      .text("MEI permaneceu ativo durante todo o ano-calendário?  ( ) SIM  ( ) NÃO")
+      .text("Se NÃO, data de baixa: ___/___/______")
+      .moveDown(0.8);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("3. RECEITA BRUTA TOTAL").moveDown(0.5);
+    doc.fontSize(10).font("Helvetica")
+      .text("3.1. Receita Bruta de Comércio e Indústria:")
+      .text("     Janeiro: R$ ___________  Fevereiro: R$ ___________  Março: R$ ___________")
+      .text("     Abril:   R$ ___________  Maio:      R$ ___________  Junho: R$ ___________")
+      .text("     Julho:   R$ ___________  Agosto:    R$ ___________  Setembro: R$ ___________")
+      .text("     Outubro: R$ ___________  Novembro:  R$ ___________  Dezembro: R$ ___________")
+      .text("     TOTAL COMÉRCIO/INDÚSTRIA: R$ ________________________________________________").moveDown(0.5);
+    doc.text("3.2. Receita Bruta de Serviços:")
+      .text("     Janeiro: R$ ___________  Fevereiro: R$ ___________  Março: R$ ___________")
+      .text("     Abril:   R$ ___________  Maio:      R$ ___________  Junho: R$ ___________")
+      .text("     Julho:   R$ ___________  Agosto:    R$ ___________  Setembro: R$ ___________")
+      .text("     Outubro: R$ ___________  Novembro:  R$ ___________  Dezembro: R$ ___________")
+      .text("     TOTAL SERVIÇOS: R$ __________________________________________________________").moveDown(0.5);
+    doc.text("3.3. RECEITA BRUTA TOTAL (Comércio + Serviços): R$ _________________________________")
+      .moveDown(0.5);
+    doc.fontSize(10).font("Helvetica-Bold").fillColor("#1a1a1a")
+      .text("Limite MEI 2026: R$ 81.000,00").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text("( ) Receita dentro do limite  ( ) Receita excedeu o limite — obrigatório desenquadramento")
+      .moveDown(0.8);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("4. EMPREGADO").moveDown(0.5);
+    doc.fontSize(10).font("Helvetica")
+      .text("Possuiu empregado no ano-calendário?  ( ) SIM  ( ) NÃO")
+      .text("Se SIM, quantidade de meses com empregado: ____ meses")
+      .text("Nome do empregado: ___________________________________________________________________")
+      .text("CPF: _______________________________  Salário: R$ ___________________")
+      .moveDown(0.8);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("5. NOTAS FISCAIS EMITIDAS").moveDown(0.5);
+    doc.fontSize(10).font("Helvetica")
+      .text("Quantidade de notas fiscais emitidas no ano: ______")
+      .text("Valor total de notas fiscais emitidas: R$ _____________________________________________")
+      .moveDown(0.8);
+
+    doc.fontSize(13).font("Helvetica-Bold").fillColor("#1a1a1a").text("6. DECLARAÇÃO").moveDown(0.5);
+    doc.fontSize(10).font("Helvetica")
+      .text("Declaro, sob as penas da lei, que as informações prestadas nesta declaração são")
+      .text("verdadeiras e correspondem à realidade dos fatos.")
+      .moveDown(2);
+
+    doc.text(`__________________________, ${today}.`, { align: "center" }).moveDown(2);
+    doc.text("_________________________________________", { align: "center" });
+    doc.font("Helvetica-Bold").text("ASSINATURA DO MEI OU REPRESENTANTE LEGAL", { align: "center" });
+
+    addFooter(doc);
+    doc.end();
+  });
+}
+
+/** Nota Fiscal de Serviço Avulsa */
+export function generateNotaFiscalAvulsa(data: CustomerData): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const doc = createBaseDocument();
+    const chunks: Buffer[] = [];
+    doc.on("data", (chunk) => chunks.push(chunk));
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+    doc.on("error", reject);
+
+    addHeader(doc, "NOTA FISCAL DE SERVIÇO AVULSA");
+    doc.fontSize(10).font("Helvetica").fillColor("#666666")
+      .text("Documento Fiscal para Prestação de Serviços — Pessoa Física e MEI", { align: "center" })
+      .moveDown(1);
+
+    doc.fontSize(11).font("Helvetica-Bold").fillColor("#333333")
+      .text("NFS-e Nº: ____________  ", { continued: true })
+      .font("Helvetica").text(`Data de Emissão: ${new Date().toLocaleDateString("pt-BR")}`)
+      .moveDown(0.8);
+
+    doc.fontSize(12).font("Helvetica-Bold").fillColor("#1a1a1a")
+      .text("PRESTADOR DE SERVIÇOS").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text(`Nome/Razão Social: ${data.nomeEmpresa || "_________________________________________________________________"}`)
+      .text(`CNPJ/CPF: ${data.cnpj || "______________________________"}  Insc. Municipal: ___________________`)
+      .text("Endereço: ____________________________________________________________________________")
+      .text("Município/UF: __________________________  CEP: ___________________")
+      .text("Telefone: _________________________  E-mail: ___________________________________________")
+      .moveDown(0.8);
+
+    doc.fontSize(12).font("Helvetica-Bold").text("TOMADOR DE SERVIÇOS").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text("Nome/Razão Social: ____________________________________________________________________")
+      .text("CPF/CNPJ: _____________________________________________________________________________")
+      .text("Endereço: ____________________________________________________________________________")
+      .text("Município/UF: __________________________  CEP: ___________________")
+      .text("Telefone: _________________________  E-mail: ___________________________________________")
+      .moveDown(0.8);
+
+    doc.fontSize(12).font("Helvetica-Bold").text("DISCRIMINAÇÃO DOS SERVIÇOS").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text("1. ________________________________________________________________________________")
+      .text("2. ________________________________________________________________________________")
+      .text("3. ________________________________________________________________________________")
+      .text("4. ________________________________________________________________________________")
+      .text("5. ________________________________________________________________________________")
+      .moveDown(0.5);
+    doc.text("CNAE Principal: ____________________  Código do Serviço (LC 116): ____________________")
+      .moveDown(0.8);
+
+    doc.fontSize(12).font("Helvetica-Bold").text("VALORES").moveDown(0.3);
+    doc.fontSize(10).font("Helvetica")
+      .text("Valor dos Serviços:                         R$ _________________________________________")
+      .text("Desconto (se houver):                       R$ _________________________________________")
+      .text("Base de Cálculo:                            R$ _________________________________________")
+      .text("Alíquota ISS (%):                           ______%")
+      .text("ISS Retido:                                 R$ _________________________________________")
+      .text("PIS:                                        R$ _________________________________________")
+      .text("COFINS:                                     R$ _________________________________________")
+      .text("IRRF:                                       R$ _________________________________________")
+      .text("INSS:                                       R$ _________________________________________")
+      .moveDown(0.3);
+    doc.font("Helvetica-Bold")
+      .text("VALOR LÍQUIDO:                              R$ _________________________________________", { align: "right" })
+      .moveDown(0.8);
+
+    doc.fontSize(9).font("Helvetica-Oblique").fillColor("#666666")
+      .text("Observações:")
+      .text("• Este documento é um modelo. Para NFS-e oficial, utilize o sistema da prefeitura do seu município.")
+      .text("• MEI é isento de PIS, COFINS e IRRF (LC 123/2006). Consulte seu contador.")
+      .text("• ISS: alíquota varia conforme município (geralmente 2% a 5% para MEI).")
+      .moveDown(1);
+
+    const today2 = new Date().toLocaleDateString("pt-BR");
+    doc.fontSize(10).font("Helvetica").fillColor("#333333")
+      .text(`__________________________, ${today2}.`, { align: "center" }).moveDown(1.5);
+    doc.text("_________________________________________", { align: "center" });
+    doc.font("Helvetica-Bold").text("PRESTADOR DE SERVIÇOS", { align: "center" });
+
+    addFooter(doc);
+    doc.end();
+  });
+}
+
+/** Termo de Rescisão de Contrato */
+export function generateTermoRescisaoContrato(data: CustomerData): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const doc = createBaseDocument();
+    const chunks: Buffer[] = [];
+    doc.on("data", (chunk) => chunks.push(chunk));
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+    doc.on("error", reject);
+
+    addHeader(doc, "TERMO DE RESCISÃO DE CONTRATO");
+    const today = new Date().toLocaleDateString("pt-BR");
+
+    doc.fontSize(10).font("Helvetica").fillColor("#666666")
+      .text("Documento formal para distrato de contrato de prestação de serviços", { align: "center" })
+      .moveDown(1);
+
+    doc.fontSize(13).font("Helvetica-Bold").fillColor("#1a1a1a")
+      .text("1. DAS PARTES").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("CONTRATANTE: ____________________________________________________________________")
+      .text("CPF/CNPJ: ________________________________________________________________________")
+      .text("Endereço: ________________________________________________________________________")
+      .moveDown(0.5);
+    doc.text(`CONTRATADO(A): ${data.nomeEmpresa || "_________________________________________________________________"}`)
+      .text(`CNPJ (MEI): ${data.cnpj || "_________________________________________________________________"}`)
+      .text("Endereço: ________________________________________________________________________")
+      .moveDown(1);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("2. DO CONTRATO RESCINDIDO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("As partes celebram o presente TERMO DE RESCISÃO referente ao Contrato de Prestação")
+      .text("de Serviços firmado em ___/___/______, cujo objeto era:")
+      .moveDown(0.3)
+      .text("___________________________________________________________________________")
+      .text("___________________________________________________________________________")
+      .text("___________________________________________________________________________")
+      .moveDown(1);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("3. DO MOTIVO DA RESCISÃO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("3.1. O presente contrato é rescindido pelo seguinte motivo:")
+      .moveDown(0.3)
+      .text("( ) Término do prazo contratual")
+      .text("( ) Conclusão do objeto contratado")
+      .text("( ) Acordo entre as partes")
+      .text("( ) Rescisão unilateral por parte do CONTRATANTE")
+      .text("( ) Rescisão unilateral por parte do CONTRATADO(A)")
+      .text("( ) Outro: ___________________________________________________________________")
+      .moveDown(0.5);
+    doc.text("3.2. A data de efeito da rescisão é: ___/___/______")
+      .moveDown(1);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("4. DO ACERTO FINANCEIRO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("4.1. Valores pagos até a presente data: R$ _________________________________________")
+      .text("4.2. Valores pendentes de pagamento: R$ ___________________________________________")
+      .text("4.3. Multa rescisória (se aplicável): R$ ___________________________________________")
+      .text("4.4. Valor total do acerto: R$ ____________________________________________________")
+      .text("4.5. Forma de pagamento do acerto: ________________________________________________")
+      .text("4.6. Prazo para pagamento: até ___/___/______")
+      .moveDown(0.5);
+    doc.fontSize(10).font("Helvetica-Oblique").fillColor("#666666")
+      .text("( ) As partes declaram que não há valores pendentes — QUITAÇÃO TOTAL E IRRESTRITA.")
+      .moveDown(1);
+
+    doc.fontSize(13).font("Helvetica-Bold").fillColor("#1a1a1a")
+      .text("5. DAS OBRIGAÇÕES PÓS-RESCISÃO").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("5.1. O CONTRATADO(A) se compromete a:")
+      .text("    a) Entregar todos os materiais, arquivos e documentos pendentes em até ____ dias;")
+      .text("    b) Manter sigilo sobre informações confidenciais por ____ meses;")
+      .text("    c) Fornecer suporte de transição por ____ dias (se aplicável).")
+      .moveDown(0.5);
+    doc.text("5.2. O CONTRATANTE se compromete a:")
+      .text("    a) Efetuar o pagamento do acerto financeiro no prazo estabelecido;")
+      .text("    b) Devolver equipamentos/materiais do CONTRATADO(A), se houver.")
+      .moveDown(1);
+
+    doc.fontSize(13).font("Helvetica-Bold").text("6. DA QUITAÇÃO GERAL").moveDown(0.5);
+    doc.fontSize(11).font("Helvetica")
+      .text("As partes declaram, para todos os fins de direito, que dão plena, rasa e geral quitação")
+      .text("uma à outra em relação ao contrato rescindido, nada mais tendo a reclamar, seja a que")
+      .text("título for, renunciando a qualquer ação judicial ou extrajudicial relativa ao contrato.")
+      .moveDown(2);
+
+    doc.text(`__________________________, ${today}.`, { align: "center" }).moveDown(2);
+    doc.text("_________________________________________", { align: "center" });
+    doc.font("Helvetica-Bold").text("CONTRATANTE", { align: "center" }).moveDown(2);
+    doc.text("_________________________________________", { align: "center" });
+    doc.font("Helvetica-Bold").text("CONTRATADO(A) — MEI", { align: "center" }).moveDown(1);
+    doc.fontSize(9).font("Helvetica").fillColor("#999999")
+      .text("Testemunhas:", { align: "left" })
+      .text("1. ______________________________  CPF: ______________________________")
+      .text("2. ______________________________  CPF: ______________________________");
+
+    addFooter(doc);
+    doc.end();
+  });
+}
