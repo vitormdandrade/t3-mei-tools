@@ -54,20 +54,43 @@ export const AFFILIATE_CONFIG: Record<string, { name: string; base_url: string; 
     base_url: 'https://www.boacompra.com',
     utm_campaign: 'oraculodomei-boacompra',
   },
+  'cora': {
+    name: 'Cora',
+    base_url: 'https://www.cora.com.br',
+    utm_campaign: 'oraculodomei-cora',
+  },
+  'bs2': {
+    name: 'BS2',
+    base_url: 'https://www.bs2.com.br',
+    utm_campaign: 'oraculodomei-bs2',
+  },
+  'original': {
+    name: 'Banco Original',
+    base_url: 'https://www.original.com.br',
+    utm_campaign: 'oraculodomei-original',
+  },
 };
 
 export function buildAffiliateUrl(slug: string, affiliateUrl: string): string {
-  if (affiliateUrl === '#') return '#';
-
   const config = AFFILIATE_CONFIG[slug];
-  if (!config) return affiliateUrl;
 
-  const params = new URLSearchParams({
-    utm_source: 'oraculodomei',
-    utm_medium: 'affiliate',
-    utm_campaign: config.utm_campaign,
-    utm_content: slug,
-  });
+  // If a live affiliate URL is provided, use it directly (future-proof for affiliate program)
+  if (affiliateUrl && affiliateUrl !== '#') {
+    return affiliateUrl;
+  }
 
-  return `${config.base_url}?${params.toString()}`;
+  // Fallback: use AFFILIATE_CONFIG base URL with UTM tracking
+  // This ensures CTAs are always clickable even before affiliate programs are live
+  if (config) {
+    const params = new URLSearchParams({
+      utm_source: 'oraculodomei',
+      utm_medium: 'referral',
+      utm_campaign: config.utm_campaign,
+      utm_content: slug,
+    });
+    return `${config.base_url}?${params.toString()}`;
+  }
+
+  // No config, no live URL — keep disabled state
+  return '#';
 }
