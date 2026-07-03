@@ -95,7 +95,7 @@ export default function MelhoresContasPJ() {
                     page="melhores-contas-pj-mei"
                     className="inline-block bg-accent text-white text-xs px-3 py-1.5 rounded font-semibold hover:bg-accent-hover whitespace-nowrap"
                   >
-                    Conhecer →
+                    Abrir Conta →
                   </AffiliateCta>
                 </td>
               </tr>
@@ -149,7 +149,7 @@ export default function MelhoresContasPJ() {
                 page="melhores-contas-pj-mei"
                 className="inline-block w-full text-center bg-accent text-white py-2 rounded font-semibold hover:bg-accent-hover text-sm"
               >
-                Conhecer Mais
+                Abrir Conta Grátis
               </AffiliateCta>
             </div>
           ))}

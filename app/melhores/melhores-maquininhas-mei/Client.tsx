@@ -81,7 +81,7 @@ export default function MelhoresMaquininhas() {
                 page="melhores-maquininhas-mei"
                 className="inline-block w-full text-center bg-accent text-white py-2 rounded font-semibold hover:bg-accent-hover text-sm"
               >
-                Conhecer {m.name} →
+                Solicitar {m.name} →
               </AffiliateCta>
             </div>
           ))}
