@@ -223,6 +223,23 @@
       "best_for": "MEI com faturamento crescente que busca assessoria",
       "affiliate_url": "#",
       "rating": 4.2
+    },
+    {
+      "locale": "pt-BR",
+      "id": "asaas",
+      "name": "Asaas",
+      "slug": "asaas",
+      "description_pt": "Plataforma de gestão financeira completa com conta digital, cobrança recorrente, emissão de boletos e cartão de crédito para MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados e gratuitos",
+        "Cobrança recorrente automatizada",
+        "Cartão de crédito empresarial integrado",
+        "Conciliação bancária automática"
+      ],
+      "best_for": "MEI que emite cobranças recorrentes e precisa de gestão financeira completa",
+      "affiliate_url": "#",
+      "rating": 4.4
     }
   ]
 }
