@@ -240,6 +240,23 @@
       "best_for": "MEI que emite cobranças recorrentes e precisa de gestão financeira completa",
       "affiliate_url": "#",
       "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "picpay-pj",
+      "name": "PicPay PJ",
+      "slug": "picpay-pj",
+      "description_pt": "Conta digital PJ do PicPay com cashback em todas as transações, Pix ilimitado e marketplace de serviços financeiros integrado",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback em todas as transações",
+        "Pix ilimitado e gratuito",
+        "Marketplace de crédito e seguros",
+        "Cartão virtual integrado"
+      ],
+      "best_for": "MEI que busca cashback e ecossistema completo de serviços financeiros",
+      "affiliate_url": "#",
+      "rating": 4.3
     }
   ]
 }
