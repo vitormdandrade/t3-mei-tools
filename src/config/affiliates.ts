@@ -69,6 +69,16 @@ export const AFFILIATE_CONFIG: Record<string, { name: string; base_url: string; 
     base_url: 'https://www.original.com.br',
     utm_campaign: 'oraculodomei-original',
   },
+  'asaas': {
+    name: 'Asaas',
+    base_url: 'https://www.asaas.com',
+    utm_campaign: 'oraculodomei-asaas',
+  },
+  'picpay-pj': {
+    name: 'PicPay PJ',
+    base_url: 'https://www.picpay.com',
+    utm_campaign: 'oraculodomei-picpaypj',
+  },
 };
 
 export function buildAffiliateUrl(slug: string, affiliateUrl: string): string {
