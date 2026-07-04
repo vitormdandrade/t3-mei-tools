@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import fintechs from '@/data/fintechs.json';
 import { AffiliateCta } from '@/components/AffiliateCta';
 import { buildAffiliateUrl } from '@/config/affiliates';
+import StarRating from '@/components/StarRating';
 
 type SortMode = 'default' | 'rating' | 'fee';
 
@@ -87,7 +88,9 @@ export default function MelhoresContasPJ() {
                 <td className="px-4 py-3 text-center text-sm">
                   {f.highlights.some(h => h.includes('artão')) ? '✓' : '-'}
                 </td>
-                <td className="px-4 py-3 text-center font-bold">{f.rating}</td>
+                <td className="px-4 py-3 text-center">
+                  <StarRating rating={f.rating} size="sm" />
+                </td>
                 <td className="px-4 py-3 text-center">
                   <AffiliateCta
                     href={buildAffiliateUrl(f.id, f.affiliate_url)}
@@ -122,7 +125,7 @@ export default function MelhoresContasPJ() {
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">{f.best_for}</p>
                 </div>
-                <div className="text-2xl font-bold text-yellow-500 dark:text-yellow-400">{f.rating}★</div>
+                <div className="text-yellow-500 dark:text-yellow-400"><StarRating rating={f.rating} size="md" showNumber={false} /></div>
               </div>
 
               <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">{f.description_pt}</p>
