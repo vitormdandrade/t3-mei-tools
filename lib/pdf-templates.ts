@@ -14,6 +14,8 @@ function createBaseDocument(): PDFDocumentInstance {
   const doc = new PDFDocument({
     size: "A4",
     margins: { top: 60, bottom: 60, left: 60, right: 60 },
+    // Required so addFooter() can switchToPage() across all pages at the end
+    bufferPages: true,
     info: {
       Creator: "Oraculo do MEI",
       Producer: "Oraculo do MEI - Kit MEI",
@@ -42,6 +44,10 @@ function addFooter(doc: PDFDocumentInstance) {
   const pages = doc.bufferedPageRange();
   for (let i = 0; i < pages.count; i++) {
     doc.switchToPage(i);
+    // The footer sits inside the bottom margin; zero it out while writing so
+    // pdfkit doesn't auto-append a blank page, then restore it.
+    const bottomMargin = doc.page.margins.bottom;
+    doc.page.margins.bottom = 0;
     doc
       .fontSize(8)
       .fillColor("#999999")
@@ -49,8 +55,9 @@ function addFooter(doc: PDFDocumentInstance) {
         `Pagina ${i + 1} de ${pages.count} - Gerado por oraculodomei.com.br`,
         60,
         doc.page.height - 50,
-        { align: "center", width: doc.page.width - 120 }
+        { align: "center", width: doc.page.width - 120, lineBreak: false }
       );
+    doc.page.margins.bottom = bottomMargin;
   }
 }
 
@@ -1079,10 +1086,298 @@ export function generateTermoRescisaoContrato(data: CustomerData): Promise<Buffe
     doc.font("Helvetica-Bold").text("CONTRATANTE", { align: "center" }).moveDown(2);
     doc.text("_________________________________________", { align: "center" });
     doc.font("Helvetica-Bold").text("CONTRATADO(A) — MEI", { align: "center" }).moveDown(1);
-    doc.fontSize(9).font("Helvetica").fillColor("#999999")
-      .text("Testemunhas:", { align: "left" })
-      .text("1. ______________________________  CPF: ______________________________")
-      .text("2. ______________________________  CPF: ______________________________");
+    addFooter(doc);
+    doc.end();
+  });
+}
+
+/** Converte um valor em reais para extenso em português (até centenas de milhões). */
+export function valorPorExtenso(valor: number): string {
+  const unidades = [
+    "", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove",
+    "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis",
+    "dezessete", "dezoito", "dezenove",
+  ];
+  const dezenas = ["", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
+  const centenas = ["", "cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"];
+
+  function ateMil(n: number): string {
+    if (n === 0) return "";
+    if (n === 100) return "cem";
+    const partes: string[] = [];
+    const c = Math.floor(n / 100);
+    const resto = n % 100;
+    if (c > 0) partes.push(centenas[c]);
+    if (resto > 0) {
+      if (resto < 20) {
+        partes.push(unidades[resto]);
+      } else {
+        const d = Math.floor(resto / 10);
+        const u = resto % 10;
+        partes.push(u > 0 ? `${dezenas[d]} e ${unidades[u]}` : dezenas[d]);
+      }
+    }
+    return partes.join(" e ");
+  }
+
+  function inteiroPorExtenso(n: number): string {
+    if (n === 0) return "zero";
+    const milhoes = Math.floor(n / 1_000_000);
+    const milhares = Math.floor((n % 1_000_000) / 1000);
+    const resto = n % 1000;
+    const partes: string[] = [];
+    if (milhoes > 0) partes.push(milhoes === 1 ? "um milhão" : `${ateMil(milhoes)} milhões`);
+    if (milhares > 0) partes.push(milhares === 1 ? "mil" : `${ateMil(milhares)} mil`);
+    if (resto > 0) partes.push(ateMil(resto));
+    // "e" antes do último grupo quando ele é < 100 ou centena exata (ex: "mil e cem", "dois mil e trinta")
+    if (partes.length > 1 && resto > 0 && (resto < 100 || resto % 100 === 0)) {
+      const ultima = partes.pop() as string;
+      return `${partes.join(" ")} e ${ultima}`;
+    }
+    return partes.join(" ");
+  }
+
+  const reais = Math.floor(valor);
+  const centavos = Math.round((valor - reais) * 100);
+  const partes: string[] = [];
+  if (reais > 0) {
+    const sufixo = reais === 1 ? "real" : reais % 1_000_000 === 0 ? "de reais" : "reais";
+    partes.push(`${inteiroPorExtenso(reais)} ${sufixo}`);
+  }
+  if (centavos > 0) {
+    partes.push(`${inteiroPorExtenso(centavos)} ${centavos === 1 ? "centavo" : "centavos"}`);
+  }
+  if (partes.length === 0) return "zero reais";
+  return partes.join(" e ");
+}
+
+/** Converte string de valor em formato brasileiro ("1.500,00") ou simples ("1500.00") para número. */
+function parseValorBR(str: string): number {
+  const clean = (str || "").replace(/[^\d,.]/g, "");
+  if (!clean) return NaN;
+  if (clean.includes(",")) {
+    return parseFloat(clean.replace(/\./g, "").replace(",", "."));
+  }
+  if (/^\d{1,3}(\.\d{3})+$/.test(clean)) {
+    return parseFloat(clean.replace(/\./g, ""));
+  }
+  return parseFloat(clean);
+}
+
+/** Gerador de Recibo MEI — preenchido com dados do usuário */
+export type ReciboMEIData = {
+  nome: string;
+  cnpj: string;
+  endereco: string;
+  telefone: string;
+  email: string;
+  tomadorNome: string;
+  tomadorCpfCnpj: string;
+  tomadorEndereco: string;
+  servicoDescricao: string;
+  servicoValor: string;
+  servicoData: string;
+  reciboNumero: string;
+};
+
+export function generateReciboMEI(data: ReciboMEIData): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const doc = createBaseDocument();
+    const chunks: Buffer[] = [];
+    doc.on("data", (chunk) => chunks.push(chunk));
+    doc.on("end", () => resolve(Buffer.concat(chunks)));
+    doc.on("error", reject);
+
+    addHeader(doc, "RECIBO DE PRESTAÇÃO DE SERVIÇOS");
+
+    // Disclaimer
+    doc
+      .fontSize(9)
+      .font("Helvetica-Oblique")
+      .fillColor("#666666")
+      .text("Documento particular — não substitui nota fiscal", {
+        align: "center",
+      })
+      .moveDown(0.8);
+
+    // Recibo number and date
+    const emissaoData = /^\d{4}-\d{2}-\d{2}$/.test(data.servicoData)
+      ? new Date(data.servicoData + "T00:00:00").toLocaleDateString("pt-BR")
+      : data.servicoData || new Date().toLocaleDateString("pt-BR");
+    doc
+      .fontSize(10)
+      .font("Helvetica-Bold")
+      .fillColor("#333333")
+      .text(`Recibo Nº: ${data.reciboNumero || "—"}`, { align: "right" })
+      .font("Helvetica")
+      .text(`Data: ${emissaoData}`, { align: "right" });
+    doc.moveDown(0.8);
+
+    // ── Two-column layout: Prestador (left) | Tomador (right) ──
+    const colLeft = 60;
+    const colRight = 310;
+    const colWidth = 220;
+    const startY = doc.y;
+
+    // Left: PRESTADOR
+    doc
+      .fontSize(11)
+      .font("Helvetica-Bold")
+      .fillColor("#1a1a1a")
+      .text("PRESTADOR DE SERVIÇOS", colLeft, startY, { width: colWidth });
+    doc.moveDown(0.3);
+
+    const prestadorY = doc.y;
+    doc
+      .fontSize(9)
+      .font("Helvetica")
+      .fillColor("#333333")
+      .text(`Nome: ${data.nome || "—"}`, colLeft, prestadorY, { width: colWidth })
+      .text(`CPF/CNPJ: ${data.cnpj || "—"}`, { width: colWidth })
+      .text(`Endereço: ${data.endereco || "—"}`, { width: colWidth })
+      .text(`Telefone: ${data.telefone || "—"}`, { width: colWidth })
+      .text(`E-mail: ${data.email || "—"}`, { width: colWidth });
+
+    // Right: TOMADOR
+    doc
+      .fontSize(11)
+      .font("Helvetica-Bold")
+      .fillColor("#1a1a1a")
+      .text("TOMADOR DE SERVIÇOS", colRight, startY, { width: colWidth });
+    doc.moveDown(0.3);
+
+    const tomadorY = doc.y;
+    doc
+      .fontSize(9)
+      .font("Helvetica")
+      .fillColor("#333333")
+      .text(`Nome: ${data.tomadorNome || "—"}`, colRight, tomadorY, { width: colWidth })
+      .text(`CPF/CNPJ: ${data.tomadorCpfCnpj || "—"}`, { width: colWidth })
+      .text(`Endereço: ${data.tomadorEndereco || "—"}`, { width: colWidth });
+
+    // Move past both columns
+    doc.y = Math.max(doc.y, prestadorY + 110);
+
+    // Vertical divider line
+    doc
+      .moveTo(295, startY)
+      .lineTo(295, doc.y)
+      .strokeColor("#cccccc")
+      .stroke();
+
+    doc.moveDown(1);
+    // Reset cursor to the left margin — the tomador column moved doc.x to 310
+    doc.x = colLeft;
+
+    // ── SERVICES TABLE ──
+    doc
+      .fontSize(12)
+      .font("Helvetica-Bold")
+      .fillColor("#1a1a1a")
+      .text("DISCRIMINAÇÃO DOS SERVIÇOS")
+      .moveDown(0.5);
+
+    // Table header
+    const tableTop = doc.y;
+    const colDesc = 60;
+    const colVal = 420;
+
+    doc
+      .fontSize(9)
+      .font("Helvetica-Bold")
+      .fillColor("#333333")
+      .text("Descrição do Serviço", colDesc, tableTop, { width: 330 })
+      .text("Valor (R$)", colVal, tableTop, { width: 80 });
+
+    // Header line
+    doc
+      .moveTo(colDesc, doc.y + 2)
+      .lineTo(500, doc.y + 2)
+      .strokeColor("#333333")
+      .stroke();
+    doc.moveDown(0.5);
+
+    // Service row
+    const serviceY = doc.y;
+    doc
+      .fontSize(10)
+      .font("Helvetica")
+      .fillColor("#1a1a1a")
+      .text(data.servicoDescricao || "—", colDesc, serviceY, { width: 330 });
+
+    const valorNum = parseValorBR(data.servicoValor);
+    const valorStr = !isNaN(valorNum)
+      ? `R$ ${valorNum.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+      : "—";
+
+    doc
+      .fontSize(10)
+      .font("Helvetica-Bold")
+      .text(valorStr, colVal, serviceY, { width: 80 });
+
+    // Bottom line
+    doc
+      .moveTo(colDesc, doc.y + 4)
+      .lineTo(500, doc.y + 4)
+      .strokeColor("#333333")
+      .stroke();
+    doc.moveDown(0.8);
+    // Reset cursor to the left margin — the table cells above moved doc.x to 420
+    doc.x = colDesc;
+
+    // Total
+    doc
+      .fontSize(11)
+      .font("Helvetica-Bold")
+      .fillColor("#1a1a1a")
+      .text(`VALOR TOTAL:  ${valorStr}`, { align: "right" })
+      .moveDown(0.8);
+
+    // Valor por extenso + declaração de recebimento
+    if (!isNaN(valorNum)) {
+      doc
+        .fontSize(10)
+        .font("Helvetica")
+        .fillColor("#333333")
+        .text(
+          `Recebi(emos) de ${data.tomadorNome || "____________________"} a importância de ${valorStr} (${valorPorExtenso(valorNum)}), referente aos serviços acima discriminados, pelos quais dou(damos) plena e geral quitação.`,
+          { align: "justify" }
+        )
+        .moveDown(1.5);
+    } else {
+      doc.moveDown(0.7);
+    }
+
+    // ── FOOTER INFO ──
+    doc
+      .fontSize(9)
+      .font("Helvetica-Oblique")
+      .fillColor("#666666")
+      .text("Informações Importantes:")
+      .text("• Este recibo é um documento particular e não substitui nota fiscal.")
+      .text("• A emissão de NFS-e deve ser feita no portal da prefeitura quando aplicável.")
+      .text("• MEI é isento de PIS, COFINS, IPI, IRRF e CSLL conforme Lei Complementar 123/2006.")
+      .text("• Consulte seu contador sobre as obrigações fiscais específicas do seu município.")
+      .moveDown(1.5);
+
+    // Signature block
+    doc
+      .fontSize(10)
+      .font("Helvetica")
+      .fillColor("#333333")
+      .text(`__________________________________________, ${emissaoData}.`, { align: "center" })
+      .moveDown(1.5);
+
+    doc
+      .fontSize(10)
+      .font("Helvetica")
+      .text("_________________________________________", { align: "center" })
+      .font("Helvetica-Bold")
+      .text(data.nome ? data.nome.toUpperCase() : "PRESTADOR DE SERVIÇOS — MEI", { align: "center" })
+      .font("Helvetica")
+      .fontSize(9)
+      .fillColor("#666666")
+      .text(`Recibo Nº ${data.reciboNumero || "—"}`, { align: "center" });
 
     addFooter(doc);
     doc.end();

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 const crossSells = [
   { slug: "contrato-prestacao", name: "Contrato de Prestação de Serviços", price: 49.9, emoji: "📋" },
   { slug: "nota-fiscal-avulsa", name: "Nota Fiscal de Serviço Avulsa", price: 19.9, emoji: "📄" },
+  { slug: "gerador-recibo", name: "Gerador de Recibo MEI", price: 39.9, emoji: "🧾" },
   { slug: "dasn-simei", name: "Declaração Anual MEI (DASN)", price: 29.9, emoji: "📊" },
 ];
 

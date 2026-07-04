@@ -9,6 +9,7 @@ export async function POST(req: NextRequest) {
     const origin = req.headers.get("origin") || process.env.NEXT_PUBLIC_SITE_URL || "https://oraculodomei.com.br";
 
     // Determine if this is for the bundled Kit MEI or an individual template
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let lineItem: any;
     let metadata: Record<string, string>;
     let successUrl: string;
@@ -28,9 +29,32 @@ export async function POST(req: NextRequest) {
         },
         quantity: 1,
       };
-      metadata = { product, type: "template-pack" };
-      successUrl = `${origin}/kit-mei/sucesso?session_id={CHECKOUT_SESSION_ID}&product=${product}`;
-      cancelUrl = `${origin}/kit-mei/${product}`;
+
+      if (product === "gerador-recibo") {
+        // Gerador: include form data in metadata (split across keys for 500-char limit)
+        metadata = {
+          product,
+          type: "gerador",
+          form_nome: String(body.form_nome || "").slice(0, 500),
+          form_cnpj: String(body.form_cnpj || "").slice(0, 500),
+          form_endereco: String(body.form_endereco || "").slice(0, 500),
+          form_telefone: String(body.form_telefone || "").slice(0, 500),
+          form_email: String(body.form_email || "").slice(0, 500),
+          form_tomador_nome: String(body.form_tomador_nome || "").slice(0, 500),
+          form_tomador_cpfcnpj: String(body.form_tomador_cpfcnpj || "").slice(0, 500),
+          form_tomador_endereco: String(body.form_tomador_endereco || "").slice(0, 500),
+          form_servico_descricao: String(body.form_servico_descricao || "").slice(0, 500),
+          form_servico_valor: String(body.form_servico_valor || "").slice(0, 500),
+          form_servico_data: String(body.form_servico_data || "").slice(0, 500),
+          form_recibo_numero: String(body.form_recibo_numero || "").slice(0, 500),
+        };
+        successUrl = `${origin}/kit-mei/sucesso?session_id={CHECKOUT_SESSION_ID}&product=${product}`;
+        cancelUrl = `${origin}/kit-mei/${product}`;
+      } else {
+        metadata = { product, type: "template-pack" };
+        successUrl = `${origin}/kit-mei/sucesso?session_id={CHECKOUT_SESSION_ID}&product=${product}`;
+        cancelUrl = `${origin}/kit-mei/${product}`;
+      }
     } else {
       // Default: Kit MEI bundle
       lineItem = {
@@ -68,9 +92,9 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ url: session.url });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Checkout error:", error);
-    const message = error?.message || String(error);
+    const message = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
       { error: `Erro ao processar checkout: ${message}` },
       { status: 500 }

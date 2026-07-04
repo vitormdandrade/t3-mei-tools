@@ -9,6 +9,7 @@ const PRODUCT_NAMES: Record<string, string> = {
   "dasn-simei": "Declaração Anual MEI (DASN-SIMEI)",
   "nota-fiscal-avulsa": "Nota Fiscal de Serviço Avulsa",
   "termo-rescisao": "Termo de Rescisão de Contrato",
+  "gerador-recibo": "Recibo MEI",
 };
 
 function SucessoContent() {

@@ -43,4 +43,9 @@ export const TEMPLATE_PRICES: Record<string, { price: number; name: string; desc
     name: "Termo de Rescisão de Contrato",
     description: "Documento formal para encerramento de contrato de prestação de serviços. Cláusulas de quitação e responsabilidades.",
   },
+  "gerador-recibo": {
+    price: 3990,
+    name: "Gerador de Recibo MEI",
+    description: "Preencha os dados e receba seu Recibo MEI preenchido em PDF. Profissional, rápido e pronto para enviar ao cliente.",
+  },
 };

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 const crossSells = [
   { slug: "contrato-prestacao", name: "Contrato de Prestação de Serviços", price: 49.9, emoji: "📋" },
   { slug: "recibo-autonomo", name: "Recibo de Autônomo (RPA)", price: 19.9, emoji: "🧾" },
+  { slug: "gerador-recibo", name: "Gerador de Recibo MEI", price: 39.9, emoji: "🧾" },
   { slug: "termo-rescisao", name: "Termo de Rescisão de Contrato", price: 39.9, emoji: "📝" },
 ];
 

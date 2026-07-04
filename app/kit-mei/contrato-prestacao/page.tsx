@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 const crossSells = [
   { slug: "recibo-autonomo", name: "Recibo de Autônomo (RPA)", price: 19.9, emoji: "🧾" },
   { slug: "nota-fiscal-avulsa", name: "Nota Fiscal de Serviço Avulsa", price: 19.9, emoji: "📄" },
+  { slug: "gerador-recibo", name: "Gerador de Recibo MEI", price: 39.9, emoji: "🧾" },
   { slug: "termo-rescisao", name: "Termo de Rescisão de Contrato", price: 39.9, emoji: "📝" },
 ];
 

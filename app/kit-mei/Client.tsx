@@ -317,6 +317,7 @@ export default function KitMEIPage() {
             { slug: "dasn-simei", name: "Declaração Anual MEI (DASN)", price: "R$29,90", emoji: "📊", desc: "Tabelas mensais e limite de faturamento" },
             { slug: "nota-fiscal-avulsa", name: "Nota Fiscal de Serviço Avulsa", price: "R$19,90", emoji: "📄", desc: "Campos fiscais completos" },
             { slug: "termo-rescisao", name: "Termo de Rescisão de Contrato", price: "R$39,90", emoji: "📝", desc: "Acerto financeiro e quitação" },
+            { slug: "gerador-recibo", name: "Gerador de Recibo", price: "R$39,90", emoji: "🧾", desc: "Preencha os dados e gere seu recibo profissional em PDF" },
           ].map((tpl) => (
             <a
               key={tpl.slug}
