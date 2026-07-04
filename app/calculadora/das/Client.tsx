@@ -206,6 +206,27 @@ export default function DASCalculator() {
         </div>
       </div>
 
+      {/* Sticky Mobile CTA — Melhores Contas PJ */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-3 z-50 shadow-lg">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            <p className="text-xs text-gray-500 dark:text-gray-400">Abra sua conta PJ:</p>
+            <p className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
+              Melhores Contas PJ para MEI 2026
+            </p>
+            <p className="text-xs text-green-600 dark:text-green-400">
+              ✓ Grátis · ✓ Pix ilimitado · ✓ Cartão sem anuidade
+            </p>
+          </div>
+          <a
+            href="/melhores/melhores-contas-pj-mei"
+            className="flex-shrink-0 bg-accent text-white text-sm px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover whitespace-nowrap no-underline"
+          >
+            Comparar Contas →
+          </a>
+        </div>
+      </div>
+
       {/* Lead Capture — contador orçamento */}
       <LeadCaptureForm
         source="das"
