@@ -150,6 +150,9 @@ export default function Home() {
                 <span className="text-2xl font-bold" style={{ color: 'var(--brand-gold)' }}>R$ 29,90</span>
                 <a href="/kit-mei" className="btn-gold no-underline inline-flex items-center gap-2">Comprar Kit MEI <span aria-hidden>→</span></a>
               </div>
+              <p className="text-sm mt-4" style={{ color: '#c8d2dc' }}>
+                📘 Novo: <a href="/kit-mei/guia-mei-2026" className="font-semibold underline" style={{ color: 'var(--brand-gold)' }}>Guia Completo do MEI 2026</a> — ebook com tudo sobre abertura, DAS, nota fiscal e DASN por R$ 19,90.
+              </p>
             </div>
             <div className="grid grid-cols-2 gap-2.5 shrink-0">
               {['📝 Contrato', '🧾 Nota Fiscal', '💰 Recibo', '✍️ Termo'].map((label) => (

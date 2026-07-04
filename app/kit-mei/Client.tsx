@@ -318,6 +318,7 @@ export default function KitMEIPage() {
             { slug: "nota-fiscal-avulsa", name: "Nota Fiscal de Serviço Avulsa", price: "R$19,90", emoji: "📄", desc: "Campos fiscais completos" },
             { slug: "termo-rescisao", name: "Termo de Rescisão de Contrato", price: "R$39,90", emoji: "📝", desc: "Acerto financeiro e quitação" },
             { slug: "gerador-recibo", name: "Gerador de Recibo", price: "R$39,90", emoji: "🧾", desc: "Preencha os dados e gere seu recibo profissional em PDF" },
+            { slug: "guia-mei-2026", name: "Guia Completo do MEI 2026 (Ebook)", price: "R$19,90", emoji: "📘", desc: "9 capítulos: abertura, DAS, nota fiscal, DASN e finanças" },
           ].map((tpl) => (
             <a
               key={tpl.slug}

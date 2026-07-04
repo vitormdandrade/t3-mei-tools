@@ -12,6 +12,7 @@ import {
   generateTermoRescisaoContrato,
   generateReciboMEI,
 } from "../../../lib/pdf-templates";
+import { generateGuiaCompletoMEI2026 } from "../../../lib/pdf-ebook";
 import { ensureBucket, uploadKitZipAndGetUrl, uploadPdfAndGetUrl } from "../../../lib/supabase-storage";
 import { sendKitDeliveryEmail, sendTemplateDeliveryEmail } from "../../../lib/email";
 import Stripe from "stripe";
@@ -89,6 +90,11 @@ const SINGLE_PDF_GENERATORS: Record<string, {
     fn: generateTermoRescisaoContrato,
     filename: "Termo-Rescisao-Contrato.pdf",
     name: "Termo de Rescisão de Contrato",
+  },
+  "guia-mei-2026": {
+    fn: generateGuiaCompletoMEI2026,
+    filename: "Guia-Completo-MEI-2026.pdf",
+    name: "Guia Completo do MEI 2026 (Ebook)",
   },
 };
 

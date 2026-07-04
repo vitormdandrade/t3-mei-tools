@@ -77,6 +77,23 @@ export default function GuidesPage() {
         ))}
       </div>
 
+      {/* Ebook CTA */}
+      <div className="card p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-6 border-2" style={{ borderColor: 'var(--brand-gold, #d4a12a)' }}>
+        <div className="text-6xl shrink-0">📘</div>
+        <div className="flex-grow text-center sm:text-left">
+          <h2 className="text-subheading mb-1" style={{ color: 'var(--color-foreground)' }}>
+            Todos os guias em um único PDF
+          </h2>
+          <p className="text-body">
+            O <strong>Guia Completo do MEI 2026</strong> reúne abertura, DAS, nota fiscal,
+            DASN-SIMEI, INSS e finanças em 9 capítulos objetivos. Leia offline, no seu ritmo.
+          </p>
+        </div>
+        <a href="/kit-mei/guia-mei-2026" className="btn-primary no-underline shrink-0">
+          Comprar Ebook — R$ 19,90
+        </a>
+      </div>
+
       {/* Kit MEI CTA */}
       <div
         className="rounded-3xl p-8 sm:p-10 text-center overflow-hidden"

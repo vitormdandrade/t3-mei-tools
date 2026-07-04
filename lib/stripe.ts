@@ -48,4 +48,9 @@ export const TEMPLATE_PRICES: Record<string, { price: number; name: string; desc
     name: "Gerador de Recibo MEI",
     description: "Preencha os dados e receba seu Recibo MEI preenchido em PDF. Profissional, rápido e pronto para enviar ao cliente.",
   },
+  "guia-mei-2026": {
+    price: 1990,
+    name: "Guia Completo do MEI 2026 (Ebook)",
+    description: "Ebook em PDF com tudo sobre o MEI em 2026: abertura, DAS, limite de faturamento, nota fiscal, DASN-SIMEI, INSS, finanças e calendário de obrigações.",
+  },
 };
