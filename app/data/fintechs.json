@@ -257,6 +257,40 @@
       "best_for": "MEI que busca cashback e ecossistema completo de serviços financeiros",
       "affiliate_url": "#",
       "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "ton",
+      "name": "Ton",
+      "slug": "ton",
+      "description_pt": "Conta digital da Stone para MEI com Pix ilimitado, cartão sem anuidade e integração com maquininhas Stone",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Conta 100% digital e gratuita",
+        "Integração com maquininhas Stone",
+        "Pix ilimitado sem tarifa",
+        "Cartão de débito sem anuidade"
+      ],
+      "best_for": "MEI que já usa maquininha Stone e quer conta integrada",
+      "affiliate_url": "#",
+      "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "sicredi-pj",
+      "name": "Sicredi PJ",
+      "slug": "sicredi-pj",
+      "description_pt": "Conta PJ do Sicredi, cooperativa de crédito com soluções financeiras completas e atendimento personalizado para MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cooperativa com participação nos resultados",
+        "Atendimento personalizado por gerente",
+        "Linhas de crédito com taxas reduzidas",
+        "Plataforma digital completa"
+      ],
+      "best_for": "MEI que valoriza atendimento personalizado e relacionamento cooperativo",
+      "affiliate_url": "#",
+      "rating": 4.5
     }
   ]
 }

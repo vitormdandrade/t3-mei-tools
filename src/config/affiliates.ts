@@ -79,6 +79,16 @@ export const AFFILIATE_CONFIG: Record<string, { name: string; base_url: string; 
     base_url: 'https://www.picpay.com',
     utm_campaign: 'oraculodomei-picpaypj',
   },
+  'ton': {
+    name: 'Ton',
+    base_url: 'https://www.ton.com.br',
+    utm_campaign: 'oraculodomei-ton',
+  },
+  'sicredi-pj': {
+    name: 'Sicredi PJ',
+    base_url: 'https://www.sicredi.com.br',
+    utm_campaign: 'oraculodomei-sicredipj',
+  },
 };
 
 export function buildAffiliateUrl(slug: string, affiliateUrl: string): string {
