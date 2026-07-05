@@ -91,6 +91,9 @@ export default function Home() {
           <span className="chip">✓ 100% gratuito, sem cadastro</span>
           <span className="chip">✓ Cada calculadora com URL própria</span>
         </div>
+        <p className="text-sm mt-4" style={{ color: 'var(--color-muted)' }}>
+          🔢 <strong>+10.000</strong> cálculos realizados em 2026 · Atualizado em Julho/2026
+        </p>
       </section>
 
       {/* ── Calculators ── */}
