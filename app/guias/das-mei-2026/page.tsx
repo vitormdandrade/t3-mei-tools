@@ -80,6 +80,69 @@ export default function DasMei2026() {
         {' '}— você pode baixar o arquivo .ics para importar no Google Calendar ou Apple Calendar.
       </p>
 
+      <h2>O que Acontece se Não Pagar o DAS?</h2>
+      <p>
+        Deixar de pagar o DAS gera consequências progressivas que podem levar ao cancelamento do seu CNPJ MEI. Entenda cada etapa:
+      </p>
+
+      <div className="overflow-x-auto my-6">
+        <table className="table-compare">
+          <thead>
+            <tr>
+              <th>Tempo de Atraso</th>
+              <th>Consequência</th>
+              <th>Como Resolver</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1-30 dias</td>
+              <td>Multa de 0,33% ao dia (limitada a 20%) + juros Selic</td>
+              <td>Emitir DAS em atraso pelo PGMEI e pagar com acréscimos</td>
+            </tr>
+            <tr>
+              <td>31-90 dias</td>
+              <td>Multa atinge 20% + juros acumulados. Nome inscrito na Dívida Ativa da União</td>
+              <td>Parcelar débito no Portal do Simples Nacional (até 60x)</td>
+            </tr>
+            <tr>
+              <td>91-180 dias</td>
+              <td>Dívida Ativa consolidada. Restrição no CPF (Serasa, SPC)</td>
+              <td>Negociar parcelamento ou pagamento à vista com desconto de juros</td>
+            </tr>
+            <tr>
+              <td>Mais de 180 dias</td>
+              <td>CNPJ pode ser declarado inapto. Perda de benefícios previdenciários (INSS)</td>
+              <td>Regularizar todos os débitos e solicitar reativação na Receita Federal</td>
+            </tr>
+            <tr>
+              <td>Mais de 2 anos sem pagamento</td>
+              <td>CNPJ cancelado definitivamente. Perda do direito ao MEI</td>
+              <td>Abrir novo CNPJ (se elegível) ou migrar para ME/EPP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="callout callout-warning my-6">
+        <p className="callout-title">⚠️ Atenção aos Benefícios do INSS</p>
+        <p>
+          Ao deixar de pagar o DAS por mais de 12 meses consecutivos, você <strong>perde o direito a benefícios previdenciários</strong> como auxílio-doença, salário-maternidade e aposentadoria. Para recuperar, é necessário pagar todos os débitos em atraso e cumprir nova carência.
+        </p>
+      </div>
+
+      <h2>Como Regularizar DAS Atrasado</h2>
+      <ol>
+        <li>Acesse o <strong>PGMEI</strong> (Programa Gerador do DAS para MEI) no portal do Simples Nacional</li>
+        <li>Selecione o ano-calendário com débitos pendentes</li>
+        <li>O sistema calcula automaticamente multa e juros</li>
+        <li>Emita o DAS atualizado e pague no banco ou internet banking</li>
+        <li>Guarde o comprovante — a baixa no sistema leva até 48h</li>
+      </ol>
+      <p>
+        Para parcelamento, acesse o <strong>Portal do Simples Nacional</strong> → "Parcelamento" → "Parcelamento de Débitos do MEI". O valor mínimo da parcela é R$ 50,00 e o prazo máximo é de 60 meses.
+      </p>
+
       <div className="callout callout-accent my-8">
         <p className="callout-title">Use Nossa Calculadora</p>
         <p className="mb-4">Saiba exatamente quanto você pagará de DAS:</p>
