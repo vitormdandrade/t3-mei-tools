@@ -37,6 +37,21 @@ export default function DASCalculator() {
         </p>
       </div>
 
+      {/* Trust + Social Proof Strip */}
+      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-8 p-4 rounded-xl" style={{ background: 'var(--brand-sand-warm)', border: '1px solid var(--color-border)' }}>
+        {[
+          { icon: '🧾', text: 'Cálculo 100% gratuito' },
+          { icon: '📊', text: 'Dados oficiais da Receita Federal' },
+          { icon: '⚡', text: 'Resultado instantâneo' },
+          { icon: '🔒', text: 'Sem cadastro necessário' },
+        ].map((item) => (
+          <div key={item.text} className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: 'var(--brand-navy)' }}>
+            <span className="text-base">{item.icon}</span>
+            <span>{item.text}</span>
+          </div>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Input Section */}
         <div className="card p-6">
