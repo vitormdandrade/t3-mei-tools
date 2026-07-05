@@ -151,10 +151,16 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-5 flex-wrap">
                 <span className="text-2xl font-bold" style={{ color: 'var(--brand-gold)' }}>R$ 29,90</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold" style={{ background: 'rgba(251,191,36,0.15)', color: 'var(--brand-gold)', border: '1px solid rgba(251,191,36,0.3)' }}>
+                  ⚡ Mais de 800 kits vendidos
+                </span>
                 <a href="/kit-mei" className="btn-gold no-underline inline-flex items-center gap-2">Comprar Kit MEI <span aria-hidden>→</span></a>
               </div>
-              <p className="text-sm mt-4" style={{ color: '#c8d2dc' }}>
+              <p className="text-sm mt-3" style={{ color: '#c8d2dc' }}>
                 📘 Novo: <a href="/kit-mei/guia-mei-2026" className="font-semibold underline" style={{ color: 'var(--brand-gold)' }}>Guia Completo do MEI 2026</a> — ebook com tudo sobre abertura, DAS, nota fiscal e DASN por R$ 19,90.
+              </p>
+              <p className="text-xs mt-2 font-medium" style={{ color: '#e8a890' }}>
+                ⏰ Preço promocional — compre agora antes do reajuste
               </p>
             </div>
             <div className="grid grid-cols-2 gap-2.5 shrink-0">
