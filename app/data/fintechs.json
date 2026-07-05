@@ -6,6 +6,7 @@
       "name": "Conta Simples",
       "slug": "conta-simples",
       "description_pt": "Conta bancária PJ completa com transferências ilimitadas e antecipação de recebíveis",
+      "description_en": "Full-featured business bank account with unlimited transfers and receivables advance for Brazilian MEI entrepreneurs",
       "monthly_fee_brl": 0,
       "highlights": [
         "Transferências ilimitadas",
@@ -22,6 +23,7 @@
       "name": "Neon PJ",
       "slug": "neon-pj",
       "description_pt": "Conta PJ digital com pagamento de boletos e transferências sem tarifa",
+      "description_en": "Digital business account with free bill payments, no-fee transfers, and an intuitive mobile app for MEI",
       "monthly_fee_brl": 0,
       "highlights": [
         "Sem taxa de transferência",
@@ -38,6 +40,7 @@
       "name": "Nubank PJ",
       "slug": "nubank-pj",
       "description_pt": "Conta corrente PJ do Nubank com cashback e benefícios exclusivos",
+      "description_en": "Nubank business checking account with cashback rewards, no annual card fee, and seamless integration with personal Nubank accounts",
       "monthly_fee_brl": 0,
       "highlights": [
         "Cashback em transações",
@@ -54,6 +57,7 @@
       "name": "Inter Empresas",
       "slug": "inter-empresas",
       "description_pt": "Conta empresarial do Banco Inter com crédito pré-aprovado para MEI",
+      "description_en": "Banco Inter business account with pre-approved credit lines, overdraft protection, and zero-fee wire transfers for MEI owners",
       "monthly_fee_brl": 0,
       "highlights": [
         "Crédito pré-aprovado",
@@ -70,6 +74,7 @@
       "name": "C6 Bank PJ",
       "slug": "c6-bank-pj",
       "description_pt": "Banco digital com conta PJ, cartão corporativo e soluções de crédito",
+      "description_en": "Digital bank offering a business account, corporate card, and automated credit lines at reduced fees for growing MEI",
       "monthly_fee_brl": 0,
       "highlights": [
         "Cartão corporativo",
@@ -86,6 +91,7 @@
       "name": "InfinitePay",
       "slug": "infinitepay",
       "description_pt": "Máquina de pagamento com liquidação automática e taxa competitiva",
+      "description_en": "Payment terminal with automatic D+1 settlement, competitive rates starting at 1.99%, and no equipment rental fees for MEI merchants",
       "monthly_fee_brl": 0,
       "highlights": [
         "Liquidação D+1",
