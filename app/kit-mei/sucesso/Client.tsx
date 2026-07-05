@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import { track } from "@vercel/analytics";
 
 const PRODUCT_NAMES: Record<string, string> = {
   "contrato-prestacao": "Contrato de Prestação de Serviços",
@@ -38,6 +39,7 @@ function SucessoContent() {
         if (data.ready) {
           setStatus("ready");
           setDownloadUrl(`/api/download?session_id=${sessionId}&download=1`);
+          track("purchase", { product: product || "kit-mei" });
         } else if (data.status === "pending") {
           setTimeout(checkSession, 3000);
         } else if (data.status === "expired") {
