@@ -6,7 +6,7 @@ import { AffiliateCta } from '@/components/AffiliateCta';
 import { buildAffiliateUrl } from '@/config/affiliates';
 import StarRating from '@/components/StarRating';
 
-type SortMode = 'default' | 'rating' | 'fee';
+type SortMode = 'default' | 'rating' | 'fee' | 'popular';
 
 function sortFintechs(list: typeof fintechs.fintechs, mode: SortMode) {
   const sorted = [...list];
@@ -15,6 +15,13 @@ function sortFintechs(list: typeof fintechs.fintechs, mode: SortMode) {
       return sorted.sort((a, b) => b.rating - a.rating);
     case 'fee':
       return sorted.sort((a, b) => a.monthly_fee_brl - b.monthly_fee_brl);
+    case 'popular':
+      // Popularity = rating * 20 + (free? 10 : 0) + (highlights_count * 3)
+      return sorted.sort((a, b) => {
+        const scoreA = (a.rating * 20) + (a.monthly_fee_brl === 0 ? 10 : 0) + ((a.highlights?.length ?? 0) * 3);
+        const scoreB = (b.rating * 20) + (b.monthly_fee_brl === 0 ? 10 : 0) + ((b.highlights?.length ?? 0) * 3);
+        return scoreB - scoreA;
+      });
     default:
       return sorted;
   }
@@ -48,6 +55,7 @@ export default function MelhoresContasPJ() {
           className="input-field font-medium"
         >
           <option value="default">Padrão</option>
+          <option value="popular">🔥 Mais Populares</option>
           <option value="rating">⭐ Melhor Avaliados</option>
           <option value="fee">💰 Menor Taxa</option>
         </select>
