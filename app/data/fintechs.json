@@ -297,6 +297,93 @@
       "best_for": "MEI que valoriza atendimento personalizado e relacionamento cooperativo",
       "affiliate_url": "#",
       "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "conta-simples",
+      "name": "Conta Simples",
+      "slug": "conta-simples",
+      "description_pt": "Conta bancária PJ completa com transferências ilimitadas e antecipação de recebíveis",
+      "description_en": "Full-featured business bank account with unlimited transfers and receivables advance for Brazilian MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited transfers",
+        "Receivables advance",
+        "NFSe integration"
+      ],
+      "best_for": "Freelancers and MEI with medium revenue",
+      "affiliate_url": "#",
+      "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "sicredi-pj",
+      "name": "Sicredi PJ",
+      "slug": "sicredi-pj",
+      "description_pt": "Conta PJ do Sicredi, cooperativa de crédito com soluções financeiras completas e atendimento personalizado para MEI",
+      "description_en": "Sicredi cooperative business account with profit-sharing, personalized manager support, and reduced-rate credit lines for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cooperative with profit-sharing",
+        "Personalized manager support",
+        "Reduced-rate credit lines",
+        "Complete digital platform"
+      ],
+      "best_for": "MEI who values personalized service and cooperative banking",
+      "affiliate_url": "#",
+      "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "nubank-pj",
+      "name": "Nubank PJ",
+      "slug": "nubank-pj",
+      "description_pt": "Conta corrente PJ do Nubank com cashback e benefícios exclusivos",
+      "description_en": "Nubank business checking account with cashback rewards, no annual card fee, and seamless integration with personal Nubank accounts",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback on transactions",
+        "No annual card fee",
+        "Integrated with Nubank personal account"
+      ],
+      "best_for": "MEI who already uses Nubank",
+      "affiliate_url": "#",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "stone",
+      "name": "Stone",
+      "slug": "stone",
+      "description_pt": "Líder de market share em máquinas de pagamento com suporte enterprise",
+      "description_en": "Market share leader in payment terminals with fast settlement, competitive rates, and enterprise-grade support for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Fast settlement",
+        "Competitive rates",
+        "Specialized support"
+      ],
+      "best_for": "High-volume retail MEI",
+      "affiliate_url": "#",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "asaas",
+      "name": "Asaas",
+      "slug": "asaas",
+      "description_pt": "Plataforma de gestão financeira completa com conta digital, cobrança recorrente, emissão de boletos e cartão de crédito para MEI",
+      "description_en": "Complete financial management platform with digital account, recurring billing, invoice issuance, and integrated business credit card for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited free invoices (boletos)",
+        "Automated recurring billing",
+        "Integrated business credit card",
+        "Automatic bank reconciliation"
+      ],
+      "best_for": "MEI who issues recurring invoices and needs complete financial management",
+      "affiliate_url": "#",
+      "rating": 4.4
     }
   ]
 }
