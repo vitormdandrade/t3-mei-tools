@@ -2,6 +2,19 @@ export const metadata = {
   title: "Como Abrir MEI Online - Guia Passo a Passo 2026",
   description: "Guia completo para registrar seu MEI no portal oficial. Documentos necessários, custos e prazos.",
   alternates: { canonical: '/guias/como-abrir-mei' },
+  openGraph: {
+    title: "Como Abrir MEI Online - Guia Passo a Passo 2026",
+    description: "Guia completo para registrar seu MEI gratuitamente no portal gov.br. Documentos, CNAE e passo a passo em 10 minutos.",
+    type: 'article',
+    locale: 'pt_BR',
+    url: 'https://oraculodomei.com.br/guias/como-abrir-mei',
+    siteName: 'Oráculo do MEI',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Como Abrir MEI Online — Passo a Passo 2026",
+    description: "Guia completo: documentos, CNAE e passo a passo para abrir seu MEI em 10 minutos. 100% gratuito.",
+  },
 };
 
 const faqSchema = {
