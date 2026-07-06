@@ -227,6 +227,9 @@ export default function DASCalculator() {
           <a href="/guias/das-mei-2026" className="link-arrow no-underline">
             <span aria-hidden>→</span> Guia completo DAS 2026
           </a>
+          <a href="/melhores/melhores-contas-pj-mei" className="link-arrow no-underline font-semibold text-accent">
+            <span aria-hidden>→</span> Melhores contas PJ para MEI
+          </a>
         </div>
       </div>
 
