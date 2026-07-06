@@ -384,6 +384,114 @@
       "best_for": "MEI who issues recurring invoices and needs complete financial management",
       "affiliate_url": "#",
       "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "pagbank-pj",
+      "name": "PagBank PJ",
+      "slug": "pagbank-pj",
+      "description_pt": "Conta digital PJ do PagSeguro com maquininha integrada, link de pagamento e gestão de vendas para MEI",
+      "description_en": "PagSeguro's digital business account with integrated POS terminal, payment links, and sales management — ideal for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Maquininha integrada sem aluguel",
+        "Link de pagamento para WhatsApp e redes sociais",
+        "Conta digital com Pix e TED grátis",
+        "Antecipação de recebíveis em 1 dia útil"
+      ],
+      "best_for": "MEI que trabalha com vendas físicas e online",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "pagbank-pj",
+      "name": "PagBank PJ",
+      "slug": "pagbank-pj",
+      "description_pt": "Conta digital PJ do PagSeguro com maquininha integrada, link de pagamento e gestão de vendas para MEI",
+      "description_en": "PagSeguro's digital business account with integrated POS terminal, payment links, and sales management — ideal for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Integrated POS terminal with no rental fee",
+        "Payment links for WhatsApp and social media",
+        "Digital account with free Pix and wire transfers",
+        "Next-day receivables advance"
+      ],
+      "best_for": "MEI merchants selling both in-person and online",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "cora-pj",
+      "name": "Cora",
+      "slug": "cora-pj",
+      "description_pt": "Conta digital PJ gratuita com emissão de boletos ilimitados, Pix e gestão de cobranças — focada em MEI e freelancers",
+      "description_en": "Free digital business account with unlimited invoice issuance, Pix, and receivables management — built specifically for MEI and freelancers",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados e gratuitos",
+        "Gestão de cobranças automatizada",
+        "Cartão de débito e crédito PJ sem anuidade",
+        "Conciliação bancária automática"
+      ],
+      "best_for": "MEI prestador de serviços que emite muitos boletos",
+      "affiliate_url": "#",
+      "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "cora-pj",
+      "name": "Cora",
+      "slug": "cora-pj",
+      "description_pt": "Conta digital PJ gratuita com emissão de boletos ilimitados, Pix e gestão de cobranças — focada em MEI e freelancers",
+      "description_en": "Free digital business account with unlimited invoice issuance, Pix, and receivables management — built specifically for MEI and freelancers",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited free invoice (boleto) issuance",
+        "Automated receivables management",
+        "No-fee business debit and credit card",
+        "Automatic bank reconciliation"
+      ],
+      "best_for": "Service-providing MEI who issues many invoices",
+      "affiliate_url": "#",
+      "rating": 4.5
+    },
+    {
+      "locale": "pt-BR",
+      "id": "banco-do-brasil-pj",
+      "name": "Banco do Brasil PJ",
+      "slug": "banco-do-brasil-pj",
+      "description_pt": "Conta PJ do Banco do Brasil com crédito facilitado, antecipação de recebíveis e ampla rede de agências — ideal para MEI que precisa de crédito",
+      "description_en": "Banco do Brasil business account with easy credit access, receivables advance, and Brazil's largest bank branch network — ideal for MEI needing credit lines",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito com taxas reduzidas para MEI",
+        "Maior rede de agências do Brasil",
+        "Antecipação de recebíveis de maquininha",
+        "Integração com DAS e tributos"
+      ],
+      "best_for": "MEI que precisa de crédito e atendimento presencial",
+      "affiliate_url": "#",
+      "rating": 4.0
+    },
+    {
+      "locale": "en",
+      "id": "banco-do-brasil-pj",
+      "name": "Banco do Brasil PJ",
+      "slug": "banco-do-brasil-pj",
+      "description_pt": "Conta PJ do Banco do Brasil com crédito facilitado, antecipação de recebíveis e ampla rede de agências — ideal para MEI que precisa de crédito",
+      "description_en": "Banco do Brasil business account with easy credit access, receivables advance, and Brazil's largest bank branch network — ideal for MEI needing credit lines",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Reduced-rate credit lines for MEI",
+        "Brazil's largest branch network",
+        "POS terminal receivables advance",
+        "Integrated DAS and tax payment"
+      ],
+      "best_for": "MEI who needs credit and in-person banking",
+      "affiliate_url": "#",
+      "rating": 4.0
     }
   ]
 }
