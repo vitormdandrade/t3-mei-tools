@@ -166,6 +166,30 @@ export default function DASCalculator() {
         </div>
       </div>
 
+      {/* Urgency Banner — Próximo vencimento DAS */}
+      <div className="rounded-2xl p-5 mb-6" style={{ background: '#fef3c7', border: '2px solid #f59e0b' }}>
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">⏰</span>
+            <div>
+              <p className="text-sm font-extrabold" style={{ color: '#92400e' }}>
+                Próximo vencimento do DAS: dia {(() => { const today = new Date(); const year = today.getFullYear(); const month = today.getMonth(); const dueDate = new Date(year, month + 1, 20); const diffDays = Math.ceil((dueDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)); return diffDays > 0 ? `${diffDays} dias (${dueDate.toLocaleDateString('pt-BR')})` : 'HOJE!'; })()}
+              </p>
+              <p className="text-xs" style={{ color: '#a16207' }}>
+                Não perca o prazo — organize seu pagamento agora com uma conta PJ gratuita
+              </p>
+            </div>
+          </div>
+          <a
+            href="/melhores/melhores-contas-pj-mei"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold no-underline whitespace-nowrap"
+            style={{ background: '#f59e0b', color: '#78350f' }}
+          >
+            Abrir Conta PJ Grátis →
+          </a>
+        </div>
+      </div>
+
       {/* Mid-Page CTA — Contas PJ para pagar o DAS */}
       <div
         className="rounded-3xl p-6"
