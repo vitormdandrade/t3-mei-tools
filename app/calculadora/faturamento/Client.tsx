@@ -2,7 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import meiLimits from '@/data/mei-limits.json';
+import fintechs from '@/data/fintechs.json';
 import { AffiliateCta } from '@/components/AffiliateCta';
+import { buildAffiliateUrl } from '@/config/affiliates';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 
 type Year = 2024 | 2025 | 2026;
@@ -258,7 +260,7 @@ export default function RevenueCalculator() {
         />
       )}
 
-      {/* CTA — when user is engaged with their MEI finances */}
+      {/* CTA — direct fintech affiliate links when user is engaged */}
       {total > 0 && (
         <div
           className="rounded-3xl p-6"
@@ -268,11 +270,28 @@ export default function RevenueCalculator() {
           <p className="text-body mb-4" style={{ color: '#c8d2dc' }}>
             Gerencie seu faturamento MEI com uma conta digital gratuita. Sem tarifas, com emissão de boletos e integração com contabilidade.
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            {fintechs.fintechs
+              .filter((f: { locale: string; rating: number }) => f.locale === 'pt-BR' && f.rating >= 4.3)
+              .sort((a: { rating: number }, b: { rating: number }) => b.rating - a.rating)
+              .slice(0, 4)
+              .map((f: { id: string; name: string; rating: number; affiliate_url: string }) => (
+                <AffiliateCta
+                  key={f.id}
+                  href={buildAffiliateUrl(f.id, f.affiliate_url)}
+                  partner={f.id}
+                  page="calculadora-faturamento"
+                  className="btn-light no-underline text-center text-sm font-semibold py-2 px-3 rounded-lg inline-flex items-center justify-center gap-1"
+                >
+                  {f.name} ★{f.rating} →
+                </AffiliateCta>
+              ))}
+          </div>
           <a
             href="/melhores/melhores-contas-pj-mei"
-            className="btn-light no-underline inline-flex items-center gap-2"
+            className="btn-light no-underline inline-flex items-center gap-2 text-xs opacity-80"
           >
-            Ver Melhores Contas PJ →
+            Ver todas as contas PJ →
           </a>
         </div>
       )}
