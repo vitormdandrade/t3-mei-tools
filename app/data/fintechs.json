@@ -492,6 +492,91 @@
       "best_for": "MEI who needs credit and in-person banking",
       "affiliate_url": "#",
       "rating": 4.0
+    },
+    {
+      "locale": "en",
+      "id": "neon-pj",
+      "name": "Neon PJ",
+      "slug": "neon-pj",
+      "description_pt": "Conta PJ digital com pagamento de boletos e transferências sem tarifa",
+      "description_en": "Digital business account with free bill payments, no-fee transfers, and an intuitive mobile app for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "No transfer fees",
+        "Bill payment (boleto) support",
+        "Intuitive mobile app"
+      ],
+      "best_for": "MEI who needs mobile-first banking",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "inter-empresas",
+      "name": "Inter Empresas",
+      "slug": "inter-empresas",
+      "description_pt": "Conta empresarial do Banco Inter com crédito pré-aprovado para MEI",
+      "description_en": "Banco Inter business account with pre-approved credit lines, overdraft protection, and zero-fee wire transfers for MEI owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Pre-approved credit",
+        "Overdraft protection",
+        "Zero-fee wire transfers (TED)"
+      ],
+      "best_for": "MEI who needs credit access",
+      "affiliate_url": "#",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "c6-bank-pj",
+      "name": "C6 Bank PJ",
+      "slug": "c6-bank-pj",
+      "description_pt": "Banco digital com conta PJ, cartão corporativo e soluções de crédito",
+      "description_en": "Digital bank offering a business account, corporate card, and automated credit lines at reduced fees for growing MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Corporate card included",
+        "Automatic credit line",
+        "Reduced fees"
+      ],
+      "best_for": "Growing MEI expecting scale",
+      "affiliate_url": "#",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "infinitepay",
+      "name": "InfinitePay",
+      "slug": "infinitepay",
+      "description_pt": "Máquina de pagamento com liquidação automática e taxa competitiva",
+      "description_en": "Payment terminal with automatic D+1 settlement, competitive rates starting at 1.99%, and no equipment rental fees for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "D+1 settlement",
+        "Rates from 1.99%",
+        "No equipment rental"
+      ],
+      "best_for": "Retail MEI with in-person sales",
+      "affiliate_url": "#",
+      "rating": 4.1
+    },
+    {
+      "locale": "en",
+      "id": "sumup",
+      "name": "SumUp",
+      "slug": "sumup",
+      "description_pt": "Maquininha com NFC, WiFi e 4G com segurança de dados criptografada",
+      "description_en": "Compact payment terminal with NFC, WiFi, and 4G connectivity plus encrypted data security for mobile MEI professionals",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Portable and compact",
+        "Rates from 2.49%",
+        "24/7 support"
+      ],
+      "best_for": "Mobile MEI and service providers",
+      "affiliate_url": "#",
+      "rating": 4.0
     }
   ]
 }
