@@ -258,7 +258,7 @@ export default function RevenueCalculator() {
         />
       )}
 
-      {/* Affiliate CTA — when user is engaged with their MEI finances */}
+      {/* CTA — when user is engaged with their MEI finances */}
       {total > 0 && (
         <div
           className="rounded-3xl p-6"
@@ -268,14 +268,12 @@ export default function RevenueCalculator() {
           <p className="text-body mb-4" style={{ color: '#c8d2dc' }}>
             Gerencie seu faturamento MEI com uma conta digital gratuita. Sem tarifas, com emissão de boletos e integração com contabilidade.
           </p>
-          <AffiliateCta
-            href="#"
-            partner="contas-pj"
-            page="calculadora-faturamento"
+          <a
+            href="/melhores/melhores-contas-pj-mei"
             className="btn-light no-underline inline-flex items-center gap-2"
           >
             Ver Melhores Contas PJ →
-          </AffiliateCta>
+          </a>
         </div>
       )}
 
