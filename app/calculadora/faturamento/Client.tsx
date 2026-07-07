@@ -307,6 +307,43 @@ export default function RevenueCalculator() {
           </a>
         </div>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Qual o limite de faturamento do MEI em 2026?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O limite anual de faturamento do MEI é R$ 81.000,00. Se você ultrapassar esse valor, precisa migrar para outro regime tributário como ME ou EPP.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'O que acontece se ultrapassar o limite do MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Se ultrapassar até 20% do limite (R$ 97.200), você deve recolher DAS complementar e migrar no ano seguinte. Acima disso, a migração é obrigatória e retroativa, com pagamento de impostos retroativos.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Como calcular a projeção de faturamento MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Some o faturamento dos meses já registrados, calcule a média mensal e multiplique por 12. Se a projeção ultrapassar R$ 81.000, comece a planejar a migração de regime.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
