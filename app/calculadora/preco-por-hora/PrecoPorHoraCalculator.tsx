@@ -240,6 +240,43 @@ export default function PrecoPorHoraCalculator() {
           </a>
         </div>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Como calcular o preço por hora como MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Divida o valor que você quer ganhar por mês (salário líquido + despesas + DAS) pelo número de horas efetivas trabalhadas. Adicione 20% de margem para cobrir dias improdutivos e imprevistos.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual o valor mínimo que um MEI deve cobrar por hora?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O valor mínimo por hora cobre exatamente seus custos mensais (salário desejado + DAS + despesas). O recomendado é adicionar 20% sobre esse mínimo para ter margem de lucro e segurança financeira.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quanto custa o DAS MEI por mês em 2026?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O DAS MEI em 2026 começa em R$ 75,90 para comércio, variando conforme a categoria (serviços ou indústria). Inclui 5% do salário mínimo para INSS mais valores fixos de ICMS e/ou ISS.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
