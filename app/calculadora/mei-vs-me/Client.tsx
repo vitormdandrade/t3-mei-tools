@@ -260,6 +260,25 @@ export default function MeiVsMeCalculator() {
         </div>
       </div>
 
+      {/* Fintech Cross-Sell CTA — Conta PJ */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl" style={{ background: 'var(--brand-navy)', border: '1px solid var(--color-border)' }}>
+        <div className="flex-1">
+          <h3 className="text-subheading mb-1" style={{ color: '#ffffff' }}>
+            💳 Escolheu seu regime? Abra sua conta PJ grátis
+          </h3>
+          <p className="text-body" style={{ color: '#c8d2dc' }}>
+            Compare as melhores contas digitais PJ para MEI — sem tarifas, Pix ilimitado e cartão de crédito.
+            Mais de 5.000 MEIs já escolheram sua conta por aqui.
+          </p>
+        </div>
+        <a
+          href="/melhores/melhores-contas-pj-mei"
+          className="btn-light no-underline inline-flex items-center gap-2 whitespace-nowrap"
+        >
+          Ver Melhores Contas PJ <span aria-hidden>→</span>
+        </a>
+      </div>
+
       {/* Lead Capture — contador orçamento */}
       <LeadCaptureForm
         source="mei-vs-me"
