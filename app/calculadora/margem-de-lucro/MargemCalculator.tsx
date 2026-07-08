@@ -192,6 +192,43 @@ export default function MargemCalculator() {
           </a>
         </div>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Como calcular a margem de lucro de um produto?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A fórmula é: Margem (%) = ((Preço de Venda − Custo Total) ÷ Preço de Venda) × 100. Por exemplo, se você vende por R$ 80 e gasta R$ 35 para produzir, a margem é ((80−35)÷80)×100 = 56,3%. Isso significa que 56,3% do valor da venda é lucro real.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual é uma boa margem de lucro para MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Para a maioria dos negócios MEI, uma margem acima de 30% é considerada saudável — cobre custos fixos, impostos (DAS) e ainda gera lucro para reinvestir ou retirar como pró-labore. Margens entre 15% e 30% são moderadas e exigem atenção aos custos. Abaixo de 15% é arriscado, pois qualquer aumento de custo pode transformar lucro em prejuízo.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual a diferença entre margem de lucro e markup?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Margem de lucro é o percentual do preço de venda que representa lucro (Lucro ÷ Preço × 100). Markup é o multiplicador aplicado sobre o custo para chegar ao preço de venda (Preço ÷ Custo). Por exemplo, se o custo é R$ 35 e você vende por R$ 80, a margem é 56,3% e o markup é 2,3×. Margem alta nem sempre significa markup alto — o importante é que ambos cubram seus custos fixos.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
