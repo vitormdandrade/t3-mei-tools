@@ -287,6 +287,43 @@ export default function PontoEquilibrioCalculator() {
           </a>
         </div>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Como calcular o ponto de equilíbrio do MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Divida seus custos fixos mensais pela margem de contribuição unitária (preço de venda menos custo variável por unidade). O resultado é o número mínimo de vendas para cobrir todas as despesas. Exemplo: custos fixos de R$ 3.500, preço de R$ 80 e custo variável de R$ 35 → margem de R$ 45 → ponto de equilíbrio de 78 unidades/mês.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual a diferença entre ponto de equilíbrio e lucro?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O ponto de equilíbrio é o volume de vendas onde receita total iguala custo total — você não tem lucro nem prejuízo. Abaixo dele, você está no vermelho. Acima, cada venda adicional gera lucro igual à margem de contribuição. Para o MEI, conhecer esse número é essencial para definir metas mínimas de faturamento.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'O limite de faturamento do MEI afeta o ponto de equilíbrio?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Sim. O MEI tem limite de R$ 81.000/ano (média de R$ 6.750/mês). Se o seu ponto de equilíbrio estiver próximo desse valor, você tem pouca margem para lucro real. Considere migrar para ME se o faturamento projetado ultrapassar consistentemente o teto do MEI.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
