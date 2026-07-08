@@ -214,6 +214,47 @@ export default function PrecoPorHoraCalculator() {
         </div>
       )}
 
+      {/* CTA — Fintech cross-sell after user sees their hourly rate */}
+      {result && (
+        <div
+          className="rounded-3xl p-6"
+          style={{ background: 'linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light))' }}
+        >
+          <h3 className="text-subheading mb-2" style={{ color: '#ffffff' }}>💰 Receba pagamentos com uma Conta PJ Gratuita</h3>
+          <p className="text-body mb-4" style={{ color: '#c8d2dc' }}>
+            Agora que você sabe quanto cobrar por hora, abra uma conta digital PJ gratuita para receber seus pagamentos. Sem tarifas, com emissão de boletos e Pix ilimitado.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            {(() => {
+              // Dynamic import pattern — fintechs data is already available via module scope
+              const fintechs = [
+                { id: 'conta-simples', name: 'Conta Simples', rating: 4.5, url: 'https://contasimples.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs' },
+                { id: 'neon-pj', name: 'Neon PJ', rating: 4.3, url: 'https://neon.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs' },
+                { id: 'cora', name: 'Cora', rating: 4.5, url: 'https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs' },
+                { id: 'asaas', name: 'Asaas', rating: 4.4, url: 'https://asaas.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs' },
+              ].sort((a, b) => b.rating - a.rating);
+              return fintechs.map((f) => (
+                <a
+                  key={f.id}
+                  href={f.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-light no-underline text-center text-sm font-semibold py-2 px-3 rounded-lg inline-flex items-center justify-center gap-1"
+                >
+                  {f.name} ★{f.rating} →
+                </a>
+              ));
+            })()}
+          </div>
+          <a
+            href="/melhores/melhores-contas-pj-mei"
+            className="btn-light no-underline inline-flex items-center gap-2 text-xs opacity-80"
+          >
+            Ver todas as contas PJ →
+          </a>
+        </div>
+      )}
+
       {/* Tips */}
       <div className="bg-yellow-50 dark:bg-yellow-950/40 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6">
         <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">Dicas ao Precificar</h3>
