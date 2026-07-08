@@ -11,7 +11,7 @@ const MAQUININHAS = [
     description: 'Líder de mercado em Brasil com maior cobertura de MEI.',
     taxas: { debito: '1,69% a 1,99%', credito: '2,69% a 3,99%', aluguel: 'R$ 79-99/mês', liquidacao: 'D+1' },
     highlights: ['Maior rede de suporte', 'Equipamentos modernos', 'Integração com diversos sistemas'],
-    affiliate_url: '#',
+    affiliate_url: 'https://stone.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs',
     rating: 4.4,
   },
   {
@@ -20,7 +20,7 @@ const MAQUININHAS = [
     description: 'Integrada ao Mercado Livre com excelente experiência de uso.',
     taxas: { debito: '1,69% a 1,99%', credito: '2,69% a 3,99%', aluguel: 'Grátis ou baixo', liquidacao: 'D+1' },
     highlights: ['Integração Mercado Livre', 'Avançado antecipação', 'App simples'],
-    affiliate_url: '#',
+    affiliate_url: 'https://mercadopago.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs',
     rating: 4.3,
   },
   {
@@ -29,7 +29,7 @@ const MAQUININHAS = [
     description: 'Maquininha portátil ideal para atendimento ambulante.',
     taxas: { debito: '1,69%', credito: '2,49% a 2,99%', aluguel: 'Grátis', liquidacao: 'D+1' },
     highlights: ['Equipamento portátil', 'Sem aluguel', 'Suporte 24/7'],
-    affiliate_url: '#',
+    affiliate_url: 'https://sumup.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs',
     rating: 4.0,
   },
   {
@@ -38,7 +38,7 @@ const MAQUININHAS = [
     description: 'Focada em antecipação de recebíveis para MEI.',
     taxas: { debito: '1,99%', credito: '2,99%', aluguel: 'Grátis', liquidacao: '24h' },
     highlights: ['Antecipação automática', 'Taxa competitiva', 'Sem aluguel'],
-    affiliate_url: '#',
+    affiliate_url: 'https://infinitepay.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs',
     rating: 4.1,
   },
 ];
