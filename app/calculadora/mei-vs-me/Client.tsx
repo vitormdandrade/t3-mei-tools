@@ -302,6 +302,43 @@ export default function MeiVsMeCalculator() {
           </a>
         </div>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Qual a diferença entre MEI, Simples Nacional e ME?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'MEI é para faturamento até R$ 81.000/ano com DAS fixo de ~R$ 76,90/mês e apenas 1 funcionário. Simples Nacional é para faturamento até R$ 360.000/ano com imposto de 6% a 15% sobre o faturamento. Microempresa (ME) também fatura até R$ 360.000/ano mas tem estrutura mais formal, com imposto de 12,5% a 25% dependendo da categoria e acesso a contratos maiores.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quando compensa sair do MEI para o Simples Nacional?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Compensa sair quando você fatura consistentemente acima de R$ 81.000/ano, precisa contratar mais de 1 funcionário, ou seus clientes exigem nota fiscal completa que o MEI não pode emitir. No Simples Nacional, seu imposto é proporcional ao faturamento, então quanto mais você fatura, mais paga — mas abre acesso a crédito, contratos e estrutura.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quanto paga de imposto no MEI vs Simples Nacional em 2026?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No MEI, o DAS fixo em 2026 começa em R$ 76,90/mês (comércio) ou R$ 80,90/mês (serviços), cerca de R$ 922,80 a R$ 970,80 por ano. No Simples Nacional, o imposto é de 6% (comércio) ou 15% (serviços) sobre o faturamento — para R$ 5.000/mês, você pagaria entre R$ 300 e R$ 750 por mês de imposto.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
