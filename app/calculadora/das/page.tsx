@@ -37,6 +37,21 @@ export default function DASCalculator() {
         </p>
       </div>
 
+      {/* Social Proof + Trust Strip */}
+      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-0 p-4 rounded-xl" style={{ background: 'var(--color-surface-alt)', border: '1px solid var(--color-border)' }}>
+        {[
+          { icon: '🧮', text: '+10.000 MEIs já calcularam' },
+          { icon: '✅', text: 'Valores oficiais 2026' },
+          { icon: '⚡', text: 'Resultado instantâneo' },
+          { icon: '🔒', text: '100% gratuito e seguro' },
+        ].map((item) => (
+          <div key={item.text} className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: 'var(--color-foreground)' }}>
+            <span className="text-base">{item.icon}</span>
+            <span>{item.text}</span>
+          </div>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Input Section */}
         <div className="card p-6">

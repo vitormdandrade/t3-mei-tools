@@ -226,6 +226,23 @@ export default function Home() {
           }),
         }}
       />
+
+      {/* Organization JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Oráculo do MEI',
+            url: 'https://oraculodomei.com.br',
+            description: 'Ferramentas gratuitas para microempreendedores: calculadoras de DAS, faturamento, MEI vs ME, INSS autônomo e guias completos.',
+            sameAs: [
+              'https://oraculodomei.com.br',
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
