@@ -613,6 +613,42 @@
       "best_for": "Higher-revenue MEI who wants integrated business banking and investments",
       "affiliate_url": "https://www.btgpactual.com/empresas?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.6
+    },
+    {
+      "locale": "pt-BR",
+      "id": "agibank-pj",
+      "name": "Agibank PJ",
+      "slug": "agibank-pj",
+      "description_pt": "Conta digital PJ do Agibank com crédito facilitado, antecipação de recebíveis e Pix ilimitado para MEI — zero taxa mensal e cartão sem anuidade",
+      "description_en": "Agibank digital business account with easy credit access, receivables advance, and unlimited Pix for MEI — zero monthly fee and no-annual-fee business card",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito facilitado sem burocracia",
+        "Antecipação de recebíveis em 24h",
+        "Pix ilimitado e gratuito",
+        "Cartão PJ sem anuidade"
+      ],
+      "best_for": "MEI que precisa de crédito rápido e conta digital sem tarifas",
+      "affiliate_url": "https://agibank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "agibank-pj",
+      "name": "Agibank PJ",
+      "slug": "agibank-pj",
+      "description_pt": "Conta digital PJ do Agibank com crédito facilitado, antecipação de recebíveis e Pix ilimitado para MEI — zero taxa mensal e cartão sem anuidade",
+      "description_en": "Agibank digital business account with easy credit access, receivables advance, and unlimited Pix for MEI — zero monthly fee and no-annual-fee business card",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Easy credit access with no bureaucracy",
+        "24-hour receivables advance",
+        "Unlimited free Pix transfers",
+        "No-annual-fee business card"
+      ],
+      "best_for": "MEI who needs quick credit access and a fee-free digital account",
+      "affiliate_url": "https://agibank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
     }
   ]
 }
