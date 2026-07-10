@@ -63,6 +63,34 @@ export default function ComoAbrirMEI() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Como Abrir MEI Online em 2026',
+            description:
+              'Guia passo a passo para registrar seu Microempreendedor Individual no portal oficial. Totalmente gratuito e 100% online.',
+            author: {
+              '@type': 'Organization',
+              name: 'Oráculo do MEI',
+              url: 'https://oraculodomei.com.br',
+            },
+            datePublished: '2025-01-01',
+            dateModified: '2026-07-01',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://oraculodomei.com.br/guias/como-abrir-mei',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Oráculo do MEI',
+              url: 'https://oraculodomei.com.br',
+            },
+          }),
+        }}
+      />
       <header className="mb-10">
         <span className="text-label">Guia</span>
         <h1 className="text-hero mt-2 mb-4">Como Abrir MEI Online em 2026</h1>
