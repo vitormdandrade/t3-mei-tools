@@ -81,6 +81,51 @@ export default function LimiteFaturamentoMEI() {
           Calcular Faturamento
         </a>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Qual é o limite de faturamento do MEI em 2026?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O limite de faturamento do MEI em 2026 é de R$ 81.000 por ano, o que equivale a aproximadamente R$ 7.083 por mês. Este valor é definido por lei federal e é o teto para permanecer no regime MEI.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'O que acontece se eu ultrapassar o limite de faturamento do MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Se você ultrapassar R$ 81.000 no ano, será desenquadrado do MEI e precisará migrar para o Simples Nacional como Microempresa (ME). A Receita Federal detecta automaticamente o excesso e você pode ser penalizado se não formalizar a mudança.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'O que entra no cálculo do limite de faturamento do MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Entram no cálculo todas as vendas de produtos e serviços prestados ao longo do ano. Devoluções e cancelamentos reduzem o total. O faturamento é calculado pela soma das notas fiscais emitidas no período de janeiro a dezembro.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Como saber se estou perto do limite do MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Acompanhe seu faturamento mensal e some os valores ao longo do ano. O ideal é manter um controle mensal para não ultrapassar a média de R$ 7.083 por mês. Use nossa calculadora de faturamento para monitorar em tempo real.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </article>
   );
 }
