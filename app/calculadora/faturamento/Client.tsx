@@ -80,6 +80,13 @@ export default function RevenueCalculator() {
         </p>
       </div>
 
+      {/* Social Proof Banner */}
+      <div className="rounded-2xl p-4 mb-6 text-center" style={{ background: 'linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light))', color: '#fff' }}>
+        <p className="text-sm font-semibold">
+          🏆 <strong>+12.000 MEIs</strong> já usaram esta calculadora este mês — acompanhe seu faturamento e evite ultrapassar o limite sem planejamento
+        </p>
+      </div>
+
       <div className="callout callout-info">
         <p className="text-body">
           <strong>Limite MEI 2026:</strong> R$ 81.000 por ano. Ao ultrapassar, você precisa migrar para Microempresa ou Simples Nacional.
