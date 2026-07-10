@@ -223,6 +223,20 @@ export default function RevenueCalculator() {
               </p>
             </div>
           )}
+          {percentage >= 70 && (
+            <div className="mt-4 rounded-xl p-3" style={{ background: '#fef3c7', border: '1px solid #fcd34d' }}>
+              <p className="text-sm font-semibold" style={{ color: '#92400e' }}>
+                ⏰ <strong>Atenção:</strong> Você já usou <strong>{percentage.toFixed(0)}%</strong> do limite anual. Faltam apenas {12 - new Date().getMonth()} meses para o fechamento do ano fiscal. Organize seu faturamento agora com uma conta PJ gratuita.
+              </p>
+              <a
+                href="/melhores/melhores-contas-pj-mei"
+                className="inline-block mt-2 text-sm font-bold no-underline"
+                style={{ color: '#b45309' }}
+              >
+                Ver Melhores Contas PJ →
+              </a>
+            </div>
+          )}
         </div>
       </div>
 
