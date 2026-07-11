@@ -104,6 +104,51 @@ export default function AbrirContaPJMEI() {
         <p className="callout-title">Saiba Mais</p>
         <a href="/calculadora/das">→ Calcular DAS</a>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Quais documentos preciso para abrir conta PJ MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Documentos da empresa: CNPJ, Recibo de Inscrição do MEI, Contrato Social, comprovante de endereço comercial. Documentos pessoais: RG ou CNH, CPF, comprovante de endereço residencial e comprovante de renda.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quanto custa abrir uma conta PJ para MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A abertura da conta é gratuita na maioria dos bancos digitais. A manutenção mensal varia de gratuita a R$ 30/mês. Transferências TED custam de gratuitas a R$ 15. Compare as opções para encontrar a conta ideal para seu MEI.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual o melhor banco para abrir conta PJ MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Depende das necessidades do seu negócio. Consulte nosso comparativo completo de contas PJ para MEI com as melhores opções do mercado: Conta Simples, Nubank PJ, Neon PJ, Inter Empresas, C6 Bank PJ, Cora, BS2, Sicredi, entre outros.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Preciso separar conta PF e PJ sendo MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Sim. Separar finanças pessoais e empresariais é essencial para organização fiscal, fluxo de caixa e comprovação de renda. Além disso, muitos clientes exigem pagamento em conta PJ.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </article>
   );
 }
