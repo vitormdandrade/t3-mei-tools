@@ -325,6 +325,40 @@ export default function MelhoresContasPJ() {
         </div>
       </section>
 
+      {/* ItemList Structured Data — product comparison with ratings */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Melhores Contas PJ para MEI 2026',
+            description: 'Ranking das melhores contas PJ digitais gratuitas para microempreendedores individuais.',
+            numberOfItems: sorted.length,
+            itemListElement: sorted.map((item, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'Product',
+                name: item.name,
+                description: item.description_pt,
+                aggregateRating: {
+                  '@type': 'AggregateRating',
+                  ratingValue: item.rating.toString(),
+                  bestRating: '5',
+                  worstRating: '1',
+                },
+                offers: {
+                  '@type': 'Offer',
+                  price: item.monthly_fee_brl.toString(),
+                  priceCurrency: 'BRL',
+                  availability: 'https://schema.org/InStock',
+                },
+              },
+            })),
+          }),
+        }}
+      />
       {/* FAQPage Structured Data */}
       <script
         type="application/ld+json"
