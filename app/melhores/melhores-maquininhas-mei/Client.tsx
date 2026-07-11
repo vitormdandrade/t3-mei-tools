@@ -212,6 +212,46 @@ export default function MelhoresMaquininhas() {
         </div>
       </div>
 
+      {/* FAQ Section */}
+      <section className="border dark:border-gray-700 rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Perguntas Frequentes</h2>
+        <div className="space-y-4">
+          <details className="bg-white dark:bg-gray-900 p-4 rounded border border-gray-200 dark:border-gray-700">
+            <summary className="font-bold cursor-pointer text-gray-900 dark:text-gray-100">
+              Qual a melhor maquininha de cartão para MEI?
+            </summary>
+            <p className="text-gray-700 dark:text-gray-300 mt-3">
+              Depende do seu perfil: para atendimento presencial fixo, a Stone oferece o melhor suporte. Para trabalho ambulante, a SumUp é ideal por ser portátil e sem aluguel. Para vendas online + presenciais, o Mercado Pago integra com o Mercado Livre. Para quem precisa de antecipação rápida, a InfinitePay liquida em 24h.
+            </p>
+          </details>
+          <details className="bg-white dark:bg-gray-900 p-4 rounded border border-gray-200 dark:border-gray-700">
+            <summary className="font-bold cursor-pointer text-gray-900 dark:text-gray-100">
+              Qual maquininha tem a menor taxa para MEI?
+            </summary>
+            <p className="text-gray-700 dark:text-gray-300 mt-3">
+              A SumUp oferece as menores taxas do mercado: 1,69% no débito e a partir de 2,49% no crédito, sem aluguel. A InfinitePay também é competitiva com 1,99% no débito e 2,99% no crédito, sem custo de aluguel.
+            </p>
+          </details>
+          <details className="bg-white dark:bg-gray-900 p-4 rounded border border-gray-200 dark:border-gray-700">
+            <summary className="font-bold cursor-pointer text-gray-900 dark:text-gray-100">
+              Preciso de CNPJ MEI para ter uma maquininha de cartão?
+            </summary>
+            <p className="text-gray-700 dark:text-gray-300 mt-3">
+              Sim. Todas as principais operadoras de maquininhas exigem CNPJ ativo, seja MEI, ME ou EPP. O cadastro como MEI é simples e gratuito. Se você ainda não tem, confira nosso{' '}
+              <a href="/guias/como-abrir-mei" className="text-accent hover:underline">guia de como abrir MEI</a>.
+            </p>
+          </details>
+          <details className="bg-white dark:bg-gray-900 p-4 rounded border border-gray-200 dark:border-gray-700">
+            <summary className="font-bold cursor-pointer text-gray-900 dark:text-gray-100">
+              Qual o prazo de liquidação das maquininhas?
+            </summary>
+            <p className="text-gray-700 dark:text-gray-300 mt-3">
+              A maioria das maquininhas oferece liquidação em D+1 (crédito no dia seguinte). A InfinitePay se destaca com liquidação em até 24h para todas as transações. Stone, SumUp e Mercado Pago também operam em D+1 na maioria dos casos. Consulte as condições específicas de cada operadora.
+            </p>
+          </details>
+        </div>
+      </section>
+
       {/* FAQPage Structured Data */}
       <script
         type="application/ld+json"
