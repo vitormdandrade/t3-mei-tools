@@ -100,14 +100,21 @@ export default function MelhoresContasPJ() {
                   <StarRating rating={f.rating} size="sm" />
                 </td>
                 <td className="px-4 py-3 text-center">
-                  <AffiliateCta
-                    href={buildAffiliateUrl(f.id, f.affiliate_url)}
-                    partner={f.id}
-                    page="melhores-contas-pj-mei"
-                    className="inline-block bg-accent text-white text-xs px-3 py-1.5 rounded font-semibold hover:bg-accent-hover whitespace-nowrap"
-                  >
-                    Abrir Conta →
-                  </AffiliateCta>
+                  <div className="flex flex-col items-center gap-0.5">
+                    <AffiliateCta
+                      href={buildAffiliateUrl(f.id, f.affiliate_url)}
+                      partner={f.id}
+                      page="melhores-contas-pj-mei"
+                      className="inline-block bg-accent text-white text-xs px-3 py-1.5 rounded font-semibold hover:bg-accent-hover whitespace-nowrap"
+                    >
+                      Abrir Conta →
+                    </AffiliateCta>
+                    {fintechs.fintechs.sort((a: { rating: number }, b: { rating: number }) => b.rating - a.rating).slice(0, 3).some((top: { id: string }) => top.id === f.id) && (
+                      <span className="text-[10px] font-semibold text-green-700 dark:text-green-400 whitespace-nowrap">
+                        ⚡ Oferta limitada
+                      </span>
+                    )}
+                  </div>
                 </td>
               </tr>
             ))}
