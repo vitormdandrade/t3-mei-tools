@@ -649,6 +649,42 @@
       "best_for": "MEI who needs quick credit access and a fee-free digital account",
       "affiliate_url": "https://agibank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.2
+    },
+    {
+      "locale": "pt-BR",
+      "id": "santander-pj",
+      "name": "Santander PJ",
+      "slug": "santander-pj",
+      "description_pt": "Conta PJ do Santander com soluções financeiras completas, crédito empresarial e integração com o ecossistema Santander para MEI",
+      "description_en": "Santander business account with complete financial solutions, business credit lines, and full Santander ecosystem integration for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito empresarial com taxas reduzidas",
+        "Integração total com app Santander",
+        "Rede de agências em todo Brasil",
+        "Cartão empresarial sem anuidade no primeiro ano"
+      ],
+      "best_for": "MEI que busca banco tradicional com presença física e ecossistema completo",
+      "affiliate_url": "https://santander.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "santander-pj",
+      "name": "Santander PJ",
+      "slug": "santander-pj",
+      "description_pt": "Conta PJ do Santander com soluções financeiras completas, crédito empresarial e integração com o ecossistema Santander para MEI",
+      "description_en": "Santander business account with complete financial solutions, business credit lines, and full Santander ecosystem integration for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Reduced-rate business credit lines",
+        "Full Santander app integration",
+        "Nationwide branch network",
+        "First-year business card with no annual fee"
+      ],
+      "best_for": "MEI seeking a traditional bank with physical branches and a complete ecosystem",
+      "affiliate_url": "https://santander.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
     }
   ]
 }
