@@ -64,6 +64,51 @@ export default function NotaFiscalMEI() {
           Comprar Kit MEI — R$ 29,90
         </a>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Quando o MEI é obrigado a emitir nota fiscal?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O MEI é obrigado a emitir nota fiscal em vendas para outras empresas (B2B), serviços com valor acima de R$ 200, exportação e quando o cliente solicitar. Alguns municípios exigem nota fiscal em todas as operações — verifique as regras locais.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quando o MEI não precisa emitir nota fiscal?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A nota fiscal não é obrigatória para vendas a pessoa física (B2C), serviços abaixo de R$ 200, comércio no varejo de pequenas vendas e serviços domésticos simples. No entanto, mesmo não sendo obrigatória, emitir a nota transmite profissionalismo.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Como emitir nota fiscal sendo MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O MEI pode emitir nota fiscal de três formas: RPA (Recibo de Prestação de Serviços) para serviços, NFSe (Nota Fiscal Eletrônica de Serviços) pelo sistema online da prefeitura, ou NFe (Nota Fiscal Eletrônica) para comércio, que exige certificado digital.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual o prazo para cancelar uma nota fiscal MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O prazo para cancelamento de nota fiscal é de até 24 horas após a emissão, dependendo das regras do município. Após esse prazo, pode ser necessário solicitar uma carta de correção ou emitir uma nota de devolução.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </article>
   );
 }
