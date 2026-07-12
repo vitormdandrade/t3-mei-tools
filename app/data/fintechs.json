@@ -685,6 +685,42 @@
       "best_for": "MEI seeking a traditional bank with physical branches and a complete ecosystem",
       "affiliate_url": "https://santander.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "efi-bank",
+      "name": "Efí Bank",
+      "slug": "efi-bank",
+      "description_pt": "Plataforma completa de meios de pagamento e banking para MEI — Pix, boletos, link de pagamento, maquininha e conta digital PJ integrada com APIs de automação financeira",
+      "description_en": "Complete payment and banking platform for MEI — Pix, boletos, payment links, POS terminal, and integrated digital business account with financial automation APIs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Pix e boletos com liquidação automática",
+        "Link de pagamento para WhatsApp e redes sociais",
+        "APIs de automação financeira e cobrança recorrente",
+        "Maquininha integrada com taxas competitivas"
+      ],
+      "best_for": "MEI que vende online e precisa de automação de pagamentos",
+      "affiliate_url": "https://sejaefi.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "efi-bank",
+      "name": "Efí Bank",
+      "slug": "efi-bank",
+      "description_pt": "Plataforma completa de meios de pagamento e banking para MEI — Pix, boletos, link de pagamento, maquininha e conta digital PJ integrada com APIs de automação financeira",
+      "description_en": "Complete payment and banking platform for MEI — Pix, boletos, payment links, POS terminal, and integrated digital business account with financial automation APIs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Pix and boletos with automatic settlement",
+        "Payment links for WhatsApp and social media",
+        "Financial automation APIs and recurring billing",
+        "Integrated POS terminal with competitive rates"
+      ],
+      "best_for": "MEI who sells online and needs payment automation",
+      "affiliate_url": "https://sejaefi.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
     }
   ]
 }
