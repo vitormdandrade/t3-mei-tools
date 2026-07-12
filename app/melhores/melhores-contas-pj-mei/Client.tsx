@@ -169,6 +169,9 @@ export default function MelhoresContasPJ() {
               >
                 Abrir Conta Grátis
               </AffiliateCta>
+              <p className="text-[10px] text-center mt-1 font-medium text-green-700 dark:text-green-400">
+                ✓ Conta verificada • Abra em 5 minutos
+              </p>
             </div>
           ))}
         </div>
