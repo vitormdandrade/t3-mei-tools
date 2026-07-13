@@ -110,10 +110,13 @@ export default function MelhoresContasPJ() {
                       Abrir Conta →
                     </AffiliateCta>
                     {fintechs.fintechs.sort((a: { rating: number }, b: { rating: number }) => b.rating - a.rating).slice(0, 3).some((top: { id: string }) => top.id === f.id) && (
-                      <span className="text-[10px] font-semibold text-green-700 dark:text-green-400 whitespace-nowrap">
+                      <span className="text-[10px] font-semibold text-amber-700 dark:text-amber-400 whitespace-nowrap">
                         ⚡ Oferta limitada
                       </span>
                     )}
+                    <span className="text-[9px] font-medium text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                      ✓ Sem burocracia • Abra em minutos
+                    </span>
                   </div>
                 </td>
               </tr>
