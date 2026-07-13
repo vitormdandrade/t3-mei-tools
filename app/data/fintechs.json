@@ -741,6 +741,42 @@
       "rating": 4.3
     },
     {
+      "locale": "pt-BR",
+      "id": "sicoob",
+      "name": "Sicoob",
+      "slug": "sicoob",
+      "description_pt": "Sistema de cooperativas de crédito com conta PJ gratuita, crédito acessível e atendimento personalizado para MEI e pequenos negócios",
+      "description_en": "Brazil's largest credit union cooperative system with free business accounts, accessible credit lines, and personalized service for MEI and small business owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Maior sistema cooperativo do Brasil",
+        "Crédito com taxas mais baixas que bancos",
+        "Atendimento personalizado por cooperativa",
+        "Participação nos resultados (sobras)"
+      ],
+      "best_for": "MEI que busca crédito acessível e atendimento próximo em cooperativas de crédito",
+      "affiliate_url": "https://www.sicoob.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "sicoob",
+      "name": "Sicoob",
+      "slug": "sicoob",
+      "description_pt": "Sistema de cooperativas de crédito com conta PJ gratuita, crédito acessível e atendimento personalizado para MEI e pequenos negócios",
+      "description_en": "Brazil's largest credit union cooperative system with free business accounts, accessible credit lines, and personalized service for MEI and small business owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Brazil's largest cooperative system",
+        "Lower credit rates than traditional banks",
+        "Personalized cooperative-level service",
+        "Profit-sharing (member dividends)"
+      ],
+      "best_for": "MEI seeking affordable credit and personalized service through credit union cooperatives",
+      "affiliate_url": "https://www.sicoob.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
       "locale": "en",
       "id": "digio",
       "name": "Digio",
