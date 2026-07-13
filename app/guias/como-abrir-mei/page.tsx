@@ -91,6 +91,35 @@ export default function ComoAbrirMEI() {
           }),
         }}
       />
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Início',
+                item: 'https://oraculodomei.com.br',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Guias',
+                item: 'https://oraculodomei.com.br/guias',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Como Abrir MEI',
+              },
+            ],
+          }),
+        }}
+      />
       <header className="mb-10">
         <span className="text-label">Guia</span>
         <h1 className="text-hero mt-2 mb-4">Como Abrir MEI Online em 2026</h1>
