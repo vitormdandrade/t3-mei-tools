@@ -721,6 +721,42 @@
       "best_for": "MEI who sells online and needs payment automation",
       "affiliate_url": "https://sejaefi.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "digio",
+      "name": "Digio",
+      "slug": "digio",
+      "description_pt": "Conta digital gratuita do Banco do Brasil e Bradesco com cartão de crédito sem anuidade, cashback e gestão financeira integrada para MEI",
+      "description_en": "Free digital account backed by Banco do Brasil and Bradesco with no-fee credit card, cashback, and integrated financial management for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cartão de crédito sem anuidade",
+        "Cashback em todas as compras",
+        "App com gestão financeira inteligente",
+        "Suporte dos maiores bancos do Brasil"
+      ],
+      "best_for": "MEI que busca cartão de crédito sem anuidade com cashback e segurança de grandes bancos",
+      "affiliate_url": "https://digio.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "digio",
+      "name": "Digio",
+      "slug": "digio",
+      "description_pt": "Conta digital gratuita do Banco do Brasil e Bradesco com cartão de crédito sem anuidade, cashback e gestão financeira integrada para MEI",
+      "description_en": "Free digital account backed by Banco do Brasil and Bradesco with no-fee credit card, cashback, and integrated financial management for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "No-annual-fee credit card",
+        "Cashback on all purchases",
+        "Smart financial management app",
+        "Backed by Brazil's largest banks"
+      ],
+      "best_for": "MEI seeking a no-fee credit card with cashback and the security of major Brazilian banks",
+      "affiliate_url": "https://digio.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
     }
   ]
 }
