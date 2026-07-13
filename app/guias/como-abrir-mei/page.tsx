@@ -194,6 +194,30 @@ export default function ComoAbrirMEI() {
         </ol>
       </div>
 
+      {/* Mid-content Kit MEI CTA — high-intent audience, internal product upsell */}
+      <div className="my-8 rounded-2xl p-6 sm:p-8" style={{ background: 'linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light))' }}>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+          <div className="flex-1">
+            <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff' }}>
+              📋 Abriu seu MEI? Não pare por aí!
+            </h3>
+            <p style={{ color: '#c8d2dc' }} className="text-body">
+              Todo MEI precisa de contrato de prestação de serviços, nota fiscal, recibo e orçamento profissional. Nosso <strong style={{ color: '#fbbf24' }}>Kit MEI</strong> reúne 4 modelos em PDF prontos para você preencher e começar a faturar hoje mesmo.
+            </p>
+            <ul className="mt-3 space-y-1" style={{ color: '#b4c1ce' }}>
+              <li>✅ Contrato de Prestação de Serviços</li>
+              <li>✅ Modelo de Nota Fiscal</li>
+              <li>✅ Recibo para Pessoa Física e Jurídica</li>
+              <li>✅ Orçamento Profissional</li>
+            </ul>
+          </div>
+          <a href="/kit-mei" className="btn-light no-underline inline-flex items-center gap-2 whitespace-nowrap text-center justify-center px-6 py-4 rounded-xl font-bold text-lg">
+            Quero o Kit MEI →<br/>
+            <span className="text-sm font-normal opacity-90">Apenas R$ 29,90</span>
+          </a>
+        </div>
+      </div>
+
       <h2>4. Próximos Passos Após Abrir MEI</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
         <div className="card p-4">
