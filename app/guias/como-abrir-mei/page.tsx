@@ -161,6 +161,17 @@ export default function ComoAbrirMEI() {
         <li>5611-1/01: Restaurantes de serviço completo</li>
         <li>9602-9/02: Salões de beleza</li>
       </ul>
+      <p className="text-sm mt-2" style={{ color: 'var(--color-muted)' }}>
+        💡 Use nossa{' '}
+        <a href="/calculadora/cnae" style={{ color: 'var(--brand-teal)', fontWeight: 600 }}>
+          calculadora de CNAE
+        </a>{' '}
+        para encontrar o código ideal para sua atividade. E depois de abrir,{' '}
+        <a href="/calculadora/faturamento" style={{ color: 'var(--brand-teal)', fontWeight: 600 }}>
+          simule seu faturamento máximo
+        </a>{' '}
+        para não ultrapassar o teto MEI.
+      </p>
 
       <h2>3. Passo a Passo para Abrir MEI</h2>
 
