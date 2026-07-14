@@ -186,31 +186,34 @@ export default function MelhoresMaquininhas() {
         ))}
       </section>
 
-      {/* Sticky Mobile CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-3 z-50 shadow-lg">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex-1 min-w-0">
-            <p className="text-xs text-gray-500 dark:text-gray-400">Melhor avaliada:</p>
-            <p className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
-              {MAQUININHAS.sort((a, b) => b.rating - a.rating)[0]?.name}
-            </p>
-            <p className="text-xs text-yellow-600 dark:text-yellow-400">
-              ★ {MAQUININHAS.sort((a, b) => b.rating - a.rating)[0]?.rating} · Menor taxa
-            </p>
+      {/* Sticky Mobile CTA — top-rated maquininha */}
+      {(() => {
+        const topRated = [...MAQUININHAS].sort((a, b) => b.rating - a.rating)[0];
+        if (!topRated) return null;
+        return (
+          <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-3 z-50 shadow-lg">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-gray-500 dark:text-gray-400">Melhor avaliada:</p>
+                <p className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
+                  {topRated.name}
+                </p>
+                <p className="text-xs text-yellow-600 dark:text-yellow-400">
+                  ★ {topRated.rating} · Menor taxa
+                </p>
+              </div>
+              <AffiliateCta
+                href={buildAffiliateUrl(topRated.id, topRated.affiliate_url)}
+                partner={topRated.id}
+                page="melhores-maquininhas-mei"
+                className="flex-shrink-0 bg-accent text-white text-sm px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover whitespace-nowrap"
+              >
+                Solicitar Agora →
+              </AffiliateCta>
+            </div>
           </div>
-          <AffiliateCta
-            href={buildAffiliateUrl(
-              MAQUININHAS.sort((a, b) => b.rating - a.rating)[0]?.id ?? '',
-              MAQUININHAS.sort((a, b) => b.rating - a.rating)[0]?.affiliate_url ?? '#'
-            )}
-            partner={MAQUININHAS.sort((a, b) => b.rating - a.rating)[0]?.id ?? ''}
-            page="melhores-maquininhas-mei"
-            className="flex-shrink-0 bg-accent text-white text-sm px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover whitespace-nowrap"
-          >
-            Solicitar Agora →
-          </AffiliateCta>
-        </div>
-      </div>
+        );
+      })()}
 
       {/* FAQ Section */}
       <section className="border dark:border-gray-700 rounded-lg p-6">

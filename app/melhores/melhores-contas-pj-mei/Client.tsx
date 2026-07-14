@@ -254,31 +254,34 @@ export default function MelhoresContasPJ() {
         </p>
       </div>
 
-      {/* Sticky Mobile CTA — shows top-rated fintech on scroll */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-3 z-50 shadow-lg">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex-1 min-w-0">
-            <p className="text-xs text-gray-500 dark:text-gray-400">Melhor avaliada:</p>
-            <p className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
-              {fintechs.fintechs.sort((a, b) => b.rating - a.rating)[0]?.name}
-            </p>
-            <p className="text-xs text-yellow-600 dark:text-yellow-400">
-              ★ {fintechs.fintechs.sort((a, b) => b.rating - a.rating)[0]?.rating} · Grátis
-            </p>
+      {/* Sticky Mobile CTA — top-rated fintech */}
+      {(() => {
+        const topRated = [...fintechs.fintechs].sort((a, b) => b.rating - a.rating)[0];
+        if (!topRated) return null;
+        return (
+          <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-3 z-50 shadow-lg">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-gray-500 dark:text-gray-400">Melhor avaliada:</p>
+                <p className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
+                  {topRated.name}
+                </p>
+                <p className="text-xs text-yellow-600 dark:text-yellow-400">
+                  ★ {topRated.rating} · Grátis
+                </p>
+              </div>
+              <AffiliateCta
+                href={buildAffiliateUrl(topRated.id, topRated.affiliate_url)}
+                partner={topRated.id}
+                page="melhores-contas-pj-mei"
+                className="flex-shrink-0 bg-accent text-white text-sm px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover whitespace-nowrap"
+              >
+                Abrir Conta →
+              </AffiliateCta>
+            </div>
           </div>
-          <AffiliateCta
-            href={buildAffiliateUrl(
-              fintechs.fintechs.sort((a, b) => b.rating - a.rating)[0]?.id ?? '',
-              fintechs.fintechs.sort((a, b) => b.rating - a.rating)[0]?.affiliate_url ?? '#'
-            )}
-            partner={fintechs.fintechs.sort((a, b) => b.rating - a.rating)[0]?.id ?? ''}
-            page="melhores-contas-pj-mei"
-            className="flex-shrink-0 bg-accent text-white text-sm px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover whitespace-nowrap"
-          >
-            Abrir Conta →
-          </AffiliateCta>
-        </div>
-      </div>
+        );
+      })()}
 
       {/* Trust Badges */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
