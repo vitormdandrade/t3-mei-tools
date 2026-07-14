@@ -334,6 +334,52 @@ export default function DASCalculator() {
           }),
         }}
       />
+      {/* Organization Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Oráculo do MEI',
+            url: 'https://oraculodomei.com.br',
+            description: 'Calculadoras, guias e comparativos gratuitos para MEI. DAS, contas PJ, maquininhas e tudo que o microempreendedor individual precisa.',
+            sameAs: [
+              'https://oraculodomei.com.br',
+            ],
+          }),
+        }}
+      />
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Início',
+                item: 'https://oraculodomei.com.br',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Calculadoras',
+                item: 'https://oraculodomei.com.br/calculadora',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Calculadora DAS MEI',
+                item: 'https://oraculodomei.com.br/calculadora/das',
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
