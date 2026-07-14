@@ -1,3 +1,8 @@
+import fintechs from '@/data/fintechs.json';
+import { AffiliateCta } from '@/components/AffiliateCta';
+import { buildAffiliateUrl } from '@/config/affiliates';
+import StarRating from '@/components/StarRating';
+
 export const metadata = {
   title: "Como Abrir Conta PJ para MEI - Guia Completo",
   description: "Guia passo a passo para abrir conta bancária PJ/MEI. Documentos, bancos e taxas.",
@@ -5,6 +10,16 @@ export const metadata = {
 };
 
 export default function AbrirContaPJMEI() {
+  const allFintechs = (fintechs as any).fintechs as Array<{
+    id: string; name: string; slug: string; description_pt: string;
+    description_en?: string; monthly_fee_brl: number; highlights: string[];
+    best_for: string; affiliate_url: string; rating: number; locale?: string;
+  }>;
+  const topFintechs = allFintechs
+    .filter(f => f.locale === 'pt-BR')
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 4);
+
   return (
     <article className="prose-guide max-w-3xl mx-auto">
       <header className="mb-10">
@@ -24,6 +39,59 @@ export default function AbrirContaPJMEI() {
           <li>Exigido por muitos clientes</li>
           <li>Melhor organização fiscal</li>
         </ul>
+      </div>
+
+      {/* ── Top Contas PJ Recomendadas ── */}
+      <div className="not-prose my-10">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+          🏆 Top Contas PJ Recomendadas
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {topFintechs.map((f, idx) => (
+            <div key={f.id} className="border dark:border-gray-700 rounded-xl p-5 bg-white dark:bg-gray-900 hover:shadow-lg transition">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{f.name}</h3>
+                    {idx === 0 && (
+                      <span className="inline-flex items-center gap-0.5 bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-amber-200">
+                        🔥 Mais procurada
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{f.best_for}</p>
+                </div>
+                <div className="text-yellow-500"><StarRating rating={f.rating} size="sm" showNumber={false} /></div>
+              </div>
+              <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1 mb-4">
+                {f.highlights.slice(0, 3).map((h, i) => (
+                  <li key={i} className="flex items-start gap-1.5">
+                    <span className="text-accent mt-0.5">✓</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-bold text-green-700 dark:text-green-400">
+                  {f.monthly_fee_brl === 0 ? 'Grátis' : `R$ ${f.monthly_fee_brl}/mês`}
+                </span>
+                <AffiliateCta
+                  href={buildAffiliateUrl(f.id, f.affiliate_url)}
+                  partner={f.id}
+                  page="guias-abrir-conta-pj-mei"
+                  className="inline-block bg-accent text-white text-xs px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition"
+                >
+                  Abrir Conta →
+                </AffiliateCta>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-4">
+          <a href="/melhores/melhores-contas-pj-mei" className="text-accent font-semibold hover:underline text-sm">
+            Ver comparativo completo com {(fintechs as any).fintechs.filter((f: any) => f.locale === 'pt-BR').length} contas →
+          </a>
+        </div>
       </div>
 
       <h2>Documentos Necessários</h2>
