@@ -1,19 +1,26 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Guia Completo DAS MEI 2026 - Valores, Prazos e Pagamento",
   description: "Entenda tudo sobre DAS MEI 2026: valores atualizados, como pagar, prazos e penalidades.",
   alternates: { canonical: '/guias/das-mei-2026' },
+  openGraph: {
+    title: "Guia Completo DAS MEI 2026 — Valores Atualizados",
+    description: "DAS MEI 2026: tabela atualizada com INSS, ICMS e ISS. Como pagar, prazos e multas por atraso.",
+    type: 'article',
+  },
 };
 
 export default function DasMei2026() {
   return (
-    <article className="prose-guide max-w-3xl mx-auto">
-      <header className="mb-10">
-        <span className="text-label">Guia</span>
-        <h1 className="text-hero mt-2 mb-4">Guia Completo: DAS MEI 2026</h1>
-        <p className="text-body-lg">
-          Tudo que você precisa saber sobre o Documento de Arrecadação do Simples Nacional (DAS) para MEI em 2026.
-        </p>
-      </header>
+      <article className="prose-guide max-w-3xl mx-auto">
+        <header className="mb-10">
+          <span className="text-label">Guia</span>
+          <h1 className="text-hero mt-2 mb-4">Guia Completo: DAS MEI 2026</h1>
+          <p className="text-body-lg">
+            Tudo que você precisa saber sobre o Documento de Arrecadação do Simples Nacional (DAS) para MEI em 2026.
+          </p>
+        </header>
 
       <h2>O que é DAS?</h2>
       <p>
