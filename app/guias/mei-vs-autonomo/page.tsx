@@ -141,6 +141,51 @@ export default function MEIVsAutonomo() {
           Calcular DAS MEI
         </a>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'MEI ou autônomo: qual é melhor?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Depende do seu objetivo. MEI oferece CNPJ, acesso a crédito e nota fiscal com contribuição reduzida (~R$ 80/mês), mas tem limite de R$ 85 mil/ano de faturamento. Autônomo não tem CNPJ nem limite de faturamento, mas paga INSS de 11-20% sobre a renda e tem mais dificuldade para acessar crédito.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quanto custa ser MEI por mês?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O custo mensal do MEI é de aproximadamente R$ 80,90 (DAS para serviços) a R$ 81,90 (DAS para comércio). Para MEI Caminhoneiro, o DAS varia de R$ 167,20 a R$ 175,20. O contador é opcional e custa entre R$ 100 e R$ 200.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual o limite de faturamento para MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O limite de faturamento do MEI é de R$ 85 mil por ano. Se você ultrapassar, precisa migrar para ME (Microempresa) e pagar mais impostos. Para autônomos, não há limite de faturamento.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Autônomo precisa emitir nota fiscal?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Não. Autônomos emitem RPA (Recibo de Pagamento Autônomo), que é um documento mais simples que a nota fiscal. Já o MEI é obrigado a emitir nota fiscal para pessoas jurídicas, mas é dispensado para pessoas físicas.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </article>
   );
 }
