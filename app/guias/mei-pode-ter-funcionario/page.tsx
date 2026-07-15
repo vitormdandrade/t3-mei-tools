@@ -105,6 +105,51 @@ export default function MEIPodeSerFuncionario() {
           → Comparar MEI vs ME
         </a>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'MEI pode ter funcionário em 2026?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Sim. O MEI pode contratar 1 único funcionário com registro em CTPS, pagando salário compatível com o mercado e recolhendo os encargos sociais (INSS, FGTS, 13º, férias). O custo total fica em torno de 20-30% acima do salário.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'O que acontece se um MEI contratar mais de um funcionário?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Se contratar 2 ou mais funcionários, o MEI é obrigado a migrar para Microempresa (ME) ou outro regime tributário. Há risco de reclassificação administrativa, multas fiscais e aumento de impostos.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quais são os custos de contratar um funcionário como MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Para um salário de R$ 1.500 (mínimo), os custos incluem: INSS patronal (11% = R$ 165), FGTS (8% = R$ 120), 13º proporcional, férias + 1/3, e outros encargos. O custo total mensal fica entre R$ 1.800 e R$ 2.000.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quais alternativas um MEI tem além de contratar um funcionário?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Alternativas incluem: contratar outra empresa como PJ (prestador de serviços), terceirizar serviços especializados, ou migrar para ME se o crescimento do negócio justificar uma estrutura maior com mais funcionários.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </article>
   );
 }
