@@ -1,7 +1,13 @@
 export const metadata = {
   title: "Como Abrir MEI Online - Guia Passo a Passo 2026",
   description: "Guia completo para registrar seu MEI no portal oficial. Documentos necessários, custos e prazos.",
-  alternates: { canonical: '/guias/como-abrir-mei' },
+  alternates: {
+    canonical: '/guias/como-abrir-mei',
+    languages: {
+      'pt-BR': 'https://oraculodomei.com.br/guias/como-abrir-mei',
+      'en': 'https://oraculodomei.com.br/en/guias/como-abrir-mei',
+    },
+  },
   openGraph: {
     title: "Como Abrir MEI Online - Guia Passo a Passo 2026",
     description: "Guia completo para registrar seu MEI gratuitamente no portal gov.br. Documentos, CNAE e passo a passo em 10 minutos.",
