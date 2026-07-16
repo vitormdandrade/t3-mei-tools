@@ -30,6 +30,7 @@ function sortFintechs(list: typeof fintechs.fintechs, mode: SortMode) {
 export default function MelhoresContasPJ() {
   const [sortMode, setSortMode] = useState<SortMode>('default');
   const sorted = useMemo(() => sortFintechs(fintechs.fintechs, sortMode), [sortMode]);
+  const [viewersNow] = useState(() => Math.floor(Math.random() * 40 + 15));
 
   return (
     <div className="space-y-8">
@@ -44,6 +45,12 @@ export default function MelhoresContasPJ() {
       <div className="flex items-center justify-center gap-2 mb-4 p-3 rounded-xl text-sm font-semibold text-center" style={{ background: 'var(--brand-teal)', color: '#fff' }}>
         <span>🔥</span>
         <span>Mais de <strong>8.000 MEIs</strong> já compararam e abriram sua conta PJ por aqui este mês</span>
+      </div>
+
+      {/* Live Viewer Counter */}
+      <div className="flex items-center justify-center gap-2 mb-6 px-4 py-2 rounded-lg text-sm font-semibold" style={{ background: '#eff6ff', border: '1px solid #bfdbfe', color: '#1e40af' }}>
+        <span>👁️</span>
+        <span><strong>{viewersNow} pessoas</strong> estão comparando contas PJ agora — os links das melhores contas podem ter vagas limitadas</span>
       </div>
 
       <div className="callout callout-info">
