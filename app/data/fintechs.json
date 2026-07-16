@@ -793,6 +793,144 @@
       "best_for": "MEI seeking a no-fee credit card with cashback and the security of major Brazilian banks",
       "affiliate_url": "https://digio.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "pagseguro",
+      "name": "PagSeguro",
+      "slug": "pagseguro",
+      "description_pt": "Solução completa com conta corrente, maquininha e cartão pré-pago",
+      "description_en": "Complete payment solution with digital account, integrated POS terminal, and prepaid card for Brazilian MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "100% online account",
+        "Integrated POS terminal",
+        "Portuguese-language support"
+      ],
+      "best_for": "MEI beginners in online sales",
+      "affiliate_url": "https://pagseguro.uol.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "mercado-pago",
+      "name": "Mercado Pago",
+      "slug": "mercado-pago",
+      "description_pt": "Conta corrente integrada com todas as soluções de pagamento do Mercado Livre",
+      "description_en": "Digital account fully integrated with Mercado Livre's payment ecosystem — reduced rates for marketplace sellers and cashback on purchases",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Mercado Livre integration",
+        "Reduced rates for sellers",
+        "Cashback on purchases"
+      ],
+      "best_for": "MEI selling on Mercado Livre",
+      "affiliate_url": "https://mercadopago.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "boa-compra",
+      "name": "Boa Compra",
+      "slug": "boa-compra",
+      "description_pt": "Antecipação de recebíveis e gestão de fluxo de caixa para MEI",
+      "description_en": "Receivables advance and cash flow management platform — get paid in 24 hours with transparent rates and no bureaucracy for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "24-hour advance",
+        "Transparent rates",
+        "No bureaucracy"
+      ],
+      "best_for": "MEI with outstanding receivables",
+      "affiliate_url": "https://boacompra.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "en",
+      "id": "cora",
+      "name": "Cora",
+      "slug": "cora",
+      "description_pt": "Conta PJ digital com foco em gestão de cobranças e emissão de boletos ilimitados",
+      "description_en": "Digital business account focused on receivables management with unlimited free invoice (boleto) issuance, automated recurring billing, and integrated bank reconciliation",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited free invoices (boletos)",
+        "Automated recurring billing",
+        "Integrated bank reconciliation"
+      ],
+      "best_for": "MEI who issues many invoices and bills",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "bs2",
+      "name": "BS2",
+      "slug": "bs2",
+      "description_pt": "Banco digital com conta PJ gratuita, crédito consignado e integração com contabilidade",
+      "description_en": "Digital bank with a free business account, payroll-deductible credit lines for MEI, and built-in accounting firm integration",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Payroll-deductible credit for MEI",
+        "Accounting firm integration",
+        "Cash flow management app"
+      ],
+      "best_for": "MEI who needs credit and accounting integration",
+      "affiliate_url": "https://bs2.com/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "en",
+      "id": "original",
+      "name": "Banco Original",
+      "slug": "original",
+      "description_pt": "Conta PJ digital do Banco Original com assessoria financeira e soluções de crédito",
+      "description_en": "Banco Original digital business account with dedicated financial advisory, receivables advance, and a no-annual-fee corporate card for growing MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Dedicated financial advisory",
+        "Receivables advance",
+        "No-annual-fee corporate card"
+      ],
+      "best_for": "Growing-revenue MEI seeking personalized financial advisory",
+      "affiliate_url": "https://original.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "picpay-pj",
+      "name": "PicPay PJ",
+      "slug": "picpay-pj",
+      "description_pt": "Conta digital PJ do PicPay com cashback em todas as transações, Pix ilimitado e marketplace de serviços financeiros integrado",
+      "description_en": "PicPay digital business account with cashback on every transaction, unlimited free Pix, and an integrated financial services marketplace with credit and insurance",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback on all transactions",
+        "Unlimited free Pix",
+        "Credit and insurance marketplace",
+        "Integrated virtual card"
+      ],
+      "best_for": "MEI seeking cashback rewards and a complete financial services ecosystem",
+      "affiliate_url": "https://picpay.com/site/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "ton",
+      "name": "Ton",
+      "slug": "ton",
+      "description_pt": "Conta digital da Stone para MEI com Pix ilimitado, cartão sem anuidade e integração com maquininhas Stone",
+      "description_en": "Stone's digital account built for MEI — unlimited free Pix, no-annual-fee debit card, and seamless integration with Stone POS terminals for unified financial management",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "100% free digital account",
+        "Integrated with Stone POS terminals",
+        "Unlimited free Pix transfers",
+        "No-annual-fee debit card"
+      ],
+      "best_for": "MEI who already uses Stone POS terminals and wants an integrated account",
+      "affiliate_url": "https://ton.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
     }
   ]
 }
