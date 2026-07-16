@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import fintechs from '@/data/fintechs.json';
 import { AffiliateCta } from '@/components/AffiliateCta';
 import { buildAffiliateUrl } from '@/config/affiliates';
@@ -27,9 +28,23 @@ function sortFintechs(list: typeof fintechs.fintechs, mode: SortMode) {
   }
 }
 
+function getCurrentLocale(): string {
+  if (typeof window === 'undefined') return 'pt-BR';
+  const pathname = window.location.pathname;
+  if (pathname.startsWith('/en/') || pathname.startsWith('/en')) return 'en';
+  if (pathname.startsWith('/es/') || pathname.startsWith('/es')) return 'es';
+  return 'pt-BR';
+}
+
 export default function MelhoresContasPJ() {
+  const router = useRouter();
+  const currentLocale = useMemo(() => getCurrentLocale(), []);
+  const localeFintechs = useMemo(
+    () => fintechs.fintechs.filter((f) => f.locale === currentLocale),
+    [currentLocale]
+  );
   const [sortMode, setSortMode] = useState<SortMode>('default');
-  const sorted = useMemo(() => sortFintechs(fintechs.fintechs, sortMode), [sortMode]);
+  const sorted = useMemo(() => sortFintechs(localeFintechs, sortMode), [localeFintechs, sortMode]);
   const [viewersNow] = useState(() => Math.floor(Math.random() * 40 + 15));
 
   return (
@@ -93,7 +108,7 @@ export default function MelhoresContasPJ() {
               <tr key={f.id} className={idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-900'}>
                 <td className="px-4 py-3 font-bold text-gray-900 dark:text-gray-100">
                   {f.name}
-                  {fintechs.fintechs.sort((a, b) => b.rating - a.rating).slice(0, 3).some(top => top.id === f.id) && (
+                  {localeFintechs.sort((a, b) => b.rating - a.rating).slice(0, 3).some(top => top.id === f.id) && (
                     <span className="ml-1.5 inline-flex items-center gap-0.5 bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-amber-200 whitespace-nowrap">
                       🔥 Procurado
                     </span>
@@ -122,7 +137,7 @@ export default function MelhoresContasPJ() {
                     >
                       Abrir Conta →
                     </AffiliateCta>
-                    {fintechs.fintechs.sort((a: { rating: number }, b: { rating: number }) => b.rating - a.rating).slice(0, 3).some((top: { id: string }) => top.id === f.id) && (
+                    {localeFintechs.sort((a: { rating: number }, b: { rating: number }) => b.rating - a.rating).slice(0, 3).some((top: { id: string }) => top.id === f.id) && (
                       <span className="text-[10px] font-semibold text-amber-700 dark:text-amber-400 whitespace-nowrap">
                         ⚡ Oferta limitada
                       </span>
@@ -148,7 +163,7 @@ export default function MelhoresContasPJ() {
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{f.name}</h3>
-                    {fintechs.fintechs.sort((a, b) => b.rating - a.rating).slice(0, 3).some(top => top.id === f.id) && (
+                    {localeFintechs.sort((a, b) => b.rating - a.rating).slice(0, 3).some(top => top.id === f.id) && (
                       <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded-full border border-amber-300">
                         🔥 Mais Procurado
                       </span>
@@ -269,7 +284,7 @@ export default function MelhoresContasPJ() {
 
       {/* Sticky Mobile CTA — top-rated fintech */}
       {(() => {
-        const topRated = [...fintechs.fintechs].sort((a, b) => b.rating - a.rating)[0];
+        const topRated = [...localeFintechs].sort((a, b) => b.rating - a.rating)[0];
         if (!topRated) return null;
         return (
           <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 p-3 z-50 shadow-lg">
