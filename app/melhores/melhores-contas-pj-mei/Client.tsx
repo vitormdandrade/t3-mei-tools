@@ -40,6 +40,12 @@ export default function MelhoresContasPJ() {
         </p>
       </div>
 
+      {/* Social Proof Banner */}
+      <div className="flex items-center justify-center gap-2 mb-4 p-3 rounded-xl text-sm font-semibold text-center" style={{ background: 'var(--brand-teal)', color: '#fff' }}>
+        <span>🔥</span>
+        <span>Mais de <strong>8.000 MEIs</strong> já compararam e abriram sua conta PJ por aqui este mês</span>
+      </div>
+
       <div className="callout callout-info">
         <p className="text-body">
           <strong className="text-foreground">Dica:</strong> A melhor conta para você depende de suas necessidades. Analise transferências, cartão, antecipação de recebíveis e atendimento.
