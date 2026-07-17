@@ -1,10 +1,12 @@
 {
   "fintechs": [
     {
+      "locale": "pt-BR",
       "id": "conta-simples",
       "name": "Conta Simples",
       "slug": "conta-simples",
       "description_pt": "Conta bancária PJ completa com transferências ilimitadas e antecipação de recebíveis",
+      "description_en": "Full-featured business bank account with unlimited transfers and receivables advance for Brazilian MEI entrepreneurs",
       "monthly_fee_brl": 0,
       "highlights": [
         "Transferências ilimitadas",
@@ -16,10 +18,12 @@
       "rating": 4.5
     },
     {
+      "locale": "pt-BR",
       "id": "neon-pj",
       "name": "Neon PJ",
       "slug": "neon-pj",
       "description_pt": "Conta PJ digital com pagamento de boletos e transferências sem tarifa",
+      "description_en": "Digital business account with free bill payments, no-fee transfers, and an intuitive mobile app for MEI",
       "monthly_fee_brl": 0,
       "highlights": [
         "Sem taxa de transferência",
@@ -31,10 +35,12 @@
       "rating": 4.3
     },
     {
+      "locale": "pt-BR",
       "id": "nubank-pj",
       "name": "Nubank PJ",
       "slug": "nubank-pj",
       "description_pt": "Conta corrente PJ do Nubank com cashback e benefícios exclusivos",
+      "description_en": "Nubank business checking account with cashback rewards, no annual card fee, and seamless integration with personal Nubank accounts",
       "monthly_fee_brl": 0,
       "highlights": [
         "Cashback em transações",
@@ -46,10 +52,12 @@
       "rating": 4.4
     },
     {
+      "locale": "pt-BR",
       "id": "inter-empresas",
       "name": "Inter Empresas",
       "slug": "inter-empresas",
       "description_pt": "Conta empresarial do Banco Inter com crédito pré-aprovado para MEI",
+      "description_en": "Banco Inter business account with pre-approved credit lines, overdraft protection, and zero-fee wire transfers for MEI owners",
       "monthly_fee_brl": 0,
       "highlights": [
         "Crédito pré-aprovado",
@@ -61,10 +69,12 @@
       "rating": 4.2
     },
     {
+      "locale": "pt-BR",
       "id": "c6-bank-pj",
       "name": "C6 Bank PJ",
       "slug": "c6-bank-pj",
       "description_pt": "Banco digital com conta PJ, cartão corporativo e soluções de crédito",
+      "description_en": "Digital bank offering a business account, corporate card, and automated credit lines at reduced fees for growing MEI",
       "monthly_fee_brl": 0,
       "highlights": [
         "Cartão corporativo",
@@ -76,10 +86,12 @@
       "rating": 4.3
     },
     {
+      "locale": "pt-BR",
       "id": "infinitepay",
       "name": "InfinitePay",
       "slug": "infinitepay",
       "description_pt": "Máquina de pagamento com liquidação automática e taxa competitiva",
+      "description_en": "Payment terminal with automatic D+1 settlement, competitive rates starting at 1.99%, and no equipment rental fees for MEI merchants",
       "monthly_fee_brl": 0,
       "highlights": [
         "Liquidação D+1",
@@ -91,6 +103,7 @@
       "rating": 4.1
     },
     {
+      "locale": "pt-BR",
       "id": "sumup",
       "name": "SumUp",
       "slug": "sumup",
@@ -103,9 +116,10 @@
       ],
       "best_for": "MEI ambulante ou de serviços",
       "affiliate_url": "https://sumup.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
-      "rating": 4.0
+      "rating": 4
     },
     {
+      "locale": "pt-BR",
       "id": "stone",
       "name": "Stone",
       "slug": "stone",
@@ -121,6 +135,7 @@
       "rating": 4.4
     },
     {
+      "locale": "pt-BR",
       "id": "pagseguro",
       "name": "PagSeguro",
       "slug": "pagseguro",
@@ -136,6 +151,7 @@
       "rating": 4.2
     },
     {
+      "locale": "pt-BR",
       "id": "mercado-pago",
       "name": "Mercado Pago",
       "slug": "mercado-pago",
@@ -151,6 +167,7 @@
       "rating": 4.3
     },
     {
+      "locale": "pt-BR",
       "id": "boa-compra",
       "name": "Boa Compra",
       "slug": "boa-compra",
@@ -164,6 +181,1014 @@
       "best_for": "MEI com contas a receber",
       "affiliate_url": "https://boacompra.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.1
+    },
+    {
+      "locale": "pt-BR",
+      "id": "cora",
+      "name": "Cora",
+      "slug": "cora",
+      "description_pt": "Conta PJ digital com foco em gestão de cobranças e emissão de boletos ilimitados",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados e gratuitos",
+        "Cobrança recorrente automática",
+        "Conciliação bancária integrada"
+      ],
+      "best_for": "MEI que emite muitas cobranças e boletos",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "bs2",
+      "name": "BS2",
+      "slug": "bs2",
+      "description_pt": "Banco digital com conta PJ gratuita, crédito consignado e integração com contabilidade",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito consignado para MEI",
+        "Integração com escritórios de contabilidade",
+        "App com gestão de fluxo de caixa"
+      ],
+      "best_for": "MEI que precisa de crédito e integração contábil",
+      "affiliate_url": "https://bs2.com/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "pt-BR",
+      "id": "original",
+      "name": "Banco Original",
+      "slug": "original",
+      "description_pt": "Conta PJ digital do Banco Original com assessoria financeira e soluções de crédito",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Assessoria financeira dedicada",
+        "Antecipação de recebíveis",
+        "Cartão corporativo sem anuidade"
+      ],
+      "best_for": "MEI com faturamento crescente que busca assessoria",
+      "affiliate_url": "https://original.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "pt-BR",
+      "id": "asaas",
+      "name": "Asaas",
+      "slug": "asaas",
+      "description_pt": "Plataforma de gestão financeira completa com conta digital, cobrança recorrente, emissão de boletos e cartão de crédito para MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados e gratuitos",
+        "Cobrança recorrente automatizada",
+        "Cartão de crédito empresarial integrado",
+        "Conciliação bancária automática"
+      ],
+      "best_for": "MEI que emite cobranças recorrentes e precisa de gestão financeira completa",
+      "affiliate_url": "https://asaas.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "picpay-pj",
+      "name": "PicPay PJ",
+      "slug": "picpay-pj",
+      "description_pt": "Conta digital PJ do PicPay com cashback em todas as transações, Pix ilimitado e marketplace de serviços financeiros integrado",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback em todas as transações",
+        "Pix ilimitado e gratuito",
+        "Marketplace de crédito e seguros",
+        "Cartão virtual integrado"
+      ],
+      "best_for": "MEI que busca cashback e ecossistema completo de serviços financeiros",
+      "affiliate_url": "https://picpay.com/site/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "ton",
+      "name": "Ton",
+      "slug": "ton",
+      "description_pt": "Conta digital da Stone para MEI com Pix ilimitado, cartão sem anuidade e integração com maquininhas Stone",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Conta 100% digital e gratuita",
+        "Integração com maquininhas Stone",
+        "Pix ilimitado sem tarifa",
+        "Cartão de débito sem anuidade"
+      ],
+      "best_for": "MEI que já usa maquininha Stone e quer conta integrada",
+      "affiliate_url": "https://ton.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "sicredi-pj",
+      "name": "Sicredi PJ",
+      "slug": "sicredi-pj",
+      "description_pt": "Conta PJ do Sicredi, cooperativa de crédito com soluções financeiras completas e atendimento personalizado para MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cooperativa com participação nos resultados",
+        "Atendimento personalizado por gerente",
+        "Linhas de crédito com taxas reduzidas",
+        "Plataforma digital completa"
+      ],
+      "best_for": "MEI que valoriza atendimento personalizado e relacionamento cooperativo",
+      "affiliate_url": "https://sicredi.com.br/site/para-voce/conta-corrente-pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "conta-simples",
+      "name": "Conta Simples",
+      "slug": "conta-simples",
+      "description_pt": "Conta bancária PJ completa com transferências ilimitadas e antecipação de recebíveis",
+      "description_en": "Full-featured business bank account with unlimited transfers and receivables advance for Brazilian MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited transfers",
+        "Receivables advance",
+        "NFSe integration"
+      ],
+      "best_for": "Freelancers and MEI with medium revenue",
+      "affiliate_url": "https://contasimples.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "sicredi-pj",
+      "name": "Sicredi PJ",
+      "slug": "sicredi-pj",
+      "description_pt": "Conta PJ do Sicredi, cooperativa de crédito com soluções financeiras completas e atendimento personalizado para MEI",
+      "description_en": "Sicredi cooperative business account with profit-sharing, personalized manager support, and reduced-rate credit lines for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cooperative with profit-sharing",
+        "Personalized manager support",
+        "Reduced-rate credit lines",
+        "Complete digital platform"
+      ],
+      "best_for": "MEI who values personalized service and cooperative banking",
+      "affiliate_url": "https://sicredi.com.br/site/para-voce/conta-corrente-pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "nubank-pj",
+      "name": "Nubank PJ",
+      "slug": "nubank-pj",
+      "description_pt": "Conta corrente PJ do Nubank com cashback e benefícios exclusivos",
+      "description_en": "Nubank business checking account with cashback rewards, no annual card fee, and seamless integration with personal Nubank accounts",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback on transactions",
+        "No annual card fee",
+        "Integrated with Nubank personal account"
+      ],
+      "best_for": "MEI who already uses Nubank",
+      "affiliate_url": "https://nubank.com.br/conta-pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "stone",
+      "name": "Stone",
+      "slug": "stone",
+      "description_pt": "Líder de market share em máquinas de pagamento com suporte enterprise",
+      "description_en": "Market share leader in payment terminals with fast settlement, competitive rates, and enterprise-grade support for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Fast settlement",
+        "Competitive rates",
+        "Specialized support"
+      ],
+      "best_for": "High-volume retail MEI",
+      "affiliate_url": "https://stone.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "asaas",
+      "name": "Asaas",
+      "slug": "asaas",
+      "description_pt": "Plataforma de gestão financeira completa com conta digital, cobrança recorrente, emissão de boletos e cartão de crédito para MEI",
+      "description_en": "Complete financial management platform with digital account, recurring billing, invoice issuance, and integrated business credit card for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited free invoices (boletos)",
+        "Automated recurring billing",
+        "Integrated business credit card",
+        "Automatic bank reconciliation"
+      ],
+      "best_for": "MEI who issues recurring invoices and needs complete financial management",
+      "affiliate_url": "https://asaas.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "pagbank-pj",
+      "name": "PagBank PJ",
+      "slug": "pagbank-pj",
+      "description_pt": "Conta digital PJ do PagSeguro com maquininha integrada, link de pagamento e gestão de vendas para MEI",
+      "description_en": "PagSeguro's digital business account with integrated POS terminal, payment links, and sales management — ideal for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Maquininha integrada sem aluguel",
+        "Link de pagamento para WhatsApp e redes sociais",
+        "Conta digital com Pix e TED grátis",
+        "Antecipação de recebíveis em 1 dia útil"
+      ],
+      "best_for": "MEI que trabalha com vendas físicas e online",
+      "affiliate_url": "https://pagbank.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "pagbank-pj",
+      "name": "PagBank PJ",
+      "slug": "pagbank-pj",
+      "description_pt": "Conta digital PJ do PagSeguro com maquininha integrada, link de pagamento e gestão de vendas para MEI",
+      "description_en": "PagSeguro's digital business account with integrated POS terminal, payment links, and sales management — ideal for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Integrated POS terminal with no rental fee",
+        "Payment links for WhatsApp and social media",
+        "Digital account with free Pix and wire transfers",
+        "Next-day receivables advance"
+      ],
+      "best_for": "MEI merchants selling both in-person and online",
+      "affiliate_url": "https://pagbank.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "cora-pj",
+      "name": "Cora",
+      "slug": "cora-pj",
+      "description_pt": "Conta digital PJ gratuita com emissão de boletos ilimitados, Pix e gestão de cobranças — focada em MEI e freelancers",
+      "description_en": "Free digital business account with unlimited invoice issuance, Pix, and receivables management — built specifically for MEI and freelancers",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados e gratuitos",
+        "Gestão de cobranças automatizada",
+        "Cartão de débito e crédito PJ sem anuidade",
+        "Conciliação bancária automática"
+      ],
+      "best_for": "MEI prestador de serviços que emite muitos boletos",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "en",
+      "id": "cora-pj",
+      "name": "Cora",
+      "slug": "cora-pj",
+      "description_pt": "Conta digital PJ gratuita com emissão de boletos ilimitados, Pix e gestão de cobranças — focada em MEI e freelancers",
+      "description_en": "Free digital business account with unlimited invoice issuance, Pix, and receivables management — built specifically for MEI and freelancers",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited free invoice (boleto) issuance",
+        "Automated receivables management",
+        "No-fee business debit and credit card",
+        "Automatic bank reconciliation"
+      ],
+      "best_for": "Service-providing MEI who issues many invoices",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "pt-BR",
+      "id": "banco-do-brasil-pj",
+      "name": "Banco do Brasil PJ",
+      "slug": "banco-do-brasil-pj",
+      "description_pt": "Conta PJ do Banco do Brasil com crédito facilitado, antecipação de recebíveis e ampla rede de agências — ideal para MEI que precisa de crédito",
+      "description_en": "Banco do Brasil business account with easy credit access, receivables advance, and Brazil's largest bank branch network — ideal for MEI needing credit lines",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito com taxas reduzidas para MEI",
+        "Maior rede de agências do Brasil",
+        "Antecipação de recebíveis de maquininha",
+        "Integração com DAS e tributos"
+      ],
+      "best_for": "MEI que precisa de crédito e atendimento presencial",
+      "affiliate_url": "https://bb.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4
+    },
+    {
+      "locale": "en",
+      "id": "banco-do-brasil-pj",
+      "name": "Banco do Brasil PJ",
+      "slug": "banco-do-brasil-pj",
+      "description_pt": "Conta PJ do Banco do Brasil com crédito facilitado, antecipação de recebíveis e ampla rede de agências — ideal para MEI que precisa de crédito",
+      "description_en": "Banco do Brasil business account with easy credit access, receivables advance, and Brazil's largest bank branch network — ideal for MEI needing credit lines",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Reduced-rate credit lines for MEI",
+        "Brazil's largest branch network",
+        "POS terminal receivables advance",
+        "Integrated DAS and tax payment"
+      ],
+      "best_for": "MEI who needs credit and in-person banking",
+      "affiliate_url": "https://bb.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4
+    },
+    {
+      "locale": "en",
+      "id": "neon-pj",
+      "name": "Neon PJ",
+      "slug": "neon-pj",
+      "description_pt": "Conta PJ digital com pagamento de boletos e transferências sem tarifa",
+      "description_en": "Digital business account with free bill payments, no-fee transfers, and an intuitive mobile app for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "No transfer fees",
+        "Bill payment (boleto) support",
+        "Intuitive mobile app"
+      ],
+      "best_for": "MEI who needs mobile-first banking",
+      "affiliate_url": "https://neon.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "inter-empresas",
+      "name": "Inter Empresas",
+      "slug": "inter-empresas",
+      "description_pt": "Conta empresarial do Banco Inter com crédito pré-aprovado para MEI",
+      "description_en": "Banco Inter business account with pre-approved credit lines, overdraft protection, and zero-fee wire transfers for MEI owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Pre-approved credit",
+        "Overdraft protection",
+        "Zero-fee wire transfers (TED)"
+      ],
+      "best_for": "MEI who needs credit access",
+      "affiliate_url": "https://bancointer.com.br/conta-empresarial/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "c6-bank-pj",
+      "name": "C6 Bank PJ",
+      "slug": "c6-bank-pj",
+      "description_pt": "Banco digital com conta PJ, cartão corporativo e soluções de crédito",
+      "description_en": "Digital bank offering a business account, corporate card, and automated credit lines at reduced fees for growing MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Corporate card included",
+        "Automatic credit line",
+        "Reduced fees"
+      ],
+      "best_for": "Growing MEI expecting scale",
+      "affiliate_url": "https://c6bank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "infinitepay",
+      "name": "InfinitePay",
+      "slug": "infinitepay",
+      "description_pt": "Máquina de pagamento com liquidação automática e taxa competitiva",
+      "description_en": "Payment terminal with automatic D+1 settlement, competitive rates starting at 1.99%, and no equipment rental fees for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "D+1 settlement",
+        "Rates from 1.99%",
+        "No equipment rental"
+      ],
+      "best_for": "Retail MEI with in-person sales",
+      "affiliate_url": "https://infinitepay.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "en",
+      "id": "sumup",
+      "name": "SumUp",
+      "slug": "sumup",
+      "description_pt": "Maquininha com NFC, WiFi e 4G com segurança de dados criptografada",
+      "description_en": "Compact payment terminal with NFC, WiFi, and 4G connectivity plus encrypted data security for mobile MEI professionals",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Portable and compact",
+        "Rates from 2.49%",
+        "24/7 support"
+      ],
+      "best_for": "Mobile MEI and service providers",
+      "affiliate_url": "https://sumup.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "btg-pactual-empresas",
+      "name": "BTG Pactual Empresas",
+      "slug": "btg-pactual-empresas",
+      "description_pt": "Conta digital PJ do BTG Pactual com plataforma de investimentos integrada, crédito empresarial e atendimento premium para MEI que busca gestão financeira sofisticada",
+      "description_en": "BTG Pactual's digital business account with integrated investment platform, corporate credit lines, and premium service for MEI seeking sophisticated financial management",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Plataforma de investimentos integrada à conta",
+        "Crédito empresarial com taxas competitivas",
+        "Atendimento premium e assessoria dedicada",
+        "App com visão consolidada de conta + investimentos"
+      ],
+      "best_for": "MEI com faturamento elevado que quer integrar conta PJ e investimentos",
+      "affiliate_url": "https://www.btgpactual.com/empresas?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.6
+    },
+    {
+      "locale": "en",
+      "id": "btg-pactual-empresas",
+      "name": "BTG Pactual Empresas",
+      "slug": "btg-pactual-empresas",
+      "description_pt": "Conta digital PJ do BTG Pactual com plataforma de investimentos integrada, crédito empresarial e atendimento premium para MEI que busca gestão financeira sofisticada",
+      "description_en": "BTG Pactual's digital business account with integrated investment platform, corporate credit lines, and premium service for MEI seeking sophisticated financial management",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Integrated investment platform with checking",
+        "Competitive-rate corporate credit lines",
+        "Premium service with dedicated advisory",
+        "Single app for banking + investments"
+      ],
+      "best_for": "Higher-revenue MEI who wants integrated business banking and investments",
+      "affiliate_url": "https://www.btgpactual.com/empresas?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.6
+    },
+    {
+      "locale": "pt-BR",
+      "id": "agibank-pj",
+      "name": "Agibank PJ",
+      "slug": "agibank-pj",
+      "description_pt": "Conta digital PJ do Agibank com crédito facilitado, antecipação de recebíveis e Pix ilimitado para MEI — zero taxa mensal e cartão sem anuidade",
+      "description_en": "Agibank digital business account with easy credit access, receivables advance, and unlimited Pix for MEI — zero monthly fee and no-annual-fee business card",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito facilitado sem burocracia",
+        "Antecipação de recebíveis em 24h",
+        "Pix ilimitado e gratuito",
+        "Cartão PJ sem anuidade"
+      ],
+      "best_for": "MEI que precisa de crédito rápido e conta digital sem tarifas",
+      "affiliate_url": "https://agibank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "agibank-pj",
+      "name": "Agibank PJ",
+      "slug": "agibank-pj",
+      "description_pt": "Conta digital PJ do Agibank com crédito facilitado, antecipação de recebíveis e Pix ilimitado para MEI — zero taxa mensal e cartão sem anuidade",
+      "description_en": "Agibank digital business account with easy credit access, receivables advance, and unlimited Pix for MEI — zero monthly fee and no-annual-fee business card",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Easy credit access with no bureaucracy",
+        "24-hour receivables advance",
+        "Unlimited free Pix transfers",
+        "No-annual-fee business card"
+      ],
+      "best_for": "MEI who needs quick credit access and a fee-free digital account",
+      "affiliate_url": "https://agibank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "pt-BR",
+      "id": "santander-pj",
+      "name": "Santander PJ",
+      "slug": "santander-pj",
+      "description_pt": "Conta PJ do Santander com soluções financeiras completas, crédito empresarial e integração com o ecossistema Santander para MEI",
+      "description_en": "Santander business account with complete financial solutions, business credit lines, and full Santander ecosystem integration for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito empresarial com taxas reduzidas",
+        "Integração total com app Santander",
+        "Rede de agências em todo Brasil",
+        "Cartão empresarial sem anuidade no primeiro ano"
+      ],
+      "best_for": "MEI que busca banco tradicional com presença física e ecossistema completo",
+      "affiliate_url": "https://santander.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "santander-pj",
+      "name": "Santander PJ",
+      "slug": "santander-pj",
+      "description_pt": "Conta PJ do Santander com soluções financeiras completas, crédito empresarial e integração com o ecossistema Santander para MEI",
+      "description_en": "Santander business account with complete financial solutions, business credit lines, and full Santander ecosystem integration for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Reduced-rate business credit lines",
+        "Full Santander app integration",
+        "Nationwide branch network",
+        "First-year business card with no annual fee"
+      ],
+      "best_for": "MEI seeking a traditional bank with physical branches and a complete ecosystem",
+      "affiliate_url": "https://santander.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "efi-bank",
+      "name": "Efí Bank",
+      "slug": "efi-bank",
+      "description_pt": "Plataforma completa de meios de pagamento e banking para MEI — Pix, boletos, link de pagamento, maquininha e conta digital PJ integrada com APIs de automação financeira",
+      "description_en": "Complete payment and banking platform for MEI — Pix, boletos, payment links, POS terminal, and integrated digital business account with financial automation APIs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Pix e boletos com liquidação automática",
+        "Link de pagamento para WhatsApp e redes sociais",
+        "APIs de automação financeira e cobrança recorrente",
+        "Maquininha integrada com taxas competitivas"
+      ],
+      "best_for": "MEI que vende online e precisa de automação de pagamentos",
+      "affiliate_url": "https://sejaefi.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "efi-bank",
+      "name": "Efí Bank",
+      "slug": "efi-bank",
+      "description_pt": "Plataforma completa de meios de pagamento e banking para MEI — Pix, boletos, link de pagamento, maquininha e conta digital PJ integrada com APIs de automação financeira",
+      "description_en": "Complete payment and banking platform for MEI — Pix, boletos, payment links, POS terminal, and integrated digital business account with financial automation APIs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Pix and boletos with automatic settlement",
+        "Payment links for WhatsApp and social media",
+        "Financial automation APIs and recurring billing",
+        "Integrated POS terminal with competitive rates"
+      ],
+      "best_for": "MEI who sells online and needs payment automation",
+      "affiliate_url": "https://sejaefi.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "digio",
+      "name": "Digio",
+      "slug": "digio",
+      "description_pt": "Conta digital gratuita do Banco do Brasil e Bradesco com cartão de crédito sem anuidade, cashback e gestão financeira integrada para MEI",
+      "description_en": "Free digital account backed by Banco do Brasil and Bradesco with no-fee credit card, cashback, and integrated financial management for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cartão de crédito sem anuidade",
+        "Cashback em todas as compras",
+        "App com gestão financeira inteligente",
+        "Suporte dos maiores bancos do Brasil"
+      ],
+      "best_for": "MEI que busca cartão de crédito sem anuidade com cashback e segurança de grandes bancos",
+      "affiliate_url": "https://digio.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "sicoob",
+      "name": "Sicoob",
+      "slug": "sicoob",
+      "description_pt": "Sistema de cooperativas de crédito com conta PJ gratuita, crédito acessível e atendimento personalizado para MEI e pequenos negócios",
+      "description_en": "Brazil's largest credit union cooperative system with free business accounts, accessible credit lines, and personalized service for MEI and small business owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Maior sistema cooperativo do Brasil",
+        "Crédito com taxas mais baixas que bancos",
+        "Atendimento personalizado por cooperativa",
+        "Participação nos resultados (sobras)"
+      ],
+      "best_for": "MEI que busca crédito acessível e atendimento próximo em cooperativas de crédito",
+      "affiliate_url": "https://www.sicoob.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "sicoob",
+      "name": "Sicoob",
+      "slug": "sicoob",
+      "description_pt": "Sistema de cooperativas de crédito com conta PJ gratuita, crédito acessível e atendimento personalizado para MEI e pequenos negócios",
+      "description_en": "Brazil's largest credit union cooperative system with free business accounts, accessible credit lines, and personalized service for MEI and small business owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Brazil's largest cooperative system",
+        "Lower credit rates than traditional banks",
+        "Personalized cooperative-level service",
+        "Profit-sharing (member dividends)"
+      ],
+      "best_for": "MEI seeking affordable credit and personalized service through credit union cooperatives",
+      "affiliate_url": "https://www.sicoob.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "digio",
+      "name": "Digio",
+      "slug": "digio",
+      "description_pt": "Conta digital gratuita do Banco do Brasil e Bradesco com cartão de crédito sem anuidade, cashback e gestão financeira integrada para MEI",
+      "description_en": "Free digital account backed by Banco do Brasil and Bradesco with no-fee credit card, cashback, and integrated financial management for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "No-annual-fee credit card",
+        "Cashback on all purchases",
+        "Smart financial management app",
+        "Backed by Brazil's largest banks"
+      ],
+      "best_for": "MEI seeking a no-fee credit card with cashback and the security of major Brazilian banks",
+      "affiliate_url": "https://digio.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "pagseguro",
+      "name": "PagSeguro",
+      "slug": "pagseguro",
+      "description_pt": "Solução completa com conta corrente, maquininha e cartão pré-pago",
+      "description_en": "Complete payment solution with digital account, integrated POS terminal, and prepaid card for Brazilian MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "100% online account",
+        "Integrated POS terminal",
+        "Portuguese-language support"
+      ],
+      "best_for": "MEI beginners in online sales",
+      "affiliate_url": "https://pagseguro.uol.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "mercado-pago",
+      "name": "Mercado Pago",
+      "slug": "mercado-pago",
+      "description_pt": "Conta corrente integrada com todas as soluções de pagamento do Mercado Livre",
+      "description_en": "Digital account fully integrated with Mercado Livre's payment ecosystem — reduced rates for marketplace sellers and cashback on purchases",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Mercado Livre integration",
+        "Reduced rates for sellers",
+        "Cashback on purchases"
+      ],
+      "best_for": "MEI selling on Mercado Livre",
+      "affiliate_url": "https://mercadopago.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "boa-compra",
+      "name": "Boa Compra",
+      "slug": "boa-compra",
+      "description_pt": "Antecipação de recebíveis e gestão de fluxo de caixa para MEI",
+      "description_en": "Receivables advance and cash flow management platform — get paid in 24 hours with transparent rates and no bureaucracy for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "24-hour advance",
+        "Transparent rates",
+        "No bureaucracy"
+      ],
+      "best_for": "MEI with outstanding receivables",
+      "affiliate_url": "https://boacompra.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "en",
+      "id": "cora",
+      "name": "Cora",
+      "slug": "cora",
+      "description_pt": "Conta PJ digital com foco em gestão de cobranças e emissão de boletos ilimitados",
+      "description_en": "Digital business account focused on receivables management with unlimited free invoice (boleto) issuance, automated recurring billing, and integrated bank reconciliation",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Unlimited free invoices (boletos)",
+        "Automated recurring billing",
+        "Integrated bank reconciliation"
+      ],
+      "best_for": "MEI who issues many invoices and bills",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "bs2",
+      "name": "BS2",
+      "slug": "bs2",
+      "description_pt": "Banco digital com conta PJ gratuita, crédito consignado e integração com contabilidade",
+      "description_en": "Digital bank with a free business account, payroll-deductible credit lines for MEI, and built-in accounting firm integration",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Payroll-deductible credit for MEI",
+        "Accounting firm integration",
+        "Cash flow management app"
+      ],
+      "best_for": "MEI who needs credit and accounting integration",
+      "affiliate_url": "https://bs2.com/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "en",
+      "id": "original",
+      "name": "Banco Original",
+      "slug": "original",
+      "description_pt": "Conta PJ digital do Banco Original com assessoria financeira e soluções de crédito",
+      "description_en": "Banco Original digital business account with dedicated financial advisory, receivables advance, and a no-annual-fee corporate card for growing MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Dedicated financial advisory",
+        "Receivables advance",
+        "No-annual-fee corporate card"
+      ],
+      "best_for": "Growing-revenue MEI seeking personalized financial advisory",
+      "affiliate_url": "https://original.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "en",
+      "id": "picpay-pj",
+      "name": "PicPay PJ",
+      "slug": "picpay-pj",
+      "description_pt": "Conta digital PJ do PicPay com cashback em todas as transações, Pix ilimitado e marketplace de serviços financeiros integrado",
+      "description_en": "PicPay digital business account with cashback on every transaction, unlimited free Pix, and an integrated financial services marketplace with credit and insurance",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback on all transactions",
+        "Unlimited free Pix",
+        "Credit and insurance marketplace",
+        "Integrated virtual card"
+      ],
+      "best_for": "MEI seeking cashback rewards and a complete financial services ecosystem",
+      "affiliate_url": "https://picpay.com/site/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "en",
+      "id": "ton",
+      "name": "Ton",
+      "slug": "ton",
+      "description_pt": "Conta digital da Stone para MEI com Pix ilimitado, cartão sem anuidade e integração com maquininhas Stone",
+      "description_en": "Stone's digital account built for MEI — unlimited free Pix, no-annual-fee debit card, and seamless integration with Stone POS terminals for unified financial management",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "100% free digital account",
+        "Integrated with Stone POS terminals",
+        "Unlimited free Pix transfers",
+        "No-annual-fee debit card"
+      ],
+      "best_for": "MEI who already uses Stone POS terminals and wants an integrated account",
+      "affiliate_url": "https://ton.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "es",
+      "id": "sicredi-pj",
+      "name": "Sicredi PJ",
+      "slug": "sicredi-pj",
+      "description_pt": "Conta PJ do Sicredi, cooperativa de crédito com soluções financeiras completas e atendimento personalizado para MEI",
+      "description_en": "Sicredi cooperative business account with profit-sharing, personalized manager support, and reduced-rate credit lines for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cooperativa con participación en resultados",
+        "Atención personalizada por gerente",
+        "Líneas de crédito con tasas reducidas",
+        "Plataforma digital completa"
+      ],
+      "best_for": "MEI que valora atención personalizada y banca cooperativa",
+      "affiliate_url": "https://sicredi.com.br/site/para-voce/conta-corrente-pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "es",
+      "id": "conta-simples",
+      "name": "Conta Simples",
+      "slug": "conta-simples",
+      "description_pt": "Conta bancária PJ completa com transferências ilimitadas e antecipação de recebíveis",
+      "description_en": "Full-featured business bank account with unlimited transfers and receivables advance for Brazilian MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Transferencias ilimitadas",
+        "Anticipación de ingresos",
+        "Integración con NFSe"
+      ],
+      "best_for": "Freelancers y MEI con ingresos medios",
+      "affiliate_url": "https://contasimples.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "es",
+      "id": "asaas",
+      "name": "Asaas",
+      "slug": "asaas",
+      "description_pt": "Plataforma de gestão financeira completa com conta digital, cobrança recorrente, emissão de boletos e cartão de crédito para MEI",
+      "description_en": "Complete financial management platform with digital account, recurring billing, invoice issuance, and integrated business credit card for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados y gratuitos",
+        "Cobranza recurrente automatizada",
+        "Tarjeta de crédito empresarial integrada",
+        "Conciliación bancaria automática"
+      ],
+      "best_for": "MEI que emite cobranzas recurrentes y necesita gestión financiera completa",
+      "affiliate_url": "https://asaas.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "es",
+      "id": "nubank-pj",
+      "name": "Nubank PJ",
+      "slug": "nubank-pj",
+      "description_pt": "Conta corrente PJ do Nubank com cashback e benefícios exclusivos",
+      "description_en": "Nubank business checking account with cashback rewards, no annual card fee, and seamless integration with personal Nubank accounts",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback en transacciones",
+        "Sin cuota anual de tarjeta",
+        "Integrado con cuenta personal Nubank"
+      ],
+      "best_for": "MEI que ya usa Nubank",
+      "affiliate_url": "https://nubank.com.br/conta-pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "es",
+      "id": "cora-pj",
+      "name": "Cora",
+      "slug": "cora-pj",
+      "description_pt": "Conta digital PJ gratuita com emissão de boletos ilimitados, Pix e gestão de cobranças — focada em MEI e freelancers",
+      "description_en": "Free digital business account with unlimited invoice issuance, Pix, and receivables management — built specifically for MEI and freelancers",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Emisión ilimitada y gratuita de boletos",
+        "Gestión de cobranzas automatizada",
+        "Tarjeta de débito y crédito PJ sin cuota anual",
+        "Conciliación bancaria automática"
+      ],
+      "best_for": "MEI prestador de servicios que emite muchos boletos",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.5
+    },
+    {
+      "locale": "es",
+      "id": "neon-pj",
+      "name": "Neon PJ",
+      "slug": "neon-pj",
+      "description_pt": "Conta PJ digital com pagamento de boletos e transferências sem tarifa",
+      "description_en": "Digital business account with free bill payments, no-fee transfers, and an intuitive mobile app for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Transferencias sin tarifa",
+        "Pago de boletos",
+        "App móvil intuitivo"
+      ],
+      "best_for": "MEI que necesita movilidad",
+      "affiliate_url": "https://neon.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "inter-empresas",
+      "name": "Inter Empresas",
+      "slug": "inter-empresas",
+      "description_pt": "Conta empresarial do Banco Inter com crédito pré-aprovado para MEI",
+      "description_en": "Banco Inter business account with pre-approved credit lines, overdraft protection, and zero-fee wire transfers for MEI owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito preaprobado",
+        "Límite de cheque especial",
+        "Sin tarifa de transferencia TED"
+      ],
+      "best_for": "MEI que necesita crédito",
+      "affiliate_url": "https://bancointer.com.br/conta-empresarial/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "es",
+      "id": "c6-bank-pj",
+      "name": "C6 Bank PJ",
+      "slug": "c6-bank-pj",
+      "description_pt": "Banco digital com conta PJ, cartão corporativo e soluções de crédito",
+      "description_en": "Digital bank offering a business account, corporate card, and automated credit lines at reduced fees for growing MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Tarjeta corporativa",
+        "Límite de crédito automático",
+        "Tarifas reducidas"
+      ],
+      "best_for": "MEI con crecimiento esperado",
+      "affiliate_url": "https://c6bank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "infinitepay",
+      "name": "InfinitePay",
+      "slug": "infinitepay",
+      "description_pt": "Máquina de pagamento com liquidação automática e taxa competitiva",
+      "description_en": "Payment terminal with automatic D+1 settlement, competitive rates starting at 1.99%, and no equipment rental fees for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Liquidación D+1",
+        "Tasa desde 1,99%",
+        "Sin alquiler de equipamiento"
+      ],
+      "best_for": "MEI de comercio con ventas presenciales",
+      "affiliate_url": "https://infinitepay.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "es",
+      "id": "sumup",
+      "name": "SumUp",
+      "slug": "sumup",
+      "description_pt": "Maquininha com NFC, WiFi e 4G com segurança de dados criptografada",
+      "description_en": "NFC/WiFi/4G POS terminal with encrypted data security, compact design, and rates from 2.49% — ideal for mobile service providers",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Portátil y compacta",
+        "Tasa desde 2.49%",
+        "Soporte 24/7"
+      ],
+      "best_for": "MEI ambulante o de servicios",
+      "affiliate_url": "https://sumup.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4
+    },
+    {
+      "locale": "es",
+      "id": "stone",
+      "name": "Stone",
+      "slug": "stone",
+      "description_pt": "Líder de market share em máquinas de pagamento com suporte enterprise",
+      "description_en": "Market share leader in payment terminals with fast settlement, competitive rates, and enterprise-grade support for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Liquidación rápida",
+        "Tasa competitiva",
+        "Soporte especializado"
+      ],
+      "best_for": "MEI de comercio de alto volumen",
+      "affiliate_url": "https://stone.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "es",
+      "id": "pagseguro",
+      "name": "PagSeguro",
+      "slug": "pagseguro",
+      "description_pt": "Solução completa com conta corrente, maquininha e cartão pré-pago",
+      "description_en": "Complete payment solution with digital account, POS terminal, and prepaid card — 100% online account with integrated POS and Portuguese support",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cuenta 100% en línea",
+        "Terminal integrado",
+        "Soporte en portugués"
+      ],
+      "best_for": "MEI principiante en ventas en línea",
+      "affiliate_url": "https://pagseguro.uol.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "es",
+      "id": "mercado-pago",
+      "name": "Mercado Pago",
+      "slug": "mercado-pago",
+      "description_pt": "Conta corrente integrada com todas as soluções de pagamento do Mercado Livre",
+      "description_en": "Current account integrated with all Mercado Livre payment solutions — reduced fees for sellers, cashback on purchases, and seamless marketplace integration",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Integración Mercado Libre",
+        "Tasa reducida para vendedores",
+        "Cashback en compras"
+      ],
+      "best_for": "MEI vendedor de Mercado Libre",
+      "affiliate_url": "https://mercadopago.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "boa-compra",
+      "name": "Boa Compra",
+      "slug": "boa-compra",
+      "description_pt": "Antecipação de recebíveis e gestão de fluxo de caixa para MEI",
+      "description_en": "Receivables advance and cash flow management for MEI — 24-hour advance, transparent rates, and zero bureaucracy for freelancers with outstanding invoices",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Anticipo en 24h",
+        "Tasa transparente",
+        "Sin burocracia"
+      ],
+      "best_for": "MEI con cuentas por cobrar",
+      "affiliate_url": "https://boacompra.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "es",
+      "id": "cora",
+      "name": "Cora",
+      "slug": "cora",
+      "description_pt": "Conta PJ digital com foco em gestão de cobranças e emissão de boletos ilimitados",
+      "description_en": "Digital business account focused on billing management and unlimited invoice issuance — free unlimited boletos, automated recurring billing, and integrated bank reconciliation",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados y gratuitos",
+        "Cobro recurrente automático",
+        "Conciliación bancaria integrada"
+      ],
+      "best_for": "MEI que emite muchos cobros y boletos",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
     }
   ]
 }
