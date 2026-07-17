@@ -1019,6 +1019,91 @@
       "best_for": "MEI prestador de servicios que emite muchos boletos",
       "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.5
+    },
+    {
+      "locale": "es",
+      "id": "neon-pj",
+      "name": "Neon PJ",
+      "slug": "neon-pj",
+      "description_pt": "Conta PJ digital com pagamento de boletos e transferências sem tarifa",
+      "description_en": "Digital business account with free bill payments, no-fee transfers, and an intuitive mobile app for MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Transferencias sin tarifa",
+        "Pago de boletos",
+        "App móvil intuitivo"
+      ],
+      "best_for": "MEI que necesita movilidad",
+      "affiliate_url": "https://neon.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "inter-empresas",
+      "name": "Inter Empresas",
+      "slug": "inter-empresas",
+      "description_pt": "Conta empresarial do Banco Inter com crédito pré-aprovado para MEI",
+      "description_en": "Banco Inter business account with pre-approved credit lines, overdraft protection, and zero-fee wire transfers for MEI owners",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito preaprobado",
+        "Límite de cheque especial",
+        "Sin tarifa de transferencia TED"
+      ],
+      "best_for": "MEI que necesita crédito",
+      "affiliate_url": "https://bancointer.com.br/conta-empresarial/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "es",
+      "id": "c6-bank-pj",
+      "name": "C6 Bank PJ",
+      "slug": "c6-bank-pj",
+      "description_pt": "Banco digital com conta PJ, cartão corporativo e soluções de crédito",
+      "description_en": "Digital bank offering a business account, corporate card, and automated credit lines at reduced fees for growing MEI",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Tarjeta corporativa",
+        "Límite de crédito automático",
+        "Tarifas reducidas"
+      ],
+      "best_for": "MEI con crecimiento esperado",
+      "affiliate_url": "https://c6bank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "infinitepay",
+      "name": "InfinitePay",
+      "slug": "infinitepay",
+      "description_pt": "Máquina de pagamento com liquidação automática e taxa competitiva",
+      "description_en": "Payment terminal with automatic D+1 settlement, competitive rates starting at 1.99%, and no equipment rental fees for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Liquidación D+1",
+        "Tasa desde 1,99%",
+        "Sin alquiler de equipamiento"
+      ],
+      "best_for": "MEI de comercio con ventas presenciales",
+      "affiliate_url": "https://infinitepay.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "es",
+      "id": "sumup",
+      "name": "SumUp",
+      "slug": "sumup",
+      "description_pt": "Maquininha com NFC, WiFi e 4G com segurança de dados criptografada",
+      "description_en": "NFC/WiFi/4G POS terminal with encrypted data security, compact design, and rates from 2.49% — ideal for mobile service providers",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Portátil y compacta",
+        "Tasa desde 2.49%",
+        "Soporte 24/7"
+      ],
+      "best_for": "MEI ambulante o de servicios",
+      "affiliate_url": "https://sumup.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4
     }
   ]
 }
