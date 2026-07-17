@@ -41,6 +41,24 @@ const MAQUININHAS = [
     affiliate_url: 'https://infinitepay.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs',
     rating: 4.1,
   },
+  {
+    id: 'pagseguro',
+    name: 'PagSeguro',
+    description: 'Solução completa com conta corrente, maquininha e cartão pré-pago.',
+    taxas: { debito: '1,89% a 1,99%', credito: '2,99% a 3,99%', aluguel: 'Grátis (modelo básico)', liquidacao: 'D+1' },
+    highlights: ['Conta 100% online', 'Maquininha integrada', 'Suporte em português'],
+    affiliate_url: 'https://pagseguro.uol.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs',
+    rating: 4.2,
+  },
+  {
+    id: 'ton',
+    name: 'Ton',
+    description: 'Conta digital da Stone para MEI com maquininha integrada.',
+    taxas: { debito: '1,69% a 1,89%', credito: '2,69% a 3,49%', aluguel: 'Grátis', liquidacao: 'D+1' },
+    highlights: ['Integração com maquininhas Stone', 'Conta 100% digital', 'Pix ilimitado sem tarifa'],
+    affiliate_url: 'https://ton.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs',
+    rating: 4.4,
+  },
 ];
 
 export default function MelhoresMaquininhas() {
@@ -164,7 +182,7 @@ export default function MelhoresMaquininhas() {
       {/* Social Proof Banner */}
       <div className="bg-gradient-to-r from-accent to-accent-secondary text-white rounded-lg p-6 text-center">
         <p className="text-lg font-bold mb-1">
-          🔥 Mais de 3.500 MEIs já compararam maquininhas este mês
+          🔥 Mais de 4.500 MEIs já compararam maquininhas este mês
         </p>
         <p className="text-muted-soft text-sm">
           Escolha a maquininha ideal e comece a vender no cartão — sem burocracia e com as menores taxas
