@@ -1104,6 +1104,91 @@
       "best_for": "MEI ambulante o de servicios",
       "affiliate_url": "https://sumup.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4
+    },
+    {
+      "locale": "es",
+      "id": "stone",
+      "name": "Stone",
+      "slug": "stone",
+      "description_pt": "Líder de market share em máquinas de pagamento com suporte enterprise",
+      "description_en": "Market share leader in payment terminals with fast settlement, competitive rates, and enterprise-grade support for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Liquidación rápida",
+        "Tasa competitiva",
+        "Soporte especializado"
+      ],
+      "best_for": "MEI de comercio de alto volumen",
+      "affiliate_url": "https://stone.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "es",
+      "id": "pagseguro",
+      "name": "PagSeguro",
+      "slug": "pagseguro",
+      "description_pt": "Solução completa com conta corrente, maquininha e cartão pré-pago",
+      "description_en": "Complete payment solution with digital account, POS terminal, and prepaid card — 100% online account with integrated POS and Portuguese support",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cuenta 100% en línea",
+        "Terminal integrado",
+        "Soporte en portugués"
+      ],
+      "best_for": "MEI principiante en ventas en línea",
+      "affiliate_url": "https://pagseguro.uol.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "es",
+      "id": "mercado-pago",
+      "name": "Mercado Pago",
+      "slug": "mercado-pago",
+      "description_pt": "Conta corrente integrada com todas as soluções de pagamento do Mercado Livre",
+      "description_en": "Current account integrated with all Mercado Livre payment solutions — reduced fees for sellers, cashback on purchases, and seamless marketplace integration",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Integración Mercado Libre",
+        "Tasa reducida para vendedores",
+        "Cashback en compras"
+      ],
+      "best_for": "MEI vendedor de Mercado Libre",
+      "affiliate_url": "https://mercadopago.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "boa-compra",
+      "name": "Boa Compra",
+      "slug": "boa-compra",
+      "description_pt": "Antecipação de recebíveis e gestão de fluxo de caixa para MEI",
+      "description_en": "Receivables advance and cash flow management for MEI — 24-hour advance, transparent rates, and zero bureaucracy for freelancers with outstanding invoices",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Anticipo en 24h",
+        "Tasa transparente",
+        "Sin burocracia"
+      ],
+      "best_for": "MEI con cuentas por cobrar",
+      "affiliate_url": "https://boacompra.com/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "es",
+      "id": "cora",
+      "name": "Cora",
+      "slug": "cora",
+      "description_pt": "Conta PJ digital com foco em gestão de cobranças e emissão de boletos ilimitados",
+      "description_en": "Digital business account focused on billing management and unlimited invoice issuance — free unlimited boletos, automated recurring billing, and integrated bank reconciliation",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Boletos ilimitados y gratuitos",
+        "Cobro recurrente automático",
+        "Conciliación bancaria integrada"
+      ],
+      "best_for": "MEI que emite muchos cobros y boletos",
+      "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
     }
   ]
 }
