@@ -193,6 +193,64 @@ export default function DasMei2026() {
         ))}
       </div>
 
+      {/* Article Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Guia Completo DAS MEI 2026 — Valores, Prazos e Pagamento',
+            description:
+              'Tudo sobre o DAS MEI 2026: valores atualizados com o novo salário mínimo, tabela por categoria, como pagar, prazos, multas e consequências do não pagamento.',
+            author: {
+              '@type': 'Organization',
+              name: 'Oráculo do MEI',
+              url: 'https://oraculodomei.com.br',
+            },
+            datePublished: '2025-01-01',
+            dateModified: '2026-07-16',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://oraculodomei.com.br/guias/das-mei-2026',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Oráculo do MEI',
+              url: 'https://oraculodomei.com.br',
+            },
+          }),
+        }}
+      />
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Início',
+                item: 'https://oraculodomei.com.br',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Guias',
+                item: 'https://oraculodomei.com.br/guias',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'DAS MEI 2026',
+              },
+            ],
+          }),
+        }}
+      />
       {/* FAQPage Structured Data */}
       <script
         type="application/ld+json"
