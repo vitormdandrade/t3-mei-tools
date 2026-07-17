@@ -154,6 +154,19 @@ export default function DASCalculator() {
               </p>
             </div>
 
+            {/* Inline CTA inside results card */}
+            <a
+              href="/melhores/melhores-contas-pj-mei"
+              className="mt-3 flex items-center justify-between gap-3 no-underline rounded-xl p-3 transition-all hover:scale-[1.02]"
+              style={{ background: 'linear-gradient(135deg, var(--brand-teal), #0d9488)', color: '#fff' }}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-lg">💳</span>
+                <span className="text-sm font-bold">Abra sua conta PJ gratuita para pagar o DAS</span>
+              </div>
+              <span className="text-sm font-bold whitespace-nowrap">Comparar Contas →</span>
+            </a>
+
             <div className="callout callout-warning mt-6">
               <p className="text-body">
                 <strong>Anual:</strong> R$ {(rates.total * 12).toLocaleString('pt-BR', {
