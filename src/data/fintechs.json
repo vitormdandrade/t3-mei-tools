@@ -1189,6 +1189,95 @@
       "best_for": "MEI que emite muchos cobros y boletos",
       "affiliate_url": "https://cora.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "agibank-pj",
+      "name": "Agibank PJ",
+      "slug": "agibank-pj",
+      "description_pt": "Conta digital PJ do Agibank com crédito facilitado, antecipação de recebíveis e Pix ilimitado para MEI — zero taxa mensal e cartão sem anuidade",
+      "description_en": "Agibank digital business account with easy credit access, receivables advance, and unlimited Pix for MEI — zero monthly fee and no-annual-fee business card",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito fácil sin burocracia",
+        "Anticipo de ingresos en 24h",
+        "Pix ilimitado y gratuito",
+        "Tarjeta PJ sin cuota anual"
+      ],
+      "best_for": "MEI que necesita crédito rápido y cuenta digital sin tarifas",
+      "affiliate_url": "https://agibank.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "es",
+      "id": "banco-do-brasil-pj",
+      "name": "Banco do Brasil PJ",
+      "slug": "banco-do-brasil-pj",
+      "description_pt": "Conta PJ do Banco do Brasil com crédito facilitado, antecipação de recebíveis e ampla rede de agências — ideal para MEI que precisa de crédito",
+      "description_en": "Banco do Brasil business account with easy credit access, receivables advance, and Brazil's largest bank branch network — ideal for MEI needing credit lines",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito con tasas reducidas para MEI",
+        "Mayor red de sucursales de Brasil",
+        "Anticipo de ingresos de terminal POS",
+        "Integración con DAS e impuestos"
+      ],
+      "best_for": "MEI que necesita crédito y atención presencial",
+      "affiliate_url": "https://bb.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4
+    },
+    {
+      "locale": "es",
+      "id": "bs2",
+      "name": "BS2",
+      "slug": "bs2",
+      "description_pt": "Banco digital com conta PJ gratuita, crédito consignado e integração com contabilidade",
+      "description_en": "Digital bank with a free business account, payroll-deductible credit lines for MEI, and built-in accounting firm integration",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito consignado para MEI",
+        "Integración con despachos contables",
+        "App con gestión de flujo de caja"
+      ],
+      "best_for": "MEI que necesita crédito e integración contable",
+      "affiliate_url": "https://bs2.com/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "es",
+      "id": "btg-pactual-empresas",
+      "name": "BTG Pactual Empresas",
+      "slug": "btg-pactual-empresas",
+      "description_pt": "Conta digital PJ do BTG Pactual com plataforma de investimentos integrada, crédito empresarial e atendimento premium para MEI que busca gestão financeira sofisticada",
+      "description_en": "BTG Pactual's digital business account with integrated investment platform, corporate credit lines, and premium service for MEI seeking sophisticated financial management",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Plataforma de inversiones integrada a la cuenta",
+        "Crédito empresarial con tasas competitivas",
+        "Atención premium y asesoría dedicada",
+        "App con visión consolidada de cuenta + inversiones"
+      ],
+      "best_for": "MEI con ingresos elevados que busca integrar cuenta PJ e inversiones",
+      "affiliate_url": "https://www.btgpactual.com/empresas?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.6
+    },
+    {
+      "locale": "es",
+      "id": "digio",
+      "name": "Digio",
+      "slug": "digio",
+      "description_pt": "Conta digital gratuita do Banco do Brasil e Bradesco com cartão de crédito sem anuidade, cashback e gestão financeira integrada para MEI",
+      "description_en": "Free digital account backed by Banco do Brasil and Bradesco with no-fee credit card, cashback, and integrated financial management for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Tarjeta de crédito sin cuota anual",
+        "Cashback en todas las compras",
+        "App con gestión financiera inteligente",
+        "Respaldado por los mayores bancos de Brasil"
+      ],
+      "best_for": "MEI que busca tarjeta de crédito sin cuota anual con cashback y seguridad de grandes bancos",
+      "affiliate_url": "https://digio.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
     }
   ]
 }
