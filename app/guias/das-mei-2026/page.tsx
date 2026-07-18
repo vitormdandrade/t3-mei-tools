@@ -3,7 +3,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Guia Completo DAS MEI 2026 - Valores, Prazos e Pagamento",
   description: "Entenda tudo sobre DAS MEI 2026: valores atualizados, como pagar, prazos e penalidades.",
-  alternates: { canonical: '/guias/das-mei-2026' },
+  alternates: {
+    canonical: '/guias/das-mei-2026',
+    languages: {
+      'pt-BR': 'https://oraculodomei.com.br/guias/das-mei-2026',
+      'en': 'https://oraculodomei.com.br/en/guias/das-mei-2026',
+    },
+  },
   openGraph: {
     title: "Guia Completo DAS MEI 2026 — Valores Atualizados",
     description: "DAS MEI 2026: tabela atualizada com INSS, ICMS e ISS. Como pagar, prazos e multas por atraso.",
