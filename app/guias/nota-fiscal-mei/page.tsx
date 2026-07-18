@@ -51,7 +51,26 @@ export default function NotaFiscalMEI() {
 
       <div className="callout callout-info my-6">
         <p className="callout-title">Próximos Passos</p>
-        <a href="/guias/como-abrir-mei">← Voltar ao guias</a>
+        <ul>
+          <li>✓ <a href="/calculadora/das">Calcule seu DAS</a></li>
+          <li>✓ <a href="/kit-mei/gerador-nota-fiscal">Gerador de Nota Fiscal MEI</a></li>
+          <li>✓ <a href="/guias/das-mei-2026">Entenda o DAS 2026</a></li>
+        </ul>
+      </div>
+
+      <h2>Conteúdo Relacionado</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        {[
+          ['/guias/como-abrir-mei', 'Como Abrir MEI', 'Passo a passo completo para abrir seu MEI grátis em 2026'],
+          ['/guias/das-mei-2026', 'DAS MEI 2026', 'Valores atualizados, prazos e como pagar o DAS'],
+          ['/guias/limite-faturamento-mei', 'Limite de Faturamento MEI', 'Entenda o teto de R$ 81 mil e o que fazer se ultrapassar'],
+          ['/guias/abrir-conta-pj-mei', 'Abrir Conta PJ para MEI', 'Compare as melhores contas PJ gratuitas para seu CNPJ'],
+        ].map(([href, title, desc]) => (
+          <a key={href} href={href} className="card card-hover no-underline p-4 flex flex-col gap-1">
+            <span className="font-semibold" style={{ color: 'var(--color-foreground)' }}>{title} →</span>
+            <span className="text-caption">{desc}</span>
+          </a>
+        ))}
       </div>
 
       {/* Kit MEI CTA */}
