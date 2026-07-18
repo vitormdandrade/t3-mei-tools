@@ -318,6 +318,59 @@ export default function INSSAutonomoCalculator() {
           </a>
         </div>
       </div>
+
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Qual é a contribuição INSS para MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'O MEI (Microempreendedor Individual) contribui com apenas 5% sobre o salário mínimo vigente (R$ 1.518,00 em 2026), o que equivale a aproximadamente R$ 75,90/mês. Essa alíquota reduzida garante acesso a benefícios como auxílio-doença, salário-maternidade e pensão por morte, mas não inclui aposentadoria por tempo de contribuição.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Qual a diferença entre contribuir com 11% e 20% como autônomo?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A alíquota de 11% é a padrão para contribuintes individuais (autônomos e freelancers sem CNPJ) e garante a maioria dos benefícios previdenciários: aposentadoria por idade, por tempo de contribuição, auxílio-doença, salário-maternidade, pensão por morte e auxílio-acidente. Já a alíquota de 20% é para contribuintes voluntários que desejam aumentar o valor da aposentadoria, permitindo contribuir sobre um valor maior que o salário mínimo, até o teto do INSS.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Autônomos e freelancers são obrigados a contribuir para o INSS?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Sim. Todo trabalhador autônomo ou freelancer que exerce atividade remunerada é obrigado a contribuir para a Previdência Social como contribuinte individual, conforme a Lei 8.212/91. A contribuição garante acesso a benefícios previdenciários e conta para a aposentadoria. Quem não contribui fica desprotegido em caso de doença, acidente ou na hora de se aposentar.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Posso contribuir como MEI (5%) e também como autônomo (11% ou 20%)?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Não simultaneamente para a mesma atividade. Se você é MEI, já está contribuindo com 5% via DAS e isso conta para o INSS. Se você também exerce outra atividade como autônomo (sem ser pelo CNPJ MEI), deve contribuir separadamente sobre essa renda adicional. O ideal é avaliar com um contador se vale mais a pena manter o MEI ou migrar para contribuinte individual.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Quais benefícios do INSS a contribuição de 11% garante?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'A contribuição de 11% como contribuinte individual garante: aposentadoria por idade (62 anos mulher, 65 anos homem), aposentadoria por tempo de contribuição (30 anos mulher, 35 anos homem), auxílio-doença, salário-maternidade, pensão por morte para dependentes e auxílio-acidente. É a alíquota mais recomendada para autônomos que desejam cobertura previdenciária completa.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
