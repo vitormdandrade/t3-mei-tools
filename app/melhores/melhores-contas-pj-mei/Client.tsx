@@ -45,7 +45,16 @@ export default function MelhoresContasPJ() {
   );
   const [sortMode, setSortMode] = useState<SortMode>('default');
   const sorted = useMemo(() => sortFintechs(localeFintechs, sortMode), [localeFintechs, sortMode]);
-  const [viewersNow] = useState(() => Math.floor(Math.random() * 40 + 15));
+  // Deterministic daily viewer count for social proof (changes once per day)
+  const viewersNow = useMemo(() => {
+    const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    let hash = 0;
+    for (let i = 0; i < today.length; i++) {
+      hash = ((hash << 5) - hash) + today.charCodeAt(i);
+      hash |= 0;
+    }
+    return 15 + (Math.abs(hash) % 50); // 15–64 viewers
+  }, []);
 
   return (
     <div className="space-y-8">
