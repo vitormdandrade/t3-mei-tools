@@ -1278,6 +1278,93 @@
       "best_for": "MEI que busca tarjeta de crédito sin cuota anual con cashback y seguridad de grandes bancos",
       "affiliate_url": "https://digio.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "efi-bank",
+      "name": "Efí Bank",
+      "slug": "efi-bank",
+      "description_pt": "Plataforma completa de meios de pagamento e banking para MEI — Pix, boletos, link de pagamento, maquininha e conta digital PJ integrada com APIs de automação financeira",
+      "description_en": "Complete payment and banking platform for MEI — Pix, boletos, payment links, POS terminal, and integrated digital business account with financial automation APIs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Pix y boletos con liquidación automática",
+        "Link de pago para WhatsApp y redes sociales",
+        "APIs de automatización financiera y cobro recurrente",
+        "Terminal POS integrado con tasas competitivas"
+      ],
+      "best_for": "MEI que vende online y necesita automatización de pagos",
+      "affiliate_url": "https://sejaefi.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "es",
+      "id": "original",
+      "name": "Banco Original",
+      "slug": "original",
+      "description_pt": "Conta PJ digital do Banco Original com assessoria financeira e soluções de crédito",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Asesoría financiera dedicada",
+        "Anticipo de ingresos",
+        "Tarjeta corporativa sin cuota anual"
+      ],
+      "best_for": "MEI con ingresos crecientes que busca asesoría",
+      "affiliate_url": "https://original.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.2
+    },
+    {
+      "locale": "es",
+      "id": "pagbank-pj",
+      "name": "PagBank PJ",
+      "slug": "pagbank-pj",
+      "description_pt": "Conta digital PJ do PagSeguro com maquininha integrada, link de pagamento e gestão de vendas para MEI",
+      "description_en": "PagSeguro's digital business account with integrated POS terminal, payment links, and sales management — ideal for MEI merchants",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Terminal POS integrado sin alquiler",
+        "Link de pago para WhatsApp y redes sociales",
+        "Cuenta digital con Pix y TED gratis",
+        "Anticipo de ingresos en 1 día hábil"
+      ],
+      "best_for": "MEI que trabaja con ventas físicas y online",
+      "affiliate_url": "https://pagbank.com.br/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "picpay-pj",
+      "name": "PicPay PJ",
+      "slug": "picpay-pj",
+      "description_pt": "Conta digital PJ do PicPay com cashback em todas as transações, Pix ilimitado e marketplace de serviços financeiros integrado",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cashback en todas las transacciones",
+        "Pix ilimitado y gratuito",
+        "Marketplace de crédito y seguros",
+        "Tarjeta virtual integrada"
+      ],
+      "best_for": "MEI que busca cashback y ecosistema completo de servicios financieros",
+      "affiliate_url": "https://picpay.com/site/para-empresas/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
+    },
+    {
+      "locale": "es",
+      "id": "santander-pj",
+      "name": "Santander PJ",
+      "slug": "santander-pj",
+      "description_pt": "Conta PJ do Santander com soluções financeiras completas, crédito empresarial e integração com o ecossistema Santander para MEI",
+      "description_en": "Santander business account with complete financial solutions, business credit lines, and full Santander ecosystem integration for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Crédito empresarial con tasas reducidas",
+        "Integración total con app Santander",
+        "Red de sucursales en todo Brasil",
+        "Tarjeta empresarial sin cuota anual el primer año"
+      ],
+      "best_for": "MEI que busca banco tradicional con presencia física y ecosistema completo",
+      "affiliate_url": "https://santander.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.3
     }
   ]
 }
