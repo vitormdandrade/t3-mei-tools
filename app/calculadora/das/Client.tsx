@@ -303,6 +303,38 @@ export default function DASCalculator() {
         </div>
       </div>
 
+      {/* Artigos Relacionados — cross-linking for SEO internal link graph */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        <a
+          href="/melhores/melhores-contas-pj-mei"
+          className="card p-5 no-underline hover:shadow-md transition group border border-border rounded-xl"
+        >
+          <h3 className="text-subheading group-hover:text-accent transition-colors">💳 Melhores Contas PJ MEI</h3>
+          <p className="text-body mt-1">Compare contas digitais gratuitas para pagar seu DAS sem tarifas — Pix ilimitado, cartão sem anuidade e abertura em minutos.</p>
+        </a>
+        <a
+          href="/guias/abrir-conta-pj-mei"
+          className="card p-5 no-underline hover:shadow-md transition group border border-border rounded-xl"
+        >
+          <h3 className="text-subheading group-hover:text-accent transition-colors">📋 Guia: Abrir Conta PJ MEI</h3>
+          <p className="text-body mt-1">Passo a passo completo para abrir sua conta PJ gratuita e organizar as finanças do seu MEI.</p>
+        </a>
+        <a
+          href="/calculadora/mei-vs-me"
+          className="card p-5 no-underline hover:shadow-md transition group border border-border rounded-xl"
+        >
+          <h3 className="text-subheading group-hover:text-accent transition-colors">⚖️ MEI vs ME: Qual escolher?</h3>
+          <p className="text-body mt-1">Compare cargas tributárias, obrigações e descubra se já é hora de migrar para ME.</p>
+        </a>
+        <a
+          href="/calculadora/inss-autonomo"
+          className="card p-5 no-underline hover:shadow-md transition group border border-border rounded-xl"
+        >
+          <h3 className="text-subheading group-hover:text-accent transition-colors">🧮 Calculadora INSS Autônomo</h3>
+          <p className="text-body mt-1">Compare quanto você pagaria de INSS como autônomo vs. MEI e veja qual vale mais a pena.</p>
+        </a>
+      </section>
+
       {/* FAQPage Structured Data */}
       <script
         type="application/ld+json"
