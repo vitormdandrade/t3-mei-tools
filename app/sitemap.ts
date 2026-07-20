@@ -20,6 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/calendario-das', changeFreq: 'monthly' as const },
     { url: '/kit-mei', changeFreq: 'monthly' as const },
     { url: '/kit-mei/guia-mei-2026', changeFreq: 'monthly' as const },
+    { url: '/kit-mei/contrato-prestacao', changeFreq: 'monthly' as const },
+    { url: '/kit-mei/recibo-autonomo', changeFreq: 'monthly' as const },
+    { url: '/kit-mei/termo-rescisao', changeFreq: 'monthly' as const },
+    { url: '/kit-mei/nota-fiscal-avulsa', changeFreq: 'monthly' as const },
+    { url: '/kit-mei/gerador-recibo', changeFreq: 'monthly' as const },
+    { url: '/kit-mei/gerador-nota-fiscal', changeFreq: 'monthly' as const },
+    { url: '/kit-mei/dasn-simei', changeFreq: 'monthly' as const },
   ];
 
   // Guides
