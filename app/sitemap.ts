@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/guias/limite-faturamento-mei', changeFreq: 'monthly' as const },
     { url: '/guias/mei-vs-autonomo', changeFreq: 'monthly' as const },
     { url: '/guias/abrir-conta-pj-mei', changeFreq: 'monthly' as const },
+    { url: '/guias/cancelar-mei', changeFreq: 'monthly' as const },
   ];
 
   // Comparisons

@@ -48,6 +48,12 @@ export default function GuidesPage() {
       excerpt: "Guia para abrir conta bancária PJ/MEI com documentação necessária.",
       category: "Banco",
     },
+    {
+      slug: "cancelar-mei",
+      title: "Como Cancelar MEI (Dar Baixa) em 2026",
+      excerpt: "Passo a passo para encerrar seu MEI, regularizar débitos e evitar multas.",
+      category: "Regulamentação",
+    },
   ];
 
   return (
