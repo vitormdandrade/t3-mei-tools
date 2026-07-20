@@ -65,6 +65,8 @@ const faqs = [
   { q: 'Qual é o limite de faturamento para MEI em 2026?', a: 'O limite anual é de R$ 81.000 em 2026. Se ultrapassar este valor, você terá que migrar para outro regime.' },
   { q: 'Como funciona o DAS?', a: 'O DAS é a contribuição mensal que o MEI faz à Prefeitura (ISS ou ICMS) e ao INSS. Varia conforme a categoria da atividade.' },
   { q: 'MEI pode ter funcionário?', a: 'Sim, MEI pode ter apenas 1 funcionário. Se contratar outro, é obrigado a virar ME.' },
+  { q: 'Qual o valor do DAS MEI em 2026?', a: 'Em 2026, o DAS para comércio/indústria é de aproximadamente R$ 76,60 e para serviços é de R$ 81,60, considerando o salário mínimo vigente. Use nossa calculadora para o valor exato.' },
+  { q: 'MEI precisa declarar Imposto de Renda?', a: 'Sim, se seus rendimentos tributáveis ultrapassarem R$ 30.639,90 no ano. Além disso, todo MEI deve entregar a DASN-SIMEI anualmente, declarando o faturamento bruto do ano anterior.' },
 ];
 
 export default function Home() {
