@@ -37,8 +37,8 @@ const guides: Tool[] = [
 ];
 
 const comparisons: Tool[] = [
-  { href: '/melhores/melhores-contas-pj-mei', icon: '🏦', title: 'Melhores Contas PJ para MEI', desc: 'Compare as melhores contas bancárias para MEI com transferências, cartões e crédito.', cta: 'Ver comparativo' },
-  { href: '/melhores/melhores-maquininhas-mei', icon: '💳', title: 'Melhores Maquininhas', desc: 'Maquininhas de crédito e débito para MEI com as melhores taxas e suporte.', cta: 'Ver comparativo' },
+  { href: '/melhores/melhores-contas-pj-mei', icon: '🏦', title: 'Melhores Contas PJ para MEI', desc: 'Compare as melhores contas bancárias para MEI com transferências, cartões e crédito.', cta: 'Comparar Contas →' },
+  { href: '/melhores/melhores-maquininhas-mei', icon: '💳', title: 'Melhores Maquininhas', desc: 'Maquininhas de crédito e débito para MEI com as melhores taxas e suporte.', cta: 'Comparar Maquininhas →' },
 ];
 
 function ToolCard({ tool }: { tool: Tool }) {
