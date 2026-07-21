@@ -39,8 +39,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Detect locale from pathname for static rendering — defaults to pt-BR.
+  // In a full client-side navigation, useRouter().locale is the canonical source;
+  // this fallback handles the initial server render.
+  const locale = 'pt-BR';
   return (
-    <html lang="pt-BR" data-locale="pt-BR">
+    <html lang={locale} data-locale={locale}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
