@@ -74,12 +74,58 @@ export default function LimiteFaturamentoMEI() {
         <p>A Receita Federal detectará automaticamente o excesso. Você pode ser penalizado se não se formalizar corretamente.</p>
       </div>
 
+      <h2>MEI vs ME: O Que Muda Quando Você Ultrapassa o Limite?</h2>
+      <div className="overflow-x-auto my-6">
+        <table className="table-compare">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>MEI</th>
+              <th>ME (Simples Nacional)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Faturamento anual</strong></td>
+              <td>Até R$ 81.000</td>
+              <td>Até R$ 360.000</td>
+            </tr>
+            <tr>
+              <td><strong>Funcionários</strong></td>
+              <td>1 (máximo)</td>
+              <td>Até 9 (comércio) ou 19 (serviços)</td>
+            </tr>
+            <tr>
+              <td><strong>Imposto mensal</strong></td>
+              <td>DAS fixo (~R$ 76-81)</td>
+              <td>Percentual sobre faturamento (4% a 11,61%)</td>
+            </tr>
+            <tr>
+              <td><strong>Contabilidade</strong></td>
+              <td>Facultativa mas recomendada</td>
+              <td>Obrigatória</td>
+            </tr>
+            <tr>
+              <td><strong>Nota Fiscal</strong></td>
+              <td>Opcional para PF</td>
+              <td>Obrigatória em quase todos os casos</td>
+            </tr>
+            <tr>
+              <td><strong>Atividades permitidas</strong></td>
+              <td>Apenas CNAEs da lista MEI</td>
+              <td>Qualquer CNAE permitido</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div className="callout callout-accent my-8">
-        <p className="callout-title">Use Nossa Calculadora</p>
-        <p className="mb-4">Acompanhe seu faturamento em tempo real:</p>
-        <a href="/calculadora/faturamento" className="btn-primary no-underline inline-flex">
-          Calcular Faturamento
-        </a>
+        <p className="callout-title">Ferramentas para Sua Decisão</p>
+        <ul>
+          <li>✓ <a href="/calculadora/faturamento">Acompanhe seu faturamento em tempo real</a></li>
+          <li>✓ <a href="/calculadora/mei-vs-me">Compare MEI vs ME vs Simples Nacional</a></li>
+          <li>✓ <a href="/calculadora/das">Calcule seu DAS mensal</a></li>
+        </ul>
       </div>
 
       {/* FAQPage Structured Data */}
