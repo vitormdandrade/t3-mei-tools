@@ -1401,6 +1401,42 @@
       "best_for": "MEI entrepreneurs who are already Itaú clients or want a full-service bank with physical branches and integrated digital ecosystem",
       "affiliate_url": "https://itau.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.4
+    },
+    {
+      "locale": "pt-BR",
+      "id": "banco-pan-pj",
+      "name": "Banco PAN PJ",
+      "slug": "banco-pan-pj",
+      "description_pt": "Conta digital PJ do Banco PAN com cartão sem anuidade, Pix ilimitado e CDB com rentabilidade automática para o saldo da conta",
+      "description_en": "Banco PAN digital business account with no-annual-fee card, unlimited Pix transfers, and automatic CDB yield on account balances for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Cartão sem anuidade",
+        "Pix ilimitado",
+        "CDB com rendimento automático do saldo",
+        "Saque gratuito na rede 24h"
+      ],
+      "best_for": "MEI que quer conta digital completa com rendimento automático do saldo e cartão sem anuidade",
+      "affiliate_url": "https://www.bancopan.com.br/conta-pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
+    },
+    {
+      "locale": "en",
+      "id": "banco-pan-pj",
+      "name": "Banco PAN PJ",
+      "slug": "banco-pan-pj",
+      "description_pt": "Conta digital PJ do Banco PAN com cartão sem anuidade, Pix ilimitado e CDB com rentabilidade automática para o saldo da conta",
+      "description_en": "Banco PAN digital business account with no-annual-fee card, unlimited Pix transfers, and automatic CDB yield on account balances for MEI entrepreneurs",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "No-annual-fee business card",
+        "Unlimited Pix transfers",
+        "Automatic CDB yield on account balance",
+        "Free withdrawals at 24h network ATMs"
+      ],
+      "best_for": "MEI entrepreneurs who want a full digital account with automatic balance yield and a no-fee business card",
+      "affiliate_url": "https://www.bancopan.com.br/conta-pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.1
     }
   ]
 }
