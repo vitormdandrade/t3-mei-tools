@@ -54,6 +54,12 @@ export default function GuidesPage() {
       excerpt: "Passo a passo para encerrar seu MEI, regularizar débitos e evitar multas.",
       category: "Regulamentação",
     },
+    {
+      slug: "desenquadramento-mei",
+      title: "Desenquadramento MEI: Migrar para ME ou Simples Nacional",
+      excerpt: "Quando o faturamento ultrapassa R$ 81 mil: como migrar, prazos, multas e o que muda.",
+      category: "Faturamento",
+    },
   ];
 
   return (
