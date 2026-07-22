@@ -1365,6 +1365,42 @@
       "best_for": "MEI que busca banco tradicional con presencia física y ecosistema completo",
       "affiliate_url": "https://santander.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
       "rating": 4.3
+    },
+    {
+      "locale": "pt-BR",
+      "id": "itau-pj",
+      "name": "Itaú PJ",
+      "slug": "itau-pj",
+      "description_pt": "Conta PJ do maior banco privado do Brasil com soluções financeiras completas, crédito empresarial, maquininha integrada e benefícios exclusivos para correntistas MEI",
+      "description_en": "Business account from Brazil's largest private bank — complete financial solutions, business credit, integrated POS terminal, and exclusive benefits for MEI account holders",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Integração total com app e plataforma Itaú",
+        "Descontos exclusivos para correntistas",
+        "Crédito empresarial com taxas reduzidas",
+        "Maquininha Rede integrada sem aluguel"
+      ],
+      "best_for": "MEI que já é cliente Itaú ou busca banco completo com agências físicas e ecossistema digital integrado",
+      "affiliate_url": "https://itau.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
+    },
+    {
+      "locale": "en",
+      "id": "itau-pj",
+      "name": "Itaú PJ",
+      "slug": "itau-pj",
+      "description_pt": "Conta PJ do maior banco privado do Brasil com soluções financeiras completas, crédito empresarial, maquininha integrada e benefícios exclusivos para correntistas MEI",
+      "description_en": "Business account from Brazil's largest private bank — complete financial solutions, business credit, integrated POS terminal, and exclusive benefits for MEI account holders",
+      "monthly_fee_brl": 0,
+      "highlights": [
+        "Full integration with Itaú app and platform",
+        "Exclusive discounts for account holders",
+        "Business credit lines with reduced rates",
+        "Integrated Rede POS terminal with no rental fee"
+      ],
+      "best_for": "MEI entrepreneurs who are already Itaú clients or want a full-service bank with physical branches and integrated digital ecosystem",
+      "affiliate_url": "https://itau.com.br/pj/?utm_source=oraculodomei&utm_medium=affiliate&utm_campaign=fintechs",
+      "rating": 4.4
     }
   ]
 }
