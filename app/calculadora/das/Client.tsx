@@ -157,14 +157,21 @@ export default function DASCalculator() {
             {/* Inline CTA inside results card */}
             <a
               href="/melhores/melhores-contas-pj-mei"
-              className="mt-3 flex items-center justify-between gap-3 no-underline rounded-xl p-3 transition-all hover:scale-[1.02]"
+              className="mt-3 flex flex-col gap-2 no-underline rounded-xl p-4 transition-all hover:scale-[1.02]"
               style={{ background: 'linear-gradient(135deg, var(--brand-teal), #0d9488)', color: '#fff' }}
             >
-              <div className="flex items-center gap-2">
-                <span className="text-lg">💳</span>
-                <span className="text-sm font-bold">Abra sua conta PJ gratuita para pagar o DAS</span>
+              <div className="flex items-center justify-between gap-3 w-full">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">💳</span>
+                  <span className="text-sm font-bold">Abra sua conta PJ gratuita para pagar o DAS</span>
+                </div>
+                <span className="text-sm font-bold whitespace-nowrap">Comparar Contas →</span>
               </div>
-              <span className="text-sm font-bold whitespace-nowrap">Comparar Contas →</span>
+              <div className="flex items-center gap-3 text-xs opacity-90">
+                <span>⭐ 4.5 · 5.000+ MEIs</span>
+                <span>🔒 Contas reguladas pelo BACEN</span>
+                <span>⚡ Abertura em 5 minutos</span>
+              </div>
             </a>
 
             <div className="callout callout-warning mt-6">
