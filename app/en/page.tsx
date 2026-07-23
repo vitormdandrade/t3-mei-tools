@@ -50,7 +50,7 @@ const referenceTools: Tool[] = [
 const guides: Tool[] = [
   { href: '/en/guias/como-abrir-mei', icon: '🚀', title: 'How to Open MEI', desc: 'Step-by-step guide to register your MEI online and start legally in Brazil.', cta: 'Read guide' },
   { href: '/en/guias/das-mei-2026', icon: '📑', title: 'DAS 2026 Guide', desc: 'Everything about DAS: values, deadlines, and how to pay correctly.', cta: 'Read guide' },
-  { href: '/guias/nota-fiscal-mei', icon: '🧾', title: 'MEI Invoicing (Nota Fiscal)', desc: 'When, how, and rules for issuing invoices as a Brazilian MEI.', cta: 'Read guide' },
+  { href: '/en/guias/nota-fiscal-mei', icon: '🧾', title: 'MEI Invoicing (Nota Fiscal)', desc: 'When, how, and rules for issuing invoices as a Brazilian MEI.', cta: 'Read guide' },
 ];
 
 const comparisons: Tool[] = [
