@@ -351,6 +351,110 @@ export default function ComoAbrirMeiEn() {
           </a>
         </div>
       </div>
+
+      {/* Article Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'How to Open a MEI in Brazil — Complete Step-by-Step Guide 2026',
+            description:
+              'Complete guide to opening a MEI (Individual Microentrepreneur) in Brazil: requirements, step-by-step online process, costs, deadlines, and what to do after registration.',
+            author: {
+              '@type': 'Organization',
+              name: 'Oráculo do MEI',
+              url: 'https://oraculodomei.com.br',
+            },
+            datePublished: '2025-06-15',
+            dateModified: '2026-07-22',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://oraculodomei.com.br/en/guias/como-abrir-mei',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Oráculo do MEI',
+              url: 'https://oraculodomei.com.br',
+            },
+            inLanguage: 'en',
+          }),
+        }}
+      />
+      {/* BreadcrumbList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://oraculodomei.com.br/en',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Guides',
+                item: 'https://oraculodomei.com.br/en/guias',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'How to Open a MEI',
+              },
+            ],
+          }),
+        }}
+      />
+      {/* FAQPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How much does it cost to open a MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Completely free. No fees or bureaucracy. The only cost will be the monthly DAS tax.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Do I need an accountant to open a MEI?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'No. You can do it yourself online. An accountant helps with taxes but is not required for MEI registration.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I open a MEI while unemployed?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. There are no restrictions. You can open a MEI regardless of your employment situation in Brazil.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What if I don\\'t receive the confirmation email?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Check your spam folder. If you haven\\'t received it within 1 hour, access the portal again with your CPF to retrieve your MEI registration.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </article>
   );
 }
