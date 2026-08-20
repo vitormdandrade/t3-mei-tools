@@ -103,7 +103,21 @@ export async function POST(req: NextRequest) {
     let event: Stripe.Event;
 
     if (process.env.STRIPE_WEBHOOK_SECRET) {
-      event = await verifyWebhook(req);
+      try {
+        event = await verifyWebhook(req);
+      } catch (error: any) {
+        // Missing/invalid signature or missing secret is a client/config
+        // error — return 400 so Stripe never retries malformed deliveries.
+        // Keep 500 for genuine processing failures below.
+        console.error(
+          "Webhook signature verification failed:",
+          error?.message ?? error
+        );
+        return NextResponse.json(
+          { error: "Invalid signature" },
+          { status: 400 }
+        );
+      }
     } else {
       // Development mode: parse body directly
       event = (await req.json()) as Stripe.Event;
