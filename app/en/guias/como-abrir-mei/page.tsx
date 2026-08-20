@@ -445,10 +445,10 @@ export default function ComoAbrirMeiEn() {
               },
               {
                 '@type': 'Question',
-                name: 'What if I don\\'t receive the confirmation email?',
+                name: 'What if I don\'t receive the confirmation email?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Check your spam folder. If you haven\\'t received it within 1 hour, access the portal again with your CPF to retrieve your MEI registration.',
+                  text: 'Check your spam folder. If you haven\'t received it within 1 hour, access the portal again with your CPF to retrieve your MEI registration.',
                 },
               },
             ],
