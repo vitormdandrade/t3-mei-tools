@@ -60,6 +60,12 @@ export default function GuidesPage() {
       excerpt: "Quando o faturamento ultrapassa R$ 81 mil: como migrar, prazos, multas e o que muda.",
       category: "Faturamento",
     },
+    {
+      slug: "cnaes-permitidos-mei",
+      title: "CNAEs Permitidos para MEI 2026 — Lista Completa",
+      excerpt: "Todos os CNAEs autorizados para MEI, como escolher o código correto e o que não pode ser MEI.",
+      category: "Regulamentação",
+    },
   ];
 
   return (

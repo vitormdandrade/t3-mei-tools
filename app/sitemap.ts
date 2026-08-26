@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/guias/abrir-conta-pj-mei', changeFreq: 'monthly' as const },
     { url: '/guias/cancelar-mei', changeFreq: 'monthly' as const },
     { url: '/guias/declaracao-anual-mei', changeFreq: 'monthly' as const },
+    { url: '/guias/cnaes-permitidos-mei', changeFreq: 'monthly' as const },
   ];
 
   // Comparisons
